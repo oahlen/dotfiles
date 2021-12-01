@@ -1,0 +1,8 @@
+[user]
+	name = Oscar Ahlén
+	email = oscar.ahlen@protonmail.com
+[core]
+	editor = vim
+	eol = lf
+	autocrlf = input
+

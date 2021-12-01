@@ -1,0 +1,19 @@
+export ASPNETCORE_ENVIRONMENT="Development"
+
+export PATH=$PATH:/usr/share/dotnet
+export PATH=$PATH:~/.dotnet/tools
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+alias ll='exa -la'
+alias ls='exa'
+alias cat='bat'
+alias grep='rg'
+alias find='fd'
+alias ps='procs'
+
+alias gs='git status'
+alias gc='git commit'
+alias gp='git push origin'
