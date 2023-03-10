@@ -1,4 +1,9 @@
+{{ if eq .chezmoi.osRelease.id "nixos" -}}
+shell = /run/current-system/sw/bin/fish
+{{ else }}
 shell = /usr/bin/fish
+{{ end -}}
+
 term = xterm-256color
 font = JetBrainsMono:size=11
 dpi-aware = no
