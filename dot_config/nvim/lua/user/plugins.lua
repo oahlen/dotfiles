@@ -91,8 +91,7 @@ return packer.startup(function(use)
     use "norcalli/nvim-colorizer.lua"
 
     -- Color scheme
-    -- use { "https://codeberg.org/oahlen/iceberg.nvim" }
-    use "/home/oahlen/git/iceberg.nvim/"
+    use "oahlen/iceberg.nvim"
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
