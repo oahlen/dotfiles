@@ -1,0 +1,31 @@
+set selection-clipboard clipboard
+set font "JetBrainsMono normal 11"
+
+# set recolor
+set recolor-lightcolor \#161821
+set recolor-darkcolor \#c6c8d1
+set recolor-keephue
+set default-bg \#161821
+
+set statusbar-bg \#0f1117
+set statusbar-fg \#c6c8d1
+set inputbar-bg \#161821
+set inputbar-fg \#c6c8d1
+
+set notification-error-bg \#e27878
+set notification-error-fg \#1e2132
+set notification-warning-bg \#e2a478
+set notification-warning-fg \#1e2132
+set notification-bg \#84a0c6
+set notification-fg \#1e2132
+
+set highlight-color \#e2a478
+set highlight-active-color \#b4be82
+set highlight-transparency 0.5
+
+set completion-bg \#3d425b
+set completion-fg \#c6c8d1
+set completion-group-bg \#0f1117
+set completion-group-fg \#818596
+set completion-highlight-bg \#5b6389
+set completion-highlight-fg \#eff0f4

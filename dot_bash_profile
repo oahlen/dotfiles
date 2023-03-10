@@ -1,0 +1,24 @@
+#
+# ~/.bash_profile
+#
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export LESSHISTFILE="$XDG_DATA_HOME/less/history"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NUGET_PACKAGES="$XDG_CACHE_HOME/NuGetPackages"
+export OMNISHARPHOME="$XDG_CONFIG_HOME/omnisharp"
+export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
+export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+
+# If running from tty1 start sway
+if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+    exec sway
+fi
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
