@@ -2,3 +2,4 @@
 dot_config/nvim/lua/user/plugins.lua
 dot_config/electron21-flags.conf
 {{- end }}
+README.md
