@@ -64,7 +64,11 @@ lsp_config.svelte.setup {
     on_attach = on_attach
 }
 
+{{ if eq .chezmoi.osRelease.id "nixos" -}}
+lsp_config.sumneko_lua.setup {
+{{ else }}
 lsp_config.lua_ls.setup {
+{{ end -}}
     on_attach = on_attach,
     settings = {
         Lua = {
