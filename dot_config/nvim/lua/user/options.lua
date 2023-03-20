@@ -50,6 +50,9 @@ vim.g.loaded_vimballPlugin = 1
 vim.g.loaded_zip = 1
 vim.g.loaded_zipPlugin = 1
 
+-- Set colorscheme
+vim.cmd.colorscheme("iceberg")
+
 -- Fix cursor in terminal on exiting
 vim.cmd [[
   augroup RestoreCursorShapeOnExit
