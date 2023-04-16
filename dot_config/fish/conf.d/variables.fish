@@ -17,7 +17,6 @@ set -gx FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS '
     --color=header:#84a0c6,info:#444b71,border:#444b71,separator:#444b71
     --color=prompt:#b4be82,pointer:#e2a478,marker:#89b8c2,spinner:#a093c7
 '
-set -gx GNUPGHOME $XDG_DATA_HOME/gnupg
 set -gx JQ_COLORS "1;35:0;35:0;35:0;35:0;36:0;37:0;37"
 set -gx LESSHISTFILE $XDG_DATA_HOME/less/history
 set -gx MANPAGER 'less' '-R' '--use-color' '-Dd+b' '-Du+G' '-DP+kb' '-DS+ky'
