@@ -3,36 +3,29 @@ if not status_ok then
     return
 end
 
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local map = vim.keymap.set
-map("n", "gn", vim.diagnostic.goto_next)
-map("n", "gN", vim.diagnostic.goto_prev)
-map("n", "<leader>l", vim.diagnostic.setloclist)
+vim.keymap.set("n", "gn", vim.diagnostic.goto_next)
+vim.keymap.set("n", "gN", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "<leader>l", vim.diagnostic.setloclist)
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
 local on_attach = function(_, bufnr)
-    -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
     local telescope = require('telescope.builtin')
-    -- Mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
     local opts = { noremap = true, silent = true, buffer = bufnr }
-    map("n", "gD", vim.lsp.buf.declaration, opts)
-    map("n", "gd", vim.lsp.buf.definition, opts)
-    map("n", "K", vim.lsp.buf.hover, opts)
-    map("n", "gi", telescope.lsp_implementations, opts)
-    map("n", "<C-s>", vim.lsp.buf.signature_help, opts)
-    map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
-    map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
-    map("n", "<leader>wl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, opts)
-    map("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-    map("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    map("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-    map("n", "gr", telescope.lsp_references, opts)
-    map("n", "==", function() vim.lsp.buf.format { async = true } end, opts)
+
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "gi", telescope.lsp_implementations, opts)
+    vim.keymap.set("n", "<C-s>", vim.lsp.buf.signature_help, opts)
+    vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set("n", "<leader>wl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, opts)
+    vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "gr", telescope.lsp_references, opts)
+    vim.keymap.set("n", "==", function() vim.lsp.buf.format { async = true } end, opts)
 end
 
 lsp_config.omnisharp.setup {
@@ -64,11 +57,7 @@ lsp_config.svelte.setup {
     on_attach = on_attach
 }
 
-{{ if eq .chezmoi.osRelease.id "nixos" -}}
-lsp_config.sumneko_lua.setup {
-{{ else }}
 lsp_config.lua_ls.setup {
-{{ end -}}
     on_attach = on_attach,
     settings = {
         Lua = {

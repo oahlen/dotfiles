@@ -1,10 +1,2 @@
-{{- if eq .chezmoi.osRelease.id "nixos" }}
-.config/fish/functions/packages.fish
-.config/fish/config.fish
-.config/fish/fish_variables
-.config/npm
-.config/nvim/lua/user/plugins.lua
-.config/electron21-flags.conf
-{{- end }}
 LICENSE
 README.md

@@ -1,7 +1,2 @@
-Host codeberg.org
-  HostName codeberg.org
-  IdentityFile ~/.ssh/codeberg
-
-Host github.com
-  HostName github.com
+Host *
   IdentityFile ~/.ssh/github

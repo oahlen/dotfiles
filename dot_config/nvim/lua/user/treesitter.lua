@@ -4,7 +4,6 @@ if not status_ok then
 end
 
 configs.setup {
-{{ if eq .chezmoi.osRelease.id "arch" -}}
     ensure_installed = {
         "bash",
         "c",
@@ -23,7 +22,6 @@ configs.setup {
         "lua",
         "make",
         "markdown",
-        "nix",
         "python",
         "rust",
         "scss",
@@ -34,9 +32,6 @@ configs.setup {
         "vim",
         "yaml"
     },
-{{ else if eq .chezmoi.osRelease.id "nixos" -}}
-    ensure_installed = {},
-{{ end -}}
     sync_install = false,
     ignore_install = {},
     highlight = {

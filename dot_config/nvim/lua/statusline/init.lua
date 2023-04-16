@@ -27,8 +27,8 @@ function active()
 
     local parts = {
         " %f [%n] %m",
-        [[%{luaeval("require'statusline'.lsp_diagnostics()")}]],
         "%=",
+        [[%{luaeval("require'statusline'.lsp_diagnostics()")}]],
         "%{&fenc?&fenc:&enc}",
         "%{&ff}",
         "%{&ft!=#''?&ft:'none'}",

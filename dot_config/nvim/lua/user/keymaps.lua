@@ -1,47 +1,45 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local map = vim.keymap.set
-
 -- Remap space as leader key
-map("", "<Space>", "<Nop>")
+vim.keymap.set("", "<Space>", "<Nop>")
 
 -- Yank to end of line
-map("n", "Y", "y$")
+vim.keymap.set("n", "Y", "y$")
 
 -- Better window navigation
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
-map("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- Keep cursor in the middle of screen
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 -- Clear highlights
-map("n", "<leader>ch", "<CMD>nohl<CR>")
+vim.keymap.set("n", "<leader>ch", "<CMD>nohl<CR>")
 
 -- Tab operations
-map("n", "<leader>ta", "<CMD>$tabnew<CR>")
-map("n", "<leader>tc", "<CMD>tabclose<CR>")
+vim.keymap.set("n", "<leader>ta", "<CMD>$tabnew<CR>")
+vim.keymap.set("n", "<leader>tc", "<CMD>tabclose<CR>")
 
 -- Close current buffer
-map("n", "<leader>q", "<CMD>bp<BAR>bd#<CR>")
+vim.keymap.set("n", "<leader>q", "<CMD>bp<BAR>bd#<CR>")
 
 -- Stay in indent mode
-map("v", "<", "<gv")
-map("v", ">", ">gv")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
 -- Faster way to enter insert mode
-map("v", "i", "<ESC>i")
-map("v", "a", "<ESC>a")
+vim.keymap.set("v", "i", "<ESC>i")
+vim.keymap.set("v", "a", "<ESC>a")
 
 -- Sane way of exiting terminal mode
-map("t", "<ESC>", "<C-\\><C-n>")
+vim.keymap.set("t", "<ESC>", "<C-\\><C-n>")
 
 -- Format json
-map("n", "<leader>jf", "<CMD>%! jq<CR>")
+vim.keymap.set("n", "<leader>jf", "<CMD>%! jq<CR>")

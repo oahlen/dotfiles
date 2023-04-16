@@ -10,5 +10,6 @@ set +o history
 
 alias ls='exa'
 alias ll='exa -la'
+alias '..'='cd ..'
 
 PS1='[\u@\h \W]\$ '

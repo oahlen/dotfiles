@@ -2,4 +2,3 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
 SETUVAR fish_key_bindings:fish_default_key_bindings
-SETUVAR fish_user_paths:/usr/share/dotnet\x1e/home/oahlen/\x2edotnet/tools\x1e/home/oahlen/\x2elocal/share/cargo/bin\x1e/home/oahlen/\x2elocal/share/npm/bin

@@ -1,8 +1,6 @@
 require "user.options"
 require "user.keymaps"
-{{ if eq .chezmoi.osRelease.id "arch" -}}
 require "user.plugins"
-{{ end -}}
 require "user.telescope"
 require "user.mason"
 require "user.lsp"
