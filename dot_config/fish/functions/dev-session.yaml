@@ -1,0 +1,15 @@
+session_name: "${TMUX_SESSION}"
+start_directory: "${PWD}"
+windows:
+  - window_name: Code
+    panes:
+      - shell_command:
+          - nvim
+        focus: true
+  - window_name: Terminal
+    panes:
+      - shell_command:
+  - window_name: Git
+    panes:
+      - shell_command:
+          - gitui

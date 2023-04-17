@@ -1,0 +1,12 @@
+session_name: Dotfiles
+start_directory: ~/.local/share/chezmoi/
+windows:
+  - window_name: Code
+    panes:
+      - shell_command:
+          - nvim
+        focus: true
+  - window_name: Git
+    panes:
+      - shell_command:
+          - gitui

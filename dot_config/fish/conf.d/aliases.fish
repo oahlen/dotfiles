@@ -1,4 +1,5 @@
 alias cat bat
+alias dotedit "tmuxp load -y ~/.local/share/chezmoi/session.yaml"
 alias du dust
 alias la "exa -la"
 alias ll "exa -l"

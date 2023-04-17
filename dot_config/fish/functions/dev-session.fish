@@ -4,16 +4,6 @@ function dev-session --argument-names "session" --description "Create a tmux dev
         return
     end
 
-    tmux new-session -d -s $session
-    tmux new-window -t $session:2 -n "Git"
-    tmux new-window -t $session:3 -n "Terminal"
-
-    tmux rename-window -t $session:1 "Code"
-
-    tmux split-window -t $session:Terminal -h
-
-    tmux selectw -t $session:Code
-    tmux selectp -t 0
-
-    tmux a -t $session
+    set -gx TMUX_SESSION $session
+    tmuxp load -y ~/.config/fish/functions/dev-session.yaml
 end
