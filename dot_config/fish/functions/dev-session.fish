@@ -5,5 +5,5 @@ function dev-session --argument-names "session" --description "Create a tmux dev
     end
 
     set -gx TMUX_SESSION $session
-    tmuxp load -y ~/.config/fish/functions/dev-session.yaml
+    tmuxp load -y dev-session
 end
