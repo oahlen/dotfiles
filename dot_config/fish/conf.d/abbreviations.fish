@@ -1,6 +1,5 @@
 abbr -ag compress "tar -zcvf"
 abbr -ag cz chezmoi
-abbr -ag czcd "cd ~/.local/share/chezmoi/"
 abbr -ag df "duf --theme ansi"
 abbr -ag extract "tar -zxvf"
 abbr -ag gc "git commit"
