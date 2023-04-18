@@ -1,5 +1,5 @@
 set selection-clipboard clipboard
-set font "JetBrainsMono normal 11"
+set font "JetBrainsMono Nerd Font normal 11"
 
 # set recolor
 set recolor-lightcolor \#161821
