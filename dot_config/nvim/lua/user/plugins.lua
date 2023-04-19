@@ -1,102 +1,202 @@
--- Automatically install packer
-local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = vim.fn.system {
+local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazy_path) then
+    vim.fn.system({
         "git",
         "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        install_path
-    }
-    vim.cmd [[packadd packer.nvim]]
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazy_path,
+    })
 end
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-    return
-end
+vim.opt.rtp:prepend(lazy_path)
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
-
--- Have packer use a popup window
-packer.init {
-    display = {
-        open_fn = function()
-            return require("packer.util").float { border = "solid" }
+require("lazy").setup({
+    { "nvim-lua/plenary.nvim", lazy = true },
+    { "nvim-lua/popup.nvim",   lazy = true },
+    {
+        "nvim-tree/nvim-web-devicons",
+        lazy = true,
+        config = function()
+            require("nvim-web-devicons").setup {
+                override_by_extension = {
+                    ["rs"] = {
+                        name = "Rust",
+                        icon = "",
+                        color = "#f74c00"
+                    }
+                }
+            }
         end
+    },
+
+    {
+        "nvim-telescope/telescope.nvim",
+        dependencies = {
+            "nvim-telescope/telescope-ui-select.nvim",
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build = "make"
+            }
+        }
+    },
+
+    {
+        "neovim/nvim-lspconfig",
+        dependencies = { "Hoffs/omnisharp-extended-lsp.nvim" }
+    },
+
+    {
+        "williamboman/mason.nvim",
+        config = function() require("mason").setup() end
+    },
+
+    {
+        "mfussenegger/nvim-dap",
+        dependencies = { "theHamsta/nvim-dap-virtual-text" }
+    },
+
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lua",
+
+            "L3MON4D3/LuaSnip",
+            "rafamadriz/friendly-snippets",
+            "saadparwaiz1/cmp_luasnip",
+        }
+    },
+
+    {
+        "nvim-treesitter/nvim-treesitter",
+        config = function()
+            require("nvim-treesitter.configs").setup {
+                ensure_installed = {
+                    "bash",
+                    "c",
+                    "cmake",
+                    "comment",
+                    "c_sharp",
+                    "css",
+                    "dockerfile",
+                    "fish",
+                    "gitignore",
+                    "go",
+                    "html",
+                    "javascript",
+                    "json",
+                    "lua",
+                    "make",
+                    "markdown",
+                    "python",
+                    "rust",
+                    "scss",
+                    "sql",
+                    "svelte",
+                    "toml",
+                    "typescript",
+                    "vim",
+                    "yaml"
+                },
+                sync_install = false,
+                ignore_install = {},
+                highlight = {
+                    enable = true,
+                    disable = {},
+                    additional_vim_regex_highlighting = false
+                },
+                indent = {
+                    enable = true
+                }
+            }
+        end,
+        cmd = "TSUpdate"
+    },
+
+    {
+        "nvim-tree/nvim-tree.lua",
+        keys = {
+            { "<leader>e", "<CMD>NvimTreeToggle<CR>",   desc = "NvimTree Toggle" },
+            { "<leader>E", "<CMD>NvimTreeFindFile<CR>", desc = "NvimTree Find File" },
+        },
+        config = function()
+            require("nvim-tree").setup {
+                hijack_cursor = true,
+                sync_root_with_cwd = true,
+                renderer = {
+                    special_files = { "Cargo.toml", "Dockerfile", "Makefile", "README.md", "readme.md" },
+                },
+                filters = {
+                    custom = {
+                        "^.git$"
+                    }
+                },
+                view = {
+                    width = 40,
+                    signcolumn = "no"
+                }
+            }
+        end
+    },
+
+    {
+        "ggandor/leap.nvim",
+        config = function()
+            require("leap").add_default_mappings()
+        end
+    },
+
+    {
+        "windwp/nvim-autopairs",
+        config = function()
+            require("nvim-autopairs").setup {
+                check_ts = true,
+                ts_config = {},
+                disable_filetype = { "TelescopePrompt", "vim" },
+                enable_check_bracket_line = false,
+                ignored_next_char = "[%w%.#]"
+            }
+
+            require("cmp").event:on(
+                "confirm_done",
+                require("nvim-autopairs.completion.cmp").on_confirm_done()
+            )
+        end,
+    },
+
+    { "kylechui/nvim-surround" },
+
+    { "numToStr/Comment.nvim" },
+
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require("indent_blankline").setup {
+                space_char_blankline = " ",
+                show_current_context = true,
+                show_current_context_start = true,
+            }
+        end
+    },
+
+    { "norcalli/nvim-colorizer.lua" },
+
+    {
+        -- "oahlen/iceberg.nvim",
+        dir = "/home/oahlen/git/iceberg.nvim/",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme("iceberg")
+        end,
+    },
+
+    {
+        dir = "/home/oahlen/git/verdandi.nvim/"
     }
-}
 
--- Install your plugins here
-return packer.startup(function(use)
-    use "wbthomason/packer.nvim" -- Packer can manage itself
-    use "williamboman/mason.nvim" -- Package manager for LSP, linters, etc.
-
-    use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
-    use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-
-    -- Fuzzy finder
-    use "nvim-telescope/telescope.nvim"
-    use "nvim-telescope/telescope-ui-select.nvim"
-    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
-
-    -- LSP
-    use "neovim/nvim-lspconfig"
-    use "Hoffs/omnisharp-extended-lsp.nvim" -- Omnisharp decompilation support
-
-    -- DAP
-    use "mfussenegger/nvim-dap"
-    use "theHamsta/nvim-dap-virtual-text"
-
-    -- Completion plugins
-    use "hrsh7th/nvim-cmp" -- The completion plugin
-    use "hrsh7th/cmp-buffer" -- Buffer completions
-    use "hrsh7th/cmp-path" -- Path completions
-    use "hrsh7th/cmp-nvim-lsp" -- LSP completions
-    use "hrsh7th/cmp-nvim-lua" -- NVIM LSP completions
-
-    -- Snippets
-    use "L3MON4D3/LuaSnip" -- Snippet engine
-    use "rafamadriz/friendly-snippets" -- A bunch of snippets to use
-    use "saadparwaiz1/cmp_luasnip" -- Snippet cmp integration
-
-    -- Treesitter
-    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-
-    -- File tree
-    use "nvim-tree/nvim-tree.lua"
-
-    -- Leap
-    use "ggandor/leap.nvim"
-
-    -- Autopairs, integrates with both cmp and treesitter
-    use "windwp/nvim-autopairs"
-
-    -- Surround
-    use "kylechui/nvim-surround"
-
-    -- Easily comment stuff
-    use "numToStr/Comment.nvim"
-
-    -- Indentation guidelines
-    use "lukas-reineke/indent-blankline.nvim"
-
-    -- Colored hex codes
-    use "norcalli/nvim-colorizer.lua"
-
-    -- Color scheme
-    use "oahlen/iceberg.nvim"
-
-    if PACKER_BOOTSTRAP then
-        require("packer").sync()
-    end
-end)
+})

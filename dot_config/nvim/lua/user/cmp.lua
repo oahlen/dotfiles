@@ -1,19 +1,39 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-    return
-end
-
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-    return
-end
-
+local cmp = require("cmp")
+local luasnip = require("luasnip")
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
     local col = vim.fn.col "." - 1
     return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
+
+local kind_icons = {
+    Text = "",
+    Method = "",
+    Function = "",
+    Constructor = "",
+    Field = "",
+    Variable = "",
+    Class = "ﴯ",
+    Interface = "",
+    Module = "",
+    Property = "ﰠ",
+    Unit = "",
+    Value = "",
+    Enum = "",
+    Keyword = "",
+    Snippet = "",
+    Color = "",
+    File = "",
+    Reference = "",
+    Folder = "",
+    EnumMember = "",
+    Constant = "",
+    Struct = "",
+    Event = "",
+    Operator = "",
+    TypeParameter = ""
+}
 
 cmp.setup {
     snippet = {
@@ -52,6 +72,13 @@ cmp.setup {
                 fallback()
             end
         end, { "i", "s" }),
+    },
+    formatting = {
+        fields = { "abbr", "kind" },
+        format = function(_, vim_item)
+            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+            return vim_item
+        end
     },
     sources = cmp.config.sources {
         { name = "nvim_lsp" },
