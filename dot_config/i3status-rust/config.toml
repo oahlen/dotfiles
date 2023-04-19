@@ -2,7 +2,7 @@
 theme = "iceberg"
 
 [icons]
-icons = "none"
+icons = "awesome6"
 
 [[block]]
 block = "keyboard_layout"
@@ -36,8 +36,8 @@ cmd = "pavucontrol"
 
 [[block]]
 block = "net"
-format = " $ip "
-format_alt = " $ssid ($signal_strength) "
+format = " $icon  $ip "
+format_alt = " $icon  $device "
 missing_format = " NA "
 interval = 10
 
@@ -45,6 +45,8 @@ interval = 10
 block = "battery"
 device = "BAT0"
 if_command = "test -e /sys/class/power_supply/BAT0"
+format = " $icon  $percentage "
+full_format = ""
 missing_format = ""
 good = 75
 warning = 50
@@ -54,5 +56,4 @@ interval = 10
 [[block]]
 block = "time"
 interval = 10
-format = " $timestamp.datetime(f:'%Y-%m-%d %R') "
-icons_format = " "
+format = " $icon $timestamp.datetime(f:'%Y-%m-%d %R') "
