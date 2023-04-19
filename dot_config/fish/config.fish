@@ -4,8 +4,4 @@ if status is-interactive
 
     # Zoxide
     zoxide init fish | source
-
-    # Pyenv
-    # set -gx PATH $PYENV_ROOT/bin:$PATH
-    # pyenv init --path | source
 end
