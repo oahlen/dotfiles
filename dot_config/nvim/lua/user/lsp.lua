@@ -1,7 +1,4 @@
-local status_ok, lsp_config = pcall(require, "lspconfig")
-if not status_ok then
-    return
-end
+local lsp_config = pcall(require, "lspconfig")
 
 vim.keymap.set("n", "gn", vim.diagnostic.goto_next)
 vim.keymap.set("n", "gN", vim.diagnostic.goto_prev)
