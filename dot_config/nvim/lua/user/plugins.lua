@@ -21,6 +21,11 @@ require("lazy").setup({
         config = function()
             require("nvim-web-devicons").setup {
                 override_by_extension = {
+                    ["csproj"] = {
+                        name = "CSProj",
+                        icon = "",
+                        color = "#017bcd"
+                    },
                     ["rs"] = {
                         name = "Rust",
                         icon = "",

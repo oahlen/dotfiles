@@ -5,41 +5,73 @@ function M.lsp_diagnostics()
         return ""
     end
 
+    local symbols = {
+        error = ' ',
+        warn = ' ',
+        info = ' ',
+        hint = ' '
+    }
+
     local parts = {}
 
     local num_errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
     if num_errors > 0 then
-        table.insert(parts, "E:" .. num_errors)
+        table.insert(parts, symbols.error .. num_errors)
     end
 
     local num_warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
     if num_warnings > 0 then
-        table.insert(parts, "W:" .. num_warnings)
+        table.insert(parts, symbols.warn .. num_warnings)
     end
 
     return table.concat(parts, " ")
 end
 
-function active()
+function M.lsp_client()
+    local clients = vim.lsp.get_active_clients({ bufnr = vim.api.nvim_get_current_buf() })
+
+    if #(clients) > 0 then
+        return " " .. clients[1].name
+    end
+
+    return ""
+end
+
+function M.has_git_branch()
+    return vim.b.git_branch ~= nil and vim.b.git_branch ~= ""
+end
+
+function M.update_git_branch()
+    vim.b.git_branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
+end
+
+function M.active()
     if vim.bo.filetype == "NvimTree" then
         return " %{fnamemodify(getcwd(), ':~')}"
     end
 
-    local parts = {
-        " %f [%n] %m",
-        "%=",
-        [[%{luaeval("require'statusline'.lsp_diagnostics()")}]],
-        "%{&fenc?&fenc:&enc}",
-        "%{&ff}",
-        "%{&ft!=#''?&ft:'none'}",
-        "[%3l:%-2v]",
-        "[%3P] "
-    }
+    local parts = {}
+    table.insert(parts, " %t [%n] %m")
+
+    if M.has_git_branch() then
+        table.insert(parts, " " .. vim.b.git_branch)
+    end
+
+    table.insert(parts, [[%{luaeval("require'statusline'.lsp_client()")}]])
+    table.insert(parts, [[%{luaeval("require'statusline'.lsp_diagnostics()")}]])
+
+    table.insert(parts, "%=")
+
+    table.insert(parts, "%{&fenc?&fenc:&enc}")
+    table.insert(parts, "%{&ff}")
+    table.insert(parts, "%{&ft!=#''?&ft:'none'}")
+    table.insert(parts, "[%3l:%-2v]")
+    table.insert(parts, "[%3P] ")
 
     return table.concat(parts, "    ")
 end
 
-function inactive()
+function M.inactive()
     return vim.bo.filetype == "NvimTree"
         and " %{fnamemodify(getcwd(), ':~')}"
         or " %t [%n] %m%=[%3l:%-2v]    [%3P] "
@@ -50,7 +82,8 @@ local group = vim.api.nvim_create_augroup("statusline", { clear = true })
 vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
     pattern = "*",
     callback = function()
-        vim.wo.statusline = active()
+        M.update_git_branch()
+        vim.wo.statusline = M.active()
     end,
     group = group
 })
@@ -58,7 +91,7 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
 vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
     pattern = "*",
     callback = function()
-        vim.wo.statusline = inactive()
+        vim.wo.statusline = M.inactive()
     end,
     group = group
 })

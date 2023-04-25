@@ -37,7 +37,7 @@ lsp_config.omnisharp.setup {
         "--languageserver",
         "--hostPID",
         tostring(vim.fn.getpid())
-    };
+    },
     on_attach = on_attach
 }
 
