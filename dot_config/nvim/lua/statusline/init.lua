@@ -6,10 +6,10 @@ function M.lsp_diagnostics()
     end
 
     local symbols = {
-        error = ' ',
-        warn = ' ',
-        info = ' ',
-        hint = ' '
+        error = "󰅚 ",
+        warn = "󰀪 ",
+        info = "󰋽 ",
+        hint = "󰌶 "
     }
 
     local parts = {}
@@ -37,12 +37,12 @@ function M.lsp_client()
     return ""
 end
 
-function M.has_git_branch()
-    return vim.b.git_branch ~= nil and vim.b.git_branch ~= ""
-end
+function M.branch()
+    if vim.b.gitsigns_head ~= nil then
+        return " " .. vim.b.gitsigns_head
+    end
 
-function M.update_git_branch()
-    vim.b.git_branch = vim.fn.system("git branch --show-current 2> /dev/null | tr -d '\n'")
+    return ""
 end
 
 function M.active()
@@ -51,12 +51,9 @@ function M.active()
     end
 
     local parts = {}
-    table.insert(parts, " %t [%n] %m")
+    table.insert(parts, " %f [%n] %m")
 
-    if M.has_git_branch() then
-        table.insert(parts, " " .. vim.b.git_branch)
-    end
-
+    table.insert(parts, [[%{luaeval("require'statusline'.branch()")}]])
     table.insert(parts, [[%{luaeval("require'statusline'.lsp_client()")}]])
     table.insert(parts, [[%{luaeval("require'statusline'.lsp_diagnostics()")}]])
 
@@ -82,7 +79,6 @@ local group = vim.api.nvim_create_augroup("statusline", { clear = true })
 vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
     pattern = "*",
     callback = function()
-        M.update_git_branch()
         vim.wo.statusline = M.active()
     end,
     group = group

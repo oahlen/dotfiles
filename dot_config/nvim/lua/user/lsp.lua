@@ -1,10 +1,29 @@
 local lsp_config = pcall(require, "lspconfig")
 
+local signs = {
+    Error = "󰅚 ",
+    Warn = "󰀪 ",
+    Info = "󰋽 ",
+    Hint = "󰌶 "
+}
+
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = " ●"
+    }
+})
+
 vim.keymap.set("n", "gn", vim.diagnostic.goto_next)
 vim.keymap.set("n", "gN", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "<leader>l", vim.diagnostic.setloclist)
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
+    client.server_capabilities.semanticTokensProvider = nil
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
     local telescope = require('telescope.builtin')
