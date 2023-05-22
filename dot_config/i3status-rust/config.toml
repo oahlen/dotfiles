@@ -2,7 +2,7 @@
 theme = "iceberg"
 
 [icons]
-icons = "awesome6"
+icons = "material-nf"
 
 [[block]]
 block = "keyboard_layout"
