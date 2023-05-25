@@ -1,4 +1,4 @@
-local lsp_config = pcall(require, "lspconfig")
+local lsp_config = require("lspconfig")
 
 local signs = {
     Error = "󰅚 ",
