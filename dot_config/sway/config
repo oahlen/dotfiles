@@ -212,6 +212,8 @@ bindsym $mod+Shift+0 move container to workspace number 10
 #
 # Move to next/previous workspace
 #
+bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab workspace next
 bindsym $mod+Ctrl+$left workspace prev
 bindsym $mod+Ctrl+$right workspace next
 bindsym $mod+Ctrl+left workspace prev
