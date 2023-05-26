@@ -23,7 +23,10 @@ vim.keymap.set("n", "gN", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "<leader>l", vim.diagnostic.setloclist)
 
 local on_attach = function(client, bufnr)
-    client.server_capabilities.semanticTokensProvider = nil
+    if client.name == "omnisharp" then
+        client.server_capabilities.semanticTokensProvider = nil
+    end
+
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
     local telescope = require('telescope.builtin')
