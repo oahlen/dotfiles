@@ -6,3 +6,4 @@ alias ll "exa -l"
 alias ls exa
 alias ps procs
 alias vi nvim
+alias zki "zk edit --interactive"

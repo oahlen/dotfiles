@@ -64,6 +64,18 @@ lsp_config.rust_analyzer.setup {
     on_attach = on_attach
 }
 
+lsp_config.zk.setup {
+    cmd = {
+        "zk",
+        "lsp",
+    },
+    filetypes = { 'markdown' },
+    root_dir = function()
+        return vim.loop.cwd()
+    end,
+    on_attach = on_attach
+}
+
 lsp_config.pyright.setup {
     on_attach = on_attach
 }
