@@ -15,5 +15,10 @@ profile work {
 
 profile office {
     output eDP-1 disable
-    output "LG Electronics LG HDR WQHD 103NTPCBZ272" enable mode 3440x1440 position 0,0
+    output "Dell Inc. DELL U3421WE 9PMG753" enable mode 3440x1440 position 0,0
+}
+
+profile gul {
+    output eDP-1 disable
+    output "Samsung Electric Company SAMSUNG 0x00000F00" enable mode 3840x2160 scale 2 position 0,0
 }
