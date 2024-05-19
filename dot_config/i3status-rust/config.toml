@@ -2,7 +2,7 @@
 theme = "iceberg"
 
 [icons]
-icons = "material-nf"
+icons = "none"
 
 [[block]]
 block = "keyboard_layout"
@@ -10,14 +10,6 @@ driver = "sway"
 [block.mappings]
 "English (US)" = "US"
 "Swedish (N/A)" = "SE"
-
-[[block]]
-block = "hueshift"
-hue_shifter = "gammastep"
-min_temp = 2000
-max_temp = 6500
-click_temp = 5000
-step = 500
 
 [[block]]
 block = "backlight"
@@ -36,15 +28,15 @@ cmd = "pavucontrol"
 
 [[block]]
 block = "net"
-format = " $icon  {$ssid|Wired} "
-missing_format = " NA "
+format = " {$ssid|Wired} "
+missing_format = " No network "
 interval = 10
 
 [[block]]
 block = "battery"
 device = "BAT0"
 if_command = "test -e /sys/class/power_supply/BAT0"
-format = " $icon  $percentage "
+format = " $icon $percentage "
 full_format = ""
 missing_format = ""
 good = 75
@@ -55,4 +47,4 @@ interval = 10
 [[block]]
 block = "time"
 interval = 10
-format = " $icon $timestamp.datetime(f:'%Y-%m-%d %R') "
+format = " $timestamp.datetime(f:'%Y-%m-%d %R') "

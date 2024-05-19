@@ -5,7 +5,7 @@
 # Read `man 5 sway` for a complete reference.
 
 # Set sway font
-font pango:JetBrainsMono Nerd Font 11
+font pango:JetBrainsMono Nerd Font 11.5
 
 ### Input configuration
 #
