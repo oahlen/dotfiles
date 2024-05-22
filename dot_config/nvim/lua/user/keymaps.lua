@@ -1,3 +1,4 @@
+-- Keymaps
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -20,16 +21,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Clear highlights
-vim.keymap.set("n", "<leader>ch", "<CMD>nohl<CR>")
-
--- Tab operations
-vim.keymap.set("n", "<leader>ta", "<CMD>$tabnew<CR>")
-vim.keymap.set("n", "<leader>tc", "<CMD>tabclose<CR>")
-
--- Close current buffer
-vim.keymap.set("n", "<leader>q", "<CMD>bp<BAR>bd#<CR>")
-
 -- Stay in indent mode
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
@@ -41,5 +32,15 @@ vim.keymap.set("v", "a", "<ESC>a")
 -- Sane way of exiting terminal mode
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>")
 
--- Format json
-vim.keymap.set("n", "<leader>jf", "<CMD>%! jq<CR>")
+-- Close current buffer
+vim.keymap.set("n", "<leader>q", "<CMD>bp<BAR>bd#<CR>", { desc = "Close current buffer" })
+
+-- Tab operations
+vim.keymap.set("n", "<leader>ta", "<CMD>$tabnew<CR>", { desc = "New tab" })
+vim.keymap.set("n", "<leader>tc", "<CMD>tabclose<CR>", { desc = "Close current tab" })
+
+-- Clear highlights
+vim.keymap.set("n", "<leader>ch", "<CMD>nohl<CR>", { desc = "Clear search highlights" })
+
+-- Insert functions
+vim.keymap.set("n", "<leader>ii", "<CMD>r!uuidgen<CR>", { desc = "Insert UUID" })

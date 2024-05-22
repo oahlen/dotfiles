@@ -97,7 +97,10 @@ require("lazy").setup({
                     "lua",
                     "make",
                     "markdown",
+                    "nix",
+                    "proto",
                     "python",
+                    "query",
                     "rust",
                     "scss",
                     "sql",
@@ -105,6 +108,7 @@ require("lazy").setup({
                     "toml",
                     "typescript",
                     "vim",
+                    "vimdoc",
                     "yaml"
                 },
                 sync_install = false,
@@ -180,19 +184,14 @@ require("lazy").setup({
     {
         "lukas-reineke/indent-blankline.nvim",
         config = function()
-            require("indent_blankline").setup {
-                space_char_blankline = " ",
-                show_current_context = true,
-                show_current_context_start = true,
-            }
+            require("ibl").setup()
         end
     },
 
     { "norcalli/nvim-colorizer.lua" },
 
     {
-        -- "oahlen/iceberg.nvim",
-        dir = "/home/oahlen/git/iceberg.nvim/",
+        "oahlen/iceberg.nvim",
         lazy = false,
         priority = 1000,
         config = function()

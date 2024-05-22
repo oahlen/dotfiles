@@ -1,5 +1,7 @@
+age
 bandwhich
 bat
+bitwarden
 bottom
 brightnessctl
 calc
@@ -14,10 +16,6 @@ duf
 dust
 eza
 fastfetch
-iwgtk
-keepassxc
-qt5-wayland
-bitwarden
 fd
 figlet
 file-roller
@@ -32,17 +30,21 @@ gitui
 gping
 grim
 gvfs
+gvfs-nfs
 gvfs-smb
 hexyl
 hyperfine
 i3status-rust
+iwgtk
 jless
 jq
 kanshi
+keepassxc
 kmon
 libimobiledevice
 libnotify
 lowdown
+lua-language-server
 mako
 neovim
 noto-fonts-emoji
@@ -51,7 +53,7 @@ pavucontrol
 playerctl
 polkit
 procs
-rage
+qt5-wayland
 ripgrep
 ristretto
 sd
@@ -85,6 +87,7 @@ xdg-utils
 xorg-xwayland
 xsv
 yazi
+yubioath-desktop
 zathura
 zip
 zoxide

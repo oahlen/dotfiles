@@ -1,27 +1,27 @@
 local M = {}
 
+M.symbols = {
+    error = "󰅚 ",
+    warn = "󰀪 ",
+    info = "󰋽 ",
+    hint = "󰌶 "
+}
+
 function M.lsp_diagnostics()
     if vim.api.nvim_get_mode()["mode"] ~= "n" then
         return ""
     end
 
-    local symbols = {
-        error = "󰅚 ",
-        warn = "󰀪 ",
-        info = "󰋽 ",
-        hint = "󰌶 "
-    }
-
     local parts = {}
 
     local num_errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
     if num_errors > 0 then
-        table.insert(parts, symbols.error .. num_errors)
+        table.insert(parts, M.symbols.error .. num_errors)
     end
 
     local num_warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
     if num_warnings > 0 then
-        table.insert(parts, symbols.warn .. num_warnings)
+        table.insert(parts, M.symbols.warn .. num_warnings)
     end
 
     return table.concat(parts, " ")
@@ -50,20 +50,18 @@ function M.active()
         return " %{fnamemodify(getcwd(), ':~')}"
     end
 
-    local parts = {}
-    table.insert(parts, " %f [%n] %m")
-
-    table.insert(parts, [[%{luaeval("require'statusline'.branch()")}]])
-    table.insert(parts, [[%{luaeval("require'statusline'.lsp_client()")}]])
-    table.insert(parts, [[%{luaeval("require'statusline'.lsp_diagnostics()")}]])
-
-    table.insert(parts, "%=")
-
-    table.insert(parts, "%{&fenc?&fenc:&enc}")
-    table.insert(parts, "%{&ff}")
-    table.insert(parts, "%{&ft!=#''?&ft:'none'}")
-    table.insert(parts, "[%3l:%-2v]")
-    table.insert(parts, "[%3P] ")
+    local parts = {
+        " %t [%n] %m",
+        [[%{luaeval("require'statusline'.branch()")}]],
+        [[%{luaeval("require'statusline'.lsp_client()")}]],
+        [[%{luaeval("require'statusline'.lsp_diagnostics()")}]],
+        "%=",
+        "%{&fenc?&fenc:&enc}",
+        "%{&ff}",
+        "%{&ft!=#''?&ft:'none'}",
+        "[%3l:%-2v]",
+        "[%3P] "
+    }
 
     return table.concat(parts, "    ")
 end
