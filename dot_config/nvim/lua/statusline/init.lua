@@ -28,13 +28,14 @@ function M.lsp_diagnostics()
 end
 
 function M.lsp_client()
-    local clients = vim.lsp.get_active_clients({ bufnr = vim.api.nvim_get_current_buf() })
+    local clients = vim.lsp.get_clients()
+    local parts = {}
 
-    if #(clients) > 0 then
-        return " " .. clients[1].name
+    for _, client in pairs(clients) do
+        table.insert(parts, " " .. client.name)
     end
 
-    return ""
+    return table.concat(parts, " ")
 end
 
 function M.branch()

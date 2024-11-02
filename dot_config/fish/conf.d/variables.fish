@@ -12,7 +12,7 @@ set -gx CARGO_HOME $XDG_DATA_HOME/cargo
 set -gx DOCKER_CONFIG $XDG_CONFIG_HOME/docker
 set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow'
 set -gx FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS '
-    --layout=reverse --scrollbar '▌'
+    --layout=reverse --height=40% --scrollbar '▌'
     --color=fg:#c6c8d1,bg:#161821,hl:#e2a478
     --color=fg+:#d2d4de,bg+:#242940,hl+:#e9b189
     --color=header:#84a0c6,info:#444b71,border:#6b7089,separator:#6b7089

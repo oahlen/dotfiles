@@ -1,7 +1,7 @@
 # Syntax Highlighting
 set -g fish_color_autosuggestion brblack
 set -g fish_color_cancel red --bold
-set -g fish_color_command blue --bold
+set -g fish_color_command a3adcb --bold
 set -g fish_color_comment brblack
 set -g fish_color_end blue --bold
 set -g fish_color_error red
@@ -11,7 +11,7 @@ set -g fish_color_keyword blue
 set -g fish_color_normal normal
 set -g fish_color_operator blue
 set -g fish_color_option white
-set -g fish_color_param a3adcb --bold
+set -g fish_color_param white --bold
 set -g fish_color_quote cyan
 set -g fish_color_redirection purple --bold
 set -g fish_color_search_match --background 3d425b
