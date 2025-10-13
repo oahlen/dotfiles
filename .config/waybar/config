@@ -60,7 +60,7 @@
         "shutdown": "systemctl poweroff",
         "suspend": "systemctl suspend"
       },
-      "menu-file": "power_menu.xml",
+      "menu-file": "$XDG_CONFIG_HOME/waybar/power_menu.xml",
       "tooltip": false
     },
     "group/expander": {
