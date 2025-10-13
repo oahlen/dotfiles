@@ -1,0 +1,15 @@
+session_name: Notes
+start_directory: ~/Documents/Notes
+windows:
+  - window_name: Notes
+    panes:
+      - shell_command:
+          - nvim
+        focus: true
+  - window_name: History
+    panes:
+      - shell_command:
+          - gitui
+  - window_name: Scratchpad
+    panes:
+      - shell_command:
