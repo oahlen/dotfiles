@@ -1,0 +1,92 @@
+[flags]
+group_processes = true
+process_memory_as_value = true
+
+[[row]]
+ratio = 30
+[[row.child]]
+type = "cpu"
+
+[[row]]
+ratio = 40
+[[row.child]]
+default = true
+ratio = 4
+type = "proc"
+
+[[row.child]]
+ratio = 3
+[[row.child.child]]
+type = "temp"
+
+[[row.child.child]]
+type = "disk"
+
+[[row]]
+ratio = 30
+[[row.child]]
+type = "net"
+
+[[row.child]]
+type = "mem"
+
+[styles.battery]
+high_battery_color = "green"
+low_battery_color = "red"
+medium_battery_color = "yellow"
+
+[styles.cpu]
+all_entry_color = "green"
+avg_entry_color = "reset"
+cpu_core_colors = [
+    "red",
+    "green",
+    "yellow",
+    "blue",
+    "magenta",
+    "cyan",
+    "light red",
+    "light green",
+    "light yellow",
+    "light blue",
+    "light magenta",
+    "light cyan",
+]
+
+[styles.graphs]
+graph_color = "reset"
+legend_text = "reset"
+
+[styles.memory]
+arc_color = "light cyan"
+cache_color = "light red"
+gpu_colors = [
+    "light blue",
+    "light red",
+    "cyan",
+    "green",
+    "blue",
+    "red",
+]
+ram_color = "light magenta"
+swap_color = "light yellow"
+
+[styles.network]
+rx_color = "green"
+rx_total_color = "light cyan"
+tx_color = "cyan"
+tx_total_color = "light green"
+
+[styles.tables]
+headers = "blue"
+
+[styles.widgets]
+border_color = "dark gray"
+disabled_text = "dark gray"
+selected_border_color = "blue"
+text = "reset"
+widget_title = "white"
+
+[styles.widgets.selected_text]
+bg_color = "blue"
+color = "black"
