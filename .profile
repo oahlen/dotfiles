@@ -26,5 +26,6 @@ export NUGET_PACKAGES="$XDG_DATA_HOME/NuGetPackages"
 export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
+export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS";
 
 export PATH="$XDG_CONFIG_HOME/scripts:$XDG_DATA_HOME/dotnet/tools:$XDG_DATA_HOME/cargo/bin${PATH:+:}$PATH"
