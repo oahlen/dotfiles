@@ -1,0 +1,58 @@
+let mapleader=" "
+
+set autoindent
+set nobackup
+set cursorline
+set expandtab
+set hlsearch
+set ignorecase
+set incsearch
+set number
+set relativenumber
+set scrolloff=10
+set showmatch
+set showmode
+set smartcase
+set noswapfile
+
+nmap Y y$
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+nmap <C-d> <C-d>zz
+nmap <C-u> <C-u>zz
+
+nmap n nzzzv
+nmap N Nzzzv
+
+vmap < <gv
+vmap > >gv
+
+nmap <leader>ch :nohl<CR>
+
+nmap H <action>(PreviousTab)
+nmap L <action>(NextTab)
+nmap <leader>q <action>(CloseActiveTab)
+
+nmap <leader>f <action>(SearchEverywhere) 
+nmap <leader>g <action>(FindInPath) 
+nmap <leader>b <action>(RecentFiles)
+nmap <leader>rn <action>(RenameElement)
+nmap gi <action>(GotoImplementation)
+nmap gd <action>(GotoDeclaration)
+nmap gr <action>(FindUsages))
+nmap gn <action>(GotoNextError)
+nmap K <action>(ShowHoverInfo)
+nmap == <action>(ReformatCode)
+vmap gc <action>(CommentByLineComment)
+vmap gb <action>(CommentByBlockComment)
+
+set NERDTree
+let g:NERDTreeMapActivateNode='o'
+let g:NERDTreeMapJumpParent='h'
+
+nmap <leader>e :NERDTreeFocus<CR>
+nmap <leader>E :NERDTreeFind<CR>

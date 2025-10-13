@@ -1,0 +1,29 @@
+[alias]
+    br = "branch"
+    c = "commit"
+    s = "status"
+    sw = "switch"
+    tree = "log --graph --decorate --oneline"
+
+[core]
+    autocrlf = "input"
+    editor = "nvim"
+    eol = "lf"
+
+[filter "lfs"]
+    clean = "git-lfs clean -- %f"
+    process = "git-lfs filter-process"
+    required = true
+    smudge = "git-lfs smudge -- %f"
+
+[init]
+    defaultBranch = "main"
+
+[pull]
+    rebase = "true"
+
+[push]
+    autoSetupRemote = "true"
+
+[user]
+    name = "Oscar Ahlén"
