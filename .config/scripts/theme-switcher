@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+RESULT=$(printf "Default\nDark\nLight" | fuzzel -d) || true
+
+if [ -n "$RESULT" ]; then
+    case "${RESULT,,}" in
+        default)
+            dconf write /org/gnome/desktop/interface/color-scheme "'default'"
+            ;;
+        dark)
+            dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+            ;;
+        light)
+            dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
+            ;;
+    esac
+fi

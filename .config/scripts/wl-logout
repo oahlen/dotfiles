@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+RESULT=$(printf "Poweroff\nSuspend\nReboot" | fuzzel -d) || true
+
+if [ -n "$RESULT" ]; then
+    systemctl "${RESULT,,}"
+fi

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+URL="https://www.kernel.org/releases.json"
+curl -s "$URL" | jq -r '
+  .releases[] |
+    "\u001b[1m\(.moniker):\u001b[0m \(.version) (\(.released.isodate))"
+'

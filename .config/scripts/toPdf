@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ ! -e "$1" ]; then
+    echo "No file provided"
+    exit 1
+fi
+
+lowdown -stms "$1" | pdfroff -itk -mspdf > "${1%.md}.pdf"
