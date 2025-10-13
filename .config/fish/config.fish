@@ -17,6 +17,7 @@ status is-interactive; and begin
     alias lla 'eza -la'
     alias ls eza
     alias lt 'eza --tree'
+    alias dot-edit 'tmuxp load -y dotfiles'
     alias nix-edit 'tmuxp load -y nix-config'
     alias note-edit 'tmuxp load -y notes'
     alias tree 'eza --tree'

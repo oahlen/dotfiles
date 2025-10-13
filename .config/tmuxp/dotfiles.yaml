@@ -1,0 +1,15 @@
+session_name: Dotfiles
+start_directory: ~/dotfiles/
+windows:
+  - window_name: Code
+    panes:
+      - shell_command:
+          - nvim
+        focus: true
+  - window_name: Terminal
+    panes:
+      - shell_command:
+  - window_name: Git
+    panes:
+      - shell_command:
+          - gitui
