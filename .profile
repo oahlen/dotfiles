@@ -23,8 +23,6 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height=40% --scrollbar '▌' --color
 export JQ_COLORS="1;33:0;33:0;33:0;33:0;32:0;37:0;37:1;34"
 export LESSHISTFILE="$XDG_DATA_HOME/less/history"
 export NUGET_PACKAGES="$XDG_DATA_HOME/NuGetPackages"
-export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
-export PSQL_HISTORY="$XDG_DATA_HOME/psql_history"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS";
 
