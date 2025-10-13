@@ -1,2 +1,0 @@
-#!/bin/sh
-stow .config/ -t /home/oahlen/.config
