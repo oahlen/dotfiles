@@ -22,7 +22,6 @@ export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow"
 export FZF_DEFAULT_OPTS="--layout=reverse --height=40% --scrollbar '▌' --color bg+:0,border:7,fg+:15,gutter:0,header:4,hl:3,hl+:3,info:8,marker:6,pointer:3,prompt:2,scrollbar:8,separator:8,spinner:5"
 export JQ_COLORS="1;33:0;33:0;33:0;33:0;32:0;37:0;37:1;34"
 export LESSHISTFILE="$XDG_DATA_HOME/less/history"
-export NUGET_PACKAGES="$XDG_DATA_HOME/NuGetPackages"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 export _ZO_FZF_OPTS="$FZF_DEFAULT_OPTS";
 
