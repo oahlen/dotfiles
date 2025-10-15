@@ -82,6 +82,8 @@
     ],
     "modules-left": [
       "niri/workspaces"
+      // "sway/workspaces"
+      // "sway/mode"
     ],
     "modules-right": [
       "group/expander",
@@ -91,6 +93,9 @@
       "custom/power"
     ],
     "niri/workspaces": {
+      "disable-scroll": true
+    },
+    "sway/workspaces": {
       "disable-scroll": true
     },
     "position": "top",
