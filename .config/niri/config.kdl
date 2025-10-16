@@ -450,7 +450,7 @@ binds {
     // Toggle Waybar
     Mod+B { spawn "pkill" "-USR1" "waybar"; }
 
-    Mod+Shift+O { spawn "theme-switcher"; }
+    Mod+Shift+O { spawn "theme-switcher" "fuzzel -d"; }
 }
 
 spawn-at-startup "systemctl" "--user" "start" "niri-session.target"

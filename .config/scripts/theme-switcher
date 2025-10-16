@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-RESULT=$(printf "Default\nDark\nLight" | fuzzel -d) || true
+if [ $# -ge 1 ] && [ -n "$1" ]; then
+    FINDER=$1
+else
+    FINDER=fzf
+fi
+
+RESULT=$(printf "Default\nDark\nLight" | $FINDER) || true
 
 if [ -n "$RESULT" ]; then
     case "${RESULT,,}" in
