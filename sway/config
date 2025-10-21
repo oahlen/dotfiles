@@ -34,6 +34,13 @@ mouse_warping output
 workspace_layout default
 workspace_auto_back_and_forth no
 
+bindsym Mod4+Return exec foot
+bindsym Mod4+d exec fuzzel
+bindsym Mod4+Alt+l exec gtklock
+bindsym Mod4+o exec theme-switcher "fuzzel -d"
+bindsym Mod4+p exec password-picker "fuzzel -d"
+bindsym Ctrl+Alt+Delete exec wl-logout
+
 bindsym Mod4+1 workspace number 1
 bindsym Mod4+2 workspace number 2
 bindsym Mod4+3 workspace number 3
@@ -55,13 +62,6 @@ bindsym Mod4+Shift+7 move container to workspace number 7
 bindsym Mod4+Shift+8 move container to workspace number 8
 bindsym Mod4+Shift+9 move container to workspace number 9
 bindsym Mod4+Shift+0 move container to workspace number 10
-
-bindsym Mod4+Return exec foot
-bindsym Mod4+d exec fuzzel
-bindsym Mod4+Alt+l exec gtklock
-bindsym Mod4+o exec theme-switcher "fuzzel -d"
-bindsym Mod4+p exec password-picker "fuzzel -d"
-bindsym Ctrl+Alt+Delete exec wl-logout
 
 bindsym Mod4+Down focus down
 bindsym Mod4+Left focus left
@@ -92,19 +92,21 @@ bindsym Mod4+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. 
 bindsym Print exec grim ~/Pictures/$(date +"%Y-%m-%d-%H-%M-%S").png
 bindsym Mod4+Print exec slurp | grim -g - ~/Pictures/$(date +"%Y-%m-%d-%H-%M-%S").png
 
+bindsym Mod4+minus scratchpad show
 bindsym Mod4+Shift+minus move scratchpad
+
 bindsym Mod4+Shift+q kill
 bindsym Mod4+Shift+space floating toggle
 bindsym Mod4+a focus parent
-bindsym Mod4+b splith
-bindsym Mod4+e layout toggle split
 bindsym Mod4+f fullscreen toggle
-bindsym Mod4+minus scratchpad show
 bindsym Mod4+r mode resize
-bindsym Mod4+s layout stacking
 bindsym Mod4+space focus mode_toggle
-bindsym Mod4+v splitv
+
+bindsym Mod4+s layout stacking
+bindsym Mod4+e layout toggle split
 bindsym Mod4+w layout tabbed
+bindsym Mod4+b splith
+bindsym Mod4+v splitv
 bindsym Mod4+x split none
 
 mode "resize" {
@@ -120,7 +122,7 @@ mode "resize" {
   bindsym l resize grow width 32 px
 }
 
-gaps inner 8
+gaps inner 10
 
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="iwgtk"] floating enable

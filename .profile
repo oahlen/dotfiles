@@ -14,8 +14,6 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 export XCURSOR_SIZE=24
 export XCURSOR_THEME="Adwaita"
 
-export FLAKE="$HOME/nix-config"
-
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
 export CALCHISTFILE="$XDG_CACHE_HOME/calc_history"
