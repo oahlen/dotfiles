@@ -11,7 +11,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
-export WALLPAPER="$HOME/Pictures/Wallpapers/sunset.jpg"
+[[ -f ~/.env ]] && . "$HOME/.env"
 
 export XCURSOR_SIZE=24
 export XCURSOR_THEME="Adwaita"
