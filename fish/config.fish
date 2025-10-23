@@ -3,7 +3,6 @@ status is-login; and begin
 end
 
 status is-interactive; and begin
-
     # Abbreviations
     abbr --add -- bash /run/current-system/sw/bin/bash
 
@@ -36,12 +35,6 @@ status is-interactive; and begin
     set fish_vi_force_cursor
     set fish_cursor_default block
     set fish_cursor_insert line
-
-    # Source extra config if it exists
-    set -l EXTRA_CONFIG "$XDG_CONFIG_HOME/fish/extra.fish"
-    if test -e $EXTRA_CONFIG
-        source $EXTRA_CONFIG
-    end
 
     # The superior note taking system
     bind \cn 'nvim $HOME/notes.txt'
