@@ -5,6 +5,8 @@ end
 status is-interactive; and begin
     # Abbreviations
     abbr --add -- bash /run/current-system/sw/bin/bash
+    abbr --add -- extract tar xzf \"targz_file\"
+    abbr --add -- compress tar czf \"tar_name.tar.gz\" \<files\>
 
     # Aliases
     alias cat bat

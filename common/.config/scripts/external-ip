@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Find your external IP address
+curl ifconfig.co
