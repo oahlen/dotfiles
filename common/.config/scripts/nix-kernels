@@ -1,7 +1,6 @@
 #!/bin/sh
 
-URL="https://raw.githubusercontent.com/NixOS/nixpkgs/refs/heads/nixos-unstable/pkgs/os-specific/linux/kernel/kernels-org.json"
-curl -s "$URL" | jq -r '
-  to_entries[] |
-    "\u001b[1m\(.key):\u001b[0m \(.value.version) (lts: \(.value.lts))"
-'
+nix-search -jn linuxKernel.kernels \
+  | jq -s -r '.[] |
+    "\u001b[1m\((.package_attr_name | sub("^linuxKernel\\.kernels\\.?"; ""))):\u001b[0m \(.package_pversion)"' \
+  | sort
