@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-nix-store --gc --print-roots | rg "$HOME"
+nix-store --gc --print-roots | rg --color never "$HOME"
