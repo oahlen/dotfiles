@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+if [[ -z "$1" ]]; then
+    nixos-rebuild --help
+    exit 0
+fi
+
+nixos-rebuild "$1" --sudo --flake "$FLAKE"
+
+# Update all flatpaks if flatpak is installed
+if command -v flatpak >/dev/null 2>&1; then
+    flatpak update
+fi
