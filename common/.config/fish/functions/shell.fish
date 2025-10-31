@@ -9,5 +9,5 @@ function shell --argument-names name --description "Enters the dev shell of the 
         return
     end
 
-    nix develop "$FLAKE#$name" -c "$SHELL"
+    nix-shell "$FLAKE/shells" -A "$name" --command "$SHELL"
 end
