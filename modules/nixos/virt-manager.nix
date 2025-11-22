@@ -20,8 +20,6 @@ in
       virt-manager
     ];
 
-    users.users.${config.user.name} = {
-      extraGroups = [ "libvirtd" ];
-    };
+    users.users.${config.user.name}.extraGroups = [ "libvirtd" ];
   };
 }
