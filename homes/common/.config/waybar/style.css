@@ -56,7 +56,7 @@ window > box {
 }
 
 #language {
-    background: #a9b1d6;
+    background: #dfdfdf;
     color: #1a1b26;
     padding: 0 6px;
     border-radius: 4px;
@@ -75,7 +75,7 @@ window > box {
 #pulseaudio,
 #custom-power
 {
-    color: #DFDFDF;
+    color: #dfdfdf;
 }
 
 #custom-expand-icon {
