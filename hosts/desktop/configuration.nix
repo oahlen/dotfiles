@@ -33,6 +33,7 @@
 
   environment.systemPackages = with pkgs; [
     fastfetch
+    filen-cli
     nfs-utils
     rbw-wrapped
   ];
