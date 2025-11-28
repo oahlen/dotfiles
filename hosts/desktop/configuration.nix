@@ -4,10 +4,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking = {
-    hostName = "desktop";
-    firewall.checkReversePath = "loose";
-  };
+  networking.hostName = "desktop";
 
   boot = {
     loader.systemd-boot.enable = true;
@@ -21,6 +18,7 @@
     gaming.enable = true;
     niri.enable = true;
     podman.enable = true;
+    tailscale.enable = true;
     yubikey.enable = true;
   };
 
@@ -28,7 +26,6 @@
     flatpak.enable = true;
     fstrim.enable = true;
     power-profiles-daemon.enable = true;
-    tailscale.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
