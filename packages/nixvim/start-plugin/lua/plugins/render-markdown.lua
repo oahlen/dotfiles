@@ -7,4 +7,9 @@ require("render-markdown").setup({
         "copilot-chat",
     },
     latex = { enabled = false },
+    html = {
+        comment = {
+            conceal = false,
+        },
+    },
 })
