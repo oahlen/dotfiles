@@ -33,7 +33,6 @@
     hyperfine
     nodejs # For Github Copilot
     pqrs
-    qsv
     trash-cli
     typst
     wl-clipboard
