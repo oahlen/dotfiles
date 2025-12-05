@@ -21,9 +21,8 @@ in
         evolution-data-server.enable = mkForce false;
         gnome-online-accounts.enable = false;
       };
-
-      inherit (shared.services) pipewire;
-    };
+    }
+    // shared.services;
 
     inherit (shared) boot;
 

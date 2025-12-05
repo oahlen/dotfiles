@@ -83,7 +83,6 @@ with pkgs.vimPlugins;
       sql
       ssh_config
       svelte
-      sway
       tmux
       todotxt
       toml
