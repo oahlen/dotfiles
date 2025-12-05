@@ -27,10 +27,10 @@ in
         overlays = [ (import ./packages/overlay.nix) ];
       };
 
-      mkEnv = module: pkgs.callPackage ./environments { packagesToInstall = (import module) pkgs; };
+      mkEnv = module: pkgs.callPackage ./envs { packagesToInstall = (import module) pkgs; };
     in
     {
-      ubuntu = mkEnv ./environments/ubuntu;
+      ubuntu = mkEnv ./envs/ubuntu;
     };
 
   packages = import ./packages {
