@@ -30,7 +30,7 @@ in
       mkEnv = module: pkgs.callPackage ./envs { packagesToInstall = (import module) pkgs; };
     in
     {
-      ubuntu = mkEnv ./envs/ubuntu;
+      generic = mkEnv ./envs/generic;
     };
 
   packages = import ./packages {

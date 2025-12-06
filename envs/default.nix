@@ -6,13 +6,22 @@
 let
   env = buildEnv {
     name = "environment";
-    paths = packagesToInstall;
+
+    paths =
+      with pkgs;
+      [
+        direnv
+        nix-direnv
+      ]
+      ++ packagesToInstall;
 
     pathsToLink = [
       "/share/man"
       "/share/doc"
+      "/share/nix-direnv"
       "/bin"
     ];
+
     extraOutputsToInstall = [
       "man"
       "doc"
