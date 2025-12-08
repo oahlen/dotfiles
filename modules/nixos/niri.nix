@@ -7,13 +7,13 @@
 with lib;
 let
   cfg = config.modules.niri;
-  shared = import ./../shared/desktop.nix { inherit config pkgs; };
+  shared = import ./../shared/desktop.nix { inherit pkgs; };
 in
 {
   options.modules.niri.enable = mkEnableOption "Whether to enable the Niri window manager.";
 
   config = mkIf cfg.enable {
-    inherit shared;
+    inherit (shared) boot fonts;
 
     wayland.systemd.target = "niri-session.target";
 
@@ -81,8 +81,8 @@ in
           }
           {
             timeout = 900;
-            command = "${lib.getExe niri} msg action power-off-monitors";
-            resumeCommand = "${lib.getExe niri} msg action power-on-monitors";
+            command = "${lib.getExe pkgs.niri} msg action power-off-monitors";
+            resumeCommand = "${lib.getExe pkgs.niri} msg action power-on-monitors";
           }
           {
             timeout = 1800;
@@ -129,30 +129,34 @@ in
 
       gvfs.enable = true;
       tumbler.enable = true;
-    };
+    }
+    // shared.services;
 
-    environment.systemPackages = with pkgs; [
-      adwaita-icon-theme
-      adw-gtk3
-      brightnessctl
-      foot
-      fuzzel
-      gnome-multi-writer
-      gnome-text-editor
-      hyprpicker
-      libnotify
-      loupe
-      mako
-      nautilus
-      papirus-icon-theme
-      pavucontrol
-      playerctl
-      swaybg
-      wf-recorder
-      wl-clipboard
-      wl-mirror
-      xdg-utils
-      xwayland-satellite
-    ];
+    environment = {
+      systemPackages = with pkgs; [
+        adwaita-icon-theme
+        adw-gtk3
+        brightnessctl
+        foot
+        fuzzel
+        gnome-multi-writer
+        gnome-text-editor
+        hyprpicker
+        libnotify
+        loupe
+        mako
+        nautilus
+        papirus-icon-theme
+        pavucontrol
+        playerctl
+        swaybg
+        wf-recorder
+        wl-clipboard
+        wl-mirror
+        xdg-utils
+        xwayland-satellite
+      ];
+    }
+    // shared.environment;
   };
 }

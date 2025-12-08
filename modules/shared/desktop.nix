@@ -17,7 +17,7 @@
     ];
   };
 
-  fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     dejavu_fonts
     liberation_ttf
     nerd-fonts.jetbrains-mono
@@ -31,7 +31,7 @@
     pulse.enable = true;
   };
 
-  sessionVariables = {
+  environment.sessionVariables = {
     _JAVA_AWT_WM_NONREPARENTING = "1";
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORM = "wayland";
