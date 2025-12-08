@@ -1,12 +1,8 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }:
-let
-  sources = import ../../npins;
-in
 {
   # Nixpkgs settings
   # nixpkgs.config.allowUnfree = true;
@@ -61,28 +57,6 @@ in
     SystemMaxUse=100M
   '';
 
-  # Nix settings
-  nix = {
-    channel.enable = false;
-
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = "nix-command flakes";
-      use-xdg-base-directories = true;
-    };
-
-    extraOptions = ''
-      keep-outputs = true
-      keep-derivations = true
-    '';
-
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 14d";
-    };
-  };
-
   # User configuration
   users.users.${config.user.name} = {
     uid = 1000;
@@ -95,7 +69,6 @@ in
     # Environment variables
     variables = {
       EDITOR = "nvim";
-      NIX_PATH = lib.mkForce "nixpkgs=${sources.nixpkgs}";
       VISUAL = "nvim";
     };
 
@@ -104,14 +77,7 @@ in
   };
 
   # Common programs and packages
-  programs = {
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-
-    git.enable = true;
-  };
+  programs.git.enable = true;
 
   # General overrides
   networking.networkmanager.wifi.backend = "iwd";

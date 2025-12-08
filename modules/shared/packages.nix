@@ -13,7 +13,6 @@ pkgs: with pkgs; [
   fish
   fzf
   gitui
-  hexyl
   homage
   huevim
   jless
