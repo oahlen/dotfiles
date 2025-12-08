@@ -60,20 +60,9 @@ in
 
     security.rtkit.enable = true;
 
-    services = {
-      blueman.enable = config.hardware.bluetooth.enable;
-      displayManager.gdm.enable = true;
-
-      dbus = {
-        enable = true;
-        packages = [
-          pkgs.gcr_4
-          pkgs.mako
-        ];
-      };
-
-      gvfs.enable = true;
+    modules = {
       polkit-soteria.enable = true;
+      swayosd.enable = true;
 
       swayidle = {
         enable = true;
@@ -102,9 +91,6 @@ in
         ];
       };
 
-      swayosd.enable = true;
-      tumbler.enable = true;
-
       waybar = {
         enable = true;
         extraPackages = with pkgs; [
@@ -127,6 +113,22 @@ in
           "4500"
         ];
       };
+    };
+
+    services = {
+      blueman.enable = config.hardware.bluetooth.enable;
+      displayManager.gdm.enable = true;
+
+      dbus = {
+        enable = true;
+        packages = [
+          pkgs.gcr_4
+          pkgs.mako
+        ];
+      };
+
+      gvfs.enable = true;
+      tumbler.enable = true;
     };
 
     environment.systemPackages = with pkgs; [

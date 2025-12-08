@@ -6,11 +6,11 @@
 }:
 with lib;
 let
-  cfg = config.services.swayidle;
+  cfg = config.modules.swayidle;
   shared = import ./../shared/services.nix { inherit config lib; };
 in
 {
-  options.services.swayidle =
+  options.modules.swayidle =
     let
       timeoutModule = _: {
         options = {

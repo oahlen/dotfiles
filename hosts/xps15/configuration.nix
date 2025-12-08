@@ -25,6 +25,7 @@
 
   modules = {
     gnome.enable = true;
+    kanshi.enable = true;
     niri.enable = true;
     podman.enable = true;
     tailscale.enable = true;
@@ -37,7 +38,6 @@
     fstrim.enable = true;
     fwupd.enable = true;
     hardware.bolt.enable = true;
-    kanshi.enable = true;
     power-profiles-daemon.enable = true;
     thermald.enable = true;
   };

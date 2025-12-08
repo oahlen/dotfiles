@@ -6,11 +6,11 @@
 }:
 with lib;
 let
-  cfg = config.services.kanshi;
+  cfg = config.modules.kanshi;
   shared = import ./../shared/services.nix { inherit config lib; };
 in
 {
-  options.services.kanshi = {
+  options.modules.kanshi = {
     enable = mkEnableOption "Whether to enable kanshi, a Wayland daemon that automatically configures outputs.";
     package = lib.mkPackageOption pkgs "kanshi" { };
     systemd.target = shared.mkWaylandSystemdTargetOption { };

@@ -6,11 +6,11 @@
 }:
 with lib;
 let
-  cfg = config.services.waybar;
+  cfg = config.modules.waybar;
   shared = import ./../shared/services.nix { inherit config lib; };
 in
 {
-  options.services.waybar = {
+  options.modules.waybar = {
     enable = mkEnableOption "Whether to enable waybar, a highly customizable Wayland bar for Sway and Wlroots based compositors.";
     package = lib.mkPackageOption pkgs "waybar" { };
     systemd.target = shared.mkWaylandSystemdTargetOption { };
