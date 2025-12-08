@@ -13,6 +13,8 @@ in
   options.modules.niri.enable = mkEnableOption "Whether to enable the Niri window manager.";
 
   config = mkIf cfg.enable {
+    inherit shared;
+
     wayland.systemd.target = "niri-session.target";
 
     programs = {
@@ -41,10 +43,6 @@ in
 
       nm-applet.enable = true;
     };
-
-    inherit (shared) boot;
-
-    environment.sessionVariables = shared.sessionVariables;
 
     systemd.user.targets.niri-session = {
       description = "niri compositor session";
@@ -130,36 +128,30 @@ in
           "4500"
         ];
       };
-    }
-    // shared.services;
+    };
 
-    environment.systemPackages =
-      with pkgs;
-      [
-        adwaita-icon-theme
-        adw-gtk3
-        brightnessctl
-        foot
-        fuzzel
-        gnome-multi-writer
-        gnome-text-editor
-        hyprpicker
-        libnotify
-        loupe
-        mako
-        nautilus
-        papirus-icon-theme
-        pavucontrol
-        playerctl
-        swaybg
-        wf-recorder
-        wl-clipboard
-        wl-mirror
-        xdg-utils
-        xwayland-satellite
-      ]
-      ++ shared.packages;
-
-    fonts.packages = shared.fonts;
+    environment.systemPackages = with pkgs; [
+      adwaita-icon-theme
+      adw-gtk3
+      brightnessctl
+      foot
+      fuzzel
+      gnome-multi-writer
+      gnome-text-editor
+      hyprpicker
+      libnotify
+      loupe
+      mako
+      nautilus
+      papirus-icon-theme
+      pavucontrol
+      playerctl
+      swaybg
+      wf-recorder
+      wl-clipboard
+      wl-mirror
+      xdg-utils
+      xwayland-satellite
+    ];
   };
 }

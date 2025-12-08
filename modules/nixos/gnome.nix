@@ -13,6 +13,8 @@ in
   options.modules.gnome.enable = mkEnableOption "Whether to enable the Gnome desktop environment.";
 
   config = mkIf cfg.enable {
+    inherit shared;
+
     services = {
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
@@ -21,14 +23,9 @@ in
         evolution-data-server.enable = mkForce false;
         gnome-online-accounts.enable = false;
       };
-    }
-    // shared.services;
-
-    inherit (shared) boot;
+    };
 
     environment = {
-      inherit (shared) sessionVariables;
-
       systemPackages =
         with pkgs;
         [
@@ -73,7 +70,5 @@ in
     programs = {
       evolution.enable = false;
     };
-
-    fonts.packages = shared.fonts;
   };
 }
