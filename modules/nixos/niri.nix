@@ -40,7 +40,6 @@ in
       };
 
       niri.enable = true;
-
       nm-applet.enable = true;
     };
 

@@ -23,9 +23,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [
-      cfg.package
-    ];
+    environment.systemPackages = [ cfg.package ];
 
     systemd.user.services.waybar = shared.mkWaylandService {
       description = "Highly customizable Wayland bar for Sway and Wlroots based compositors";

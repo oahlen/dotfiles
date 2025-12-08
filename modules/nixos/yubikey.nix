@@ -18,8 +18,6 @@ in
 
     programs.yubikey-touch-detector.enable = true;
 
-    environment.systemPackages = with pkgs; [
-      yubioath-flutter
-    ];
+    environment.systemPackages = [ pkgs.yubioath-flutter ];
   };
 }
