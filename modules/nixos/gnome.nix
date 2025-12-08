@@ -67,8 +67,6 @@ in
       ];
     };
 
-    programs = {
-      evolution.enable = false;
-    };
+    programs.evolution.enable = false;
   };
 }
