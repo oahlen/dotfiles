@@ -45,7 +45,7 @@
 
   environment.systemPackages =
     let
-      packages = import ../../shared/packages { inherit pkgs; };
+      packages = import ../../packages { inherit pkgs; };
     in
     with pkgs;
     [
