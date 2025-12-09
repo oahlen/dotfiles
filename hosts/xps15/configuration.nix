@@ -14,6 +14,7 @@
 
   hardware = {
     bluetooth.enable = true;
+
     graphics.extraPackages = with pkgs; [
       intel-compute-runtime
       intel-media-driver

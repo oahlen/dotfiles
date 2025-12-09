@@ -16,7 +16,6 @@
   modules = {
     apptainer.enable = true;
     podman.enable = true;
-    wsl.enable = true;
   };
 
   services.timesyncd.enable = true;
