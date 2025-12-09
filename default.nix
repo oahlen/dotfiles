@@ -6,7 +6,7 @@ in
     let
       pkgs = import sources.nixpkgs {
         config.allowUnfree = true;
-        overlays = [ (import ./packages/overlay.nix) ];
+        overlays = [ ];
       };
 
       mkHost = modules: pkgs.nixos ([ ./modules/nixos.nix ] ++ modules);
@@ -24,7 +24,7 @@ in
     let
       pkgs = import sources.nixpkgs {
         config.allowUnfree = true;
-        overlays = [ (import ./packages/overlay.nix) ];
+        overlays = [ ];
       };
 
       mkEnv = module: pkgs.callPackage ./envs { packagesToInstall = (import module) pkgs; };

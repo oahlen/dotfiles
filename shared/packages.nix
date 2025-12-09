@@ -1,4 +1,9 @@
-pkgs: with pkgs; [
+pkgs:
+let
+  packages = import ../packages { inherit pkgs; };
+in
+with pkgs;
+[
   bat
   bat-extras.batman
   bottom
@@ -13,8 +18,6 @@ pkgs: with pkgs; [
   fish
   fzf
   gitui
-  homage
-  huevim
   jless
   jq
   just
@@ -22,7 +25,6 @@ pkgs: with pkgs; [
   nix-prefetch-git
   nix-search-cli
   nix-tree
-  nixvim
   npins
   pokeget-rs
   procs
@@ -43,4 +45,7 @@ pkgs: with pkgs; [
   yazi
   zip
   zoxide
+  packages.homage
+  packages.huevim
+  packages.nixvim
 ]

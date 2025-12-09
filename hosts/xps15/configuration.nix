@@ -43,13 +43,18 @@
     thermald.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    _1password-gui
-    fastfetch
-    nodejs
-    powertop
-    rbw-wrapped
-  ];
+  environment.systemPackages =
+    let
+      packages = import ../../shared/packages { inherit pkgs; };
+    in
+    with pkgs;
+    [
+      _1password-gui
+      fastfetch
+      nodejs
+      powertop
+      packages.rbw-wrapped
+    ];
 
   fileSystems."/".options = [
     "noatime"

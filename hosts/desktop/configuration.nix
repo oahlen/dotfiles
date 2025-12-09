@@ -28,12 +28,17 @@
     power-profiles-daemon.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    fastfetch
-    filen-cli
-    nfs-utils
-    rbw-wrapped
-  ];
+  environment.systemPackages =
+    let
+      packages = import ../../shared/packages { inherit pkgs; };
+    in
+    with pkgs;
+    [
+      fastfetch
+      filen-cli
+      nfs-utils
+      packages.rbw-wrapped
+    ];
 
   fileSystems = {
     "/".options = [
