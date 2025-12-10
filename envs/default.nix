@@ -31,6 +31,6 @@ in
 env
 // {
   switch = pkgs.writeShellScriptBin "switch" ''
-    nix-env --set ${env} "$@"
+    nix build ${env} --profile "$XDG_STATE_HOME/nix/profile"
   '';
 }
