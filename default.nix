@@ -1,14 +1,12 @@
 let
   sources = import ./npins;
+  pkgs = import sources.nixpkgs {
+    config.allowUnfree = true;
+  };
 in
 {
   hosts =
     let
-      pkgs = import sources.nixpkgs {
-        config.allowUnfree = true;
-        overlays = [ ];
-      };
-
       mkHost = modules: pkgs.nixos ([ ./modules/nixos.nix ] ++ modules);
     in
     {
@@ -22,22 +20,13 @@ in
 
   envs =
     let
-      pkgs = import sources.nixpkgs {
-        config.allowUnfree = true;
-        overlays = [ ];
-      };
-
       mkEnv = module: pkgs.callPackage ./envs { packagesToInstall = (import module) pkgs; };
     in
     {
       generic = mkEnv ./envs/generic;
     };
 
-  packages = import ./packages {
-    pkgs = import sources.nixpkgs { };
-  };
+  packages = import ./packages { inherit pkgs; };
 
-  shells = import ./shells {
-    pkgs = import sources.nixpkgs { };
-  };
+  shells = import ./shells { inherit pkgs; };
 }
