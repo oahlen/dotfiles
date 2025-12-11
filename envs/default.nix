@@ -33,6 +33,5 @@ env
     mkdir -p "$HOME/.local/state/nix/profiles"
     nix build ${env} --profile "$HOME/.local/state/nix/profiles/profile"
     ln -sfn "$HOME/.local/state/nix/profiles/profile" "$HOME/.local/state/nix/profile"
-    ln -sfn "$HOME/.local/state/nix/profile" "$HOME/.nix-profile"
   '';
 }
