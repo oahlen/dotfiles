@@ -13,10 +13,12 @@
   boot = {
     loader.systemd-boot.enable = true;
     kernelPackages = pkgs.linuxPackages_zen;
-    kernelModules = [ "amdgpu" ];
   };
 
-  hardware.bluetooth.enable = true;
+  hardware = {
+    amdgpu.initrd.enable = true;
+    bluetooth.enable = true;
+  };
 
   modules = {
     gaming.enable = true;
