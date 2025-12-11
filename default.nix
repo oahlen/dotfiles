@@ -24,6 +24,7 @@ in
     in
     {
       generic = mkEnv ./envs/generic;
+      wsl = mkEnv ./envs/wsl;
     };
 
   packages = import ./packages { inherit pkgs; };

@@ -1,10 +1,9 @@
 -- Options
 
--- Get the background and colorscheme settings from environment
-local theme = vim.fn.system({ "dconf", "read", "/org/gnome/desktop/interface/color-scheme" })
-
-if theme:find("prefer-light", 1, true) then
-    vim.o.background = "light"
+if vim.fn.executable("dconf") == 1 then
+    -- Get the background and colorscheme settings from environment
+    local theme = vim.system({ "dconf", "read", "/org/gnome/desktop/interface/color-scheme" }):wait()
+    vim.o.background = theme.stdout:find("prefer-light", 1, true) and "light" or "dark"
 else
     vim.o.background = "dark"
 end
