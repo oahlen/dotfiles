@@ -20,9 +20,9 @@ help:
 @switch:
     nixos-rebuild switch -f . -A "hosts.$(hostname)" --quiet --no-reexec --sudo
 
-# Build and switch to the specified user environment
-@env-switch env:
-    nix run -f . "envs.$1.switch"
+# Build and switch to the specified profile
+@profile name:
+    nix run -f . "profiles.$1.switch"
 
 # Run the specified package
 @run package:

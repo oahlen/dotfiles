@@ -4,7 +4,7 @@
   pkgs,
 }:
 let
-  env = buildEnv {
+  profile = buildEnv {
     name = "environment";
 
     paths = [
@@ -27,11 +27,11 @@ let
     ];
   };
 in
-env
+profile
 // {
   switch = pkgs.writeShellScriptBin "switch" ''
     mkdir -p "$HOME/.local/state/nix/profiles"
-    nix build ${env} --profile "$HOME/.local/state/nix/profiles/profile"
+    nix build ${profile} --profile "$HOME/.local/state/nix/profiles/profile"
     ln -sfn "$HOME/.local/state/nix/profiles/profile" "$HOME/.local/state/nix/profile"
   '';
 }

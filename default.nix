@@ -18,13 +18,13 @@ in
       xps15 = mkHost [ ./hosts/xps15/configuration.nix ];
     };
 
-  envs =
+  profiles =
     let
-      mkEnv = module: pkgs.callPackage ./envs { packagesToInstall = (import module) pkgs; };
+      mkProfile = module: pkgs.callPackage ./profiles { packagesToInstall = (import module) pkgs; };
     in
     {
-      generic = mkEnv ./envs/generic;
-      wsl = mkEnv ./envs/wsl;
+      generic = mkProfile ./profiles/generic;
+      wsl = mkProfile ./profiles/wsl;
     };
 
   packages = import ./packages { inherit pkgs; };
