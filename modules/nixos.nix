@@ -1,4 +1,8 @@
-{ lib, ... }:
+{
+  lib,
+  pkgs,
+  ...
+}:
 with lib;
 {
   imports = map (f: ./nixos/${f}) (builtins.attrNames (builtins.readDir ./nixos));
@@ -16,6 +20,12 @@ with lib;
         default = "Oscar Ahlén";
         description = "The full name of the primary user.";
       };
+    };
+
+    packages = mkOption {
+      type = types.attrsOf types.package;
+      default = import ../packages { inherit pkgs; };
+      description = "The available custom packages set";
     };
 
     wayland.systemd.target = mkOption {

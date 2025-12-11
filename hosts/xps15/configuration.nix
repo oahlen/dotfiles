@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -43,18 +47,13 @@
     thermald.enable = true;
   };
 
-  environment.systemPackages =
-    let
-      packages = import ../../packages { inherit pkgs; };
-    in
-    with pkgs;
-    [
-      _1password-gui
-      fastfetch
-      nodejs
-      powertop
-      packages.rbw-wrapped
-    ];
+  environment.systemPackages = with pkgs; [
+    _1password-gui
+    fastfetch
+    nodejs
+    powertop
+    config.packages.rbw-wrapped
+  ];
 
   fileSystems."/".options = [
     "noatime"

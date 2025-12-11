@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -28,17 +32,12 @@
     power-profiles-daemon.enable = true;
   };
 
-  environment.systemPackages =
-    let
-      packages = import ../../packages { inherit pkgs; };
-    in
-    with pkgs;
-    [
-      fastfetch
-      filen-cli
-      nfs-utils
-      packages.rbw-wrapped
-    ];
+  environment.systemPackages = with pkgs; [
+    fastfetch
+    filen-cli
+    nfs-utils
+    config.packages.rbw-wrapped
+  ];
 
   fileSystems = {
     "/".options = [
