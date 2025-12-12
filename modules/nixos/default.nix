@@ -73,7 +73,7 @@
     };
 
     # System packages
-    systemPackages = import ../../shared/packages.nix pkgs;
+    systemPackages = import ../../shared/packages.nix { inherit pkgs; };
   };
 
   # Common programs and packages

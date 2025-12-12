@@ -11,7 +11,7 @@ let
       pkgs.direnv
       pkgs.nix-direnv
     ]
-    ++ (import ../shared/packages.nix pkgs)
+    ++ (import ../shared/packages.nix { inherit pkgs; })
     ++ packagesToInstall;
 
     pathsToLink = [
