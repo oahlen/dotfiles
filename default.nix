@@ -20,7 +20,7 @@ in
 
   profiles =
     let
-      mkProfile = module: pkgs.callPackage ./profiles { packagesToInstall = (import module) pkgs; };
+      mkProfile = module: pkgs.callPackage ./profiles { inherit module; };
     in
     {
       generic = mkProfile ./profiles/generic;

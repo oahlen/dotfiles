@@ -1,25 +1,25 @@
 {
   buildEnv,
-  packagesToInstall ? [ ],
+  module,
   pkgs,
 }:
 let
+  config = import module { inherit pkgs; };
+
   profile = buildEnv {
     name = "environment";
 
-    paths = [
-      pkgs.direnv
-      pkgs.nix-direnv
-    ]
-    ++ (import ../shared/packages.nix { inherit pkgs; })
-    ++ packagesToInstall;
+    paths =
+      config.packages
+      ++ (import ../shared/packages.nix { inherit pkgs; })
+      ++ (if config.enableDirenv then [ ] else [ ]);
 
     pathsToLink = [
+      "/bin"
       "/share/man"
       "/share/doc"
-      "/share/nix-direnv"
-      "/bin"
-    ];
+    ]
+    ++ (if config.enableDirenv then [ "/share/nix-direnv" ] else [ ]);
 
     extraOutputsToInstall = [
       "man"

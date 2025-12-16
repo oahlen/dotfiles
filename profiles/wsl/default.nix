@@ -1,7 +1,12 @@
-pkgs: with pkgs; [
-  dconf
-  fastfetchMinimal
-  trash-cli
-  wl-clipboard
-  xdg-utils
-]
+{ pkgs }:
+{
+  enableDirenv = true;
+
+  packages = with pkgs; [
+    dconf
+    fastfetchMinimal
+    trash-cli
+    wl-clipboard
+    xdg-utils
+  ];
+}
