@@ -43,12 +43,6 @@
     };
   };
 
-  # Security settings
-  security = {
-    sudo.enable = false;
-    sudo-rs.enable = true;
-  };
-
   # Systemd settings
   services.journald.extraConfig = ''
     SystemMaxUse=100M
