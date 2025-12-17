@@ -50,6 +50,7 @@
   environment.systemPackages = with pkgs; [
     _1password-gui
     fastfetch
+    filen-cli
     nodejs
     powertop
     config.packages.rbw-wrapped
