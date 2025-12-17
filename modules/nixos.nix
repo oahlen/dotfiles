@@ -12,7 +12,7 @@ with lib;
       name = mkOption {
         type = lib.types.str;
         default = "oahlen";
-        description = "The name of the primary user";
+        description = "The name of the primary user.";
       };
 
       fullName = mkOption {
@@ -25,7 +25,7 @@ with lib;
     packages = mkOption {
       type = types.attrsOf types.package;
       default = import ../packages { inherit pkgs; };
-      description = "The available custom packages set";
+      description = "The available custom packages set.";
     };
 
     wayland.systemd.target = mkOption {
