@@ -3,6 +3,6 @@
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 flatpak install --or-update flathub "com.github.PintaProject.Pinta"
+flatpak install --or-update flathub "md.obsidian.Obsidian"
 flatpak install --or-update flathub "org.chromium.Chromium"
 flatpak install --or-update flathub "org.inkscape.Inkscape"
-flatpak install --or-update flathub "org.mozilla.firefox"

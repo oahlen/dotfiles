@@ -47,6 +47,8 @@
     thermald.enable = true;
   };
 
+  programs.firefox.enable = true;
+
   environment.systemPackages = with pkgs; [
     _1password-gui
     fastfetch
