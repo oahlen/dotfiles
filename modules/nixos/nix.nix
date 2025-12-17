@@ -1,8 +1,12 @@
-{ lib, ... }:
-let
-  sources = import ../../npins;
-in
 {
+  lib,
+  pkgs,
+  ...
+}:
+{
+  # Nixpkgs settings
+  # nixpkgs.config.allowUnfree = true;
+
   nix = {
     channel.enable = false;
 
@@ -24,7 +28,7 @@ in
     };
   };
 
-  environment.variables.NIX_PATH = lib.mkForce "nixpkgs=${sources.nixpkgs}";
+  environment.variables.NIX_PATH = lib.mkForce "nixpkgs=${pkgs.path}";
 
   programs.direnv = {
     enable = true;

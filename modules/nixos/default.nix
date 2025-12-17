@@ -4,9 +4,6 @@
   ...
 }:
 {
-  # Nixpkgs settings
-  # nixpkgs.config.allowUnfree = true;
-
   # Boot settings
   boot = {
     kernel.sysctl = {
