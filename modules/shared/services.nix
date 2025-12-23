@@ -1,7 +1,4 @@
-{
-  config,
-  lib,
-}:
+{ config, lib }:
 with lib;
 {
   mkWaylandSystemdTargetOption =
