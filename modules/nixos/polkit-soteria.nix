@@ -23,7 +23,7 @@ in
     systemd.user.services.polkit-soteria = shared.mkWaylandService {
       description = "Soteria, Polkit authentication agent for any desktop environment";
       inherit (cfg.systemd) target;
-      execStart = "${lib.getExe cfg.package}";
+      execStart = lib.getExe cfg.package;
     };
   };
 }

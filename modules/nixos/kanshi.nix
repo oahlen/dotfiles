@@ -23,7 +23,7 @@ in
       description = "Dynamic output configuration";
       documentation = [ "man:kanshi(1)" ];
       inherit (cfg.systemd) target;
-      execStart = "${lib.getExe cfg.package}";
+      execStart = lib.getExe cfg.package;
     };
   };
 }
