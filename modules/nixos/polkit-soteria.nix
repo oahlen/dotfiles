@@ -20,20 +20,10 @@ in
     security.polkit.enable = true;
     environment.systemPackages = [ cfg.package ];
 
-    systemd.user.services.polkit-soteria = {
+    systemd.user.services.polkit-soteria = shared.mkWaylandService {
       description = "Soteria, Polkit authentication agent for any desktop environment";
-
-      wantedBy = [ cfg.systemd.target ];
-      wants = [ cfg.systemd.target ];
-      after = [ cfg.systemd.target ];
-
-      script = lib.getExe cfg.package;
-      serviceConfig = {
-        Type = "simple";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
+      inherit (cfg.systemd) target;
+      execStart = "${lib.getExe cfg.package}";
     };
   };
 }
