@@ -56,5 +56,8 @@ vim.keymap.set("n", "<leader>ct", function()
     end
 end, { desc = "Toggle background color" })
 
+-- Spell
+vim.keymap.set("n", "<leader>se", "<CMD>set spell spelllang=en<CR>", { desc = "Set English spelling" })
+
 -- Insert functions
 vim.keymap.set("n", "<leader>ii", "<CMD>r!uuidgen<CR>", { desc = "Insert UUID" })
