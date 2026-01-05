@@ -12,7 +12,15 @@ let
     paths =
       config.packages
       ++ (import ../shared/packages.nix { inherit pkgs; })
-      ++ (if config.enableDirenv then [ ] else [ ]);
+      ++ (
+        if config.enableDirenv then
+          [
+            pkgs.direnv
+            pkgs.nix-direnv
+          ]
+        else
+          [ ]
+      );
 
     pathsToLink = [
       "/bin"
