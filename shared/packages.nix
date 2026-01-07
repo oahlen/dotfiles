@@ -9,7 +9,6 @@ with pkgs;
   bottom
   calc
   curl
-  dogdns
   dos2unix
   dust
   eza

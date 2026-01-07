@@ -57,7 +57,6 @@ with pkgs.vimPlugins;
       jq
       json
       json5
-      jsonc
       kdl
       kotlin
       latex

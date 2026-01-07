@@ -12,6 +12,10 @@ help:
 @sources:
     url=$(jq -r '.pins.nixpkgs.url' npins/sources.json); xdg-open "${url%/*}"
 
+# Update sources to the latest version
+@update:
+    npins update
+
 # Run nixos-rebuild boot for the current host
 @boot:
     nixos-rebuild boot -f . -A "hosts.$(hostname)" --quiet --no-reexec --sudo
