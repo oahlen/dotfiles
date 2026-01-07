@@ -12,4 +12,4 @@ windows:
   - window_name: Git
     panes:
       - shell_command:
-          - gitui
+          # - gitui

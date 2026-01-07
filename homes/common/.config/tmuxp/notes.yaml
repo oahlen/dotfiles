@@ -9,7 +9,7 @@ windows:
   - window_name: History
     panes:
       - shell_command:
-          - gitui
+          # - gitui
   - window_name: Scratchpad
     panes:
       - shell_command:
