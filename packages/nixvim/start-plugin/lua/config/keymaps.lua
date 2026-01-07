@@ -1,4 +1,5 @@
 -- Keymaps
+
 -- Yank to end of line
 vim.keymap.set("n", "Y", "y$")
 
@@ -57,7 +58,7 @@ vim.keymap.set("n", "<leader>ct", function()
 end, { desc = "Toggle background color" })
 
 -- Spell
-vim.keymap.set("n", "<leader>se", "<CMD>set spell spelllang=en<CR>", { desc = "Set English spelling" })
+vim.keymap.set("n", "<leader>ss", "<CMD>set spell! spelllang=en<CR>", { desc = "Toggle spelling" })
 
 -- Insert functions
 vim.keymap.set("n", "<leader>ii", "<CMD>r!uuidgen<CR>", { desc = "Insert UUID" })
