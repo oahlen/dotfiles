@@ -1,4 +1,5 @@
 (
+    use_selection_fg: Some(false),
     selected_tab: Some("White"),
     command_fg: Some("Reset"),
     selection_bg: Some("Black"),
