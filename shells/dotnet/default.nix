@@ -1,6 +1,11 @@
 { pkgs }:
 let
-  combined = with pkgs.dotnetCorePackages; combinePackages [ sdk_8_0 ];
+  combined =
+    with pkgs.dotnetCorePackages;
+    combinePackages [
+      sdk_8_0
+      sdk_10_0
+    ];
 in
 pkgs.mkShell {
   NIX_SHELL = "DotNet";
