@@ -2,6 +2,7 @@
 with pkgs.vimPlugins;
 [
   blink-cmp
+  blink-cmp-spell
   comment-nvim
   conform-nvim
   CopilotChat-nvim
