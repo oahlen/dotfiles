@@ -11,7 +11,7 @@ return {
         })
 
         require("CopilotChat").setup({
-            model = "gpt-5",
+            model = "gpt-5.1",
         })
 
         vim.keymap.set("v", "<leader>e", "<CMD>CopilotChatExplain<CR>", { desc = "Copilot Chat Explain" })
