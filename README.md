@@ -1,9 +1,11 @@
 # Nix configuration and dotfiles
 
 ## XPS15
+
 ![Screenshot](https://github.com/oahlen/assets/raw/main/nix-config/laptop.png)
 
 ## Desktop
+
 ![Screenshot](https://github.com/oahlen/assets/raw/main/nix-config/desktop.png)
 
 ## Installation (NixOS)
