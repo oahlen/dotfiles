@@ -4,14 +4,8 @@
   ...
 }:
 {
-  nixpkgs = {
-    # config.allowUnfree = true; Enable if nixpkgs.pkgs is not set
-
-    flake = {
-      source = lib.mkForce null;
-      setFlakeRegistry = lib.mkForce false;
-    };
-  };
+  # Enable if nixpkgs.pkgs is not set
+  # nixpkgs.config.allowUnfree = true;
 
   nix = {
     channel.enable = false;
