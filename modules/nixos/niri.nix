@@ -53,6 +53,7 @@ in
 
     users.users.${config.user.name}.extraGroups = [
       "audio"
+      "input"
       "video"
     ];
 
@@ -62,34 +63,18 @@ in
 
     modules = {
       polkit-soteria.enable = true;
-      swayosd.enable = true;
 
-      swayidle = {
+      stasis = {
         enable = true;
-
-        events = [
-          {
-            event = "before-sleep";
-            command = "${pkgs.gtklock}/bin/gtklock -d";
-          }
-        ];
-
-        timeouts = [
-          {
-            timeout = 300;
-            command = "${pkgs.gtklock}/bin/gtklock -d";
-          }
-          {
-            timeout = 900;
-            command = "${lib.getExe pkgs.niri} msg action power-off-monitors";
-            resumeCommand = "${lib.getExe pkgs.niri} msg action power-on-monitors";
-          }
-          {
-            timeout = 1800;
-            command = "${pkgs.systemd}/bin/systemctl suspend";
-          }
+        extraPackages = with pkgs; [
+          brightnessctl
+          gtklock
+          libnotify
+          niri
         ];
       };
+
+      swayosd.enable = true;
 
       waybar = {
         enable = true;
