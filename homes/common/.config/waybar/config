@@ -12,7 +12,9 @@
     ],
     "modules-right": [
       "niri/language",
-      "group/expander",
+      "custom/color-picker",
+      "power-profiles-daemon",
+      "idle_inhibitor",
       "tray",
       "battery",
       "pulseaudio",
@@ -27,22 +29,6 @@
     },
     "niri/language": {
       "format": "{short}"
-    },
-    "group/expander": {
-      "drawer": {
-        "children-class": "expander-group-item",
-        "transition-duration": 250
-      },
-      "modules": [
-        "custom/expand-icon",
-        "custom/color-picker",
-        "power-profiles-daemon"
-      ],
-      "orientation": "inherit"
-    },
-    "custom/expand-icon": {
-      "format": " ",
-      "tooltip": false
     },
     "custom/color-picker": {
       "format": "",
@@ -59,6 +45,13 @@
         "power-saver": ""
       },
       "tooltip-format": "Power profile: {profile}"
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
     },
     "tray": {
       "spacing": 12
