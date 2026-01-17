@@ -1,12 +1,8 @@
 @author "Oscar Ahlén"
 @description "Stasis configuration file"
 
-# Global variable
-default_timeout 300  # 5 minutes
-locker = "gtklock"
-
 stasis:
-  pre_suspend_command locker
+  pre_suspend_command "gtklock"
 
   monitor_media true
   ignore_remote_media true
@@ -17,8 +13,9 @@ stasis:
   # lid_close_action "lock-screen"  # lock-screen | suspend | custom | ignore
   # lid_open_action "wake"          # wake | custom | ignore
 
-  # Debounce: default is 3s; can be customized if needed
-  # debounce_seconds 4
+  debounce_seconds 4
+
+  notify_on_unpause true
 
   # Applications that prevent idle when active
   inhibit_apps [
@@ -29,10 +26,8 @@ stasis:
 
   # Desktop-only idle actions (applies to all devices)
   lock_screen:
-    timeout default_timeout
-    command "loginctl lock-session"
-    resume-command "notify-send 'Welcome Back $env.USER!'"
-    lock-command locker
+    timeout 300 # 5 minutes
+    command "gtklock"
   end
 
   dpms:
@@ -44,7 +39,6 @@ stasis:
   suspend:
     timeout 1800 # 30 minutes
     command "systemctl suspend"
-    resume-command None
   end
 
   # Laptop-only AC actions
@@ -67,7 +61,7 @@ stasis:
 
     lock_screen:
       timeout 120 # 2 minutes
-      command locker
+      command "gtklock"
     end
 
     suspend:
@@ -96,8 +90,7 @@ stasis:
 
     lock_screen:
       timeout 120 # 2 minutes
-      command locker
-      resume-command "notify-send 'Welcome back $env.USER!'"
+      command "gtklock"
     end
 
     suspend:
