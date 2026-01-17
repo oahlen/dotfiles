@@ -33,6 +33,7 @@ with pkgs;
   sd
   statix
   stylua
+  systemctl-tui
   tmux
   tmuxp
   tokei
