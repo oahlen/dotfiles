@@ -14,7 +14,7 @@
       "niri/language",
       "custom/color-picker",
       "power-profiles-daemon",
-      "idle_inhibitor",
+      "custom/idle-inhibitor",
       "tray",
       "battery",
       "pulseaudio",
@@ -46,12 +46,12 @@
       },
       "tooltip-format": "Power profile: {profile}"
     },
-    "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-        "activated": "",
-        "deactivated": ""
-      }
+    "custom/idle-inhibitor": {
+      "format": "{text}",
+      "exec": "$XDG_CONFIG_HOME/waybar/scripts/idle-inhibitor-status",
+      "return-type": "json",
+      "on-click": "$XDG_CONFIG_HOME/waybar/scripts/idle-inhibitor-toggle",
+      "interval": 60
     },
     "tray": {
       "spacing": 12

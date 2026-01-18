@@ -94,6 +94,7 @@ in
       waybar = {
         enable = true;
         extraPackages = with pkgs; [
+          bash # We might run scripts through waybar
           hyprpicker
           pavucontrol
           wl-clipboard

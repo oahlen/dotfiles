@@ -70,7 +70,7 @@ window > box {
 
 #custom-color-picker,
 #power-profiles-daemon,
-#idle_inhibitor,
+#custom-idle-inhibitor,
 #battery,
 #pulseaudio,
 #custom-power
@@ -79,7 +79,7 @@ window > box {
 }
 
 #custom-color-picker,
-#idle_inhibitor {
+#custom-idle-inhibitor {
     font-size: 16px;
     padding: 0 16px 0 0;
 }
