@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-nix-store --gc --print-roots | rg --color never "$HOME"
+set -euo pipefail
+
+nix-store --gc --print-roots | rg -v '\{censored\}'

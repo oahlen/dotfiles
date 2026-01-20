@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 FILES=$(git diff HEAD --relative --name-only --diff-filter=ACM | grep "\.cs\$" || true)
 
 if [ -z "$FILES" ]; then

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # Set GNOME Shell extensions
 gsettings set org.gnome.shell disable-user-extensions false
 gsettings set org.gnome.shell enabled-extensions "['color-picker@tuberry', 'gnome-40-ui-improvements@daniruiz', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'gnome-ui-tune@itstime.tech']"

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 if [ $# -eq 0 ]; then
     RESULT=$(find ./*.md | fzf) || true
 else
