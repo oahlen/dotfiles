@@ -40,6 +40,7 @@
     fastfetch
     filen-cli
     nfs-utils
+    config.packages.hytale-launcher
     config.packages.rbw-wrapped
   ];
 
