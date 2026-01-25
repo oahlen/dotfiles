@@ -4,7 +4,6 @@ end
 
 status is-interactive; and begin
     # Abbreviations
-    abbr --add -- bash /bin/bash
     abbr --add -- compress tar czf \"tar_name.tar.gz\" \<files\>
     abbr --add -- extract tar xzf \"targz_file\"
 
