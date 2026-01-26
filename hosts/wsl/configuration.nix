@@ -18,8 +18,6 @@
     podman.enable = true;
   };
 
-  services.timesyncd.enable = true;
-
   programs = {
     dconf.enable = true;
     git.lfs.enable = true;
