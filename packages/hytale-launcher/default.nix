@@ -1,4 +1,13 @@
-{ pkgs }:
+{
+  buildFHSEnv,
+  fetchurl,
+  lib,
+  makeDesktopItem,
+  pkgs,
+  runCommand,
+  symlinkJoin,
+  writeShellScript,
+}:
 let
   # Source from https://github.com/TNAZEP/HytaleLauncherFlake
 
@@ -20,7 +29,7 @@ let
   ];
 
   # FHS environment that downloads launcher at runtime
-  hytale-launcher-fhs = pkgs.buildFHSEnv {
+  hytale-launcher-fhs = buildFHSEnv {
     name = "hytale-launcher";
 
     targetPkgs =
@@ -60,7 +69,7 @@ let
       export XDG_DATA_DIRS="${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}:$XDG_DATA_DIRS"
     '';
 
-    runScript = pkgs.writeShellScript "hytale-launcher-wrapper" ''
+    runScript = writeShellScript "hytale-launcher-wrapper" ''
       set -e
 
       LAUNCHER_DIR="$HOME/.local/share/hytale-launcher"
@@ -89,7 +98,7 @@ let
       exec "$LAUNCHER_BIN" "$@"
     '';
 
-    meta = with pkgs.lib; {
+    meta = with lib; {
       description = "Hytale Game Launcher";
       homepage = "https://hytale.com";
       license = licenses.unfree;
@@ -99,7 +108,7 @@ let
   };
 
   # Desktop entry file
-  desktopItem = pkgs.makeDesktopItem {
+  desktopItem = makeDesktopItem {
     name = "hytale-launcher";
     desktopName = "Hytale Launcher";
     comment = "Official Hytale Game Launcher";
@@ -116,14 +125,14 @@ let
   };
 
   # Fetch the Hytale icon
-  hytaleIcon = pkgs.fetchurl {
+  hytaleIcon = fetchurl {
     url = "https://hytale.com/favicon.ico";
     hash = "sha256-eniMb/wct+vjtzXF2z8Z1XPBmwabjV8RCDyd8J1QLT0=";
   };
 
   # Convert ico to png for better compatibility
   hytaleIconPng =
-    pkgs.runCommand "hytale-launcher-icon"
+    runCommand "hytale-launcher-icon"
       {
         nativeBuildInputs = [ pkgs.imagemagick ];
       }
@@ -134,7 +143,7 @@ let
       '';
 
   # Final package with desktop integration
-  hytale-launcher = pkgs.symlinkJoin {
+  hytale-launcher = symlinkJoin {
     name = "hytale-launcher";
     paths = [
       hytale-launcher-fhs
