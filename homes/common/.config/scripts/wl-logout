@@ -5,5 +5,5 @@ set -euo pipefail
 RESULT=$(printf "Poweroff\nSuspend\nReboot" | fuzzel -d) || true
 
 if [ -n "$RESULT" ]; then
-    systemctl "${RESULT,,}"
+  systemctl "${RESULT,,}"
 fi

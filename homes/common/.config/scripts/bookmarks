@@ -3,9 +3,9 @@
 set -euo pipefail
 
 if [ $# -ge 1 ] && [ -n "$1" ]; then
-    FINDER=$1
+  FINDER=$1
 else
-    FINDER=fzf
+  FINDER=fzf
 fi
 
 BOOKMARKS="$HOME/bookmarks"
@@ -18,5 +18,5 @@ fi
 RESULT=$($FINDER < "$HOME/bookmarks")
 
 if [ -n "$RESULT" ]; then
-    xdg-open "https://$RESULT"
+  xdg-open "https://$RESULT"
 fi

@@ -5,7 +5,7 @@ set -euo pipefail
 SERVICE="swayidle.service"
 
 if systemctl --user is-active --quiet "$SERVICE"; then
-    echo '{"text":"","class":"off","tooltip":"Idle Inhibitor Inactive"}'
+  echo '{"text":"","class":"off","tooltip":"Idle Inhibitor Inactive"}'
 else
-    echo '{"text":"","class":"on","tooltip":"Idle Inhibitor Active"}'
+  echo '{"text":"","class":"on","tooltip":"Idle Inhibitor Active"}'
 fi

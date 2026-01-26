@@ -3,11 +3,11 @@
 set -euo pipefail
 
 if [ $# -eq 0 ]; then
-    RESULT=$(find ./*.md | fzf) || true
+  RESULT=$(find ./*.md | fzf) || true
 else
-    RESULT=$1
+  RESULT=$1
 fi
 
 if [ -n "$RESULT" ]; then
-    lowdown -tterm "$RESULT" --term-columns 120 --term-hmargin 4 --term-vmargin 1 --term-shortlinks | less -R
+  lowdown -tterm "$RESULT" --term-columns 120 --term-hmargin 4 --term-vmargin 1 --term-shortlinks | less -R
 fi
