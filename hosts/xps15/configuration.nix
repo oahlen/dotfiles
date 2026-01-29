@@ -11,7 +11,6 @@
   networking.hostName = "xps15";
 
   boot = {
-    loader.systemd-boot.enable = true;
     blacklistedKernelModules = [ "nouveau" ];
     initrd.kernelModules = [ "i915" ];
   };
@@ -26,42 +25,19 @@
     ];
   };
 
-  powerManagement.powertop.enable = true;
-
   modules = {
+    laptop.enable = true;
     gnome.enable = true;
-    kanshi.enable = true;
     niri.enable = true;
     podman.enable = true;
-    tailscale.enable = true;
     virt-manager.enable = true;
-    yubikey.enable = true;
   };
-
-  services = {
-    flatpak.enable = true;
-    fstrim.enable = true;
-    fwupd.enable = true;
-    hardware.bolt.enable = true;
-    power-profiles-daemon.enable = true;
-    thermald.enable = true;
-  };
-
-  programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
     _1password-gui
-    fastfetch
     filen-cli
     nodejs
-    powertop
     config.packages.rbw-wrapped
-  ];
-
-  fileSystems."/".options = [
-    "noatime"
-    "nodiratime"
-    "discard"
   ];
 
   system.stateVersion = "25.05";
