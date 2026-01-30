@@ -26,8 +26,8 @@
   };
 
   modules = {
-    laptop.enable = true;
     gnome.enable = true;
+    laptop.enable = true;
     niri.enable = true;
     podman.enable = true;
     virt-manager.enable = true;

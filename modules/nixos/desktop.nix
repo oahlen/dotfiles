@@ -15,7 +15,6 @@ in
     boot.loader.systemd-boot.enable = true;
 
     modules = {
-      tailscale.enable = true;
       yubikey.enable = true;
     };
 
@@ -23,6 +22,11 @@ in
       flatpak.enable = true;
       fstrim.enable = true;
       power-profiles-daemon.enable = true;
+
+      tailscale = {
+        enable = true;
+        useRoutingFeatures = "both";
+      };
     };
 
     programs.firefox.enable = true; # Default browser
