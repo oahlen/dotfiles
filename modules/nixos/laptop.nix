@@ -14,7 +14,6 @@ in
   config = mkIf cfg.enable {
     modules = {
       desktop.enable = true; # laptop profile is a superset of the desktop feature set
-      kanshi.enable = config.modules.niri.enable;
     };
 
     powerManagement.powertop.enable = true;
@@ -23,6 +22,7 @@ in
       fwupd.enable = true;
       hardware.bolt.enable = true;
       thermald.enable = true;
+      upower.enable = true;
     };
 
     environment.systemPackages = [ pkgs.powertop ];
