@@ -18,19 +18,6 @@
       "name": "nixos-unstable",
       "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre937308.62c838296046/nixexprs.tar.xz",
       "hash": "sha256-XBpD8PvMrKeQ7UXr8lYl+mm1tYeWX+qTTWAflzE0KtY="
-    },
-    "wpaperd": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "danyspin97",
-        "repo": "wpaperd"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "7a0fbc954a3009f522e664ce7a6f261ecbf1b172",
-      "url": "https://github.com/danyspin97/wpaperd/archive/7a0fbc954a3009f522e664ce7a6f261ecbf1b172.tar.gz",
-      "hash": "sha256-WByb493PT3RcH9RH/VQTabjQUC1jgXO12ZXMSZgoS0M="
     }
   },
   "version": 7
