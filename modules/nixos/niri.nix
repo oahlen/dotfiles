@@ -151,7 +151,6 @@ in
         papirus-icon-theme
         pavucontrol
         playerctl
-        swaybg
         wf-recorder
         wl-clipboard
         wl-mirror
