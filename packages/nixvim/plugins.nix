@@ -25,63 +25,41 @@ with pkgs.vimPlugins;
   which-key-nvim
   (nvim-treesitter.withPlugins (
     plugins: with plugins; [
-      angular
-      awk
       bash
       c
-      cmake
       comment
-      cpp
       c_sharp
       css
-      desktop
       diff
       dockerfile
       editorconfig
       fish
-      fsharp
       gitattributes
       gitcommit
       git_config
       gitignore
       git_rebase
       go
-      gpg
-      helm
       html
-      http
       java
-      javadoc
       javascript
-      jinja
-      jinja_inline
-      jq
       json
-      json5
       kdl
       kotlin
-      latex
       lua
       luadoc
       make
       markdown
       markdown_inline
-      mermaid
-      nginx
       nix
-      pem
       powershell
       properties
       proto
       python
-      query
-      r
-      regex
       ron
       rust
       scss
       sql
-      ssh_config
       svelte
       tmux
       todotxt
