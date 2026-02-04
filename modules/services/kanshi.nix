@@ -7,7 +7,7 @@
 with lib;
 let
   cfg = config.modules.kanshi;
-  shared = import ../shared/services.nix { inherit config lib; };
+  shared = import ./shared.nix { inherit config lib; };
 in
 {
   options.modules.kanshi = {

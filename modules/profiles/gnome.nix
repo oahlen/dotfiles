@@ -7,14 +7,11 @@
 with lib;
 let
   cfg = config.modules.gnome;
-  shared = import ../shared/desktop.nix { inherit pkgs; };
 in
 {
   options.modules.gnome.enable = mkEnableOption "Whether to enable the Gnome desktop environment.";
 
   config = mkIf cfg.enable {
-    inherit (shared) boot fonts;
-
     services = {
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
@@ -23,8 +20,7 @@ in
         evolution-data-server.enable = mkForce false;
         gnome-online-accounts.enable = false;
       };
-    }
-    // shared.services;
+    };
 
     environment = {
       systemPackages =
@@ -66,8 +62,7 @@ in
         totem
         yelp
       ];
-    }
-    // shared.environment;
+    };
 
     programs.evolution.enable = false;
   };

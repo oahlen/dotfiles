@@ -7,14 +7,11 @@
 with lib;
 let
   cfg = config.modules.niri;
-  shared = import ../shared/desktop.nix { inherit pkgs; };
 in
 {
   options.modules.niri.enable = mkEnableOption "Whether to enable the Niri window manager.";
 
   config = mkIf cfg.enable {
-    inherit (shared) boot fonts;
-
     wayland.systemd.target = "niri-session.target";
 
     programs = {
@@ -131,33 +128,29 @@ in
 
       gvfs.enable = true;
       tumbler.enable = true;
-    }
-    // shared.services;
+    };
 
-    environment = {
-      systemPackages = with pkgs; [
-        adwaita-icon-theme
-        adw-gtk3
-        brightnessctl
-        foot
-        fuzzel
-        gnome-multi-writer
-        gnome-text-editor
-        hyprpicker
-        libnotify
-        loupe
-        mako
-        nautilus
-        papirus-icon-theme
-        pavucontrol
-        playerctl
-        wf-recorder
-        wl-clipboard
-        wl-mirror
-        xdg-utils
-        xwayland-satellite
-      ];
-    }
-    // shared.environment;
+    environment.systemPackages = with pkgs; [
+      adwaita-icon-theme
+      adw-gtk3
+      brightnessctl
+      foot
+      fuzzel
+      gnome-multi-writer
+      gnome-text-editor
+      hyprpicker
+      libnotify
+      loupe
+      mako
+      nautilus
+      papirus-icon-theme
+      pavucontrol
+      playerctl
+      wf-recorder
+      wl-clipboard
+      wl-mirror
+      xdg-utils
+      xwayland-satellite
+    ];
   };
 }

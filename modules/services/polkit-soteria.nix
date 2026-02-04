@@ -7,7 +7,7 @@
 with lib;
 let
   cfg = config.modules.polkit-soteria;
-  shared = import ../shared/services.nix { inherit config lib; };
+  shared = import ./shared.nix { inherit config lib; };
 in
 {
   options.modules.polkit-soteria = {

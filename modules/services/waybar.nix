@@ -7,7 +7,7 @@
 with lib;
 let
   cfg = config.modules.waybar;
-  shared = import ../shared/services.nix { inherit config lib; };
+  shared = import ./services.nix { inherit config lib; };
 in
 {
   options.modules.waybar = {
