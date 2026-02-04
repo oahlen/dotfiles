@@ -15,6 +15,7 @@
 
   modules = {
     apptainer.enable = true;
+    development.enable = true;
     podman.enable = true;
   };
 

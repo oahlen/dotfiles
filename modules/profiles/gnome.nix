@@ -7,7 +7,7 @@
 with lib;
 let
   cfg = config.modules.gnome;
-  shared = import ./../shared/desktop.nix { inherit pkgs; };
+  shared = import ../shared/desktop.nix { inherit pkgs; };
 in
 {
   options.modules.gnome.enable = mkEnableOption "Whether to enable the Gnome desktop environment.";

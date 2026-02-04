@@ -19,6 +19,7 @@
 
   modules = {
     desktop.enable = true;
+    development.enable = true;
     gaming.enable = true;
     niri.enable = true;
     podman.enable = true;

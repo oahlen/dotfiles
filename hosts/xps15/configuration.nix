@@ -26,6 +26,7 @@
   };
 
   modules = {
+    development.enable = true;
     gnome.enable = true;
     laptop.enable = true;
     niri.enable = true;

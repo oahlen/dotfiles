@@ -7,7 +7,7 @@ in
 {
   hosts =
     let
-      mkHost = modules: pkgs.nixos ([ ./modules/nixos.nix ] ++ modules);
+      mkHost = modules: pkgs.nixos ([ ./modules ] ++ modules);
     in
     {
       desktop = mkHost [ ./hosts/desktop/configuration.nix ];

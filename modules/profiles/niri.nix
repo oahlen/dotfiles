@@ -7,7 +7,7 @@
 with lib;
 let
   cfg = config.modules.niri;
-  shared = import ./../shared/desktop.nix { inherit pkgs; };
+  shared = import ../shared/desktop.nix { inherit pkgs; };
 in
 {
   options.modules.niri.enable = mkEnableOption "Whether to enable the Niri window manager.";
@@ -64,7 +64,6 @@ in
       kanshi.enable = config.modules.laptop.enable;
       polkit-soteria.enable = true;
       swaybg.enable = true;
-      swayosd.enable = true;
 
       swayidle = {
         enable = true;
@@ -92,6 +91,8 @@ in
           }
         ];
       };
+
+      swayosd.enable = true;
 
       waybar = {
         enable = true;
