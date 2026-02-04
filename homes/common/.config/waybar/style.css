@@ -68,8 +68,6 @@ window > box {
     padding: 0 6px;
 }
 
-#custom-color-picker,
-#power-profiles-daemon,
 #custom-idle-inhibitor,
 #battery,
 #pulseaudio,
@@ -78,15 +76,9 @@ window > box {
     color: #dfdfdf;
 }
 
-#custom-color-picker,
 #custom-idle-inhibitor {
     font-size: 16px;
     padding: 0 16px 0 0;
-}
-
-#power-profiles-daemon {
-    font-size: 16px;
-    padding: 0 20px 0 4px;
 }
 
 #battery,

@@ -12,8 +12,6 @@
     ],
     "modules-right": [
       "niri/language",
-      "custom/color-picker",
-      "power-profiles-daemon",
       "custom/idle-inhibitor",
       "tray",
       "battery",
@@ -29,22 +27,6 @@
     },
     "niri/language": {
       "format": "{short}"
-    },
-    "custom/color-picker": {
-      "format": "",
-      "on-click": "hyprpicker -a",
-      "on-click-right": "hyprpicker -a -f hsl",
-      "tooltip-format": "Color Picker"
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "format-icons": {
-        "balanced": "",
-        "default": "",
-        "performance": "",
-        "power-saver": ""
-      },
-      "tooltip-format": "Power profile: {profile}"
     },
     "custom/idle-inhibitor": {
       "format": "{text}",
