@@ -36,8 +36,8 @@ pkgs.mkShell {
 
   packages = with pkgs; [
     combined
+    csharp-ls # omnisharp-roslyn
     netcoredbg
-    omnisharp-roslyn
     openssl
   ];
 }

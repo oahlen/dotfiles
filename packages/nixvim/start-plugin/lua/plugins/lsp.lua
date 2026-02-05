@@ -3,7 +3,7 @@ local on_init = function(client, _)
     client.server_capabilities.semanticTokensProvider = nil
 end
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
     local map = function(keys, func, desc)
         vim.keymap.set("n", keys, func, { buffer = bufnr, desc = "LSP: " .. desc })
     end
@@ -12,14 +12,8 @@ local on_attach = function(client, bufnr)
     map("gi", finder.lsp_implementations, "Goto Implementation")
     map("gr", finder.lsp_references, "Goto References")
 
-    if client.name == "omnisharp" then
-        local omnisharp_extended = require("omnisharp_extended")
-        map("gd", omnisharp_extended.lsp_definition, "Goto Definition")
-        map("gD", omnisharp_extended.lsp_type_definition, "Goto Declaration")
-    else
-        map("gd", finder.lsp_definitions, "Goto Definition")
-        map("gD", finder.lsp_declarations, "Goto Declaration")
-    end
+    map("gd", finder.lsp_definitions, "Goto Definition")
+    map("gD", finder.lsp_declarations, "Goto Declaration")
 
     map("gn", function()
         vim.diagnostic.jump({ count = 1, float = true })
@@ -68,27 +62,8 @@ enable("lua_ls", {
     },
 })
 
-enable("omnisharp", {
-    cmd = {
-        "OmniSharp",
-        "-z",
-        "--hostPID",
-        tostring(vim.fn.getpid()),
-        "DotNet:enablePackageRestore=false",
-        "--encoding",
-        "utf-8",
-        "--languageserver",
-    },
-    settings = {
-        RoslynExtensionsOptions = {
-            EnableAnalyzersSupport = true,
-            EnableImportCompletion = true,
-            AnalyzeOpenDocumentsOnly = true,
-            EnableDecompilationSupport = true,
-        },
-    },
-})
-
+enable("csharp_ls")
+-- require("csharpls_extended").buf_read_cmd_bind()
 enable("cssls")
 enable("html")
 enable("nil_ls")

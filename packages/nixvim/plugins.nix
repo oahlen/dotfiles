@@ -7,6 +7,7 @@ with pkgs.vimPlugins;
   conform-nvim
   CopilotChat-nvim
   copilot-lua
+  # csharpls-extended-lsp-nvim
   friendly-snippets
   fzf-lua
   gitsigns-nvim
@@ -20,7 +21,6 @@ with pkgs.vimPlugins;
   nvim-surround
   nvim-tree-lua
   nvim-web-devicons
-  omnisharp-extended-lsp-nvim
   render-markdown-nvim
   which-key-nvim
   (nvim-treesitter.withPlugins (
