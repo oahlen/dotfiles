@@ -36,6 +36,9 @@ help:
 @shell name:
     nix-shell . -A "shells.$1" --command "$SHELL"
 
+# Performs all code checks
+@check: fmt lint lua
+
 # Format nix code
 @fmt:
     treefmt
