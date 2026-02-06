@@ -1,45 +1,10 @@
-{
-  buildEnv,
-  module,
-  pkgs,
-}:
+{ module, pkgs }:
 let
-  config = import module { inherit pkgs; };
-
-  profile = buildEnv {
-    name = "environment";
-
-    paths =
-      config.packages
-      ++ (import ../shared/packages.nix { inherit pkgs; })
-      ++ (
-        if config.enableDirenv then
-          [
-            pkgs.direnv
-            pkgs.nix-direnv
-          ]
-        else
-          [ ]
-      );
-
-    pathsToLink = [
-      "/bin"
-      "/share/man"
-      "/share/doc"
-    ]
-    ++ (if config.enableDirenv then [ "/share/nix-direnv" ] else [ ]);
-
-    extraOutputsToInstall = [
-      "man"
-      "doc"
-    ];
-  };
+  defaultPackages = import ../shared/packages.nix { inherit pkgs; };
+  packages = import ../packages { inherit pkgs; };
+  config = import module { inherit pkgs packages; };
 in
-profile
-// {
-  switch = pkgs.writeShellScriptBin "switch" ''
-    mkdir -p "$HOME/.local/state/nix/profiles"
-    nix build ${profile} --profile "$HOME/.local/state/nix/profiles/profile"
-    ln -sfn "$HOME/.local/state/nix/profiles/profile" "$HOME/.local/state/nix/profile"
-  '';
+pkgs.callPackage ./builder.nix {
+  packages = defaultPackages ++ config.packages;
+  inherit (config) enableDirenv;
 }
