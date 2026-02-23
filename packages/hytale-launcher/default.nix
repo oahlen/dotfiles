@@ -37,11 +37,11 @@ let
       runtimeDeps
       ++ (with pkgs; [
         # Additional runtime deps
-        xorg.libX11
-        xorg.libXcursor
-        xorg.libXrandr
-        xorg.libXi
-        xorg.libxcb
+        libX11
+        libXcursor
+        libXrandr
+        libXi
+        libxcb
         libxkbcommon
         mesa
         vulkan-loader

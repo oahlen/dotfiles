@@ -20,12 +20,12 @@ pkgs.mkShell {
       libGL
       libxkbcommon
       wayland
-      xorg.libICE
-      xorg.libSM
-      xorg.libX11
-      xorg.libXcursor
-      xorg.libXi
-      xorg.libXrandr
+      libICE
+      libSM
+      libX11
+      libXcursor
+      libXi
+      libXrandr
 
       # For certain tools like Microsoft sbom tool
       mono
