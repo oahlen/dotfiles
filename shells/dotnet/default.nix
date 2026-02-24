@@ -18,14 +18,14 @@ pkgs.mkShell {
       # For GUI based applications
       fontconfig
       libGL
-      libxkbcommon
-      wayland
       libICE
       libSM
       libX11
       libXcursor
       libXi
+      libxkbcommon
       libXrandr
+      wayland
 
       # For certain tools like Microsoft sbom tool
       mono
