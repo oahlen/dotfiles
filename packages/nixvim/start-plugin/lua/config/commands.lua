@@ -1,5 +1,3 @@
--- Commands
-
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking text",
     group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
@@ -8,8 +6,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
--- Force updates csharp buffers using csharp_ls
 vim.api.nvim_create_autocmd("BufEnter", {
+    desc = "Force update csharp buffers when using csharp_ls",
+    group = vim.api.nvim_create_augroup("csharp-buffer-update", { clear = true }),
     pattern = "*.cs",
     callback = function(args)
         local bufnr = args.buf
@@ -22,6 +21,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
         -- This triggers diagnostic re-evaluation
         local params = vim.lsp.util.make_text_document_params(bufnr)
         local text = table.concat(vim.api.nvim_buf_get_lines(bufnr, 0, -1, false), "\n") .. "\n"
+
         for _, client in ipairs(clients) do
             ---@diagnostic disable-next-line: param-type-mismatch
             client.notify("textDocument/didChange", {

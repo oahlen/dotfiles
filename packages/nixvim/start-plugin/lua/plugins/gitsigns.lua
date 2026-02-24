@@ -4,12 +4,12 @@ require("gitsigns").setup({
 
         vim.keymap.set("n", "<leader>hb", function()
             gitsigns.blame_line({ full = true })
-        end, { desc = "Blame Line", buffer = bufnr })
+        end, { buffer = bufnr })
 
-        vim.keymap.set("n", "<leader>hd", gitsigns.diffthis, { desc = "Diff this", buffer = bufnr })
+        vim.keymap.set("n", "<leader>hd", gitsigns.diffthis, { buffer = bufnr })
 
         vim.keymap.set("n", "<leader>hD", function()
             gitsigns.diffthis("~")
-        end, { desc = "Diff this (~)", buffer = bufnr })
+        end, { buffer = bufnr })
     end,
 })

@@ -4,32 +4,32 @@ local on_init = function(client, _)
 end
 
 local on_attach = function(_, bufnr)
-    local map = function(keys, func, desc)
-        vim.keymap.set("n", keys, func, { buffer = bufnr, desc = "LSP: " .. desc })
+    local map = function(keys, func)
+        vim.keymap.set("n", keys, func, { buffer = bufnr })
     end
 
     local finder = require("fzf-lua")
-    map("gi", finder.lsp_implementations, "Goto Implementation")
-    map("gr", finder.lsp_references, "Goto References")
+    map("gi", finder.lsp_implementations)
+    map("gr", finder.lsp_references)
 
-    map("gd", finder.lsp_definitions, "Goto Definition")
-    map("gD", finder.lsp_declarations, "Goto Declaration")
+    map("gd", finder.lsp_definitions)
+    map("gD", finder.lsp_declarations)
 
     map("gn", function()
         vim.diagnostic.jump({ count = 1, float = true })
-    end, "Goto Next")
+    end)
     map("gN", function()
         vim.diagnostic.jump({ count = -1, float = true })
-    end, "Goto Prev")
+    end)
 
-    map("K", vim.lsp.buf.hover, "Hover Documentation")
-    map("<C-s>", vim.lsp.buf.signature_help, "Signature Help")
-    map("<leader>D", vim.lsp.buf.type_definition, "Type Definition")
-    map("<leader>rn", vim.lsp.buf.rename, "LSP Rename")
-    map("<leader>ca", finder.lsp_code_actions, "Code Action")
+    map("K", vim.lsp.buf.hover)
+    map("<C-s>", vim.lsp.buf.signature_help)
+    map("<leader>D", vim.lsp.buf.type_definition)
+    map("<leader>rn", vim.lsp.buf.rename)
+    map("<leader>ca", finder.lsp_code_actions)
     map("==", function()
         vim.lsp.buf.format({ async = true })
-    end, "Format Code")
+    end)
 end
 
 local enable = function(name, opts)

@@ -1,8 +1,8 @@
-require("plugins.fzf-lua")
+require("plugins.finder")
 require("plugins.treesitter")
-require("plugins.blink")
+require("plugins.completion")
 require("plugins.gitsigns")
-require("plugins.heirline")
+require("plugins.statusline")
 require("plugins.lsp")
 
 require("nvim-autopairs").setup()
@@ -11,5 +11,4 @@ require("ibl").setup()
 require("nvim-surround").setup()
 require("colorizer").setup()
 
-require("plugins.which-key")
 require("plugins.render-markdown")
