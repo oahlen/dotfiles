@@ -1,3 +1,5 @@
+-- Options
+
 if vim.fn.executable("dconf") == 1 then
     -- Get the background and colorscheme settings from environment
     local theme = vim.system({ "dconf", "read", "/org/gnome/desktop/interface/color-scheme" }):wait()

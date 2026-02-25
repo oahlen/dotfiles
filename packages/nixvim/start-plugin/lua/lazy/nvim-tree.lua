@@ -1,8 +1,8 @@
 return {
     "nvim-tree",
     keys = {
-        { "<leader>e", "<CMD>NvimTreeToggle<CR>" },
-        { "<leader>E", "<CMD>NvimTreeFindFile<CR>" },
+        { "<leader>e", "<CMD>NvimTreeToggle<CR>", desc = "Toggle File Tree" },
+        { "<leader>E", "<CMD>NvimTreeFindFile<CR>", desc = "Find in File Tree" },
     },
     after = function()
         require("nvim-tree").setup({

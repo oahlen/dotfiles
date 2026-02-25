@@ -1,10 +1,17 @@
+-- Keymaps
+
 -- Yank to end of line
 vim.keymap.set("n", "Y", "y$")
 
 -- System clipboard
-vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y', { noremap = true, silent = true })
-vim.keymap.set({ "n", "v", "x" }, "<leader>Y", '"+yy', { noremap = true, silent = true })
-vim.keymap.set({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v", "x" }, "<leader>y", '"+y', { noremap = true, silent = true, desc = "Yank to Clipboard" })
+vim.keymap.set(
+    { "n", "v", "x" },
+    "<leader>Y",
+    '"+yy',
+    { noremap = true, silent = true, desc = "Yank Line to Clipboard" }
+)
+vim.keymap.set({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from Clipboard" })
 
 -- Better window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h")
@@ -32,14 +39,14 @@ vim.keymap.set("v", "a", "<ESC>a")
 vim.keymap.set("t", "<ESC>", "<C-\\><C-n>")
 
 -- Close current buffer
-vim.keymap.set("n", "<leader>q", "<CMD>bp<BAR>bd#<CR>")
+vim.keymap.set("n", "<leader>q", "<CMD>bp<BAR>bd#<CR>", { desc = "Close Current Buffer" })
 
 -- Tab operations
-vim.keymap.set("n", "<leader>ta", "<CMD>$tabnew<CR>")
-vim.keymap.set("n", "<leader>tc", "<CMD>tabclose<CR>")
+vim.keymap.set("n", "<leader>ta", "<CMD>$tabnew<CR>", { desc = "New Tab" })
+vim.keymap.set("n", "<leader>tc", "<CMD>tabclose<CR>", { desc = "Close Current Tab" })
 
 -- Clear highlights
-vim.keymap.set("n", "<leader>ch", "<CMD>nohl<CR>")
+vim.keymap.set("n", "<leader>ch", "<CMD>nohl<CR>", { desc = "Clear Search Highlights" })
 
 -- Toggle background color
 vim.keymap.set("n", "<leader>ct", function()
@@ -48,10 +55,10 @@ vim.keymap.set("n", "<leader>ct", function()
     else
         vim.o.background = "dark"
     end
-end)
+end, { desc = "Toggle background color" })
 
 -- Spell
-vim.keymap.set("n", "<leader>ss", "<CMD>set spell! spelllang=en<CR>")
+vim.keymap.set("n", "<leader>ss", "<CMD>set spell! spelllang=en<CR>", { desc = "Toggle spelling" })
 
 -- Insert functions
-vim.keymap.set("n", "<leader>ii", "<CMD>r!uuidgen<CR>")
+vim.keymap.set("n", "<leader>ii", "<CMD>r!uuidgen<CR>", { desc = "Insert UUID" })
