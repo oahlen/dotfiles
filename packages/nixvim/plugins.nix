@@ -7,7 +7,7 @@ with pkgs.vimPlugins;
   conform-nvim
   CopilotChat-nvim
   copilot-lua
-  # csharpls-extended-lsp-nvim
+  # csharpls-extended-lsp-nvim - Enable when merged https://github.com/Decodetalkers/csharpls-extended-lsp.nvim/pull/52
   friendly-snippets
   fzf-lua
   gitsigns-nvim
@@ -22,7 +22,6 @@ with pkgs.vimPlugins;
   nvim-tree-lua
   nvim-web-devicons
   render-markdown-nvim
-  which-key-nvim
   (nvim-treesitter.withPlugins (
     plugins: with plugins; [
       bash

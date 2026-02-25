@@ -1,5 +1,3 @@
--- Commands
-
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking text",
     group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
@@ -8,8 +6,23 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
--- Force updates csharp buffers using csharp_ls
+vim.api.nvim_create_autocmd("FileType", {
+    group = vim.api.nvim_create_augroup("treesitter-setup", {}),
+    callback = function(args)
+        local filetype = args.match
+
+        local language = vim.treesitter.language.get_lang(filetype) or filetype
+        if not vim.treesitter.language.add(language) then
+            return
+        end
+
+        vim.treesitter.start(args.buf, language)
+    end,
+})
+
 vim.api.nvim_create_autocmd("BufEnter", {
+    desc = "Force update csharp buffers when using csharp_ls",
+    group = vim.api.nvim_create_augroup("csharp-buffer-update", { clear = true }),
     pattern = "*.cs",
     callback = function(args)
         local bufnr = args.buf
@@ -36,6 +49,14 @@ vim.api.nvim_create_autocmd("BufEnter", {
         end
     end,
 })
+
+vim.api.nvim_create_user_command("ToggleBackground", function()
+    if vim.o.background == "dark" then
+        vim.o.background = "light"
+    else
+        vim.o.background = "dark"
+    end
+end, {})
 
 -- vim.api.nvim_create_autocmd("BufWritePost", {
 --     pattern = "*.cs",

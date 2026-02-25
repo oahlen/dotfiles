@@ -25,8 +25,8 @@ fzf_lua.setup({
 
 fzf_lua.register_ui_select()
 
-vim.keymap.set("n", "<leader><space>", "<CMD>FzfLua<CR>", { desc = "Open Picker" })
-vim.keymap.set("n", "<leader>f", "<CMD>FzfLua files<CR>", { desc = "Find Files" })
-vim.keymap.set("n", "<leader>g", "<CMD>FzfLua live_grep<CR>", { desc = "Live Grep" })
-vim.keymap.set("n", "<leader>b", "<CMD>FzfLua buffers<CR>", { desc = "List Open Buffers" })
-vim.keymap.set("n", "<leader>rp", "<CMD>FzfLua resume<CR>", { desc = "Resume Picker" })
+vim.keymap.set("n", "<leader><space>", "<CMD>FzfLua<CR>", { desc = "Open picker" })
+vim.keymap.set("n", "<leader>f", "<CMD>FzfLua files<CR>", { desc = "Find files" })
+vim.keymap.set("n", "<leader>g", "<CMD>FzfLua live_grep<CR>", { desc = "Live grep" })
+vim.keymap.set("n", "<leader>b", "<CMD>FzfLua buffers<CR>", { desc = "List open buffers" })
+vim.keymap.set("n", "<leader>rp", "<CMD>FzfLua resume<CR>", { desc = "Resume picker" })
