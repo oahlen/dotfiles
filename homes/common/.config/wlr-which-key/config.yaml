@@ -22,7 +22,7 @@ menu:
     desc: System
     submenu:
       - key: "s"
-        desc: Sleep
+        desc: Suspend
         cmd: systemctl suspend
       - key: "r"
         desc: Reboot
