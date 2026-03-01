@@ -2,7 +2,7 @@
   {
     "position": "top",
     "layer": "top",
-    "height": 32,
+    "height": 40,
     "spacing": 0,
     "modules-left": [
       "niri/workspaces"
@@ -14,8 +14,7 @@
       "niri/language",
       "tray",
       "battery",
-      "pulseaudio",
-      "custom/power"
+      "pulseaudio"
     ],
     "niri/workspaces": {
       "disable-scroll": true
@@ -82,17 +81,6 @@
       "on-click": "pavucontrol",
       "scroll-step": 5,
       "tooltip-format": "Playing at {volume}%"
-    },
-    "custom/power": {
-      "format": "⏻",
-      "menu": "on-click",
-      "menu-actions": {
-        "reboot": "systemctl reboot",
-        "shutdown": "systemctl poweroff",
-        "suspend": "systemctl suspend"
-      },
-      "menu-file": "$XDG_CONFIG_HOME/waybar/power_menu.xml",
-      "tooltip": false
     }
   }
 ]

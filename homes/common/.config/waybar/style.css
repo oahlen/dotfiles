@@ -4,15 +4,18 @@
 }
 
 window#waybar {
-    background: transparent
+    background: transparent;
 }
 
 window > box {
     margin: 8px 8px 0px 8px;
     background: #1a1b26;
     color: #c0caf5;
-    padding: 4px;
     border-radius: 8px;
+}
+
+#workspaces {
+    padding: 4px;
 }
 
 #workspaces button {
@@ -47,51 +50,24 @@ window > box {
     text-shadow: inherit;
 }
 
-#mode {
-    background: #ff9e64;
-    color: #1a1b26;
-    padding: 0 8px;
-    margin: 0 0 0 8px;
-    border-radius: 8px;
-}
-
 #clock {
     font-weight: bold;
 }
 
 #language {
-    background: #dfdfdf;
-    color: #1a1b26;
-    padding: 0 6px;
-    border-radius: 4px;
-    margin: 2px 12px 2px 0;
+    color: #dfdfdf;
+    margin: 0 12px;
     font-weight: bold;
-}
-
-#language.se {
-    background: #ff9e64;
 }
 
 #tray {
     padding: 0 6px;
 }
 
-#battery,
-#pulseaudio,
-#custom-power
-{
+#battery {
     color: #dfdfdf;
-}
-
-#battery,
-#pulseaudio {
     font-size: 18px;
     padding: 0 8px;
-}
-
-#custom-power {
-  font-size: 16px;
-  padding: 0 12px 0 4px;
 }
 
 #battery.charging,
@@ -106,6 +82,13 @@ window > box {
 #battery.critical {
     color: #f7768e;
 }
+
+#pulseaudio {
+    color: #dfdfdf;
+    font-size: 18px;
+    padding: 0 12px 0 8px;
+}
+
 
 tooltip {
     background: #1a1b26;
