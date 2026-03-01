@@ -64,7 +64,7 @@ window > box {
     color: #1a1b26;
     padding: 0 6px;
     border-radius: 4px;
-    margin: 2px 16px 2px 0;
+    margin: 2px 12px 2px 0;
     font-weight: bold;
 }
 
@@ -76,17 +76,11 @@ window > box {
     padding: 0 6px;
 }
 
-#custom-idle-inhibitor,
 #battery,
 #pulseaudio,
 #custom-power
 {
     color: #dfdfdf;
-}
-
-#custom-idle-inhibitor {
-    font-size: 16px;
-    padding: 0 16px 0 0;
 }
 
 #battery,

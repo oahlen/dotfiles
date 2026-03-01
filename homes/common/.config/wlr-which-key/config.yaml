@@ -1,0 +1,87 @@
+font: JetBrainsMono Nerd Font 11.5
+
+background: "#1a1b26"
+color: "#a9b1d6"
+border: "#7aa2f7"
+separator: " ➜ "
+
+border_width: 2
+corner_r: 8
+padding: 24
+rows_per_column: 10
+column_padding: 24
+
+anchor: center
+
+inhibit_compositor_keyboard_shortcuts: true
+
+auto_kbd_layout: true
+
+menu:
+  - key: "s"
+    desc: System
+    submenu:
+      - key: "s"
+        desc: Sleep
+        cmd: systemctl suspend
+      - key: "r"
+        desc: Reboot
+        cmd: systemctl reboot
+      - key: "p"
+        desc: Poweroff
+        cmd: systemctl poweroff
+
+  - key: "t"
+    desc: Theme Settings
+    submenu:
+      - key: "t"
+        desc: Default
+        cmd: |
+          dconf write /org/gnome/desktop/interface/color-scheme "'default'"
+          pkill -USR2 foot || true
+          notify-send "Application Theme: Default"
+      - key: "d"
+        desc: Dark
+        cmd: |
+          dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+          pkill -USR1 foot || true
+          notify-send "Application Theme: Dark"
+      - key: "l"
+        desc: Light
+        cmd: |
+          dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
+          pkill -USR2 foot || true
+          notify-send "Application Theme: Light"
+
+  - key: "p"
+    desc: Power Profile
+    submenu:
+      - key: "b"
+        desc: Balanced
+        cmd: |
+          powerprofilesctl set balanced
+          notify-send "Power Profile: Balanced"
+      - key: "s"
+        desc: Saver
+        cmd: |
+          powerprofilesctl set power-saver
+          notify-send "Power Profile: Power saver"
+      - key: "p"
+        desc: Performance
+        cmd: |
+          powerprofilesctl set performance
+          notify-send "Power Profile: Performance"
+
+  - key: "i"
+    desc: Idle Service
+    submenu:
+      - key: "a"
+        desc: Start Idle Service
+        cmd: |
+          systemctl --user start swayidle.service
+          notify-send "Started Idle Service"
+      - key: "b"
+        desc: Stop Idle Service
+        cmd: |
+          systemctl --user stop swayidle.service
+          notify-send "Stopped Idle Service"

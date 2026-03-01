@@ -12,7 +12,6 @@
     ],
     "modules-right": [
       "niri/language",
-      "custom/idle-inhibitor",
       "tray",
       "battery",
       "pulseaudio",
@@ -28,13 +27,6 @@
     },
     "niri/language": {
       "format": "{short}"
-    },
-    "custom/idle-inhibitor": {
-      "format": "{text}",
-      "exec": "$XDG_CONFIG_HOME/waybar/scripts/idle-inhibitor-status",
-      "return-type": "json",
-      "on-click": "$XDG_CONFIG_HOME/waybar/scripts/idle-inhibitor-toggle",
-      "interval": 60
     },
     "tray": {
       "spacing": 12

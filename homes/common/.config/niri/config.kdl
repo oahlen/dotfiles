@@ -140,6 +140,7 @@ binds {
 
     Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Run an Application" { spawn "fuzzel"; }
+    Mod+Shift+D hotkey-overlay-title="Run an Which Key" { spawn "wlr-which-key"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "gtklock"; }
 
     XF86MonBrightnessUp   allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
@@ -245,6 +246,7 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
+
     Mod+Shift+1 { move-column-to-workspace 1; }
     Mod+Shift+2 { move-column-to-workspace 2; }
     Mod+Shift+3 { move-column-to-workspace 3; }
@@ -327,7 +329,7 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     Mod+Shift+E { quit; }
-    Ctrl+Alt+Delete { spawn "wl-logout"; }
+    Ctrl+Alt+Delete { spawn "wlr-which-key" "-k s"; }
 
     Mod+Shift+P { power-off-monitors; }
 
@@ -336,8 +338,6 @@ binds {
 
     // Toggle Waybar
     Mod+B { spawn "pkill" "-USR1" "waybar"; }
-
-    Mod+Shift+O { spawn "theme-switcher" "fuzzel -d"; }
 }
 
 spawn-at-startup "systemctl" "--user" "start" "niri-session.target"

@@ -149,6 +149,7 @@ in
       wf-recorder
       wl-clipboard
       wl-mirror
+      wlr-which-key
       xdg-utils
       xwayland-satellite
     ];
