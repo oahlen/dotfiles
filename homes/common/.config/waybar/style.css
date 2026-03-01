@@ -10,18 +10,22 @@ window#waybar {
 window > box {
     margin: 8px 8px 0px 8px;
     background: #1a1b26;
-    color: #a9b1d6;
+    color: #c0caf5;
     padding: 4px;
     border-radius: 8px;
 }
 
 #workspaces button {
-    color: #a9b1d6;
+    color: #c0caf5;
     padding: 0px 6px;
     margin: 0 2px;
     border: none;
     border-radius: 8px;
     transition: none;
+}
+
+#workspaces button.empty {
+    color: #606a99;
 }
 
 #workspaces button:hover {
@@ -62,6 +66,10 @@ window > box {
     border-radius: 4px;
     margin: 2px 16px 2px 0;
     font-weight: bold;
+}
+
+#language.se {
+    background: #ff9e64;
 }
 
 #tray {
@@ -112,5 +120,5 @@ tooltip {
 }
 
 tooltip label {
-    color: #a9b1d6;
+    color: #c0caf5;
 }
