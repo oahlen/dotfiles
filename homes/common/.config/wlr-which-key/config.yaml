@@ -39,19 +39,19 @@ menu:
         cmd: |
           dconf write /org/gnome/desktop/interface/color-scheme "'default'"
           pkill -USR2 foot || true
-          notify-send "Application Theme: Default"
+          notify-send "Application Theme" "Set to Default"
       - key: "d"
         desc: Dark
         cmd: |
           dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
           pkill -USR1 foot || true
-          notify-send "Application Theme: Dark"
+          notify-send "Application Theme" "Set to Dark"
       - key: "l"
         desc: Light
         cmd: |
           dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
           pkill -USR2 foot || true
-          notify-send "Application Theme: Light"
+          notify-send "Application Theme" "Set to Light"
 
   - key: "p"
     desc: Power Profile
@@ -60,17 +60,17 @@ menu:
         desc: Balanced
         cmd: |
           powerprofilesctl set balanced
-          notify-send "Power Profile: Balanced"
+          notify-send "Power Profile" "Set to Balanced"
       - key: "s"
         desc: Saver
         cmd: |
           powerprofilesctl set power-saver
-          notify-send "Power Profile: Power saver"
+          notify-send "Power Profile" "Set to Power saver"
       - key: "p"
         desc: Performance
         cmd: |
           powerprofilesctl set performance
-          notify-send "Power Profile: Performance"
+          notify-send "Power Profile" "Set to Performance"
 
   - key: "i"
     desc: Idle Service
@@ -79,9 +79,9 @@ menu:
         desc: Start Idle Service
         cmd: |
           systemctl --user start swayidle.service
-          notify-send "Started Idle Service"
+          notify-send "Idle Service" "Started"
       - key: "b"
         desc: Stop Idle Service
         cmd: |
           systemctl --user stop swayidle.service
-          notify-send "Stopped Idle Service"
+          notify-send "Idle Service" "Stopped"
