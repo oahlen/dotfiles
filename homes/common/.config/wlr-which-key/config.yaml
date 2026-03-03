@@ -19,69 +19,69 @@ auto_kbd_layout: true
 
 menu:
   - key: "s"
-    desc: System
+    desc: "   System"
     submenu:
       - key: "s"
-        desc: Suspend
+        desc: 󰒲  Suspend
         cmd: systemctl suspend
       - key: "r"
-        desc: Reboot
+        desc: 󰑐  Reboot
         cmd: systemctl reboot
       - key: "p"
-        desc: Poweroff
+        desc: 󰐥  Poweroff
         cmd: systemctl poweroff
 
   - key: "t"
-    desc: Theme Settings
+    desc: " 󱄄  Theme Settings"
     submenu:
       - key: "t"
-        desc: Default
+        desc: 󱄄  Default
         cmd: |
           dconf write /org/gnome/desktop/interface/color-scheme "'default'"
           pkill -USR2 foot || true
           notify-send "Application Theme" "Set to Default"
       - key: "d"
-        desc: Dark
+        desc: 󱄄  Dark
         cmd: |
           dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
           pkill -USR1 foot || true
           notify-send "Application Theme" "Set to Dark"
       - key: "l"
-        desc: Light
+        desc: 󱄄  Light
         cmd: |
           dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
           pkill -USR2 foot || true
           notify-send "Application Theme" "Set to Light"
 
   - key: "p"
-    desc: Power Profile
+    desc: "   Power Profile"
     submenu:
       - key: "b"
-        desc: Balanced
+        desc:   Balanced
         cmd: |
           powerprofilesctl set balanced
           notify-send "Power Profile" "Set to Balanced"
       - key: "s"
-        desc: Saver
+        desc:   Saver
         cmd: |
           powerprofilesctl set power-saver
           notify-send "Power Profile" "Set to Power saver"
       - key: "p"
-        desc: Performance
+        desc:   Performance
         cmd: |
           powerprofilesctl set performance
           notify-send "Power Profile" "Set to Performance"
 
   - key: "i"
-    desc: Idle Service
+    desc: "   Idle Inhibitor"
     submenu:
       - key: "a"
-        desc: Start Idle Service
-        cmd: |
-          systemctl --user start swayidle.service
-          notify-send "Idle Service" "Started"
-      - key: "b"
-        desc: Stop Idle Service
+        desc:   Start Idle Inhibitor
         cmd: |
           systemctl --user stop swayidle.service
-          notify-send "Idle Service" "Stopped"
+          notify-send "Idle Inhibitor" "Active"
+      - key: "b"
+        desc:   Stop Idle Inhibitor
+        cmd: |
+          systemctl --user start swayidle.service
+          notify-send "Idle Inhibitor" "Inactive"
