@@ -25,11 +25,46 @@ menu:
         desc: 󰒲  Suspend
         cmd: systemctl suspend
       - key: "r"
-        desc: 󰑐  Reboot
+        desc:   Reboot
         cmd: systemctl reboot
       - key: "p"
-        desc: 󰐥  Poweroff
+        desc: ⏻  Poweroff
         cmd: systemctl poweroff
+
+  - key: "p"
+    desc: "   Power Profiles"
+    submenu:
+      - key: "d"
+        desc:   Display
+        cmd: |
+          notify-send "Power Profile" "$(powerprofilesctl get)"
+      - key: "b"
+        desc:   Balanced
+        cmd: |
+          powerprofilesctl set balanced
+          notify-send "Power Profile" "Set to Balanced"
+      - key: "s"
+        desc:   Saver
+        cmd: |
+          powerprofilesctl set power-saver
+          notify-send "Power Profile" "Set to Power saver"
+      - key: "p"
+        desc:   Performance
+        cmd: |
+          powerprofilesctl set performance
+          notify-send "Power Profile" "Set to Performance"
+
+  - key: "c"
+    desc: "   Tools"
+    submenu:
+      - key: "b"
+        desc: 󰁿  Battery Status
+        cmd: |
+          battery-status
+      - key: "c"
+        desc:   Color Picker
+        cmd: |
+          hyprpicker -a
 
   - key: "t"
     desc: " 󱄄  Theme Settings"
@@ -53,26 +88,7 @@ menu:
           pkill -USR2 foot || true
           notify-send "Application Theme" "Set to Light"
 
-  - key: "p"
-    desc: "   Power Profile"
-    submenu:
-      - key: "b"
-        desc:   Balanced
-        cmd: |
-          powerprofilesctl set balanced
-          notify-send "Power Profile" "Set to Balanced"
-      - key: "s"
-        desc:   Saver
-        cmd: |
-          powerprofilesctl set power-saver
-          notify-send "Power Profile" "Set to Power saver"
-      - key: "p"
-        desc:   Performance
-        cmd: |
-          powerprofilesctl set performance
-          notify-send "Power Profile" "Set to Performance"
-
-  - key: "i"
+  - key: "a"
     desc: "   Idle Inhibitor"
     submenu:
       - key: "a"
