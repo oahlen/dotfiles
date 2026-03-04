@@ -13,3 +13,6 @@ windows:
     panes:
       - shell_command:
           - gitui
+  - window_name: AI
+    panes:
+      - shell_command:
