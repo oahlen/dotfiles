@@ -66,6 +66,22 @@ menu:
         cmd: |
           hyprpicker -a
 
+  - key: "m"
+    desc: " 󰍹  Monitor Settings"
+    submenu:
+      - key: "1"
+        desc: 󰍹  Set Resolution to 1920x1200
+        cmd: |
+          niri msg output eDP-1 custom-mode 1920x1200@60
+          niri msg output eDP-1 scale 1
+          notify-send "Monitor" "Resolution set 1920x1200\nScaling set to 1.0"
+      - key: "2"
+        desc: 󰍹  Set Resolution to 3840x2400
+        cmd: |
+          niri msg output eDP-1 mode 3840x2400@60
+          niri msg output eDP-1 scale 2
+          notify-send "Monitor" "Resolution set 3840x2400\nScaling set to 2.0"
+
   - key: "t"
     desc: " 󱄄  Theme Settings"
     submenu:
