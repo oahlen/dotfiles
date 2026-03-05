@@ -29,4 +29,4 @@ vim.keymap.set("n", "<leader><space>", "<CMD>FzfLua<CR>", { desc = "Open picker"
 vim.keymap.set("n", "<leader>f", "<CMD>FzfLua files<CR>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>g", "<CMD>FzfLua live_grep<CR>", { desc = "Live grep" })
 vim.keymap.set("n", "<leader>b", "<CMD>FzfLua buffers<CR>", { desc = "List open buffers" })
-vim.keymap.set("n", "<leader>rp", "<CMD>FzfLua resume<CR>", { desc = "Resume picker" })
+vim.keymap.set("n", "<leader>r", "<CMD>FzfLua resume<CR>", { desc = "Resume picker" })

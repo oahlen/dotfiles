@@ -21,6 +21,7 @@ with pkgs.vimPlugins;
   nvim-surround
   nvim-tree-lua
   nvim-web-devicons
+  which-key-nvim
   render-markdown-nvim
   (nvim-treesitter.withPlugins (
     plugins: with plugins; [

@@ -46,8 +46,5 @@ vim.keymap.set("n", "<leader>tc", "<CMD>tabclose<CR>", { desc = "Close current t
 -- Clear highlights
 vim.keymap.set("n", "<Esc>", "<CMD>nohl<CR>", { desc = "Clear search highlights" })
 
--- Spell
-vim.keymap.set("n", "<leader>ss", "<CMD>set spell! spelllang=en<CR>", { desc = "Toggle spelling" })
-
--- Insert functions
-vim.keymap.set("n", "<leader>ii", "<CMD>r!uuidgen<CR>", { desc = "Insert UUID" })
+-- Toggle actions
+vim.keymap.set("n", "<leader>ns", "<CMD>set spell! spelllang=en<CR>", { desc = "Toggle spelling" })

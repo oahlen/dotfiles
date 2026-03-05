@@ -1,8 +1,8 @@
 return {
     "copilot",
     keys = {
-        { "<leader>m", "<CMD>CopilotChatToggle<CR>", desc = "Copilot Chat Toggle" },
-        { "<leader>x", "<CMD>CopilotChatReset<CR>", desc = "Copilot Chat Reset" },
+        { "<leader>am", "<CMD>CopilotChatToggle<CR>", desc = "Copilot Chat Toggle" },
+        { "<leader>ax", "<CMD>CopilotChatReset<CR>", desc = "Copilot Chat Reset" },
     },
     after = function()
         require("copilot").setup({
@@ -14,6 +14,11 @@ return {
             model = "gpt-5.1",
         })
 
-        vim.keymap.set("v", "<leader>e", "<CMD>CopilotChatExplain<CR>", { desc = "Copilot Chat Explain" })
+        vim.keymap.set(
+            "v",
+            "<leader>e",
+            "<CMD>CopilotChatExplain<CR>",
+            { noremap = true, silent = true, desc = "Copilot Chat Explain" }
+        )
     end,
 }

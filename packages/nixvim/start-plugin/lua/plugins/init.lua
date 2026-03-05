@@ -11,3 +11,4 @@ require("nvim-surround").setup()
 require("colorizer").setup()
 
 require("plugins.render-markdown")
+require("plugins.which-key")
