@@ -48,3 +48,4 @@ vim.keymap.set("n", "<Esc>", "<CMD>nohl<CR>", { desc = "Clear search highlights"
 
 -- Toggle actions
 vim.keymap.set("n", "<leader>ns", "<CMD>set spell! spelllang=en<CR>", { desc = "Toggle spelling" })
+vim.keymap.set("n", "<leader>nb", "<CMD>ToggleBackground<CR>", { desc = "Toggle background" })
