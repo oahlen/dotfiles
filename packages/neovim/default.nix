@@ -110,5 +110,8 @@ let
 in
 wrapNeovimUnstable neovim-unwrapped {
   inherit plugins;
+  # TODO Remove on next nixpkgs update
+  withPython3 = false;
+  withRuby = false;
   wrapRc = false; # Use ~/.config/nvim/init.lua
 }
