@@ -49,4 +49,4 @@ help:
 
 # Format lua code
 @lua:
-    stylua packages/nixvim
+    stylua .

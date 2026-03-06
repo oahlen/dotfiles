@@ -19,20 +19,30 @@ with pkgs;
   gitui
   jless
   jq
+  jq
   just
+  lua-language-server
+  nil
   nixfmt-tree
   nix-prefetch-git
   nix-search-cli
   nix-tree
+  nodePackages.svelte-language-server
+  nodePackages.typescript-language-server
+  nodePackages.vscode-langservers-extracted
   npins
   opencode
   pokeget-rs
   procs
+  pyright
   rage
   ripgrep
+  ruff
   scooter
   sd
+  shellcheck
   statix
+  stylua
   stylua
   systemctl-tui
   tmux
@@ -48,5 +58,5 @@ with pkgs;
   zoxide
   packages.homage
   packages.huevim
-  packages.nixvim
+  packages.neovim
 ]

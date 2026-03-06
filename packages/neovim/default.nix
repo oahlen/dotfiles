@@ -1,0 +1,114 @@
+{
+  fetchFromGitHub,
+  neovim-unwrapped,
+  vimPlugins,
+  vimUtils,
+  wrapNeovimUnstable,
+}:
+let
+  plugins =
+    with vimPlugins;
+    [
+      blink-cmp
+      blink-cmp-spell
+      comment-nvim
+      conform-nvim
+      CopilotChat-nvim
+      copilot-lua
+      # csharpls-extended-lsp-nvim - Enable when merged https://github.com/Decodetalkers/csharpls-extended-lsp.nvim/pull/52
+      friendly-snippets
+      fzf-lua
+      gitsigns-nvim
+      heirline-nvim
+      indent-blankline-nvim
+      luasnip
+      lz-n
+      nvim-autopairs
+      nvim-colorizer-lua
+      nvim-lspconfig
+      nvim-surround
+      nvim-tree-lua
+      nvim-web-devicons
+      which-key-nvim
+      render-markdown-nvim
+      (nvim-treesitter.withPlugins (
+        plugins: with plugins; [
+          bash
+          c
+          comment
+          c_sharp
+          css
+          diff
+          dockerfile
+          editorconfig
+          fish
+          gitattributes
+          gitcommit
+          git_config
+          gitignore
+          git_rebase
+          go
+          html
+          java
+          javascript
+          json
+          kdl
+          kotlin
+          lua
+          luadoc
+          make
+          markdown
+          markdown_inline
+          nix
+          powershell
+          properties
+          proto
+          python
+          ron
+          rust
+          scss
+          sql
+          svelte
+          tmux
+          todotxt
+          toml
+          typescript
+          typst
+          vim
+          vimdoc
+          xml
+          yaml
+        ]
+      ))
+    ]
+    ++ [
+      (vimUtils.buildVimPlugin {
+        pname = "shellcheck-nvim";
+        version = "1.0.0";
+        src = fetchFromGitHub {
+          owner = "pablos123";
+          repo = "shellcheck.nvim";
+          rev = "ee40e705ea61a4d790907c93cd01cc52480351fa";
+          sha256 = "sha256-1rfEtD+II1uh6cn/dBxwGKxNFUwgoKXWtcJHIi6ydy4=";
+        };
+
+        meta.homepage = "https://github.com/pablos123/shellcheck.nvim";
+      })
+      (vimUtils.buildVimPlugin {
+        pname = "tokyonight-nvim";
+        version = "1.0.0";
+        src = fetchFromGitHub {
+          owner = "oahlen";
+          repo = "tokyonight.nvim";
+          rev = "b2de86baa1f482af50dd1d2099e03ace72e4255b";
+          sha256 = "sha256-WTnhEKDx45Zd0XF1QCcbGDuX81iH+bLSvo4JebzXxrw=";
+        };
+
+        meta.homepage = "https://github.com/oahlen/tokyonight.nvim";
+      })
+    ];
+in
+wrapNeovimUnstable neovim-unwrapped {
+  inherit plugins;
+  wrapRc = false; # Use ~/.config/nvim/init.lua
+}
