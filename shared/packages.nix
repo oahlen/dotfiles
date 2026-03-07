@@ -19,7 +19,6 @@ with pkgs;
   gitui
   jless
   jq
-  jq
   just
   lua-language-server
   nil
@@ -32,6 +31,9 @@ with pkgs;
   nodePackages.vscode-langservers-extracted
   npins
   opencode
+  packages.homage
+  packages.huevim
+  packages.neovim
   pokeget-rs
   procs
   pyright
@@ -42,7 +44,6 @@ with pkgs;
   sd
   shellcheck
   statix
-  stylua
   stylua
   systemctl-tui
   tmux
@@ -56,7 +57,4 @@ with pkgs;
   yazi
   zip
   zoxide
-  packages.homage
-  packages.huevim
-  packages.neovim
 ]

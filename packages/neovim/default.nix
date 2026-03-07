@@ -29,8 +29,8 @@ let
       nvim-surround
       nvim-tree-lua
       nvim-web-devicons
-      which-key-nvim
       render-markdown-nvim
+      which-key-nvim
       (nvim-treesitter.withPlugins (
         plugins: with plugins; [
           bash
