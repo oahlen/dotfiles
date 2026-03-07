@@ -2,7 +2,7 @@ font: JetBrainsMono Nerd Font 11.5
 
 background: "#1a1b26"
 color: "#a9b1d6"
-border: "#7aa2f7"
+border: "#7dcfff"
 separator: " ➜ "
 
 border_width: 2
