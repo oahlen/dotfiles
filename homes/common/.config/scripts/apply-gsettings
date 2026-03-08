@@ -28,7 +28,7 @@ gsettings set org.gnome.desktop.peripherals.keyboard repeat true
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 40
 
 # Input sources
-gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'se')]"
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'se')]"
 gsettings set org.gnome.desktop.input-sources xkb-options "['terminate:ctrl_alt_bksp', 'caps:escape']"
 
 # Window manager preferences
@@ -58,7 +58,6 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "['<Super
 
 # File picker settings
 dconf write /org/gtk/gtk4/settings/file-chooser/show-hidden true
-gsettings set org.gtk.Settings.FileChooser show-hidden true
 
 # Locale
 dconf write /system/locale/region "'sv_SE.UTF-8'"
