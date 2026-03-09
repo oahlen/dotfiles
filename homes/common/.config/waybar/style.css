@@ -67,7 +67,7 @@ window > box {
 
 #battery,
 #pulseaudio {
-    font-size: 18px;
+    font-size: 17px;
 }
 
 #battery.charging,
