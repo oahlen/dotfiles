@@ -8,13 +8,13 @@ return {
 
                 vim.keymap.set("n", "<leader>hb", function()
                     gitsigns.blame_line({ full = true })
-                end, { desc = "Blame line", buffer = bufnr })
+                end, { desc = "Blame Line", buffer = bufnr })
 
-                vim.keymap.set("n", "<leader>hd", gitsigns.diffthis, { desc = "Diff this", buffer = bufnr })
+                vim.keymap.set("n", "<leader>hd", gitsigns.diffthis, { desc = "Diff This", buffer = bufnr })
 
                 vim.keymap.set("n", "<leader>hD", function()
                     gitsigns.diffthis("~")
-                end, { desc = "Diff this (~)", buffer = bufnr })
+                end, { desc = "Diff This (~)", buffer = bufnr })
             end,
         })
     end,
