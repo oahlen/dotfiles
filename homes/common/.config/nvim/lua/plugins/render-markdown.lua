@@ -1,6 +1,6 @@
 return {
     "render-markdown",
-    ft = { "markdown", "copilot-chat" },
+    ft = { "copilot-chat", "markdown" },
     after = function()
         require("render-markdown").setup({
             code = { sign = false },
