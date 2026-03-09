@@ -1,7 +1,4 @@
 { pkgs }:
-let
-  packages = import ../packages { inherit pkgs; };
-in
 with pkgs;
 [
   bat
@@ -9,6 +6,9 @@ with pkgs;
   bottom
   calc
   curl
+  customPackages.homage
+  customPackages.huevim
+  customPackages.neovim
   dos2unix
   dust
   eza
@@ -31,9 +31,6 @@ with pkgs;
   nodePackages.vscode-langservers-extracted
   npins
   opencode
-  packages.homage
-  packages.huevim
-  packages.neovim
   pokeget-rs
   procs
   pyright

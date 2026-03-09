@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -36,9 +32,9 @@
 
   environment.systemPackages = with pkgs; [
     _1password-gui
+    customPackages.rbw-wrapped
     filen-cli
     nodejs
-    config.packages.rbw-wrapped
   ];
 
   system.stateVersion = "25.05";

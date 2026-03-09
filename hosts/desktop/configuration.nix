@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -26,9 +22,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    customPackages.hytale-launcher
+    customPackages.rbw-wrapped
     filen-cli
-    config.packages.hytale-launcher
-    config.packages.rbw-wrapped
   ];
 
   fileSystems."/mnt/backup".options = [

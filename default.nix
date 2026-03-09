@@ -2,6 +2,11 @@ let
   sources = import ./npins;
   pkgs = import sources.nixpkgs {
     config.allowUnfree = true;
+    overlays = [
+      (final: prev: {
+        customPackages = import ./packages { pkgs = final; };
+      })
+    ];
   };
 in
 {
@@ -27,7 +32,7 @@ in
       wsl = mkProfile ./profiles/wsl;
     };
 
-  packages = import ./packages { inherit pkgs; };
+  packages = pkgs.customPackages;
 
   shells = import ./shells { inherit pkgs; };
 }

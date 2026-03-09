@@ -1,4 +1,4 @@
-{ pkgs, packages }:
+{ pkgs }:
 {
   enableDirenv = true;
 
