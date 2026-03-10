@@ -17,6 +17,7 @@
     ./programs/yubikey.nix
 
     ./services/kanshi.nix
+    ./services/nix-gc-user.nix
     ./services/polkit-soteria.nix
     ./services/swaybg.nix
     ./services/swayidle.nix
