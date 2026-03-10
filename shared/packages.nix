@@ -42,7 +42,6 @@ with pkgs;
   shellcheck
   statix
   stylua
-  systemctl-tui
   tmux
   tmuxp
   tokei
