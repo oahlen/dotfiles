@@ -32,7 +32,7 @@
 
   environment.systemPackages = with pkgs; [
     _1password-gui
-    customPackages.rbw-wrapped
+    customPackages.rbw
     filen-cli
     nodejs
   ];

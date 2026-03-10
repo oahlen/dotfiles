@@ -23,7 +23,7 @@
 
   environment.systemPackages = with pkgs; [
     customPackages.hytale-launcher
-    customPackages.rbw-wrapped
+    customPackages.rbw
     filen-cli
   ];
 
