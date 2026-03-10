@@ -50,3 +50,14 @@ help:
 # Format lua code
 @lua:
     stylua .
+
+# Perform cleanup
+@clean: clean-system clean-user
+
+# Perform system cleanup
+@clean-system:
+    sudo nix-collect-garbage -d
+
+# Perform user cleanup
+@clean-user:
+    nix-collect-garbage -d
