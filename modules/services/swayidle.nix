@@ -4,7 +4,6 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.modules.swayidle;
   shared = import ./shared.nix { inherit config lib; };
@@ -14,19 +13,19 @@ in
     let
       timeoutModule = _: {
         options = {
-          timeout = mkOption {
-            type = types.ints.positive;
+          timeout = lib.mkOption {
+            type = lib.types.ints.positive;
             example = 60;
             description = "Timeout in seconds.";
           };
 
-          command = mkOption {
-            type = types.str;
+          command = lib.mkOption {
+            type = lib.types.str;
             description = "Command to run after timeout seconds of inactivity.";
           };
 
-          resumeCommand = mkOption {
-            type = with types; nullOr str;
+          resumeCommand = lib.mkOption {
+            type = with lib.types; nullOr str;
             default = null;
             description = "Command to run when there is activity again.";
           };
@@ -35,8 +34,8 @@ in
 
       eventModule = _: {
         options = {
-          event = mkOption {
-            type = types.enum [
+          event = lib.mkOption {
+            type = lib.types.enum [
               "before-sleep"
               "after-resume"
               "lock"
@@ -45,22 +44,22 @@ in
             description = "Event name.";
           };
 
-          command = mkOption {
-            type = types.str;
+          command = lib.mkOption {
+            type = lib.types.str;
             description = "Command to run when event occurs.";
           };
         };
       };
     in
     {
-      enable = mkEnableOption "Whether to enable idle manager for Wayland.";
+      enable = lib.mkEnableOption "Whether to enable idle manager for Wayland.";
       package = lib.mkPackageOption pkgs "swayidle" { };
       systemd.target = shared.mkWaylandSystemdTargetOption { };
 
-      timeouts = mkOption {
-        type = with types; listOf (submodule timeoutModule);
+      timeouts = lib.mkOption {
+        type = with lib.types; listOf (submodule timeoutModule);
         default = [ ];
-        example = literalExpression ''
+        example = lib.literalExpression ''
           [
             { timeout = 60; command = "''${pkgs.swaylock}/bin/swaylock -fF"; }
             { timeout = 90; command = "''${pkgs.systemd}/bin/systemctl suspend"; }
@@ -69,10 +68,10 @@ in
         description = "List of commands to run after idle timeout.";
       };
 
-      events = mkOption {
-        type = with types; listOf (submodule eventModule);
+      events = lib.mkOption {
+        type = with lib.types; listOf (submodule eventModule);
         default = [ ];
-        example = literalExpression ''
+        example = lib.literalExpression ''
           [
             { event = "before-sleep"; command = "''${pkgs.swaylock}/bin/swaylock -fF"; }
             { event = "lock"; command = "lock"; }
@@ -81,8 +80,8 @@ in
         description = "Run command on occurrence of a event.";
       };
 
-      extraArgs = mkOption {
-        type = with types; listOf str;
+      extraArgs = lib.mkOption {
+        type = with lib.types; listOf str;
         default = [ "-w" ];
         description = "Extra arguments to pass to swayidle.";
       };
@@ -93,7 +92,7 @@ in
       };
     };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = [ cfg.package ];
 
     systemd.user.services.swayidle = shared.mkWaylandService {

@@ -16,11 +16,11 @@ rustPlatform.buildRustPackage rec {
 
   cargoHash = "sha256-oykux000pWk6e6XNy2UQPCgBwfiXyTKj1Kl2HuQIL3g=";
 
-  meta = with lib; {
+  meta = {
     description = "Simple and effective dotfiles manager for your home.";
     mainProgram = "homage";
     homepage = "https://github.com/oahlen/homage";
-    license = with licenses; [ mit ];
+    license = with lib.licenses; [ mit ];
     # maintainers = [];
   };
 }

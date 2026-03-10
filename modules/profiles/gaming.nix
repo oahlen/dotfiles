@@ -4,16 +4,15 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.modules.gaming;
 in
 {
   options.modules.gaming = {
-    enable = mkEnableOption "Whether to enable gaming support.";
+    enable = lib.mkEnableOption "Whether to enable gaming support.";
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     hardware = {
       amdgpu.overdrive.enable = true;
 

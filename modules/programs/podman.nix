@@ -4,14 +4,13 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.modules.podman;
 in
 {
-  options.modules.podman.enable = mkEnableOption "Whether to enable Podman.";
+  options.modules.podman.enable = lib.mkEnableOption "Whether to enable Podman.";
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     virtualisation.podman = {
       enable = true;
 

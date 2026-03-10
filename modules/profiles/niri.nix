@@ -4,14 +4,13 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.modules.niri;
 in
 {
-  options.modules.niri.enable = mkEnableOption "Whether to enable the Niri window manager.";
+  options.modules.niri.enable = lib.mkEnableOption "Whether to enable the Niri window manager.";
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     wayland.systemd.target = "niri-session.target";
 
     programs = {

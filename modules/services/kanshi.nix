@@ -4,19 +4,18 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.modules.kanshi;
   shared = import ./shared.nix { inherit config lib; };
 in
 {
   options.modules.kanshi = {
-    enable = mkEnableOption "Whether to enable kanshi, a Wayland daemon that automatically configures outputs.";
+    enable = lib.mkEnableOption "Whether to enable kanshi, a Wayland daemon that automatically configures outputs.";
     package = lib.mkPackageOption pkgs "kanshi" { };
     systemd.target = shared.mkWaylandSystemdTargetOption { };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = [ cfg.package ];
 
     systemd.user.services.kanshi = shared.mkWaylandService {

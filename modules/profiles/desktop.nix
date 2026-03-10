@@ -4,14 +4,13 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.modules.desktop;
 in
 {
-  options.modules.desktop.enable = mkEnableOption "Whether to enable desktop related features.";
+  options.modules.desktop.enable = lib.mkEnableOption "Whether to enable desktop related features.";
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     boot = {
       loader.systemd-boot.enable = true;
 

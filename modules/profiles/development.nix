@@ -4,14 +4,13 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.modules.development;
 in
 {
-  options.modules.development.enable = mkEnableOption "Whether to enable basic development features.";
+  options.modules.development.enable = lib.mkEnableOption "Whether to enable basic development features.";
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     programs = {
       direnv = {
         enable = true;

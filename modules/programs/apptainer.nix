@@ -4,14 +4,13 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.modules.apptainer;
 in
 {
-  options.modules.apptainer.enable = mkEnableOption "Whether to enable Apptainer.";
+  options.modules.apptainer.enable = lib.mkEnableOption "Whether to enable Apptainer.";
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     programs.singularity = {
       enable = true;
       package = pkgs.apptainer;

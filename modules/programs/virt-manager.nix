@@ -4,14 +4,13 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.modules.virt-manager;
 in
 {
-  options.modules.virt-manager.enable = mkEnableOption "Whether to enable Virtual Machine Manager.";
+  options.modules.virt-manager.enable = lib.mkEnableOption "Whether to enable Virtual Machine Manager.";
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     virtualisation.libvirtd.enable = true;
 
     programs.dconf.enable = true;

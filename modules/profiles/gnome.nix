@@ -4,20 +4,19 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.modules.gnome;
 in
 {
-  options.modules.gnome.enable = mkEnableOption "Whether to enable the Gnome desktop environment.";
+  options.modules.gnome.enable = lib.mkEnableOption "Whether to enable the Gnome desktop environment.";
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     services = {
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
 
       gnome = {
-        evolution-data-server.enable = mkForce false;
+        evolution-data-server.enable = lib.mkForce false;
         gnome-online-accounts.enable = false;
       };
     };

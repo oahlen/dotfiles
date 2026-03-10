@@ -16,11 +16,11 @@ rustPlatform.buildRustPackage rec {
 
   cargoHash = "sha256-ttsDiIFW4VSw12/eGdNE6QV4hgFJpUI4zpoZzQuc+CQ=";
 
-  meta = with lib; {
+  meta = {
     description = "Neovim lua color scheme generator written in Rust.";
     mainProgram = "huevim";
     homepage = "https://github.com/oahlen/huevim";
-    license = with licenses; [ mit ];
+    license = with lib.licenses; [ mit ];
     # maintainers = [];
   };
 }

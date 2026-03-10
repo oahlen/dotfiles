@@ -4,17 +4,16 @@
   pkgs,
   ...
 }:
-with lib;
 let
   cfg = config.modules.swaybg;
   shared = import ./shared.nix { inherit config lib; };
 in
 {
   options.modules.swaybg = {
-    enable = mkEnableOption "Whether to enable swaybg, a wallpaper tool for Wayland compositors.";
+    enable = lib.mkEnableOption "Whether to enable swaybg, a wallpaper tool for Wayland compositors.";
     package = lib.mkPackageOption pkgs "swaybg" { };
 
-    wallpaper = mkOption {
+    wallpaper = lib.mkOption {
       type = lib.types.str;
       default = "$WALLPAPER";
       description = "The wallpaper path or environment variable to display.";
@@ -23,7 +22,7 @@ in
     systemd.target = shared.mkWaylandSystemdTargetOption { };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     environment.systemPackages = [ cfg.package ];
 
     systemd.user.services.swaybg = shared.mkWaylandService {

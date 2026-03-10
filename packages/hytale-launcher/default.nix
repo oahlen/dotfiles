@@ -98,10 +98,10 @@ let
       exec "$LAUNCHER_BIN" "$@"
     '';
 
-    meta = with lib; {
+    meta = {
       description = "Hytale Game Launcher";
       homepage = "https://hytale.com";
-      license = licenses.unfree;
+      license = lib.licenses.unfree;
       platforms = [ "x86_64-linux" ];
       mainProgram = "hytale-launcher";
     };

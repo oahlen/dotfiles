@@ -1,13 +1,12 @@
 { config, lib }:
-with lib;
 {
   mkWaylandSystemdTargetOption =
     _:
-    mkOption {
+    lib.mkOption {
       type = lib.types.str;
       description = "Systemd target to bind to.";
       default = config.wayland.systemd.target;
-      defaultText = literalExpression "config.wayland.systemd.target";
+      defaultText = lib.literalExpression "config.wayland.systemd.target";
       example = "sway-session.target";
     };
 
