@@ -16,6 +16,10 @@ help:
 @update:
     npins update
 
+# Check the current host configuration
+@check host:
+    nix build -f . "hosts.$1.config.system.build.toplevel"
+
 # Run nixos-rebuild boot for the current host
 @boot:
     nixos-rebuild boot -f . -A "hosts.$(hostname)" --quiet --no-reexec --sudo
@@ -37,10 +41,10 @@ help:
     nix-shell . -A "shells.$1" --command "$SHELL"
 
 # Performs all code checks
-@check: fmt lint lua
+@fmt: nix lint lua
 
 # Format nix code
-@fmt:
+@nix:
     treefmt
 
 # Lint nix code
