@@ -1,0 +1,115 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "actions": [],
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultProfile": "{c397f356-5e7b-55bc-956b-8cb4b9762c26}",
+  "keybindings": [
+    {
+      "id": "Terminal.CopyToClipboard",
+      "keys": "ctrl+shift+c"
+    },
+    {
+      "id": "Terminal.PasteFromClipboard",
+      "keys": "ctrl+shift+v"
+    }
+  ],
+  "launchMode": "maximized",
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
+  "profiles": {
+    "defaults": {
+      "bellStyle": "none",
+      "colorScheme": "Tokyo Night",
+      "font": {
+        "face": "JetBrainsMonoNL Nerd Font",
+        "features": {
+          "liga": 0,
+          "ss01": 1
+        },
+        "size": 11,
+        "weight": "light"
+      },
+      "intenseTextStyle": "bold",
+      "startingDirectory": "%USERPROFILE%"
+    },
+    "list": [
+      {
+        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "hidden": false,
+        "name": "Windows PowerShell"
+      },
+      {
+        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "hidden": false,
+        "name": "Command Prompt"
+      },
+      {
+        "guid": "{c397f356-5e7b-55bc-956b-8cb4b9762c26}",
+        "hidden": false,
+        "name": "NixOS",
+        "source": "Microsoft.WSL"
+      },
+      {
+        "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+        "hidden": false,
+        "name": "Git Bash",
+        "source": "Git"
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "background": "#1A1B26",
+      "black": "#292D40",
+      "blue": "#7AA2F7",
+      "brightBlack": "#606A99",
+      "brightBlue": "#7AA2F7",
+      "brightCyan": "#7DCFFF",
+      "brightGreen": "#9ECE6A",
+      "brightPurple": "#BB9AF7",
+      "brightRed": "#F7768E",
+      "brightWhite": "#C0CAF5",
+      "brightYellow": "#E0AF68",
+      "cursorColor": "#A9B1D6",
+      "cyan": "#7DCFFF",
+      "foreground": "#A9B1D6",
+      "green": "#9ECE6A",
+      "name": "Tokyo Night",
+      "purple": "#BB9AF7",
+      "red": "#F7768E",
+      "selectionBackground": "#292D40",
+      "white": "#A9B1D6",
+      "yellow": "#E0AF68"
+    },
+    {
+      "background": "#E6E7ED",
+      "black": "#D7D9E2",
+      "blue": "#2959AA",
+      "brightBlack": "#6C6E75",
+      "brightBlue": "#2959AA",
+      "brightCyan": "#006C86",
+      "brightGreen": "#385F0D",
+      "brightPurple": "#5A3E8E",
+      "brightRed": "#8C4351",
+      "brightWhite": "#2B3048",
+      "brightYellow": "#8F5E15",
+      "cursorColor": "#343B58",
+      "cyan": "#006C86",
+      "foreground": "#343B58",
+      "green": "#385F0D",
+      "name": "Tokyo Night Day",
+      "purple": "#5A3E8E",
+      "red": "#8C4351",
+      "selectionBackground": "#C8CBD8",
+      "white": "#343B58",
+      "yellow": "#8F5E15"
+    }
+  ],
+  "theme": "system",
+  "themes": []
+}
