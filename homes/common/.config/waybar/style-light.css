@@ -9,8 +9,8 @@ window#waybar {
 
 window > box {
     margin: 8px 8px 0px 8px;
-    background: #1a1b26;
-    color: #c0caf5;
+    background: #e6e7ed;
+    color: #343b58;
     border-radius: 8px;
 }
 
@@ -19,7 +19,7 @@ window > box {
 }
 
 #workspaces button {
-    color: #c0caf5;
+    color: #343b58;
     padding: 0px 6px;
     margin: 0 2px;
     border: none;
@@ -28,24 +28,24 @@ window > box {
 }
 
 #workspaces button.empty {
-    color: #606a99;
+    color: #6c6e75;
 }
 
 #workspaces button:hover {
-    background: #c0caf5;
-    color: #1a1b26;
+    background: #343b58;
+    color: #e6e7ed;
     box-shadow: inherit;
     text-shadow: inherit;
 }
 
 #workspaces button.focused {
-    background: #7aa2f7;
-    color: #1a1b26;
+    background: #2959aa;
+    color: #e6e7ed;
     font-weight: bold;
 }
 
 #workspaces button.focused:hover {
-    background: #c0caf5;
+    background: #343b58;
     box-shadow: inherit;
     text-shadow: inherit;
 }
@@ -57,7 +57,7 @@ window > box {
 #language,
 #battery,
 #pulseaudio {
-    color: #dfdfdf;
+    color: #343b58;
 }
 
 #language {
@@ -72,28 +72,27 @@ window > box {
 
 #battery.charging,
 #battery.plugged {
-    color: #9ece6a;
+    color: #385f0d;
 }
 
 #battery.warning {
-    color: #ff9e64;
+    color: #965027;
 }
 
 #battery.critical {
-    color: #f7768e;
+    color: #8c4351;
 }
 
 #pulseaudio {
     margin-right: 8px;
 }
 
-
 tooltip {
-    background: #1a1b26;
-    border: 2px solid #7dcfff;
+    background: #e6e7ed;
+    border: 2px solid #006c86;
     border-radius: 8px;
 }
 
 tooltip label {
-    color: #c0caf5;
+    color: #343b58;
 }
