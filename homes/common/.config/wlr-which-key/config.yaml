@@ -54,18 +54,6 @@ menu:
           powerprofilesctl set performance
           notify-send "Power Profile" "Set to Performance"
 
-  - key: "c"
-    desc: "   Tools"
-    submenu:
-      - key: "b"
-        desc: 󰁿  Battery Status
-        cmd: |
-          battery-status
-      - key: "c"
-        desc:   Color Picker
-        cmd: |
-          hyprpicker -a
-
   - key: "m"
     desc: " 󰍹  Monitor Settings"
     submenu:
@@ -123,3 +111,16 @@ menu:
         desc:   Toggle kanshi
         cmd: |
           toggle-user-service "kanshi"
+
+
+  - key: "c"
+    desc: "   Tools"
+    submenu:
+      - key: "b"
+        desc: 󰁿  Battery Status
+        cmd: |
+          battery-status
+      - key: "c"
+        desc:   Color Picker
+        cmd: |
+          hyprpicker -a
