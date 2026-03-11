@@ -29,7 +29,6 @@
     awscli2
     duckdb
     fastfetchMinimal
-    nodejs # For Github Copilot
     pqrs
     trash-cli
     typst

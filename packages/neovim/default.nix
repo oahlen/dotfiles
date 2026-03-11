@@ -52,8 +52,6 @@ let
     blink-cmp-spell
     comment-nvim
     conform-nvim
-    CopilotChat-nvim
-    copilot-lua
     # csharpls-extended-lsp-nvim - Enable when merged https://github.com/Decodetalkers/csharpls-extended-lsp.nvim/pull/52
     friendly-snippets
     fzf-lua

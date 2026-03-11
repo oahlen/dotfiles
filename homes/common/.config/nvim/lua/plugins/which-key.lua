@@ -11,7 +11,7 @@ return {
         })
 
         wk.add({
-            { "<leader>a", group = "Copilot Actions" },
+            { "<leader>a", group = "Agentic Actions" },
             { "<leader>c", group = "Code Actions" },
             { "<leader>h", group = "Git Actions" },
             { "<leader>n", group = "Toggle Actions" },
