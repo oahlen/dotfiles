@@ -16,7 +16,7 @@ return {
             desc = "New Agentic Session",
         },
         {
-            "<leader>an",
+            "<leader>ar",
             function()
                 require("agentic").restore_session()
             end,
