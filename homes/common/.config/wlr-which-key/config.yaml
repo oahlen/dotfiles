@@ -104,16 +104,22 @@ menu:
           pkill -USR2 foot || true
           notify-send "Application Theme" "Set to Light"
 
-  - key: "a"
-    desc: "   Idle Inhibitor"
+  - key: "u"
+    desc: "   System Units"
     submenu:
-      - key: "a"
-        desc:   Start Idle Inhibitor
+      - key: "i"
+        desc:   Toggle swayidle
         cmd: |
-          systemctl --user stop swayidle.service
-          notify-send "Idle Inhibitor" "Active"
+          toggle-user-service "swayidle"
       - key: "b"
-        desc:   Stop Idle Inhibitor
+        desc:   Toggle waybar
         cmd: |
-          systemctl --user start swayidle.service
-          notify-send "Idle Inhibitor" "Inactive"
+          toggle-user-service "waybar"
+      - key: "w"
+        desc:   Toggle wlsunset
+        cmd: |
+          toggle-user-service "wlsunset"
+      - key: "k"
+        desc:   Toggle kanshi
+        cmd: |
+          toggle-user-service "kanshi"
