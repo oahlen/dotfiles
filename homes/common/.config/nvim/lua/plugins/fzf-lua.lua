@@ -1,5 +1,6 @@
 return {
     "fzf-lua",
+    lazy = false,
     keys = {
         { "<leader><leader>", "<CMD>FzfLua<CR>", desc = "Open picker" },
         { "<leader>f", "<CMD>FzfLua files<CR>", desc = "Find files" },
