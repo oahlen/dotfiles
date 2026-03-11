@@ -32,7 +32,22 @@ let
     meta.homepage = "https://github.com/oahlen/tokyonight.nvim";
   };
 
+  agentic-nvim = vimUtils.buildVimPlugin {
+    pname = "agentic-nvim";
+    version = "1.0.0";
+    src = fetchFromGitHub {
+      owner = "carlos-algms";
+      repo = "agentic.nvim";
+      rev = "a8d77b3d255c0535b9e8ff69bedf62f36e714f22";
+      sha256 = "sha256-/CyZJ3rbwnA6YZtMBFyyK+N6lxXQSszRHkvdS4QeFTI=";
+    };
+
+    meta.homepage = "https://github.com/carlos-algms/agentic.nvim";
+    doCheck = false;
+  };
+
   plugins = with vimPlugins; [
+    agentic-nvim
     blink-cmp
     blink-cmp-spell
     comment-nvim

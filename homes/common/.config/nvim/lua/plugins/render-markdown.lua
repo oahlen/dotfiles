@@ -1,14 +1,16 @@
 return {
     "render-markdown",
-    ft = { "copilot-chat", "markdown" },
+    ft = { "AgenticChat", "copilot-chat", "markdown", "md" },
     after = function()
         require("render-markdown").setup({
             code = { sign = false },
             completions = { lsp = { enabled = true } },
             heading = { enabled = false },
             file_types = {
-                "markdown",
+                "AgenticChat",
                 "copilot-chat",
+                "markdown",
+                "md",
             },
             latex = { enabled = false },
             html = {

@@ -2,7 +2,7 @@ return {
     "copilot",
     keys = {
         { "<leader>am", "<CMD>CopilotChatToggle<CR>", desc = "Copilot Chat Toggle" },
-        { "<leader>ax", "<CMD>CopilotChatReset<CR>", desc = "Copilot Chat Reset" },
+        { "<leader>ar", "<CMD>CopilotChatReset<CR>", desc = "Copilot Chat Reset" },
         { "<leader>e", "<CMD>CopilotChatExplain<CR>", mode = "v", desc = "Copilot Chat Explain" },
     },
     after = function()
