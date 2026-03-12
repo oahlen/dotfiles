@@ -12,7 +12,15 @@ in
 {
   hosts =
     let
-      mkHost = modules: pkgs.nixos ([ ./modules ] ++ modules);
+      mkHost =
+        modules:
+        pkgs.nixos (
+          [
+            ./modules
+            "${sources.nix-index-database}/nixos-module.nix"
+          ]
+          ++ modules
+        );
     in
     {
       desktop = mkHost [ ./hosts/desktop/configuration.nix ];

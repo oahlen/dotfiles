@@ -13,6 +13,19 @@
       "url": "https://github.com/nix-community/NixOS-WSL/archive/be894604b2aa2184c0b3d3b44995acd0da14dc0c.tar.gz",
       "hash": "sha256-sm6OpWZuoDwR53KNlsY482YOoHFWlWYwt0wHmqLkRGE="
     },
+    "nix-index-database": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "nix-index-database"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "1c1d8ea87b047788fd7567adf531418c5da321ec",
+      "url": "https://github.com/nix-community/nix-index-database/archive/1c1d8ea87b047788fd7567adf531418c5da321ec.tar.gz",
+      "hash": "sha256-PMt48sEQ8cgCeljQ9I/32uoBq/8t8y+7W/nAZhf72TQ="
+    },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-unstable",
