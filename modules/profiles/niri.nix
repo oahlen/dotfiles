@@ -94,7 +94,6 @@ in
         enable = true;
         extraPackages = [
           pkgs.bash # We might run scripts through waybar
-          pkgs.pavucontrol
         ];
       };
 
@@ -132,20 +131,22 @@ in
     environment.systemPackages = with pkgs; [
       adwaita-icon-theme
       adw-gtk3
+      bluetui
       brightnessctl
       foot
       fuzzel
       gnome-multi-writer
       gnome-text-editor
       hyprpicker
+      impala
       libnotify
       loupe
       mako
       nautilus
       papirus-icon-theme
-      pavucontrol
       playerctl
       wf-recorder
+      wiremix
       wl-clipboard
       wl-mirror
       wlr-which-key

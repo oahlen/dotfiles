@@ -120,8 +120,8 @@ window-rule {
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
 
     match app-id="nm-connection-editor"
-    match app-id="pavucontrol"
     match app-id="blueman-manager"
+    match app-id="foot-floating"
     open-floating true
 
     default-column-width { fixed 1280; }
@@ -327,7 +327,9 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     Mod+Shift+E { quit; }
-    Ctrl+Alt+Delete { spawn "wlr-which-key" "-k s"; }
+
+    Mod+Shift+D hotkey-overlay-title="Run a Which Key Application" { spawn "wlr-which-key" "-k a"; }
+    Mod+Shift+S hotkey-overlay-title="Power Settings" { spawn "wlr-which-key" "-k s"; }
 
     Mod+Shift+P { power-off-monitors; }
 

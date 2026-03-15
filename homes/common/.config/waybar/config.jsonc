@@ -14,7 +14,7 @@
       "niri/language",
       "tray",
       "battery",
-      "pulseaudio"
+      "wireplumber"
     ],
     "niri/workspaces": {
       "disable-scroll": true
@@ -67,7 +67,7 @@
       "tooltip-format-charging": "{power:>1.0f}W ↑ {capacity}%",
       "tooltip-format-discharging": "{power:>1.0f}W ↓ {capacity}%"
     },
-    "pulseaudio": {
+    "wireplumber": {
       "format": "{icon}",
       "format-icons": {
         "default": [
@@ -77,8 +77,7 @@
         ]
       },
       "format-muted": " ",
-      "on-click": "pavucontrol",
-      "scroll-step": 5,
+      "scroll-step": 1,
       "tooltip-format": "Playing at {volume}%"
     }
   }

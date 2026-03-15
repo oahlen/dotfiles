@@ -18,109 +18,94 @@ inhibit_compositor_keyboard_shortcuts: true
 auto_kbd_layout: true
 
 menu:
-  - key: "s"
-    desc: "   System"
+  - key: "a"
+    desc: Applications
     submenu:
-      - key: "s"
-        desc: 󰒲  Suspend
-        cmd: systemctl suspend
-      - key: "r"
-        desc:   Reboot
-        cmd: systemctl reboot
-      - key: "p"
-        desc: ⏻  Poweroff
-        cmd: systemctl poweroff
-
-  - key: "p"
-    desc: "   Power Profiles"
-    submenu:
-      - key: "d"
-        desc:   Display
-        cmd: |
-          notify-send "Power Profile" "$(powerprofilesctl get)"
       - key: "b"
-        desc:   Balanced
-        cmd: |
-          powerprofilesctl set balanced
-          notify-send "Power Profile" "Set to Balanced"
-      - key: "s"
-        desc:   Saver
-        cmd: |
-          powerprofilesctl set power-saver
-          notify-send "Power Profile" "Set to Power saver"
-      - key: "p"
-        desc:   Performance
-        cmd: |
-          powerprofilesctl set performance
-          notify-send "Power Profile" "Set to Performance"
+        desc: Bluetooth Management
+        cmd: terminal-launch bluetui
+      - key: "c"
+        desc: Color Picker
+        cmd: hyprpicker -a
+      - key: "e"
+        desc: Energy Status
+        cmd: battery-status
+      - key: "n"
+        desc: Network Settings
+        cmd: terminal-launch impala
+      - key: "r"
+        desc: Resource Monitor
+        cmd: terminal-launch btm
+      - key: "v"
+        desc: Volume Control
+        cmd: terminal-launch wiremix
 
   - key: "m"
-    desc: " 󰍹  Monitor Settings"
+    desc: Monitor Settings
     submenu:
       - key: "1"
-        desc: 󰍹  Set Resolution to 1920x1200
+        desc: Set Resolution to 1920x1200
         cmd: |
           niri msg output eDP-1 custom-mode 1920x1200@60
           niri msg output eDP-1 scale 1
           notify-send "Monitor" "Resolution set 1920x1200\nScaling set to 1.0"
       - key: "2"
-        desc: 󰍹  Set Resolution to 3840x2400
+        desc: Set Resolution to 3840x2400
         cmd: |
           niri msg output eDP-1 mode 3840x2400@60
           niri msg output eDP-1 scale 2
           notify-send "Monitor" "Resolution set 3840x2400\nScaling set to 2.0"
 
+  - key: "p"
+    desc: Power Profiles
+    submenu:
+      - key: "b"
+        desc: Balanced
+        cmd: |
+          powerprofilesctl set balanced
+          notify-send "Power Profile" "Set to Balanced"
+      - key: "p"
+        desc: Performance
+        cmd: |
+          powerprofilesctl set performance
+          notify-send "Power Profile" "Set to Performance"
+      - key: "s"
+        desc: Saver
+        cmd: |
+          powerprofilesctl set power-saver
+          notify-send "Power Profile" "Set to Power saver"
+
+  - key: "s"
+    desc: System
+    submenu:
+      - key: "s"
+        desc: Suspend
+        cmd: systemctl suspend
+      - key: "r"
+        desc: Reboot
+        cmd: systemctl reboot
+      - key: "p"
+        desc: Poweroff
+        cmd: systemctl poweroff
+
   - key: "t"
-    desc: " 󱄄  Theme Settings"
+    desc: Theme Settings
     submenu:
       - key: "t"
-        desc: 󱄄  Default
+        desc: Default
         cmd: |
           dconf write /org/gnome/desktop/interface/color-scheme "'default'"
           pkill -USR2 foot || true
           notify-send "Application Theme" "Set to Default"
       - key: "d"
-        desc: 󱄄  Dark
+        desc: Dark
         cmd: |
           dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
           pkill -USR1 foot || true
           notify-send "Application Theme" "Set to Dark"
       - key: "l"
-        desc: 󱄄  Light
+        desc: Light
         cmd: |
           dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
           pkill -USR2 foot || true
           notify-send "Application Theme" "Set to Light"
-
-  - key: "u"
-    desc: "   System Units"
-    submenu:
-      - key: "i"
-        desc:   Toggle swayidle
-        cmd: |
-          toggle-user-service "swayidle"
-      - key: "b"
-        desc:   Toggle waybar
-        cmd: |
-          toggle-user-service "waybar"
-      - key: "w"
-        desc:   Toggle wlsunset
-        cmd: |
-          toggle-user-service "wlsunset"
-      - key: "k"
-        desc:   Toggle kanshi
-        cmd: |
-          toggle-user-service "kanshi"
-
-
-  - key: "c"
-    desc: "   Tools"
-    submenu:
-      - key: "b"
-        desc: 󰁿  Battery Status
-        cmd: |
-          battery-status
-      - key: "c"
-        desc:   Color Picker
-        cmd: |
-          hyprpicker -a
