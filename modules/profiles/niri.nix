@@ -138,7 +138,6 @@ in
       gnome-multi-writer
       gnome-text-editor
       hyprpicker
-      impala
       libnotify
       loupe
       mako

@@ -32,7 +32,7 @@ menu:
         cmd: battery-status
       - key: "n"
         desc: Network Settings
-        cmd: terminal-launch impala
+        cmd: terminal-launch nmtui
       - key: "r"
         desc: Resource Monitor
         cmd: terminal-launch btm
