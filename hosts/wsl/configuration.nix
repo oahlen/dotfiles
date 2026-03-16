@@ -26,6 +26,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    _1password-cli
     awscli2
     duckdb
     fastfetchMinimal
