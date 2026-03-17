@@ -32,6 +32,10 @@ help:
 @profile name:
     nix run -f . "profiles.$1.switch"
 
+# Build the specified package
+@build package:
+    nix build -f . "packages.$1"
+
 # Run the specified package
 @run package:
     nix run -f . "packages.$1"
