@@ -6,6 +6,7 @@ with pkgs;
   bottom
   calc
   curl
+  customPackages.btop
   customPackages.homage
   customPackages.huevim
   customPackages.neovim
