@@ -38,8 +38,8 @@ let
     src = fetchFromGitHub {
       owner = "carlos-algms";
       repo = "agentic.nvim";
-      rev = "a8d77b3d255c0535b9e8ff69bedf62f36e714f22";
-      sha256 = "sha256-/CyZJ3rbwnA6YZtMBFyyK+N6lxXQSszRHkvdS4QeFTI=";
+      rev = "b140d1b9481b60fa51c98816331724544712a84e";
+      sha256 = "sha256-HoXl/5Kjs5AADKWJPhAHXuHW04Q1MWn6yg3/hTRGBV4=";
     };
 
     meta.homepage = "https://github.com/carlos-algms/agentic.nvim";
