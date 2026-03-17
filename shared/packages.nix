@@ -26,14 +26,10 @@ with pkgs;
   nix-prefetch-git
   nix-search-cli
   nix-tree
-  nodePackages.svelte-language-server
-  nodePackages.typescript-language-server
-  nodePackages.vscode-langservers-extracted
   npins
   opencode
   pokeget-rs
   procs
-  pyright
   rage
   ripgrep
   ruff
