@@ -46,7 +46,7 @@ with pkgs;
   unzip
   wget
   xdg-user-dirs
-  yazi
+  yazi-unwrapped
   zip
   zoxide
 ]
