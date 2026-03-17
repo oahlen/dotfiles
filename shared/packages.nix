@@ -32,7 +32,6 @@ with pkgs;
   procs
   rage
   ripgrep
-  ruff
   scooter
   sd
   shellcheck
