@@ -18,27 +18,9 @@ inhibit_compositor_keyboard_shortcuts: true
 auto_kbd_layout: true
 
 menu:
-  - key: "a"
-    desc: Applications
-    submenu:
-      - key: "b"
-        desc: Bluetooth Management
-        cmd: terminal-launch bluetui
-      - key: "c"
-        desc: Color Picker
-        cmd: hyprpicker -a
-      - key: "e"
-        desc: Energy Status
-        cmd: battery-status
-      - key: "n"
-        desc: Network Settings
-        cmd: terminal-launch nmtui
-      - key: "r"
-        desc: Resource Monitor
-        cmd: terminal-launch btm
-      - key: "v"
-        desc: Volume Control
-        cmd: terminal-launch wiremix
+  - key: "c"
+    desc: Color Picker
+    cmd: hyprpicker -a
 
   - key: "m"
     desc: Monitor Settings
