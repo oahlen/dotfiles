@@ -2,7 +2,7 @@
     br = "branch"
     c = "commit"
     s = "status"
-    sw = "switch"
+    sb = "!switch-branch"
     tree = "log --graph --decorate --oneline"
 
 [core]
