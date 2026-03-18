@@ -1,6 +1,6 @@
 {
   makeWrapper,
-  pinentry-gnome3,
+  pinentry-curses,
   rbw,
   symlinkJoin,
 }:
@@ -8,7 +8,7 @@
 symlinkJoin {
   name = "rbw";
   paths = [
-    pinentry-gnome3
+    pinentry-curses
     rbw
   ];
   nativeBuildInputs = [ makeWrapper ];
