@@ -64,8 +64,8 @@
         "critical": 15,
         "warning": 30
       },
-      "tooltip-format-charging":    "Battery: {capacity}%\nTime {time} left\nCharging at: {power:>1.0f}W\nHealth: {health}%",
-      "tooltip-format-discharging": "Battery: {capacity}%\nTime {time} left\nDischarging at {power:>1.0f}W\nHealth: {health}%"
+      "tooltip-format-charging":    "Capacity: {capacity}%\nTime: {time}\nCharging at: {power:>1.0f}W\nHealth: {health}%",
+      "tooltip-format-discharging": "Capacity: {capacity}%\nTime: {time}\nDischarging at {power:>1.0f}W\nHealth: {health}%"
     },
     "wireplumber": {
       "format": "{icon}",
