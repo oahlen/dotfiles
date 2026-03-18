@@ -94,6 +94,7 @@ in
         enable = true;
         extraPackages = [
           pkgs.bash # We might run scripts through waybar
+          pkgs.swayosd
         ];
       };
 
