@@ -35,7 +35,6 @@ capacity=$(echo "$battery_info" | awk '/energy-full:/ {
     exit
 }')
 
-
 if [[ $state == "charging" ]]; then
     notify-send "Battery ${percentage}%" "${time_remaining} to full -  ${power_rate}W / ${capacity}Wh"
 else

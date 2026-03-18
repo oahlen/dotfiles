@@ -1,6 +1,6 @@
 #!/bin/sh
 
 nix-search -jn linuxKernel.kernels \
-  | jq -s -r '.[] |
-    "\u001b[1m\((.package_attr_name | sub("^linuxKernel\\.kernels\\.?"; ""))):\u001b[0m \(.package_pversion)"' \
-  | sort
+    | jq -s -r '.[] |
+      "\u001b[1m\((.package_attr_name | sub("^linuxKernel\\.kernels\\.?"; ""))):\u001b[0m \(.package_pversion)"' \
+    | sort

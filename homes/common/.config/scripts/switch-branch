@@ -5,5 +5,5 @@ set -euo pipefail
 BRANCH=$(git branch --format '%(refname:short)' | fzf --prompt 'Switch branch: ') || true
 
 if [ -n "$BRANCH" ]; then
-  git switch "$BRANCH"
+    git switch "$BRANCH"
 fi

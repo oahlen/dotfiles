@@ -3,8 +3,8 @@
 set -euo pipefail
 
 if [[ $# -lt 1 ]]; then
-  echo "Usage: $0 <program>" >&2
-  exit 1
+    echo "Usage: $0 <program>" >&2
+    exit 1
 fi
 
 exec foot -a foot-floating -e "$1"

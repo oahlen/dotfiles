@@ -3,20 +3,20 @@
 set -euo pipefail
 
 if [ $# -ge 1 ] && [ -n "$1" ]; then
-  FINDER=$1
+    FINDER=$1
 else
-  FINDER=fzf
+    FINDER=fzf
 fi
 
 BOOKMARKS="$HOME/bookmarks"
 
 if [ ! -f "$BOOKMARKS" ]; then
-  command -v notify-send >/dev/null 2>&1 && notify-send "No bookmarks configured"
-  exit 0
+    command -v notify-send >/dev/null 2>&1 && notify-send "No bookmarks configured"
+    exit 0
 fi
 
 RESULT=$($FINDER < "$HOME/bookmarks")
 
 if [ -n "$RESULT" ]; then
-  xdg-open "https://$RESULT"
+    xdg-open "https://$RESULT"
 fi
