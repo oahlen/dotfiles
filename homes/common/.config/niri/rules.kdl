@@ -21,15 +21,3 @@ window-rule {
         active-color "#7dcfff"
     }
 }
-
-window-rule {
-    match app-id="foot-menu"
-    open-floating true
-
-    default-column-width { fixed 640; }
-    default-window-height { fixed 480; }
-
-    focus-ring {
-        active-color "#7dcfff"
-    }
-}

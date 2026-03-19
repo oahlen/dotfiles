@@ -8,6 +8,7 @@ TERMINAL="foot -a foot-floating -e"
 options=(
     "Bluetooth Management:bluetui"
     "Connection Manager:nmtui"
+    "Password Picker:password-picker"
     "Process Monitor:btop"
     "Volume Control:wiremix"
 )
