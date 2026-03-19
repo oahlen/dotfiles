@@ -1,0 +1,35 @@
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+
+    match app-id="nm-connection-editor"
+    match app-id="blueman-manager"
+    match app-id="foot-floating"
+    open-floating true
+
+    default-column-width { fixed 1280; }
+    default-window-height { fixed 720; }
+
+    focus-ring {
+        active-color "#7dcfff"
+    }
+}
+
+window-rule {
+    match app-id="foot-menu"
+    open-floating true
+
+    default-column-width { fixed 640; }
+    default-window-height { fixed 480; }
+
+    focus-ring {
+        active-color "#7dcfff"
+    }
+}

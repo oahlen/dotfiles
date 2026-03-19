@@ -57,7 +57,6 @@ in
     security.rtkit.enable = true;
 
     modules = {
-      kanshi.enable = config.modules.laptop.enable;
       polkit-soteria.enable = true;
       swaybg.enable = true;
 

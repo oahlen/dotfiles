@@ -1,0 +1,19 @@
+input {
+    keyboard {
+        xkb {
+            layout "us,se"
+            options "caps:escape,grp:win_space_toggle"
+        }
+
+        repeat-delay 250
+        repeat-rate 40
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+        dwt
+    }
+
+    focus-follows-mouse max-scroll-amount="0%"
+}

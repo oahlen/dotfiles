@@ -1,0 +1,41 @@
+include "input.kdl"
+include "layout.kdl"
+include "binds.kdl"
+include "rules.kdl"
+
+spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
+
+prefer-no-csd
+
+// You can change the path where screenshots are saved.
+// A ~ at the front will be expanded to the home directory.
+// The path is formatted with strftime(3) to give you the screenshot date and time.
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
+}
+
+overview {
+    zoom 0.75
+    backdrop-color "#1a1b26"
+
+    workspace-shadow {
+        off
+    }
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+animations {
+    off
+}
+
+hotkey-overlay {
+    skip-at-startup
+}

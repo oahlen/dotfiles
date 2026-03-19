@@ -1,0 +1,5 @@
+include "common.kdl"
+
+output "DP-2" {
+    variable-refresh-rate on-demand=true
+}
