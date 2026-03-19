@@ -9,7 +9,7 @@ binds {
 
     Mod+Shift+S hotkey-overlay-title="Power Settings" { spawn "wlr-which-key" "-k s"; }
 
-    Mod+E hotkey-overlay-title="Show Bookmarks" { spawn "bookmarks" "fuzzel -d"; }
+    Mod+E hotkey-overlay-title="Show Bookmarks" { spawn "bookmarks"; }
 
     Mod+B hotkey-overlay-title="Toggle Waybar" { spawn "pkill" "-USR1" "waybar"; }
 
