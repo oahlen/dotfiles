@@ -46,7 +46,7 @@ with pkgs;
   unzip
   wget
   xdg-user-dirs
-  yazi-unwrapped
+  (yazi.override { optionalDeps = [ _7zz ]; })
   zip
   zoxide
 ]
