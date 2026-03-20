@@ -6,14 +6,10 @@ let
   };
 in
 pkgs.mkShell {
-  # Enable experimental features without having to specify the argument
-  NIX_CONFIG = "experimental-features = nix-command flakes";
-  NIX_SHELL = "Bootstrap";
+  NIX_SHELL = "Dotfiles";
 
   packages = with pkgs; [
-    git
-    just
-    nix
-    npins
+    lua-language-server
+    nodePackages.vscode-langservers-extracted # For css config files
   ];
 }

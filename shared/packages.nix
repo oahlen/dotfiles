@@ -21,7 +21,6 @@ with pkgs;
   jless
   jq
   just
-  lua-language-server
   nil
   nixfmt-tree
   nix-prefetch-git
