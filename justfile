@@ -6,7 +6,7 @@ help:
 
 # Enter the bootstrap shell environment
 @bootstrap:
-    nix-shell shells/bootstrap
+    nix-shell . -A "shells.bootstrap" --command "$SHELL"
 
 # Open the pinned nixpkgs release page
 @sources:

@@ -1,10 +1,4 @@
-let
-  sources = import ./npins;
-  pkgs = import sources.nixpkgs {
-    config = { };
-    overlays = [ ];
-  };
-in
+{ pkgs }:
 pkgs.mkShell {
   NIX_SHELL = "Dotfiles";
 
