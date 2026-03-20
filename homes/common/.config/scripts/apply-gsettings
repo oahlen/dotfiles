@@ -12,6 +12,7 @@ dconf write /org/gnome/tweaks/show-extensions-notice false
 # Interface
 gsettings set org.gnome.desktop.interface accent-color 'blue'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 gsettings set org.gnome.desktop.interface enable-animations false
 
 # Background
