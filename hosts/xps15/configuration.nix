@@ -27,7 +27,6 @@
     laptop.enable = true;
     niri.enable = true;
     podman.enable = true;
-    virt-manager.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
