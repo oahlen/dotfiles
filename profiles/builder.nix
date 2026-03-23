@@ -23,8 +23,10 @@ let
 
     pathsToLink = [
       "/bin"
-      "/share/man"
+      "/share/applications"
       "/share/doc"
+      "/share/icons"
+      "/share/man"
     ]
     ++ (if enableDirenv then [ "/share/nix-direnv" ] else [ ]);
 
