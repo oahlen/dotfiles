@@ -42,7 +42,7 @@ help:
 
 # Enter the specified shell
 @shell name:
-    nix-shell . -A "shells.$1" --command "$SHELL"
+    nix-shell default.nix -A "shells.$1" --command "$SHELL"
 
 # Performs all code checks
 @fmt: nix lint lua
