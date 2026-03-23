@@ -133,7 +133,7 @@ in
       adw-gtk3
       bluetui
       brightnessctl
-      foot
+      customPackages.foot
       fuzzel
       gnome-multi-writer
       gnome-text-editor
