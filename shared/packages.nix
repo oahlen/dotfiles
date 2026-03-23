@@ -21,11 +21,13 @@ with pkgs;
   jless
   jq
   just
+  lua-language-server
   nil
   nixfmt-tree
   nix-prefetch-git
   nix-search-cli
   nix-tree
+  nodePackages.vscode-langservers-extracted # For css config files
   npins
   opencode
   pokeget-rs
