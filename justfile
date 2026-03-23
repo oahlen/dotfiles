@@ -44,6 +44,10 @@ help:
 @shell name:
     nix-shell default.nix -A "shells.$1" --command "$SHELL"
 
+# Enter the playground shell
+@playground:
+    nix-shell default.nix -A "shells.playground" --command "$SHELL"
+
 # Performs all code checks
 @fmt: nix lint lua
 
