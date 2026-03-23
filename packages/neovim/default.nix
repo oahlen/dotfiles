@@ -6,6 +6,20 @@
   wrapNeovimUnstable,
 }:
 let
+  agentic-nvim = vimUtils.buildVimPlugin {
+    pname = "agentic-nvim";
+    version = "1.0.0";
+    src = fetchFromGitHub {
+      owner = "carlos-algms";
+      repo = "agentic.nvim";
+      rev = "4813e54e8310b3a917d4b094d016b200b27e6d3a";
+      sha256 = "sha256-mnTrph9JMbMVhI6MyCrgUB31TYQQMgx+8RNnfgC6JS4=";
+    };
+
+    meta.homepage = "https://github.com/carlos-algms/agentic.nvim";
+    doCheck = false;
+  };
+
   shellcheck-nvim = vimUtils.buildVimPlugin {
     pname = "shellcheck-nvim";
     version = "1.0.0";
@@ -30,20 +44,6 @@ let
     };
 
     meta.homepage = "https://github.com/oahlen/tokyonight.nvim";
-  };
-
-  agentic-nvim = vimUtils.buildVimPlugin {
-    pname = "agentic-nvim";
-    version = "1.0.0";
-    src = fetchFromGitHub {
-      owner = "carlos-algms";
-      repo = "agentic.nvim";
-      rev = "4813e54e8310b3a917d4b094d016b200b27e6d3a";
-      sha256 = "sha256-mnTrph9JMbMVhI6MyCrgUB31TYQQMgx+8RNnfgC6JS4=";
-    };
-
-    meta.homepage = "https://github.com/carlos-algms/agentic.nvim";
-    doCheck = false;
   };
 
   plugins = with vimPlugins; [
