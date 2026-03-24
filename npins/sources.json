@@ -26,6 +26,19 @@
       "url": "https://github.com/nix-community/nix-index-database/archive/55b588747fa3d7fc351a11831c4b874dab992862.tar.gz",
       "hash": "sha256-gdYe9wTPl4ignDyXUl1LlICWj41+S0GB5lG1fKP17+A="
     },
+    "nixGL": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "nixGL"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b6105297e6f0cd041670c3e8628394d4ee247ed5",
+      "url": "https://github.com/nix-community/nixGL/archive/b6105297e6f0cd041670c3e8628394d4ee247ed5.tar.gz",
+      "hash": "sha256-fbRQzIGPkjZa83MowjbD2ALaJf9y6KMDdJBQMKFeY/8="
+    },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-unstable",

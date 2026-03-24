@@ -19,7 +19,6 @@
     ./services/intune.nix
     ./services/nix-gc-user.nix
     ./services/polkit-soteria.nix
-    ./services/swaybg.nix
     ./services/swayidle.nix
     ./services/swayosd.nix
     ./services/waybar.nix

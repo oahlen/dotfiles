@@ -3,3 +3,5 @@ include "common.kdl"
 output "DP-2" {
     variable-refresh-rate on-demand=true
 }
+
+ spawn-sh-at-startup "swaybg -o \"*\" -i ~/Pictures/Wallpapers/lake.jpg -m fit"

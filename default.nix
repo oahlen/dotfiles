@@ -37,6 +37,7 @@ in
     in
     {
       generic = mkProfile ./profiles/generic;
+      ubuntu = mkProfile ./profiles/ubuntu;
       wsl = mkProfile ./profiles/wsl;
     };
 

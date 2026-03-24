@@ -58,7 +58,6 @@ in
 
     modules = {
       polkit-soteria.enable = true;
-      swaybg.enable = true;
 
       swayidle = {
         enable = true;
@@ -144,6 +143,7 @@ in
       nautilus
       papirus-icon-theme
       playerctl
+      swaybg
       wf-recorder
       wiremix
       wl-clipboard

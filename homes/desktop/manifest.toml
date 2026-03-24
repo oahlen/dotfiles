@@ -1,10 +1,9 @@
 includes = [
-  "../../config/default.toml"
+  "../../config/default.toml",
   "../../config/graphical.toml"
 ]
 
 [files]
-".env" = "~/"
 "niri" = "~/.config/niri"
 "scripts" = "~/.config/scripts"
 "Wallpapers" = "~/Pictures/Wallpapers"
