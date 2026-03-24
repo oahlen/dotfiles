@@ -24,6 +24,7 @@
   modules = {
     development.enable = true;
     gnome.enable = true;
+    intune.enable = true;
     laptop.enable = true;
     niri.enable = true;
     podman.enable = true;

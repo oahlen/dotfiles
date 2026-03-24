@@ -16,6 +16,7 @@
     ./programs/virt-manager.nix
     ./programs/yubikey.nix
 
+    ./services/intune.nix
     ./services/nix-gc-user.nix
     ./services/polkit-soteria.nix
     ./services/swaybg.nix
