@@ -16,7 +16,11 @@
   modules = {
     apptainer.enable = true;
     development.enable = true;
-    podman.enable = true;
+
+    podman = {
+      enable = true;
+      dockerCompat = true;
+    };
   };
 
   programs = {
