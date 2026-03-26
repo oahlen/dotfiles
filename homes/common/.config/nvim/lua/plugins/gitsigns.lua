@@ -17,5 +17,8 @@ return {
                 end, { desc = "Diff This (~)", buffer = bufnr })
             end,
         })
+
+        vim.keymap.set("n", "gj", "<CMD>Gitsigns next_hunk<CR>", { desc = "Goto Next Git Change" })
+        vim.keymap.set("n", "gk", "<CMD>Gitsigns prev_hunk<CR>", { desc = "Goto Previous Git Change" })
     end,
 }

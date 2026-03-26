@@ -50,6 +50,9 @@ nmap == <action>(ReformatCode)
 vmap gc <action>(CommentByLineComment)
 vmap gb <action>(CommentByBlockComment)
 
+nmap gj :action VcsShowNextChangeMarker<CR>
+nmap gk :action VcsShowPrevChangeMarker<CR>
+
 set NERDTree
 let g:NERDTreeMapActivateNode='o'
 let g:NERDTreeMapJumpParent='h'
