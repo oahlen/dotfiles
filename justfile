@@ -62,3 +62,11 @@ help:
 # Format lua code
 @lua:
     stylua .
+
+# Install dotfiles for the specified host
+@install:
+    homage install "homes/$(hostname)/manifest.toml"
+
+# Uninstall dotfiles for the specified host
+@uninstall:
+    homage uninstall "homes/$(hostname)/manifest.toml"

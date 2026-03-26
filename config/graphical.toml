@@ -1,0 +1,9 @@
+[files]
+"foot" = "~/.config/foot"
+"fuzzel" = "~/.config/fuzzel"
+"ideavim" = "~/.config/ideavim"
+"mako" = "~/.config/mako"
+"MangoHud" = "~/.config/MangoHud"
+"niri" = "~/.config/niri"
+"waybar" = "~/.config/waybar"
+"wlr-which-key" = "~/.config/wlr-which-key"
