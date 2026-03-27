@@ -1,3 +1,7 @@
 includes = [
   "../../config/default.toml"
 ]
+
+
+[files]
+"opencode" = "~/.config/opencode"

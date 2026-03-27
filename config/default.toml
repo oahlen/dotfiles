@@ -7,7 +7,6 @@
 "git" = "~/.config/git"
 "gitui" = "~/.config/gitui"
 "nvim" = "~/.config/nvim"
-"opencode" = "~/.config/opencode"
 "profile" = "~"
 "ripgrep" = "~/.config/ripgrep"
 "scripts" = "~/.config/scripts"
