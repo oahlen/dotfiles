@@ -1,7 +1,6 @@
 includes = [
   "../../config/default.toml",
   "../../config/graphical.toml"
-  "../../config/opencode.toml",
 ]
 
 [files]
