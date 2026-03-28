@@ -8,9 +8,11 @@
     customPackages.niri
     fastfetch
     fuzzel
+    # swaylock Use locker directly from Ubuntu
     hyprpicker
     mako
     playerctl
+    soteria
     swaybg
     swayidle
     swayosd
