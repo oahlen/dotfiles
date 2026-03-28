@@ -4,4 +4,6 @@ output "DP-2" {
     variable-refresh-rate on-demand=true
 }
 
- spawn-sh-at-startup "swaybg -o \"*\" -i ~/Pictures/Wallpapers/lake.jpg -m fit"
+spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
+
+spawn-sh-at-startup "swaybg -o \"*\" -i ~/Pictures/Wallpapers/lake.jpg -m fit"

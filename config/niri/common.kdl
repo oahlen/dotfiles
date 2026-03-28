@@ -3,8 +3,6 @@ include "layout.kdl"
 include "binds.kdl"
 include "rules.kdl"
 
-// spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
-
 prefer-no-csd
 
 // You can change the path where screenshots are saved.
