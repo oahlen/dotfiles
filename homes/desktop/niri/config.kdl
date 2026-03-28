@@ -6,4 +6,4 @@ output "DP-2" {
 
 spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
 
-spawn-sh-at-startup "swaybg -o \"*\" -i ~/Pictures/Wallpapers/lake.jpg -m fit"
+spawn-sh-at-startup "swaybg -o \"*\" -i ~/Pictures/Wallpapers/lake.png -m fit"
