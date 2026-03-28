@@ -17,6 +17,7 @@ with pkgs;
   figlet
   fish
   fzf
+  github-copilot-cli
   gitui
   jless
   jq
