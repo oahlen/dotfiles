@@ -33,12 +33,11 @@ in
 
   profiles =
     let
-      mkProfile = module: import ./profiles { inherit module pkgs; };
+      mkProfile = modules: import ./profiles { inherit modules pkgs; };
     in
     {
-      generic = mkProfile ./profiles/generic;
-      ubuntu = mkProfile ./profiles/ubuntu;
-      wsl = mkProfile ./profiles/wsl;
+      ubuntu = mkProfile [ ./environments/ubuntu ];
+      wsl = mkProfile [ ./environments/wsl ];
     };
 
   packages = pkgs.customPackages;

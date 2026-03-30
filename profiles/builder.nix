@@ -1,61 +1,23 @@
 {
   buildEnv,
-  direnv,
-  nix-direnv,
+  config,
+  lib,
   writeShellScriptBin,
-  writeText,
-  packages ? [ ],
-  enableDirenv ? false,
 }:
 let
-  direnvPackages =
-    if enableDirenv then
-      [
-        direnv
-        nix-direnv
-      ]
-    else
-      [ ];
-
-  direnvrc = writeText "direnvrc" ''
-    source ${nix-direnv}/share/nix-direnv/direnvrc
-  '';
-
-  direnvActivation =
-    if enableDirenv then
-      ''
-        mkdir -p "$HOME/.config/direnv"
-        ln -sfn ${direnvrc} "$HOME/.config/direnv/direnvrc"
-      ''
-    else
-      "";
+  cfg = config.environment;
 
   profile = buildEnv {
     name = "environment";
-
-    paths = packages ++ direnvPackages;
-
-    pathsToLink = [
-      "/bin"
-      "/share/applications"
-      "/share/doc"
-      "/share/icons"
-      "/share/man"
-    ];
-
-    extraOutputsToInstall = [
-      "man"
-      "doc"
-    ];
+    paths = cfg.packages;
+    inherit (cfg) pathsToLink extraOutputsToInstall;
   };
 in
 profile
 // {
   switch = writeShellScriptBin "switch" ''
-    mkdir -p "$HOME/.local/state/nix/profiles"
-    nix build ${profile} --profile "$HOME/.local/state/nix/profiles/profile"
-    ln -sfn "$HOME/.local/state/nix/profiles/profile" "$HOME/.local/state/nix/profile"
-
-    ${direnvActivation}
+    mkdir -p "$XDG_STATE_HOME/nix/profiles"
+    nix build ${profile} --profile "$XDG_STATE_HOME/nix/profiles/profile"
+    ln -sfn "$XDG_STATE_HOME/nix/profiles/profile" "$XDG_STATE_HOME/nix/profile"
   '';
 }

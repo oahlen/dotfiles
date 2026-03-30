@@ -1,8 +1,8 @@
-{ pkgs }:
+{ pkgs, ... }:
 {
-  enableDirenv = true;
+  modules.direnv.enable = true;
 
-  packages = with pkgs; [
+  environment.packages = with pkgs; [
     dconf
     fastfetchMinimal
     trash-cli

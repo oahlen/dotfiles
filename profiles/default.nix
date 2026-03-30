@@ -1,9 +1,10 @@
-{ module, pkgs }:
+{ modules, pkgs }:
 let
-  defaultPackages = import ../shared/packages.nix { inherit pkgs; };
-  config = import module { inherit pkgs; };
+  evaluated = pkgs.lib.evalModules {
+    specialArgs = { inherit pkgs; };
+    modules = modules ++ ../modules/environment;
+  };
 in
 pkgs.callPackage ./builder.nix {
-  packages = defaultPackages ++ config.packages;
-  inherit (config) enableDirenv;
+  inherit (evaluated) config;
 }

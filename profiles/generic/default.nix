@@ -1,6 +1,0 @@
-{ pkgs }:
-{
-  enableDirenv = true;
-
-  packages = [ ];
-}
