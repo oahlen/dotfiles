@@ -36,8 +36,8 @@ in
       mkProfile = modules: import ./profiles { inherit modules pkgs; };
     in
     {
-      ubuntu = mkProfile [ ./environments/ubuntu ];
-      wsl = mkProfile [ ./environments/wsl ];
+      ubuntu = mkProfile [ ./profiles/ubuntu ];
+      wsl = mkProfile [ ./profiles/wsl ];
     };
 
   packages = pkgs.customPackages;

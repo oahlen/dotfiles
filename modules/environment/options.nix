@@ -10,22 +10,13 @@
 
       pathsToLink = lib.mkOption {
         type = lib.types.listOf lib.types.str;
-        default = [
-          "/bin"
-          "/share/applications"
-          "/share/doc"
-          "/share/icons"
-          "/share/man"
-        ];
+        default = [ "/bin" ];
         description = "Paths to link in the profile environment.";
       };
 
       extraOutputsToInstall = lib.mkOption {
         type = lib.types.listOf lib.types.str;
-        default = [
-          "man"
-          "doc"
-        ];
+        default = [ ];
         description = "Extra outputs to install for packages in the profile environment.";
       };
     };

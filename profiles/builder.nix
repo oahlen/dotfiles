@@ -16,8 +16,9 @@ in
 profile
 // {
   switch = writeShellScriptBin "switch" ''
-    mkdir -p "$XDG_STATE_HOME/nix/profiles"
-    nix build ${profile} --profile "$XDG_STATE_HOME/nix/profiles/profile"
-    ln -sfn "$XDG_STATE_HOME/nix/profiles/profile" "$XDG_STATE_HOME/nix/profile"
+    TARGET=''${XDG_STATE_HOME:-$HOME/.local/state}
+    mkdir -p "$TARGET/nix/profiles"
+    nix build ${profile} --profile "$TARGET/nix/profiles/profile"
+    ln -sfn "$TARGET/nix/profiles/profile" "$TARGET/nix/profile"
   '';
 }

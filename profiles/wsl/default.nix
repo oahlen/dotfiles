@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  modules.direnv.enable = true;
+  modules = {
+    development.enable = true;
+    direnv.enable = true;
+  };
 
   environment.packages = with pkgs; [
     dconf
