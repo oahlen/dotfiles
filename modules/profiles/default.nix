@@ -3,10 +3,9 @@
   imports = [
     ./options.nix
 
-    ./profiles/development.nix
-    ./profiles/niri.nix
-
-    ./programs/direnv.nix
+    ./development.nix
+    ./direnv.nix
+    ./niri.nix
   ];
 
   environment = {

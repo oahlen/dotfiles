@@ -33,7 +33,17 @@ in
 
   profiles =
     let
-      mkProfile = modules: import ./profiles { inherit modules pkgs; };
+      mkProfile =
+        modules:
+        let
+          evaluated = pkgs.lib.evalModules {
+            specialArgs = { inherit pkgs; };
+            modules = modules ++ [ ./modules/profiles ];
+          };
+        in
+        pkgs.callPackage ./profiles/builder.nix {
+          inherit (evaluated) config;
+        };
     in
     {
       ubuntu = mkProfile [ ./profiles/ubuntu ];

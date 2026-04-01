@@ -4,12 +4,12 @@
     ./options.nix
     ./settings.nix
 
-    ./profiles/desktop.nix
-    ./profiles/development.nix
-    ./profiles/gaming.nix
-    ./profiles/gnome.nix
-    ./profiles/laptop.nix
-    ./profiles/niri.nix
+    ./features/desktop.nix
+    ./features/development.nix
+    ./features/gaming.nix
+    ./features/gnome.nix
+    ./features/laptop.nix
+    ./features/niri.nix
 
     ./programs/apptainer.nix
     ./programs/podman.nix
