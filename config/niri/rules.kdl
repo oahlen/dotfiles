@@ -3,12 +3,7 @@ window-rule {
     clip-to-geometry true
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-
     match app-id="nm-connection-editor"
     match app-id="blueman-manager"
     match app-id="foot-floating"
