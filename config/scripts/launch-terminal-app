@@ -9,7 +9,7 @@ options=(
     "Bluetooth Management:bluetui"
     "Connection Manager:nmtui"
     "Password Picker:password-picker"
-    "Process Monitor:btop"
+    "Process Monitor:bottom"
     "Volume Control:wiremix"
 )
 
