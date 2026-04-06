@@ -4,7 +4,6 @@
     ./options.nix
 
     ./development.nix
-    ./direnv.nix
     ./niri.nix
   ];
 

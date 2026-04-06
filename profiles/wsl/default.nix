@@ -1,11 +1,8 @@
 { pkgs, ... }:
 {
-  modules = {
-    development.enable = true;
-    direnv.enable = true;
-  };
+  modules.development.enable = true;
 
-  environment.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     dconf
     fastfetchMinimal
     trash-cli

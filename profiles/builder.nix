@@ -9,7 +9,7 @@ let
 
   profile = buildEnv {
     name = "environment";
-    paths = cfg.packages;
+    paths = cfg.systemPackages;
     inherit (cfg) pathsToLink extraOutputsToInstall;
   };
 in

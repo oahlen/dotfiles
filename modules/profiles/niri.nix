@@ -12,7 +12,7 @@ in
 
   config = lib.mkIf cfg.enable {
     environment = {
-      packages = with pkgs; [
+      systemPackages = with pkgs; [
         brightnessctl
         customPackages.foot
         customPackages.niri

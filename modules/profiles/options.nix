@@ -2,7 +2,7 @@
 {
   options = {
     environment = {
-      packages = lib.mkOption {
+      systemPackages = lib.mkOption {
         type = lib.types.listOf lib.types.package;
         default = [ ];
         description = "Packages to include in the profile environment.";
