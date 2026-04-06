@@ -16,7 +16,7 @@ in
         modules:
         pkgs.nixos (
           [
-            ./modules
+            ./modules/nixos
             "${sources.nix-index-database}/nixos-module.nix"
           ]
           ++ modules
