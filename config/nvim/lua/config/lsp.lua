@@ -34,7 +34,7 @@ end
 
 local enable = function(name, opts)
     local config = vim.tbl_deep_extend("force", { on_init = on_init, on_attach = on_attach }, opts or {})
-    vim.lsp.config(name, config)
+    vim.lsp.config[name] = config
     vim.lsp.enable(name)
 end
 

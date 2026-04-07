@@ -38,7 +38,6 @@ in
       nix-prefetch-git
       nix-search-cli
       nix-tree
-      nodePackages.vscode-langservers-extracted # For css config files
       npins
       opencode
       pokeget-rs
@@ -56,6 +55,7 @@ in
       tree
       typos
       unzip
+      vscode-langservers-extracted # For css config files
       wget
       xdg-user-dirs
       (yazi.override { optionalDeps = [ _7zz ]; })
