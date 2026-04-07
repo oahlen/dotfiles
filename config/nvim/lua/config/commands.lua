@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
         local text = table.concat(vim.api.nvim_buf_get_lines(bufnr, 0, -1, false), "\n") .. "\n"
         for _, client in ipairs(clients) do
             ---@diagnostic disable-next-line: param-type-mismatch
-            client.notify("textDocument/didChange", {
+            client:notify("textDocument/didChange", {
                 textDocument = {
                     uri = params.uri,
                     version = vim.lsp.util.buf_versions[bufnr] or 0,
