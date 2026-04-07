@@ -65,8 +65,8 @@ help:
 
 # Install dotfiles for the specified host
 @install:
-    homage install "homes/$(hostname)/manifest.toml"
+    homage install "homes/$(hostname)/manifest.toml" -v
 
 # Uninstall dotfiles for the specified host
 @uninstall:
-    homage uninstall "homes/$(hostname)/manifest.toml"
+    homage uninstall "homes/$(hostname)/manifest.toml" -v
