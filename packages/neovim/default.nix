@@ -52,7 +52,6 @@ let
     blink-cmp-spell
     comment-nvim
     conform-nvim
-    # csharpls-extended-lsp-nvim - Enable when merged https://github.com/Decodetalkers/csharpls-extended-lsp.nvim/pull/52
     friendly-snippets
     fzf-lua
     gitsigns-nvim

@@ -63,7 +63,6 @@ enable("lua_ls", {
 })
 
 enable("csharp_ls")
--- require("csharpls_extended").buf_read_cmd_bind()
 enable("cssls")
 enable("html")
 enable("nil_ls")
