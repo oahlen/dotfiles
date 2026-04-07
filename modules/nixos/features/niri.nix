@@ -130,7 +130,6 @@ in
     environment.systemPackages = with pkgs; [
       adwaita-icon-theme
       adw-gtk3
-      bluetui
       brightnessctl
       customPackages.foot
       fuzzel
@@ -142,10 +141,10 @@ in
       mako
       nautilus
       papirus-icon-theme
+      pavucontrol
       playerctl
       swaybg
       wf-recorder
-      wiremix
       wl-clipboard
       wl-mirror
       wlr-which-key

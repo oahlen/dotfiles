@@ -4,9 +4,10 @@ window-rule {
 }
 
 window-rule {
-    match app-id="nm-connection-editor"
     match app-id="blueman-manager"
-    match app-id="foot-floating"
+    match app-id="nm-connection-editor"
+    match app-id="password-picker"
+    match app-id="pavucontrol"
     open-floating true
 
     default-column-width { fixed 1280; }
