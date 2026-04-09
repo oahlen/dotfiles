@@ -17,7 +17,6 @@ in
         pkgs.nixos (
           [
             ./modules/nixos
-            ./modules/shared
             "${sources.nix-index-database}/nixos-module.nix"
           ]
           ++ modules
@@ -39,10 +38,7 @@ in
         let
           evaluated = pkgs.lib.evalModules {
             specialArgs = { inherit pkgs; };
-            modules = modules ++ [
-              ./modules/profiles
-              ./modules/shared
-            ];
+            modules = modules ++ [ ./modules/profiles ];
           };
         in
         pkgs.callPackage ./profiles/builder.nix {

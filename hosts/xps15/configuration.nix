@@ -34,7 +34,6 @@
     _1password-gui
     customPackages.rbw
     filen-cli
-    nodejs
   ];
 
   system.stateVersion = "25.05";

@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -10,8 +11,6 @@ in
   options.modules.development.enable = lib.mkEnableOption "Whether to enable basic development features.";
 
   config = lib.mkIf cfg.enable {
-    modules.packages.enable = true;
-
     programs = {
       direnv = {
         enable = true;
@@ -20,5 +19,7 @@ in
 
       git.enable = true;
     };
+
+    environment.systemPackages = [ pkgs.customPackages.environment ];
   };
 }
