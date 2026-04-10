@@ -46,6 +46,57 @@ let
     meta.homepage = "https://github.com/oahlen/tokyonight.nvim";
   };
 
+  treesitter = vimPlugins.nvim-treesitter.withPlugins (
+    plugins: with plugins; [
+      bash
+      c
+      comment
+      c_sharp
+      css
+      diff
+      dockerfile
+      editorconfig
+      fish
+      gitattributes
+      gitcommit
+      git_config
+      gitignore
+      git_rebase
+      go
+      html
+      java
+      javascript
+      json
+      kdl
+      kotlin
+      lua
+      luadoc
+      make
+      markdown
+      markdown_inline
+      nix
+      powershell
+      properties
+      proto
+      python
+      ron
+      rust
+      scss
+      sql
+      svelte
+      tmux
+      todotxt
+      toml
+      typescript
+      typst
+      vim
+      vimdoc
+      xml
+      yaml
+    ]
+  );
+in
+wrapNeovimUnstable neovim-unwrapped {
   plugins = with vimPlugins; [
     agentic-nvim
     blink-cmp
@@ -68,59 +119,8 @@ let
     render-markdown-nvim
     shellcheck-nvim
     tokyonight-nvim
+    treesitter
     which-key-nvim
-    (nvim-treesitter.withPlugins (
-      plugins: with plugins; [
-        bash
-        c
-        comment
-        c_sharp
-        css
-        diff
-        dockerfile
-        editorconfig
-        fish
-        gitattributes
-        gitcommit
-        git_config
-        gitignore
-        git_rebase
-        go
-        html
-        java
-        javascript
-        json
-        kdl
-        kotlin
-        lua
-        luadoc
-        make
-        markdown
-        markdown_inline
-        nix
-        powershell
-        properties
-        proto
-        python
-        ron
-        rust
-        scss
-        sql
-        svelte
-        tmux
-        todotxt
-        toml
-        typescript
-        typst
-        vim
-        vimdoc
-        xml
-        yaml
-      ]
-    ))
   ];
-in
-wrapNeovimUnstable neovim-unwrapped {
-  inherit plugins;
   wrapRc = false; # Use ~/.config/nvim/init.lua
 }
