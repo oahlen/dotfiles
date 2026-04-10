@@ -23,7 +23,20 @@ menu:
     cmd: hyprpicker -a
 
   - key: "m"
-    desc: Monitor Settings
+    desc: Multimedia Controls
+    submenu:
+      - key: "t"
+        desc: Toggle Play/Pause
+        cmd: playerctl play-pause
+      - key: "n"
+        desc: Next Track
+        cmd: playerctl next
+      - key: "p"
+        desc: Previous Track
+        cmd: playerctl previous
+
+  - key: "o"
+    desc: Output Settings
     submenu:
       - key: "1"
         desc: Set Resolution to 1920x1200
