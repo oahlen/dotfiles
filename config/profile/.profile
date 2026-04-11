@@ -19,6 +19,7 @@ export COLORTERM="truecolor"
 export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
 export LESSHISTFILE="$XDG_DATA_HOME/less/history"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
+export TMUXP_PROGRESS=0 
 
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow"
 export FZF_DEFAULT_OPTS="--layout=reverse --height=40% --scrollbar '▌' --color bg+:0,border:7,fg+:15,gutter:0,header:4,hl:3,hl+:3,info:8,marker:6,pointer:3,prompt:2,scrollbar:8,separator:8,spinner:5"
