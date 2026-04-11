@@ -7,7 +7,7 @@ let
   cfg = config.modules.intune;
 in
 {
-  options.modules.intune.enable = lib.mkEnableOption "Whether to enable Microsoft Intune.";
+  options.modules.intune.enable = lib.mkEnableOption "Microsoft Intune.";
 
   config = lib.mkIf cfg.enable {
     services.intune.enable = true;

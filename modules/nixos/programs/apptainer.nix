@@ -8,7 +8,7 @@ let
   cfg = config.modules.apptainer;
 in
 {
-  options.modules.apptainer.enable = lib.mkEnableOption "Whether to enable Apptainer.";
+  options.modules.apptainer.enable = lib.mkEnableOption "Apptainer.";
 
   config = lib.mkIf cfg.enable {
     programs.singularity = {

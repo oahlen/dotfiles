@@ -8,7 +8,7 @@ let
   cfg = config.modules.development;
 in
 {
-  options.modules.development.enable = lib.mkEnableOption "Whether to enable basic development features.";
+  options.modules.development.enable = lib.mkEnableOption "basic development features.";
 
   config = lib.mkIf cfg.enable {
     environment = {

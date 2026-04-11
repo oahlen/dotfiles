@@ -8,7 +8,7 @@ let
   cfg = config.modules.yubikey;
 in
 {
-  options.modules.yubikey.enable = lib.mkEnableOption "Whether to enable Yubikey support.";
+  options.modules.yubikey.enable = lib.mkEnableOption "Yubikey support.";
 
   config = lib.mkIf cfg.enable {
     services.pcscd.enable = true;

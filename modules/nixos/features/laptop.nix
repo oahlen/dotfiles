@@ -8,7 +8,7 @@ let
   cfg = config.modules.laptop;
 in
 {
-  options.modules.laptop.enable = lib.mkEnableOption "Whether to enable laptop related features.";
+  options.modules.laptop.enable = lib.mkEnableOption "laptop related features.";
 
   config = lib.mkIf cfg.enable {
     modules = {

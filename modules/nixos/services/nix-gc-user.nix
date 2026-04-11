@@ -7,7 +7,7 @@ let
   cfg = config.nix.gc;
 in
 {
-  options.nix.gc.user = lib.mkEnableOption "Whether to enable nix garbage collection for the current user.";
+  options.nix.gc.user = lib.mkEnableOption "Nix garbage collection for the current user.";
 
   config = {
     systemd.user.services.nix-gc = lib.mkIf cfg.user {

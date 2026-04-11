@@ -8,7 +8,7 @@ let
   cfg = config.modules.gnome;
 in
 {
-  options.modules.gnome.enable = lib.mkEnableOption "Whether to enable the Gnome desktop environment.";
+  options.modules.gnome.enable = lib.mkEnableOption "the Gnome desktop environment.";
 
   config = lib.mkIf cfg.enable {
     services = {

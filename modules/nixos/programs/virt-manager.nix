@@ -8,7 +8,7 @@ let
   cfg = config.modules.virt-manager;
 in
 {
-  options.modules.virt-manager.enable = lib.mkEnableOption "Whether to enable Virtual Machine Manager.";
+  options.modules.virt-manager.enable = lib.mkEnableOption "Virtual Machine Manager.";
 
   config = lib.mkIf cfg.enable {
     virtualisation.libvirtd.enable = true;

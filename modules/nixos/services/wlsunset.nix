@@ -10,7 +10,7 @@ let
 in
 {
   options.modules.wlsunset = {
-    enable = lib.mkEnableOption "Whether to enable wlsunset.";
+    enable = lib.mkEnableOption "wlsunset.";
     package = lib.mkPackageOption pkgs "wlsunset" { };
     systemd.target = shared.mkWaylandSystemdTargetOption { };
 

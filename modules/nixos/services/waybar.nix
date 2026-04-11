@@ -10,7 +10,7 @@ let
 in
 {
   options.modules.waybar = {
-    enable = lib.mkEnableOption "Whether to enable waybar, a highly customizable Wayland bar for Sway and Wlroots based compositors.";
+    enable = lib.mkEnableOption "Waybar, a highly customizable Wayland bar for Sway and Wlroots based compositors.";
     package = lib.mkPackageOption pkgs "waybar" { };
     systemd.target = shared.mkWaylandSystemdTargetOption { };
 

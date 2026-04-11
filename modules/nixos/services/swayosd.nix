@@ -10,7 +10,7 @@ let
 in
 {
   options.modules.swayosd = {
-    enable = lib.mkEnableOption "Whether to enable swayosd, a GTK based on screen display for keyboard shortcuts like caps-lock and volume.";
+    enable = lib.mkEnableOption "swayosd, a GTK based on screen display for keyboard shortcuts like caps-lock and volume.";
     package = lib.mkPackageOption pkgs "swayosd" { };
     systemd.target = shared.mkWaylandSystemdTargetOption { };
   };

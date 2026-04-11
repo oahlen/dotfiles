@@ -9,8 +9,8 @@ let
 in
 {
   options.modules.podman = {
-    enable = lib.mkEnableOption "Whether to enable Podman.";
-    dockerCompat = lib.mkEnableOption "Whether to enable docker related compatibility features.";
+    enable = lib.mkEnableOption "Podman.";
+    dockerCompat = lib.mkEnableOption "Docker related compatibility features.";
   };
 
   config = lib.mkIf cfg.enable {

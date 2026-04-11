@@ -9,7 +9,7 @@ let
 in
 {
   options.modules.gaming = {
-    enable = lib.mkEnableOption "Whether to enable gaming support.";
+    enable = lib.mkEnableOption "gaming support.";
   };
 
   config = lib.mkIf cfg.enable {

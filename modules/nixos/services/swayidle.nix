@@ -52,7 +52,7 @@ in
       };
     in
     {
-      enable = lib.mkEnableOption "Whether to enable idle manager for Wayland.";
+      enable = lib.mkEnableOption "idle management for Wayland.";
       package = lib.mkPackageOption pkgs "swayidle" { };
       systemd.target = shared.mkWaylandSystemdTargetOption { };
 
