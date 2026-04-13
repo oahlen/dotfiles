@@ -21,16 +21,20 @@ help:
     nix build -f . "hosts.$1.config.system.build.toplevel"
 
 # Run nixos-rebuild boot for the current host
-@boot:
+@rebuild-boot:
     nixos-rebuild boot -f . -A "hosts.$(hostname)" --quiet --no-reexec --sudo
 
 # Run nixos-rebuild switch for the current host
-@switch:
+@rebuild-switch:
     nixos-rebuild switch -f . -A "hosts.$(hostname)" --quiet --no-reexec --sudo
 
-# Activate home configuration for the current host
-@home:
-    nix run -f . "homes.$(hostname).switch"
+# Installs the home configuration for the current host
+@home-install:
+    nix run -f . "homes.$(hostname).install"
+
+# Swiches to the home configuration for the current host
+@home-switch:
+    heim-switch . "homes.$(hostname)"
 
 # Activate home configuration (manifest) for the current host
 @manifest:
