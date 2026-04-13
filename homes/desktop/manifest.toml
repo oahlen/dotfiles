@@ -1,9 +1,0 @@
-includes = [
-  "../../config/default.toml",
-  "../../config/graphical.toml"
-]
-
-[files]
-"niri" = "~/.config/niri"
-"scripts" = "~/.config/scripts"
-"Wallpapers" = "~/Pictures/Wallpapers"

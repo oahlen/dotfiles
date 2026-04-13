@@ -10,7 +10,6 @@ symlinkJoin {
     bottom
     calc
     curl
-    customPackages.homage
     customPackages.huevim
     customPackages.neovim
     dos2unix

@@ -38,25 +38,7 @@ in
     in
     {
       desktop = mkHome [ ./homes/desktop/home.nix ];
-    };
-
-  profiles =
-    let
-      mkProfile =
-        modules:
-        let
-          evaluated = pkgs.lib.evalModules {
-            specialArgs = { inherit pkgs; };
-            modules = modules ++ [ ./modules/profiles ];
-          };
-        in
-        pkgs.callPackage ./profiles/builder.nix {
-          inherit (evaluated) config;
-        };
-    in
-    {
-      ubuntu = mkProfile [ ./profiles/ubuntu ];
-      wsl = mkProfile [ ./profiles/wsl ];
+      nixos = mkHome [ ./homes/nixos/home.nix ];
     };
 
   packages = pkgs.customPackages;

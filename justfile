@@ -36,10 +36,6 @@ help:
 @manifest:
     nix run -f . "homes.$(hostname).activate"
 
-# Build and switch to the specified profile
-@profile name:
-    nix run -f . "profiles.$1.switch"
-
 # Build the specified package
 @build package:
     nix build -f . "packages.$1"
@@ -70,11 +66,3 @@ help:
 # Format lua code
 @lua:
     stylua .
-
-# Install dotfiles for the specified host
-@install:
-    homage install "homes/$(hostname)/manifest.toml" -v
-
-# Uninstall dotfiles for the specified host
-@uninstall:
-    homage uninstall "homes/$(hostname)/manifest.toml" -v

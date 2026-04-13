@@ -36,15 +36,12 @@ in
       "fish".source = ../../config/fish;
       "git".source = ../../config/git;
       "gitui".source = ../../config/gitui;
+      "ideavim".source = ../../config/ideavim;
       "nvim".source = ../../config/nvim;
-      "opencode".source = ../../config/opencode;
-
       "ripgrep".source = ../../config/ripgrep;
       "scripts".source = ../../config/scripts;
-      "ideavim".source = ../../config/ideavim;
-
-      "tmux".source = ../../config/tmux;
       "tmuxp".source = ../../config/tmuxp;
+      "tmux".source = ../../config/tmux;
       "yazi".source = ../../config/yazi;
 
       "mimeapps.list".source = ../../config/xdg/mimeapps.list;
