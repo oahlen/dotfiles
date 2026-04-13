@@ -4,9 +4,9 @@ set -euo pipefail
 
 DOTFILES="/home/oahlen/dotfiles"
 
-sudo install -m 755 $DOTFILES/config/system/usr/local/bin/niri /usr/local/bin/niri
+sudo install -m 755 $DOTFILES/modules/heim/config/system/usr/local/bin/niri /usr/local/bin/niri
 
-sudo install -m 644 $DOTFILES/config/system/usr/share/systemd/user/niri.service /usr/share/systemd/user/niri.service
-sudo install -m 644 $DOTFILES/config/system/usr/share/systemd/user/niri-shutdown.target /usr/share/systemd/user/niri-shutdown.target
-sudo install -m 644 $DOTFILES/config/system/usr/share/wayland-sessions/niri.desktop /usr/share/wayland-sessions/niri.desktop
-sudo install -m 644 $DOTFILES/config/system/usr/share/xdg-desktop-portal/niri-portals.conf /usr/share/xdg-desktop-portal/niri-portals.conf
+sudo install -m 644 $DOTFILES/modules/heim/config/system/usr/share/systemd/user/niri.service /usr/share/systemd/user/niri.service
+sudo install -m 644 $DOTFILES/modules/heim/config/system/usr/share/systemd/user/niri-shutdown.target /usr/share/systemd/user/niri-shutdown.target
+sudo install -m 644 $DOTFILES/modules/heim/config/system/usr/share/wayland-sessions/niri.desktop /usr/share/wayland-sessions/niri.desktop
+sudo install -m 644 $DOTFILES/modules/heim/config/system/usr/share/xdg-desktop-portal/niri-portals.conf /usr/share/xdg-desktop-portal/niri-portals.conf

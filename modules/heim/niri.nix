@@ -40,14 +40,14 @@ in
     # };
 
     xdg.config.files = {
-      "foot".source = ../../config/foot;
-      "fuzzel".source = ../../config/fuzzel;
-      "mako".source = ../../config/mako;
-      "MangoHud".source = ../../config/MangoHud;
-      "niri".source = ../../config/niri;
-      "swaylock".source = ../../config/swaylock;
-      "waybar".source = ../../config/waybar;
-      "wlr-which-key".source = ../../config/wlr-which-key;
+      "foot".source = ./config/foot;
+      "fuzzel".source = ./config/fuzzel;
+      "mako".source = ./config/mako;
+      "MangoHud".source = ./config/MangoHud;
+      "niri".source = ./config/niri;
+      "swaylock".source = ./config/swaylock;
+      "waybar".source = ./config/waybar;
+      "wlr-which-key".source = ./config/wlr-which-key;
     };
   };
 }
