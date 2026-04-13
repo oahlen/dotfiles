@@ -13,6 +13,19 @@
       "url": "https://github.com/nix-community/NixOS-WSL/archive/d97e078f4788cddb8d11c3c99f72a4bb9ddec221.tar.gz",
       "hash": "sha256-DnLIpFxznohpLkIFs390uZ0gxwkVyhtknhKNu+lQJK8="
     },
+    "nix-heim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "oahlen",
+        "repo": "nix-heim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "7a90d827948c8dce04dd6423449daa0d242fb39c",
+      "url": "https://github.com/oahlen/nix-heim/archive/7a90d827948c8dce04dd6423449daa0d242fb39c.tar.gz",
+      "hash": "sha256-aFtBGs7Fir6Huq+BcCA+lVCTHzf60qSiABTjeKq9YEg="
+    },
     "nix-index-database": {
       "type": "Git",
       "repository": {

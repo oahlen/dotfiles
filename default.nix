@@ -31,6 +31,15 @@ in
       xps15 = mkHost [ ./hosts/xps15/configuration.nix ];
     };
 
+  homes =
+    let
+      heim = import sources.nix-heim;
+      mkHome = modules: heim pkgs ([ ./modules/heim ] ++ modules);
+    in
+    {
+      desktop = mkHome [ ./homes/desktop/home.nix ];
+    };
+
   profiles =
     let
       mkProfile =

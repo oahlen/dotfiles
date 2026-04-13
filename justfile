@@ -28,6 +28,14 @@ help:
 @switch:
     nixos-rebuild switch -f . -A "hosts.$(hostname)" --quiet --no-reexec --sudo
 
+# Activate home configuration for the current host
+@home:
+    nix run -f . "homes.$(hostname).switch"
+
+# Activate home configuration (manifest) for the current host
+@manifest:
+    nix run -f . "homes.$(hostname).activate"
+
 # Build and switch to the specified profile
 @profile name:
     nix run -f . "profiles.$1.switch"
