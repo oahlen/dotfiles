@@ -18,7 +18,6 @@ in
         bottom
         calc
         curl
-        customPackages.huevim
         customPackages.neovim
         direnv
         dos2unix
