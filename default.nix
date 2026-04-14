@@ -8,6 +8,7 @@ let
       })
     ];
   };
+  heim = import sources.nix-heim;
 in
 {
   hosts =
@@ -17,7 +18,9 @@ in
         pkgs.nixos (
           [
             ./modules/nixos
+            ./modules/heim/nixos.nix
             "${sources.nix-index-database}/nixos-module.nix"
+            heim.nixosModules.default
           ]
           ++ modules
         );
@@ -33,12 +36,10 @@ in
 
   homes =
     let
-      heim = import sources.nix-heim;
       mkHome = modules: heim pkgs ([ ./modules/heim ] ++ modules);
     in
     {
-      desktop = mkHome [ ./homes/desktop/home.nix ];
-      nixos = mkHome [ ./homes/nixos/home.nix ];
+      xps15 = mkHome [ ./homes/xps15/home.nix ];
     };
 
   packages = pkgs.customPackages;

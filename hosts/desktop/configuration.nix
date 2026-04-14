@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./home.nix
   ];
 
   networking.hostName = "desktop";
