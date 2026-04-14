@@ -1,5 +1,6 @@
 let
   sources = import ./npins;
+
   pkgs = import sources.nixpkgs {
     config.allowUnfree = true;
     overlays = [
@@ -8,6 +9,7 @@ let
       })
     ];
   };
+
   heim = import sources.nix-heim;
 in
 {
@@ -39,7 +41,7 @@ in
       mkHome = modules: heim pkgs ([ ./modules/heim ] ++ modules);
     in
     {
-      xps15 = mkHome [ ./homes/xps15/home.nix ];
+      xps15 = mkHome [ ./hosts/xps15/home.nix ];
     };
 
   packages = pkgs.customPackages;
