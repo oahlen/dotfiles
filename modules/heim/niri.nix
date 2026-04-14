@@ -31,29 +31,27 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home = {
-      packages =
-        with pkgs;
-        [
-          brightnessctl
-          customPackages.foot
-          fuzzel
-          hyprpicker
-          playerctl
-          swaybg
-          wf-recorder
-          wl-clipboard
-          wl-mirror
-          wlr-which-key
-          xwayland-satellite
-        ]
-        ++ (if cfg.standalone then cfg.standalone.packages else [ ]);
+    packages =
+      with pkgs;
+      [
+        brightnessctl
+        customPackages.foot
+        fuzzel
+        hyprpicker
+        playerctl
+        swaybg
+        wf-recorder
+        wl-clipboard
+        wl-mirror
+        wlr-which-key
+        xwayland-satellite
+      ]
+      ++ (if cfg.standalone then cfg.standalone.packages else [ ]);
 
-      pathsToLink = [
-        "/share/applications"
-        "/share/icons"
-      ];
-    };
+    pathsToLink = [
+      "/share/applications"
+      "/share/icons"
+    ];
 
     xdg.config.files = {
       "foot".source = ./config/foot;

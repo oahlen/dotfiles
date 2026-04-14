@@ -8,14 +8,6 @@
 
     home = {
       directory = "/home/oahlen";
-      overwrite = true;
-
-      packages = with pkgs; [
-        customPackages.hytale-launcher
-        customPackages.rbw
-        fastfetch
-        filen-cli
-      ];
 
       files = {
         "Pictures/Wallpapers".source = ./config/Wallpapers;
@@ -26,5 +18,14 @@
       "niri/config.kdl".source = ./config/niri/config.kdl;
       "scripts/flatpak-sync".source = ./config/scripts/flatpak-sync;
     };
+
+    overwrite = true;
+
+    packages = with pkgs; [
+      customPackages.hytale-launcher
+      customPackages.rbw
+      fastfetch
+      filen-cli
+    ];
   };
 }

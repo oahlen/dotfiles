@@ -11,9 +11,6 @@
 
   home = {
     directory = "/home/oahlen";
-    overwrite = true;
-
-    packages = [ pkgs.fastfetch ];
 
     files = {
       "Pictures/Wallpapers".source = ./config/Wallpapers;
@@ -26,4 +23,8 @@
     "scripts/apply-conf".source = ./config/scripts/apply-conf;
     "scripts/flatpak-sync".source = ./config/scripts/flatpak-sync;
   };
+
+  overwrite = true;
+
+  packages = [ pkgs.fastfetch ];
 }
