@@ -8,36 +8,52 @@ let
   cfg = config.modules.niri;
 in
 {
-  options.modules.niri.enable = lib.mkEnableOption "the Niri window manager.";
+  options.modules.niri = {
+    enable = lib.mkEnableOption "the Niri window manager.";
+
+    standalone = {
+      enable = lib.mkEnableOption "standalone package options for non NixOS setups.";
+
+      packages = lib.mkOption {
+        type = with lib.types; listOf package;
+        default = with pkgs; [
+          customPackages.niri
+          mako
+          soteria
+          swayidle
+          swayosd
+          waybar
+          wlsunset
+        ];
+        description = "Default packages for standalone Niri installation.";
+      };
+    };
+  };
 
   config = lib.mkIf cfg.enable {
-    # home = {
-    #   packages = with pkgs; [
-    #     brightnessctl
-    #     customPackages.foot
-    #     customPackages.niri
-    #     fastfetch
-    #     fuzzel
-    #     hyprpicker
-    #     mako
-    #     playerctl
-    #     soteria
-    #     swaybg
-    #     swayidle
-    #     # swaylock Use locker directly from distribution
-    #     swayosd
-    #     waybar
-    #     wl-clipboard
-    #     wlr-which-key
-    #     wlsunset
-    #     xwayland-satellite
-    #   ];
-    #
-    #   pathsToLink = [
-    #     "/share/applications"
-    #     "/share/icons"
-    #   ];
-    # };
+    home = {
+      packages =
+        with pkgs;
+        [
+          brightnessctl
+          customPackages.foot
+          fuzzel
+          hyprpicker
+          playerctl
+          swaybg
+          wf-recorder
+          wl-clipboard
+          wl-mirror
+          wlr-which-key
+          xwayland-satellite
+        ]
+        ++ (if cfg.standalone then cfg.standalone.packages else [ ]);
+
+      pathsToLink = [
+        "/share/applications"
+        "/share/icons"
+      ];
+    };
 
     xdg.config.files = {
       "foot".source = ./config/foot;

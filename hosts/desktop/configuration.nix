@@ -16,17 +16,12 @@
 
   modules = {
     desktop.enable = true;
-    development.enable = true;
     gaming.enable = true;
     niri.enable = true;
     podman.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    customPackages.hytale-launcher
-    customPackages.rbw
-    filen-cli
-  ];
+  environment.systemPackages = [ pkgs.nfs-utils ];
 
   fileSystems."/mnt/backup".options = [
     "noatime"

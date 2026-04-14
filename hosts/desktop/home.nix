@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   users.users.oahlen.heim = {
     modules = {
@@ -9,6 +9,13 @@
     home = {
       directory = "/home/oahlen";
       overwrite = true;
+
+      packages = with pkgs; [
+        customPackages.hytale-launcher
+        customPackages.rbw
+        fastfetch
+        filen-cli
+      ];
 
       files = {
         "Pictures/Wallpapers".source = ./config/Wallpapers;

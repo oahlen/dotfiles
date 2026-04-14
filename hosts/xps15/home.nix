@@ -1,13 +1,19 @@
-{ ... }:
+{ pkgs, ... }:
 {
   modules = {
     development.enable = true;
-    niri.enable = true;
+
+    niri = {
+      enable = true;
+      standalone = true;
+    };
   };
 
   home = {
     directory = "/home/oahlen";
     overwrite = true;
+
+    packages = [ pkgs.fastfetch ];
 
     files = {
       "Pictures/Wallpapers".source = ./config/Wallpapers;

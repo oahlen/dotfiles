@@ -72,11 +72,6 @@ in
       SDL_VIDEODRIVER = "wayland";
     };
 
-    environment.systemPackages = with pkgs; [
-      fastfetch
-      nfs-utils
-    ];
-
     fileSystems."/".options = [
       "noatime"
       "nodiratime"

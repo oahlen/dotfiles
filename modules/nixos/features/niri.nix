@@ -130,26 +130,15 @@ in
     environment.systemPackages = with pkgs; [
       adwaita-icon-theme
       adw-gtk3
-      brightnessctl
-      customPackages.foot
-      fuzzel
       gnome-multi-writer
       gnome-text-editor
-      hyprpicker
       libnotify
       loupe
       mako
       nautilus
       papirus-icon-theme
       pavucontrol
-      playerctl
-      swaybg
-      wf-recorder
-      wl-clipboard
-      wl-mirror
-      wlr-which-key
       xdg-utils
-      xwayland-satellite
     ];
   };
 }

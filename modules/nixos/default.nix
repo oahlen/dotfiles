@@ -5,7 +5,6 @@
     ./settings.nix
 
     ./features/desktop.nix
-    ./features/development.nix
     ./features/gaming.nix
     ./features/gnome.nix
     ./features/laptop.nix

@@ -87,6 +87,11 @@
     extraGroups = [ "wheel" ];
   };
 
+  # Essential programs
+  programs = {
+    git.enable = true;
+  };
+
   # Global environment variables
   environment.variables = {
     EDITOR = "nvim";

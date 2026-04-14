@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
+{ config, ... }:
 {
   imports = [
     ./home.nix
@@ -19,7 +15,6 @@
 
   modules = {
     apptainer.enable = true;
-    development.enable = true;
 
     podman = {
       enable = true;
@@ -32,18 +27,6 @@
     git.lfs.enable = true;
     ssh.startAgent = true;
   };
-
-  environment.systemPackages = with pkgs; [
-    _1password-cli
-    awscli2
-    duckdb
-    fastfetchMinimal
-    pqrs
-    trash-cli
-    typst
-    wl-clipboard
-    xdg-utils
-  ];
 
   system.stateVersion = "24.11";
 }

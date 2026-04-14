@@ -22,7 +22,6 @@
   };
 
   modules = {
-    development.enable = true;
     gnome.enable = true;
     intune.enable = true;
     laptop.enable = true;
