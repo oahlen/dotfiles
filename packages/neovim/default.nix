@@ -101,7 +101,6 @@ wrapNeovimUnstable neovim-unwrapped {
     agentic-nvim
     blink-cmp
     blink-cmp-spell
-    comment-nvim
     conform-nvim
     friendly-snippets
     fzf-lua
@@ -113,7 +112,6 @@ wrapNeovimUnstable neovim-unwrapped {
     nvim-autopairs
     nvim-colorizer-lua
     nvim-lspconfig
-    nvim-surround
     nvim-tree-lua
     nvim-web-devicons
     render-markdown-nvim

@@ -9,8 +9,8 @@ local on_attach = function(_, bufnr)
     end
 
     local finder = require("fzf-lua")
-    map("gi", finder.lsp_implementations, "Goto Implementation")
-    map("gr", finder.lsp_references, "Goto References")
+    map("gri", finder.lsp_implementations, "Goto Implementation")
+    map("grr", finder.lsp_references, "Goto References")
 
     map("gd", finder.lsp_definitions, "Goto Definition")
     map("gD", finder.lsp_declarations, "Goto Declaration")
@@ -24,9 +24,9 @@ local on_attach = function(_, bufnr)
 
     map("K", vim.lsp.buf.hover, "Hover Documentation")
     map("<C-s>", vim.lsp.buf.signature_help, "Signature Help")
-    map("<leader>D", vim.lsp.buf.type_definition, "Type Definition")
-    map("<leader>cr", vim.lsp.buf.rename, "Rename Symbol")
-    map("<leader>ca", finder.lsp_code_actions, "Code Actions")
+    map("grt", vim.lsp.buf.type_definition, "Type Definition")
+    map("grn", vim.lsp.buf.rename, "Rename Symbol")
+    map("gra", finder.lsp_code_actions, "Code Actions")
     map("==", function()
         vim.lsp.buf.format({ async = true })
     end, "Format Code")

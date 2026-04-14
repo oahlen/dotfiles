@@ -16,6 +16,7 @@ return {
             { "<leader>h", group = "Git Actions" },
             { "<leader>n", group = "Toggle Actions" },
             { "<leader>t", group = "Tab Actions" },
+            { "gr", group = "LSP Actions" },
         })
     end,
 }
