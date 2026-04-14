@@ -2,8 +2,6 @@ return {
     "blink.cmp",
     lazy = false,
     after = function()
-        require("luasnip/loaders/from_vscode").lazy_load()
-
         local kind_icons = {
             Text = "",
             Method = "󰆧",
@@ -74,17 +72,7 @@ return {
             },
             keymap = {
                 preset = "default",
-                ["<Enter>"] = {
-                    function(cmp)
-                        if cmp.snippet_active() then
-                            return cmp.accept()
-                        else
-                            return cmp.select_and_accept()
-                        end
-                    end,
-                    "select_and_accept",
-                    "fallback",
-                },
+                ["<Enter>"] = { "select_and_accept", "fallback" },
                 ["<Tab>"] = { "select_next", "fallback" },
                 ["<S-Tab>"] = { "select_prev", "fallback" },
                 ["<C-j>"] = { "select_next", "fallback" },
@@ -93,7 +81,7 @@ return {
                 ["<C-f>"] = { "scroll_documentation_down", "fallback" },
             },
             sources = {
-                default = { "lsp", "path", "spell", "snippets", "buffer" },
+                default = { "lsp", "path", "spell", "buffer" },
 
                 providers = {
                     spell = {

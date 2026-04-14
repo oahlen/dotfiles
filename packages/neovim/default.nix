@@ -102,12 +102,10 @@ wrapNeovimUnstable neovim-unwrapped {
     blink-cmp
     blink-cmp-spell
     conform-nvim
-    friendly-snippets
     fzf-lua
     gitsigns-nvim
     heirline-nvim
     indent-blankline-nvim
-    luasnip
     lz-n
     nvim-autopairs
     nvim-colorizer-lua
