@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 {
   imports = [
     ./home.nix
@@ -9,7 +9,7 @@
 
   wsl = {
     enable = true;
-    defaultUser = config.user.name;
+    defaultUser = "oahlen";
     useWindowsDriver = true;
   };
 
@@ -19,6 +19,7 @@
     podman = {
       enable = true;
       dockerCompat = true;
+      user = "oahlen";
     };
   };
 

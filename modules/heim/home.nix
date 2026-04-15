@@ -10,4 +10,6 @@
     "man"
     "doc"
   ];
+
+  overwrite = true;
 }

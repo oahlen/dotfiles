@@ -29,9 +29,6 @@ in
       defaultNetwork.settings.dns_enabled = true;
     };
 
-    # Add user to podman group in order to connect with the docker socket
-    users.users.${config.user.name}.extraGroups = if cfg.dockerCompat then [ "podman" ] else [ ];
-
     environment.systemPackages = [ pkgs.podman-compose ];
   };
 }

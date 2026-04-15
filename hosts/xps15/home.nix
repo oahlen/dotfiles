@@ -24,7 +24,5 @@
     "scripts/flatpak-sync".source = ./config/scripts/flatpak-sync;
   };
 
-  overwrite = true;
-
   packages = [ pkgs.fastfetch ];
 }

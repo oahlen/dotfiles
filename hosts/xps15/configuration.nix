@@ -29,11 +29,23 @@
     podman.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    _1password-gui
-    customPackages.rbw
-    filen-cli
-  ];
+  users.users.oahlen = {
+    uid = 1000;
+    description = "Oscar Ahlén";
+    isNormalUser = true;
+    extraGroups = [
+      "audio"
+      # "libvirtd"
+      "video"
+      "wheel"
+    ];
 
-  system.stateVersion = "25.05";
+    packages = with pkgs; [
+      _1password-gui
+      customPackages.rbw
+      filen-cli
+    ];
+  };
+
+  system.stateVersion = "25.11";
 }

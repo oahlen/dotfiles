@@ -47,11 +47,6 @@ in
       after = [ "graphical-session-pre.target" ];
     };
 
-    users.users.${config.user.name}.extraGroups = [
-      "audio"
-      "video"
-    ];
-
     networking.networkmanager.enable = true;
 
     security.rtkit.enable = true;

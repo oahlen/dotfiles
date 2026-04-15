@@ -16,7 +16,5 @@ in
     programs.dconf.enable = true;
 
     environment.systemPackages = [ pkgs.virt-manager ];
-
-    users.users.${config.user.name}.extraGroups = [ "libvirtd" ];
   };
 }

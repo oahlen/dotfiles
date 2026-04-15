@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   ...
@@ -78,14 +77,6 @@
   services.journald.extraConfig = ''
     SystemMaxUse=100M
   '';
-
-  # User configuration
-  users.users.${config.user.name} = {
-    uid = 1000;
-    description = config.user.fullName;
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
 
   # Essential programs
   programs = {

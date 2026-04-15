@@ -60,8 +60,6 @@ in
       };
     };
 
-    users.users.${config.user.name}.extraGroups = [ "gamemode" ];
-
     # Game launchers and utilities
     environment.systemPackages = [
       pkgs.heroic
