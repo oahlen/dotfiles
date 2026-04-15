@@ -46,7 +46,7 @@ in
         wlr-which-key
         xwayland-satellite
       ]
-      ++ (if cfg.standalone then cfg.standalone.packages else [ ]);
+      ++ (if cfg.standalone.enable then cfg.standalone.packages else [ ]);
 
     pathsToLink = [
       "/share/applications"
