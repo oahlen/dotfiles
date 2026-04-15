@@ -19,7 +19,6 @@
     podman = {
       enable = true;
       dockerCompat = true;
-      user = "oahlen";
     };
   };
 
