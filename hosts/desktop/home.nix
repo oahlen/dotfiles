@@ -17,12 +17,8 @@
         niri.enable = true;
       };
 
-      home = {
-        directory = "/home/oahlen";
-
-        files = {
-          "Pictures/Wallpapers".source = ./config/Wallpapers;
-        };
+      home.files = {
+        "Pictures/Wallpapers".source = ./config/Wallpapers;
       };
 
       xdg.config.files = {
