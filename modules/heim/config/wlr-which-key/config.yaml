@@ -18,10 +18,6 @@ inhibit_compositor_keyboard_shortcuts: true
 auto_kbd_layout: true
 
 menu:
-  - key: "c"
-    desc: Color Picker
-    cmd: hyprpicker -a
-
   - key: "m"
     desc: Multimedia Controls
     submenu:
