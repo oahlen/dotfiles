@@ -17,6 +17,12 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move Focus to the Right Window"
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move Focus to the Lower Window" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move Focus to the Upper Window" })
 
+-- Window resize
+vim.keymap.set("n", "<C-Up>", "<CMD>resize +5<CR>", { desc = "Increase Window Height" })
+vim.keymap.set("n", "<C-Down>", "<CMD>resize -5<CR>", { desc = "Decrease Window Height" })
+vim.keymap.set("n", "<C-Left>", "<CMD>vertical resize -5<CR>", { desc = "Decrease Window Width" })
+vim.keymap.set("n", "<C-Right>", "<CMD>vertical resize +5<CR>", { desc = "Increase Window Width" })
+
 -- Keep cursor in the middle of screen
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Jump Half-Page Down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Jump Half-Page Up" })
