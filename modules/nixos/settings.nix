@@ -71,7 +71,7 @@
     };
   };
 
-  environment.variables.NIX_PATH = lib.mkForce "nixpkgs=${pkgs.path}";
+  environment.variables.NIX_PATH = lib.mkForce "nixpkgs=${builtins.storePath pkgs.path}";
 
   # Systemd settings
   services.journald.extraConfig = ''
