@@ -31,19 +31,22 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    programs = {
+      fuzzel.enable = true;
+      mako.enable = true;
+      wlr-which-key.enable = true;
+    };
     packages =
       with pkgs;
       [
         brightnessctl
         customPackages.foot
-        fuzzel
         hyprpicker
         playerctl
         swaybg
         wf-recorder
         wl-clipboard
         wl-mirror
-        wlr-which-key
         xwayland-satellite
       ]
       ++ (if cfg.standalone.enable then cfg.standalone.packages else [ ]);
@@ -55,13 +58,10 @@ in
 
     xdg.config.files = {
       "foot".source = ./config/foot;
-      "fuzzel".source = ./config/fuzzel;
-      "mako".source = ./config/mako;
       "MangoHud".source = ./config/MangoHud;
       "niri".source = ./config/niri;
       "swaylock".source = ./config/swaylock;
       "waybar".source = ./config/waybar;
-      "wlr-which-key".source = ./config/wlr-which-key;
     };
   };
 }
