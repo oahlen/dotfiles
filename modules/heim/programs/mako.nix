@@ -51,7 +51,7 @@ in
       in
       {
         "mako/config".variants = {
-          "dark" = {
+          dark = {
             text = mkConfig (config // dark);
             default = true;
           };

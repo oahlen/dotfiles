@@ -141,6 +141,7 @@ in
                   desc = "Default";
                   cmd = ''
                     dconf write /org/gnome/desktop/interface/color-scheme "'default'"
+                    heim-activate --variant dark
                     pkill -USR2 foot || true
                     notify-send "Application Theme" "Set to Default"
                   '';
@@ -150,6 +151,7 @@ in
                   desc = "Dark";
                   cmd = ''
                     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+                    heim-activate --variant dark
                     pkill -USR1 foot || true
                     notify-send "Application Theme" "Set to Dark"
                   '';
@@ -159,6 +161,7 @@ in
                   desc = "Light";
                   cmd = ''
                     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
+                    heim-activate --variant light
                     pkill -USR2 foot || true
                     notify-send "Application Theme" "Set to Light"
                   '';
@@ -182,7 +185,7 @@ in
       in
       {
         "wlr-which-key/config.yaml".variants = {
-          "dark" = {
+          dark = {
             text = lib.generators.toYAML { } (config // dark);
             default = true;
           };

@@ -66,7 +66,7 @@ in
       in
       {
         "fuzzel/fuzzel.ini".variants = {
-          "dark" = {
+          dark = {
             text = lib.generators.toINI { } (config // dark);
             default = true;
           };

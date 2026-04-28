@@ -32,6 +32,7 @@ in
 
   config = lib.mkIf cfg.enable {
     programs = {
+      foot.enable = true;
       fuzzel.enable = true;
       mako.enable = true;
       wlr-which-key.enable = true;
@@ -40,7 +41,6 @@ in
       with pkgs;
       [
         brightnessctl
-        customPackages.foot
         hyprpicker
         playerctl
         swaybg
@@ -57,7 +57,6 @@ in
     ];
 
     xdg.config.files = {
-      "foot".source = ./config/foot;
       "MangoHud".source = ./config/MangoHud;
       "niri".source = ./config/niri;
       "swaylock".source = ./config/swaylock;

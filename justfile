@@ -32,7 +32,7 @@ help:
 @home-install:
     nix run -f . "homes.$(hostname).install"
 
-# Swiches to the home configuration for the current host
+# Switches to the home configuration for the current host
 @home-switch:
     heim-switch . "homes.$(hostname)"
 
