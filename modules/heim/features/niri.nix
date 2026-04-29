@@ -37,7 +37,7 @@ in
 
       niri = {
         enable = true;
-        package = if cfg.standalone then pkgs.customPackages.niri else pkgs.niri;
+        package = if cfg.standalone.enable then pkgs.customPackages.niri else pkgs.niri;
       };
 
       waybar.enable = true;

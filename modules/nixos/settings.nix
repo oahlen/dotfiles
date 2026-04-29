@@ -90,6 +90,8 @@
   };
 
   # General overrides
+  programs.command-not-found.enable = false;
+
   networking.networkmanager.wifi.backend = "iwd";
   services.dbus.implementation = "broker";
 }

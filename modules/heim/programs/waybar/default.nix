@@ -105,9 +105,9 @@ in
         ];
       in
       {
-        "waybar/config.json".text = lib.generators.toJSON { } config;
-        "waybar/styles-dark.css".source = ./style-dark.css;
-        "waybar/styles-light.css".source = ./style-light.css;
+        "waybar/config".text = lib.generators.toJSON { } config;
+        "waybar/style-dark.css".source = ./style-dark.css;
+        "waybar/style-light.css".source = ./style-light.css;
       };
   };
 }
