@@ -2,7 +2,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./home.nix
   ];
 
   networking.hostName = "desktop";
@@ -28,6 +27,20 @@
     "nodiratime"
     "discard"
   ];
+
+  users.users.oahlen = {
+    uid = 1000;
+    description = "Oscar Ahlén";
+    isNormalUser = true;
+    extraGroups = [
+      "audio"
+      "gamemode"
+      "video"
+      "wheel"
+    ];
+
+    heim = import ./home.nix { inherit pkgs; };
+  };
 
   system.stateVersion = "22.11";
 }

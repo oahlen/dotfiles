@@ -36,9 +36,9 @@ help:
 @home-switch:
     heim-switch . "homes.$(hostname)"
 
-# Activate home configuration (manifest) for the current host
+# Build the home configuration (manifest) for the current host
 @manifest:
-    nix run -f . "homes.$(hostname).activate"
+    nix build -f . "homes.$(hostname).manifest"
 
 # Build the specified package
 @build package:

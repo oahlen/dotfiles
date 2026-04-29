@@ -41,6 +41,8 @@ in
       mkHome = modules: heim pkgs ([ ./modules/heim ] ++ modules);
     in
     {
+      desktop = mkHome [ ./hosts/desktop/home.nix ];
+      nixos = mkHome [ ./hosts/wsl/home.nix ];
       xps15 = mkHome [ ./hosts/xps15/home.nix ];
     };
 

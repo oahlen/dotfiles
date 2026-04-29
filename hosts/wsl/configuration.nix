@@ -1,9 +1,5 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  imports = [
-    ./home.nix
-  ];
-
   # Since we don't have a hardware-configuration.nix
   nixpkgs.hostPlatform = "x86_64-linux";
 
@@ -26,6 +22,18 @@
     dconf.enable = true;
     git.lfs.enable = true;
     ssh.startAgent = true;
+  };
+
+  users.users.oahlen = {
+    uid = 1000;
+    description = "Oscar Ahlén";
+    isNormalUser = true;
+    extraGroups = [
+      "podman"
+      "wheel"
+    ];
+
+    heim = import ./home.nix { inherit pkgs; };
   };
 
   system.stateVersion = "24.11";
