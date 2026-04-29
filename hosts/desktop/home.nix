@@ -5,6 +5,10 @@
     niri.enable = true;
   };
 
+  programs = {
+    mangohud.enable = true;
+  };
+
   home = {
     directory = "/home/oahlen";
 
@@ -24,4 +28,6 @@
     fastfetch
     filen-cli
   ];
+
+  overwrite = true;
 }

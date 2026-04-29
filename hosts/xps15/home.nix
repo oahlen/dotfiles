@@ -9,6 +9,13 @@
     };
   };
 
+  programs = {
+    swaylock = {
+      enable = true;
+      installPackage = false;
+    };
+  };
+
   home = {
     directory = "/home/oahlen";
 

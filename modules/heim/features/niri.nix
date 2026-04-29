@@ -17,7 +17,6 @@ in
       packages = lib.mkOption {
         type = with lib.types; listOf package;
         default = with pkgs; [
-          customPackages.niri
           mako
           soteria
           swayidle
@@ -35,8 +34,16 @@ in
       foot.enable = true;
       fuzzel.enable = true;
       mako.enable = true;
+
+      niri = {
+        enable = true;
+        package = if cfg.standalone then pkgs.customPackages.niri else pkgs.niri;
+      };
+
+      waybar.enable = true;
       wlr-which-key.enable = true;
     };
+
     packages =
       with pkgs;
       [
@@ -55,12 +62,5 @@ in
       "/share/applications"
       "/share/icons"
     ];
-
-    xdg.config.files = {
-      "MangoHud".source = ./config/MangoHud;
-      "niri".source = ./config/niri;
-      "swaylock".source = ./config/swaylock;
-      "waybar".source = ./config/waybar;
-    };
   };
 }

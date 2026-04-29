@@ -1,9 +1,4 @@
 { ... }:
 {
-  heim.sharedModules = [
-    ./programs
-    ./development.nix
-    ./niri.nix
-    ./home.nix
-  ];
+  heim.sharedModules = (import ./default.nix { }).imports;
 }

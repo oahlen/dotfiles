@@ -1,0 +1,113 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  cfg = config.programs.waybar;
+in
+{
+  options.programs.waybar.enable = lib.mkEnableOption "waybar.";
+
+  config = lib.mkIf cfg.enable {
+    packages = [ pkgs.waybar ];
+
+    xdg.config.files =
+      let
+        config = [
+          {
+            position = "top";
+            layer = "top";
+            height = 40;
+            spacing = 16;
+            modules-left = [ "niri/workspaces" ];
+            modules-center = [ "clock" ];
+            modules-right = [
+              "niri/language"
+              "tray"
+              "battery"
+              "wireplumber"
+            ];
+
+            "niri/workspaces" = {
+              "disable-scroll" = true;
+            };
+
+            clock = {
+              format = "{:%d %B %H:%M}";
+              tooltip = false;
+            };
+
+            "niri/language" = {
+              format = "{short}";
+            };
+
+            tray = {
+              spacing = 16;
+            };
+
+            battery = {
+              format = "{icon}";
+              format-full = "󰂅";
+              format-icons = {
+                charging = [
+                  "󰢜"
+                  "󰂆"
+                  "󰂇"
+                  "󰂈"
+                  "󰢝"
+                  "󰂉"
+                  "󰢞"
+                  "󰂊"
+                  "󰂋"
+                  "󰂅"
+                ];
+                default = [
+                  "󰁺"
+                  "󰁻"
+                  "󰁼"
+                  "󰁽"
+                  "󰁾"
+                  "󰁿"
+                  "󰂀"
+                  "󰂁"
+                  "󰂂"
+                  "󰁹"
+                ];
+              };
+              format-plugged = "";
+              interval = 15;
+              states = {
+                critical = 15;
+                warning = 30;
+              };
+              tooltip-format-charging = "Capacity: {capacity}%\nTime: {time}\nCharging at: {power:>1.0f}W\nHealth: {health}%";
+              tooltip-format-discharging = "Capacity: {capacity}%\nTime: {time}\nDischarging at {power:>1.0f}W\nHealth: {health}%";
+            };
+
+            wireplumber = {
+              format = "{icon}";
+              format-icons = {
+                default = [
+                  " "
+                  " "
+                  " "
+                ];
+              };
+              format-muted = " ";
+              on-click = "${pkgs.swayosd}/bin/swayosd-client --output-volume mute-toggle";
+              on-scroll-up = "${pkgs.swayosd}/bin/swayosd-client --output-volume +1";
+              on-scroll-down = "${pkgs.swayosd}/bin/swayosd-client --output-volume -1";
+              tooltip-format = "Playing at {volume}%";
+            };
+          }
+        ];
+      in
+      {
+        "waybar/config.json".text = lib.generators.toJSON { } config;
+        "waybar/styles-dark.css".source = ./style-dark.css;
+        "waybar/styles-light.css".source = ./style-light.css;
+      };
+  };
+}

@@ -64,10 +64,10 @@ in
 
     home = {
       files = {
-        ".bash_profile".source = ./config/bash/.bash_profile;
-        ".bashrc".source = ./config/bash/.bashrc;
-        ".profile".source = ./config/profile/.profile;
-        ".ssh".source = ./config/ssh;
+        ".bash_profile".source = ../config/bash/.bash_profile;
+        ".bashrc".source = ../config/bash/.bashrc;
+        ".profile".source = ../config/profile/.profile;
+        ".ssh".source = ../config/ssh;
       };
     };
 
@@ -76,23 +76,23 @@ in
         source ${pkgs.nix-direnv}/share/nix-direnv/direnvrc
       '';
 
-      "bat".source = ./config/bat;
-      "bottom".source = ./config/bottom;
-      "fd".source = ./config/fd;
-      "fish".source = ./config/fish;
-      "git".source = ./config/git;
-      "gitui".source = ./config/gitui;
-      "ideavim".source = ./config/ideavim;
-      "nvim".source = ./config/nvim;
-      "ripgrep".source = ./config/ripgrep;
-      "scripts".source = ./config/scripts;
-      "tmuxp".source = ./config/tmuxp;
-      "tmux".source = ./config/tmux;
-      "yazi".source = ./config/yazi;
+      "bat".source = ../config/bat;
+      "bottom".source = ../config/bottom;
+      "fd".source = ../config/fd;
+      "fish".source = ../config/fish;
+      "git".source = ../config/git;
+      "gitui".source = ../config/gitui;
+      "ideavim".source = ../config/ideavim;
+      "nvim".source = ../config/nvim;
+      "ripgrep".source = ../config/ripgrep;
+      "scripts".source = ../config/scripts;
+      "tmuxp".source = ../config/tmuxp;
+      "tmux".source = ../config/tmux;
+      "yazi".source = ../config/yazi;
 
-      "mimeapps.list".source = ./config/xdg/mimeapps.list;
-      "user-dirs.conf".source = ./config/xdg/user-dirs.conf;
-      "user-dirs.dirs".source = ./config/xdg/user-dirs.dirs;
+      "mimeapps.list".source = ../config/xdg/mimeapps.list;
+      "user-dirs.conf".source = ../config/xdg/user-dirs.conf;
+      "user-dirs.dirs".source = ../config/xdg/user-dirs.dirs;
     };
   };
 }
