@@ -2,6 +2,7 @@
 {
   imports = [
     ./features/development.nix
+    ./features/gaming.nix
     ./features/niri.nix
 
     ./programs/niri
@@ -9,7 +10,6 @@
     ./programs/foot.nix
     ./programs/fuzzel.nix
     ./programs/mako.nix
-    ./programs/mangohud.nix
     ./programs/wlr-which-key.nix
   ];
 

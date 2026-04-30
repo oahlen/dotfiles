@@ -9,7 +9,7 @@ window#waybar {
 
 window > box {
     margin: 8px 8px 0px 8px;
-    background: #e6e7ed;
+    background: #c8cbd8;
     color: #343b58;
     border-radius: 8px;
 }

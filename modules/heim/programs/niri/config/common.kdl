@@ -2,6 +2,7 @@ include "input.kdl"
 include "layout.kdl"
 include "binds.kdl"
 include "rules.kdl"
+include "theme.kdl"
 
 prefer-no-csd
 
@@ -17,7 +18,6 @@ cursor {
 
 overview {
     zoom 0.75
-    backdrop-color "#1a1b26"
 
     workspace-shadow {
         off

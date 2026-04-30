@@ -1,16 +1,26 @@
 { pkgs, ... }:
+let
+  homeDirectory = "/home/oahlen";
+in
 {
   modules = {
     development.enable = true;
+    gaming.enable = true;
     niri.enable = true;
   };
 
-  programs = {
-    mangohud.enable = true;
-  };
+  programs.niri.extraConfig = ''
+    output "DP-2" {
+        variable-refresh-rate on-demand=true
+    }
+
+    spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
+
+    spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "${homeDirectory}/Pictures/Wallpapers/lake.png" "-m" "fit"
+  '';
 
   home = {
-    directory = "/home/oahlen";
+    directory = homeDirectory;
 
     files = {
       "Pictures/Wallpapers".source = ./config/Wallpapers;
@@ -18,7 +28,6 @@
   };
 
   xdg.config.files = {
-    "niri/config.kdl".source = ./config/niri/config.kdl;
     "scripts/flatpak-sync".source = ./config/scripts/flatpak-sync;
   };
 

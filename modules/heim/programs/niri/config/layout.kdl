@@ -51,9 +51,5 @@ layout {
         // off
 
         width 2
-
-        active-color "#7aa2f7"
-
-        inactive-color "#606a99"
     }
 }

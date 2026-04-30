@@ -12,8 +12,4 @@ window-rule {
 
     default-column-width { fixed 1280; }
     default-window-height { fixed 720; }
-
-    focus-ring {
-        active-color "#7dcfff"
-    }
 }

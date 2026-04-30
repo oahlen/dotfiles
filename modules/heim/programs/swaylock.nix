@@ -10,16 +10,11 @@ in
 {
   options.programs.swaylock = {
     enable = lib.mkEnableOption "swaylock.";
-
-    installPackage = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Whether to install the swaylock package.";
-    };
+    package = lib.mkPackageOption pkgs "swaylock" { nullable = true; };
   };
 
   config = lib.mkIf cfg.enable {
-    packages = if config.installPackage then [ pkgs.swaylock ] else [ ];
+    packages = lib.mkIf config.package != null [ cfg.package ];
 
     xdg.config.files = {
       "swaylock/config".text = ''

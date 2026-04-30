@@ -59,11 +59,5 @@ in
         };
       };
     };
-
-    # Game launchers and utilities
-    environment.systemPackages = [
-      pkgs.heroic
-      pkgs.mangohud
-    ];
   };
 }

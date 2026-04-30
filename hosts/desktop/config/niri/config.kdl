@@ -1,9 +1,0 @@
-include "common.kdl"
-
-output "DP-2" {
-    variable-refresh-rate on-demand=true
-}
-
-spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
-
-spawn-sh-at-startup "swaybg -o \"*\" -i ~/Pictures/Wallpapers/lake.png -m fit"

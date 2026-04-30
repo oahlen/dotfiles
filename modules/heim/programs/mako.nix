@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -10,6 +11,8 @@ in
   options.programs.mako.enable = lib.mkEnableOption "mako.";
 
   config = lib.mkIf cfg.enable {
+    packages = [ pkgs.mako ];
+
     xdg.config.files =
       let
         inherit (lib)
