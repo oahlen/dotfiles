@@ -22,10 +22,6 @@
             scale 2.0
         }
 
-        binds {
-            Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "swaylock"; }
-        }
-
         spawn-sh-at-startup "swaybg -o \"*\" -i ~/Pictures/Wallpapers/sunset.jpg -m fit"
 
         spawn-sh-at-startup "waybar"
@@ -38,13 +34,8 @@
 
         spawn-sh-at-startup "mako"
 
-        spawn-sh-at-startup "swayidle -w timeout 300 'swaylock -f' timeout 900 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors' timeout 1800 'systemctl suspend' before-sleep 'swaylock -f'"
+        spawn-sh-at-startup "swayidle -w timeout 300 'gtklock -d' timeout 900 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors' timeout 1800 'systemctl suspend' before-sleep 'gtklock -d'"
       '';
-    };
-
-    swaylock = {
-      enable = true;
-      package = null;
     };
   };
 
