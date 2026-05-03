@@ -20,7 +20,6 @@ in
         pkgs.nixos (
           [
             ./modules/nixos
-            ./modules/heim/nixos.nix
             "${sources.nix-index-database}/nixos-module.nix"
             heim.nixosModules.default
           ]

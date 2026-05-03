@@ -1,9 +1,6 @@
 { ... }:
 {
   imports = [
-    ./options.nix
-    ./settings.nix
-
     ./desktops/gnome.nix
     ./desktops/niri.nix
 
@@ -24,5 +21,10 @@
     ./services/swayosd.nix
     ./services/waybar.nix
     ./services/wlsunset.nix
+
+    ./options.nix
+    ./settings.nix
   ];
+
+  heim.sharedModules = (import ../heim { }).imports;
 }

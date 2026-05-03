@@ -17,6 +17,4 @@
     wl-clipboard
     xdg-utils
   ];
-
-  overwrite = true;
 }

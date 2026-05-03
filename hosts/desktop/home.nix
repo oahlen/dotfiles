@@ -38,6 +38,4 @@ in
     fastfetch
     filen-cli
   ];
-
-  overwrite = true;
 }
