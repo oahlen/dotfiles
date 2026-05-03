@@ -29,6 +29,8 @@ in
       defaultNetwork.settings.dns_enabled = true;
     };
 
+    users.groups.podman.members = config.users.groups.wheel.members;
+
     environment.systemPackages = [ pkgs.podman-compose ];
   };
 }

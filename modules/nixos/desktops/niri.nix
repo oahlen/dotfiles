@@ -49,6 +49,9 @@ in
 
     networking.networkmanager.enable = true;
 
+    users.groups.audio.members = config.users.groups.users.members;
+    users.groups.video.members = config.users.groups.users.members;
+
     security.rtkit.enable = true;
 
     services = {

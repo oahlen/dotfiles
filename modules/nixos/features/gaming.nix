@@ -59,5 +59,7 @@ in
         };
       };
     };
+
+    users.groups.gamemode.members = config.users.groups.users.members;
   };
 }

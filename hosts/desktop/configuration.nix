@@ -39,9 +39,7 @@
     description = "Oscar Ahlén";
     isNormalUser = true;
     extraGroups = [
-      "audio"
-      "gamemode"
-      "video"
+      "users"
       "wheel"
     ];
 

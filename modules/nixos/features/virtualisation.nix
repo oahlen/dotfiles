@@ -13,6 +13,8 @@ in
   config = lib.mkIf cfg.enable {
     virtualisation.libvirtd.enable = true;
 
+    users.groups.libvirtd.members = config.users.groups.users.members;
+
     programs.dconf.enable = true;
 
     environment.systemPackages = [ pkgs.virt-manager ];

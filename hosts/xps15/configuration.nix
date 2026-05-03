@@ -41,9 +41,7 @@
     description = "Oscar Ahlén";
     isNormalUser = true;
     extraGroups = [
-      "audio"
-      # "libvirtd"
-      "video"
+      "users"
       "wheel"
     ];
 
