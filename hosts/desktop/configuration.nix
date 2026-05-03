@@ -13,11 +13,14 @@
     bluetooth.enable = true;
   };
 
-  modules = {
-    desktop.enable = true;
+  profiles.desktop.enable = true;
+
+  desktops.niri.enable = true;
+
+  features = {
+    containers.enable = true;
     gaming.enable = true;
-    niri.enable = true;
-    podman.enable = true;
+    security-key.enable = true;
   };
 
   environment.systemPackages = [ pkgs.nfs-utils ];

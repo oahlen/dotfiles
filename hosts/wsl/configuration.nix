@@ -9,16 +9,15 @@
     useWindowsDriver = true;
   };
 
-  modules = {
-    apptainer.enable = true;
-
-    podman = {
+  features = {
+    containers = {
       enable = true;
       dockerCompat = true;
     };
   };
 
   programs = {
+    apptainer.enable = true;
     dconf.enable = true;
     git.lfs.enable = true;
     ssh.startAgent = true;

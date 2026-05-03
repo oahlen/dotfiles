@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.modules.wlsunset;
+  cfg = config.services.wlsunset;
   shared = import ./shared.nix { inherit config lib; };
 in
 {
-  options.modules.wlsunset = {
+  options.services.wlsunset = {
     enable = lib.mkEnableOption "wlsunset.";
     package = lib.mkPackageOption pkgs "wlsunset" { };
     systemd.target = shared.mkWaylandSystemdTargetOption { };

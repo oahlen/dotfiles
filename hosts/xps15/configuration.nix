@@ -21,12 +21,19 @@
     ];
   };
 
-  modules = {
-    gnome.enable = true;
-    intune.enable = true;
+  profiles = {
     laptop.enable = true;
+    work.enable = true;
+  };
+
+  desktops = {
+    gnome.enable = true;
     niri.enable = true;
-    podman.enable = true;
+  };
+
+  features = {
+    containers.enable = true;
+    security-key.enable = true;
   };
 
   users.users.oahlen = {

@@ -1,17 +1,17 @@
 { pkgs, ... }:
 {
-  modules = {
-    development.enable = true;
+  desktops.niri = {
+    enable = true;
+    extraPackages = with pkgs; [
+      soteria
+      swayidle
+      swayosd
+      wlsunset
+    ];
+  };
 
-    niri = {
-      enable = true;
-      extraPackages = with pkgs; [
-        soteria
-        swayidle
-        swayosd
-        wlsunset
-      ];
-    };
+  features = {
+    development.enable = true;
   };
 
   programs = {

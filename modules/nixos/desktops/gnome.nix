@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.modules.gnome;
+  cfg = config.desktops.gnome;
 in
 {
-  options.modules.gnome.enable = lib.mkEnableOption "the Gnome desktop environment.";
+  options.desktops.gnome.enable = lib.mkEnableOption "the Gnome desktop environment.";
 
   config = lib.mkIf cfg.enable {
     services = {

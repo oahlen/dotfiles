@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.modules.swayosd;
+  cfg = config.services.swayosd;
   shared = import ./shared.nix { inherit config lib; };
 in
 {
-  options.modules.swayosd = {
+  options.services.swayosd = {
     enable = lib.mkEnableOption "swayosd, a GTK based on screen display for keyboard shortcuts like caps-lock and volume.";
     package = lib.mkPackageOption pkgs "swayosd" { };
     systemd.target = shared.mkWaylandSystemdTargetOption { };

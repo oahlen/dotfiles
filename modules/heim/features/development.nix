@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.modules.development;
+  cfg = config.features.development;
 in
 {
-  options.modules.development.enable = lib.mkEnableOption "basic development features.";
+  options.features.development.enable = lib.mkEnableOption "basic development features.";
 
   config = lib.mkIf cfg.enable {
     packages = with pkgs; [

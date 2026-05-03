@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  modules = {
+  features = {
     development.enable = true;
   };
 

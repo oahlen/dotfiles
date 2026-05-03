@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.modules.apptainer;
+  cfg = config.programs.apptainer;
 in
 {
-  options.modules.apptainer.enable = lib.mkEnableOption "Apptainer.";
+  options.programs.apptainer.enable = lib.mkEnableOption "Apptainer.";
 
   config = lib.mkIf cfg.enable {
     programs.singularity = {

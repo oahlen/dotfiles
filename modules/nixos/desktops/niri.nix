@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.modules.niri;
+  cfg = config.desktops.niri;
 in
 {
-  options.modules.niri.enable = lib.mkEnableOption "the Niri window manager.";
+  options.desktops.niri.enable = lib.mkEnableOption "the Niri window manager and related desktop components.";
 
   config = lib.mkIf cfg.enable {
     wayland.systemd.target = "niri-session.target";
@@ -51,7 +51,19 @@ in
 
     security.rtkit.enable = true;
 
-    modules = {
+    services = {
+      blueman.enable = config.hardware.bluetooth.enable;
+      displayManager.gdm.enable = true;
+
+      dbus = {
+        enable = true;
+        packages = [
+          pkgs.gcr_4
+          pkgs.mako
+        ];
+      };
+
+      gvfs.enable = true;
       polkit-soteria.enable = true;
 
       swayidle = {
@@ -82,6 +94,7 @@ in
       };
 
       swayosd.enable = true;
+      tumbler.enable = true;
 
       waybar = {
         enable = true;
@@ -104,22 +117,6 @@ in
           "4500"
         ];
       };
-    };
-
-    services = {
-      blueman.enable = config.hardware.bluetooth.enable;
-      displayManager.gdm.enable = true;
-
-      dbus = {
-        enable = true;
-        packages = [
-          pkgs.gcr_4
-          pkgs.mako
-        ];
-      };
-
-      gvfs.enable = true;
-      tumbler.enable = true;
     };
 
     environment.systemPackages = with pkgs; [

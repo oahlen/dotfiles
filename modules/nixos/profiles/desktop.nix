@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.modules.desktop;
+  cfg = config.profiles.desktop;
 in
 {
-  options.modules.desktop.enable = lib.mkEnableOption "desktop related features.";
+  options.profiles.desktop.enable = lib.mkEnableOption "desktop profile.";
 
   config = lib.mkIf cfg.enable {
     boot = {
@@ -36,10 +36,6 @@ in
       nerd-fonts.jetbrains-mono
       noto-fonts-color-emoji
     ];
-
-    modules = {
-      yubikey.enable = true;
-    };
 
     services = {
       flatpak.enable = true;

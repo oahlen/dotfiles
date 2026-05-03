@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.modules.niri;
+  cfg = config.desktops.niri;
 in
 {
-  options.modules.niri = {
+  options.desktops.niri = {
     enable = lib.mkEnableOption "the Niri window manager.";
 
     extraPackages = lib.mkOption {

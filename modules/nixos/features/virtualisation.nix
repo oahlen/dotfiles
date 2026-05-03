@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.modules.virt-manager;
+  cfg = config.features.virtualisation;
 in
 {
-  options.modules.virt-manager.enable = lib.mkEnableOption "Virtual Machine Manager.";
+  options.features.virtualisation.enable = lib.mkEnableOption "virtualisation.";
 
   config = lib.mkIf cfg.enable {
     virtualisation.libvirtd.enable = true;

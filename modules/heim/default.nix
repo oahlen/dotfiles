@@ -1,9 +1,10 @@
 { ... }:
 {
   imports = [
+    ./desktops/niri.nix
+
     ./features/development.nix
     ./features/gaming.nix
-    ./features/niri.nix
 
     ./programs/niri
     ./programs/waybar

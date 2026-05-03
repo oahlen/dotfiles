@@ -5,14 +5,14 @@
   ...
 }:
 let
-  cfg = config.modules.laptop;
+  cfg = config.profiles.laptop;
 in
 {
-  options.modules.laptop.enable = lib.mkEnableOption "laptop related features.";
+  options.profiles.laptop.enable = lib.mkEnableOption "laptop profile.";
 
   config = lib.mkIf cfg.enable {
-    modules = {
-      desktop.enable = true; # laptop profile is a superset of the desktop feature set
+    profiles = {
+      desktop.enable = true; # laptop profile is a superset of the desktop profile
     };
 
     powerManagement.powertop.enable = true;

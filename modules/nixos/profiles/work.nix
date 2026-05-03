@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.modules.intune;
+  cfg = config.profiles.work;
 in
 {
-  options.modules.intune.enable = lib.mkEnableOption "Microsoft Intune.";
+  options.profiles.work.enable = lib.mkEnableOption "work profile.";
 
   config = lib.mkIf cfg.enable {
     services.intune.enable = true;

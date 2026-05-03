@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.modules.polkit-soteria;
+  cfg = config.services.polkit-soteria;
   shared = import ./shared.nix { inherit config lib; };
 in
 {
-  options.modules.polkit-soteria = {
+  options.services.polkit-soteria = {
     enable = lib.mkEnableOption "Soteria, a Polkit authentication agent for any desktop environment.";
     package = lib.mkPackageOption pkgs "soteria" { };
     systemd.target = shared.mkWaylandSystemdTargetOption { };

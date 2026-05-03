@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.modules.gaming;
+  cfg = config.features.gaming;
 in
 {
-  options.modules.gaming = {
+  options.features.gaming = {
     enable = lib.mkEnableOption "gaming support.";
   };
 
