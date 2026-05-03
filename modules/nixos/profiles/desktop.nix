@@ -49,11 +49,6 @@ in
       };
 
       power-profiles-daemon.enable = true;
-
-      tailscale = {
-        enable = true;
-        useRoutingFeatures = "both";
-      };
     };
 
     programs = {

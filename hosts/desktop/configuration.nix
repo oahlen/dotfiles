@@ -13,7 +13,10 @@
     bluetooth.enable = true;
   };
 
-  profiles.desktop.enable = true;
+  profiles = {
+    desktop.enable = true;
+    home.enable = true;
+  };
 
   desktops.niri.enable = true;
 

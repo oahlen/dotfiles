@@ -10,6 +10,7 @@
     ./features/virtualisation.nix
 
     ./profiles/desktop.nix
+    ./profiles/home.nix
     ./profiles/laptop.nix
     ./profiles/work.nix
 
