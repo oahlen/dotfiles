@@ -1,6 +1,8 @@
 { ... }:
 {
   imports = [
+    ./colors/default.nix
+
     ./desktops/niri.nix
 
     ./features/development.nix

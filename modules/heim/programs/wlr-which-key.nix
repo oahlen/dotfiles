@@ -6,6 +6,12 @@
 }:
 let
   cfg = config.programs.wlr-which-key;
+
+  mkColors = variant: {
+    inherit (variant) background;
+    color = variant.foreground;
+    border = variant.cyan;
+  };
 in
 {
   options.programs.wlr-which-key.enable = lib.mkEnableOption "wlr-which-key.";
@@ -15,14 +21,9 @@ in
 
     xdg.config.files =
       let
-        config = {
+        base = {
           font = "JetBrainsMono Nerd Font 11.5";
-
-          background = "#1a1b26";
-          color = "#a9b1d6";
-          border = "#7dcfff";
           separator = " ➜ ";
-
           border_width = 2;
           corner_r = 8;
           padding = 24;
@@ -170,27 +171,18 @@ in
             }
           ];
         };
-
-        dark = {
-          background = "#1a1b26";
-          color = "#a9b1d6";
-          border = "#7dcfff";
-        };
-
-        light = {
-          background = "#e6e7ed";
-          color = "#343b58";
-          border = "#006c86";
-        };
       in
       {
         "wlr-which-key/config.yaml".variants = {
           dark = {
-            text = lib.generators.toYAML { } (config // dark);
-            default = true;
+            text = lib.generators.toYAML { } (base // mkColors config.colors.dark);
+            default = config.colorscheme.default == "dark";
           };
 
-          light.text = lib.generators.toYAML { } (config // light);
+          light = {
+            text = lib.generators.toYAML { } (base // mkColors config.colors.light);
+            default = config.colorscheme.default == "light";
+          };
         };
       };
   };

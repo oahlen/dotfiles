@@ -15,7 +15,7 @@ in
 
     xdg.config.files =
       let
-        config = [
+        base = [
           {
             position = "top";
             layer = "top";
@@ -105,7 +105,7 @@ in
         ];
       in
       {
-        "waybar/config".text = lib.generators.toJSON { } config;
+        "waybar/config".text = lib.generators.toJSON { } base;
         "waybar/style-dark.css".source = ./style-dark.css;
         "waybar/style-light.css".source = ./style-light.css;
       };

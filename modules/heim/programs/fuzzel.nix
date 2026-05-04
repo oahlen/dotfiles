@@ -6,6 +6,20 @@
 }:
 let
   cfg = config.programs.fuzzel;
+
+  withAlpha = color: "${lib.removePrefix "#" color}ff";
+
+  mkColors = variant: {
+    background = withAlpha variant.background;
+    border = withAlpha variant.cyan;
+    input = withAlpha variant.foreground;
+    match = withAlpha variant.yellow;
+    prompt = withAlpha variant.green;
+    selection = withAlpha variant.selection.background;
+    selection-match = withAlpha variant.selection.highlight;
+    selection-text = withAlpha variant.selection.foreground;
+    text = withAlpha variant.foreground;
+  };
 in
 {
   options.programs.fuzzel.enable = lib.mkEnableOption "fuzzel.";
@@ -15,7 +29,7 @@ in
 
     xdg.config.files =
       let
-        config = {
+        base = {
           main = {
             dpi-aware = "no";
             font = "JetBrainsMono Nerd Font:size=11.5";
@@ -35,43 +49,18 @@ in
             width = 2;
           };
         };
-
-        dark = {
-          colors = {
-            background = "1a1b26ff";
-            border = "7dcfffff";
-            input = "a9b1d6ff";
-            match = "e0af68ff";
-            prompt = "9ece6aff";
-            selection = "292d40ff";
-            selection-match = "ff9e64ff";
-            selection-text = "c0caf5ff";
-            text = "a9b1d6ff";
-          };
-        };
-
-        light = {
-          colors = {
-            background = "e6e7edff";
-            border = "006c86ff";
-            input = "343b58ff";
-            match = "8f5e15ff";
-            prompt = "385f0dff";
-            selection = "c8cbd8ff";
-            selection-match = "965027ff";
-            selection-text = "2b3048ff";
-            text = "343b58ff";
-          };
-        };
       in
       {
         "fuzzel/fuzzel.ini".variants = {
           dark = {
-            text = lib.generators.toINI { } (config // dark);
-            default = true;
+            text = lib.generators.toINI { } (base // { colors = mkColors config.colors.dark; });
+            default = config.colorscheme.default == "dark";
           };
 
-          light.text = lib.generators.toINI { } (config // light);
+          light = {
+            text = lib.generators.toINI { } (base // { colors = mkColors config.colors.light; });
+            default = config.colorscheme.default == "light";
+          };
         };
       };
   };

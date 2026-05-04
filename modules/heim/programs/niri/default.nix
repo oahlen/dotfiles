@@ -6,6 +6,19 @@
 }:
 let
   cfg = config.programs.niri;
+
+  mkTheme = variant: ''
+    overview {
+        backdrop-color "${variant.background}"
+    }
+
+    layout {
+        focus-ring {
+            active-color "${variant.cyan}"
+            inactive-color "${variant.bright-black}"
+        }
+    }
+  '';
 in
 {
   options.programs.niri = {
@@ -25,7 +38,7 @@ in
 
     xdg.config.files =
       let
-        config = ''
+        base = ''
           include "common.kdl"
           include "input.kdl"
           include "layout.kdl"
@@ -35,39 +48,20 @@ in
       in
       {
         "niri/config.kdl".text =
-          config + lib.optionalString (cfg.extraConfig != null) ("\n" + cfg.extraConfig);
+          base + lib.optionalString (cfg.extraConfig != null) ("\n" + cfg.extraConfig);
 
         "niri".source = ./config;
 
         "niri/theme.kdl".variants = {
           dark = {
-            text = ''
-              overview {
-                  backdrop-color "#1a1b26"
-              }
-
-              layout {
-                  focus-ring {
-                      active-color "#7dcfff"
-                      inactive-color "#606a99"
-                  }
-              }
-            '';
-            default = true;
+            text = mkTheme config.colors.dark;
+            default = config.colorscheme.default == "dark";
           };
 
-          light.text = ''
-            overview {
-                backdrop-color "#c8cbd8"
-            }
-
-            layout {
-                focus-ring {
-                    active-color "#006c86"
-                    inactive-color "#6c6e75"
-                }
-            }
-          '';
+          light = {
+            text = mkTheme config.colors.light;
+            default = config.colorscheme.default == "light";
+          };
         };
       };
   };

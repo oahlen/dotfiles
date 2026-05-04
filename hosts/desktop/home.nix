@@ -38,4 +38,6 @@ in
     fastfetch
     filen-cli
   ];
+
+  colorscheme.name = "tokyonight";
 }
