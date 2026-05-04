@@ -20,12 +20,12 @@ in
             position = "top";
             layer = "top";
             height = 40;
-            spacing = 16;
+            spacing = 20;
             modules-left = [ "niri/workspaces" ];
             modules-center = [ "clock" ];
             modules-right = [
               "niri/language"
-              "tray"
+              "network"
               "battery"
               "wireplumber"
             ];
@@ -45,6 +45,25 @@ in
 
             tray = {
               spacing = 16;
+            };
+
+            network = {
+              format-icons = [
+                "󰤯 "
+                "󰤟 "
+                "󰤢 "
+                "󰤥 "
+                "󰤨 "
+              ];
+              format = "{icon}";
+              format-wifi = "{icon}";
+              format-ethernet = "󰀂 ";
+              format-disconnected = "󰤮 ";
+              tooltip-format-wifi = "{essid} ({frequency} GHz)";
+              tooltip-format-ethernet = "Connected";
+              tooltip-format-disconnected = "Disconnected";
+              interval = 3;
+              spacing = 1;
             };
 
             battery = {
@@ -171,6 +190,7 @@ in
           }
 
           #language,
+          #network,
           #battery,
           #wireplumber {
               color: @fg;
@@ -182,6 +202,7 @@ in
           }
 
           #battery,
+          #network,
           #wireplumber {
               font-size: 17px;
           }

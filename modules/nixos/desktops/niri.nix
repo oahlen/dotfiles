@@ -36,7 +36,6 @@ in
       };
 
       niri.enable = true;
-      nm-applet.enable = true;
     };
 
     systemd.user.targets.niri-session = {
