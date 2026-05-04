@@ -4,7 +4,7 @@
   rbw,
   symlinkJoin,
 }:
-# Create an rbw wrapper with pinentry-gnome3 accessible
+# Create an rbw wrapper with a pinentry program accessible
 symlinkJoin {
   name = "rbw";
   paths = [
