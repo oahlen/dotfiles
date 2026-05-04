@@ -17,7 +17,7 @@ in
 
     spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
 
-    spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "${homeDirectory}/Pictures/Wallpapers/lake.png" "-m" "fit"
+    spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "${homeDirectory}/Pictures/Wallpapers/buck.jpg" "-m" "fit"
   '';
 
   home = {
