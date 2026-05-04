@@ -103,11 +103,121 @@ in
             };
           }
         ];
+
+        mkStyle = variant: ''
+          @define-color bg ${variant.background};
+          @define-color fg ${variant.bright-white};
+          @define-color fg_dim ${variant.bright-black};
+          @define-color accent ${variant.blue};
+          @define-color green ${variant.green};
+          @define-color highlight ${variant.selection.highlight};
+          @define-color red ${variant.red};
+          @define-color cyan ${variant.cyan};
+
+          * {
+              font-family: "JetBrainsMono Nerd Font";
+              font-size: 15px;
+          }
+
+          window#waybar {
+              background: transparent;
+          }
+
+          window > box {
+              margin: 8px 8px 0px 8px;
+              background: @bg;
+              color: @fg;
+              border-radius: 8px;
+          }
+
+          #workspaces {
+              padding: 4px;
+          }
+
+          #workspaces button {
+              color: @fg;
+              padding: 0px 6px;
+              margin: 0 2px;
+              border: none;
+              border-radius: 8px;
+              transition: none;
+          }
+
+          #workspaces button.empty {
+              color: @fg_dim;
+          }
+
+          #workspaces button:hover {
+              background: @fg;
+              color: @bg;
+              box-shadow: inherit;
+              text-shadow: inherit;
+          }
+
+          #workspaces button.focused {
+              background: @accent;
+              color: @bg;
+              font-weight: bold;
+          }
+
+          #workspaces button.focused:hover {
+              background: @fg;
+              box-shadow: inherit;
+              text-shadow: inherit;
+          }
+
+          #clock {
+              font-weight: bold;
+          }
+
+          #language,
+          #battery,
+          #wireplumber {
+              color: @fg;
+          }
+
+          #language {
+              font-weight: bold;
+              padding: 0 4px;
+          }
+
+          #battery,
+          #wireplumber {
+              font-size: 17px;
+          }
+
+          #battery.charging,
+          #battery.plugged {
+              color: @green;
+          }
+
+          #battery.warning {
+              color: @highlight;
+          }
+
+          #battery.critical {
+              color: @red;
+          }
+
+          #wireplumber {
+              margin-right: 8px;
+          }
+
+          tooltip {
+              background: @bg;
+              border: 2px solid @cyan;
+              border-radius: 8px;
+          }
+
+          tooltip label {
+              color: @fg;
+          }
+        '';
       in
       {
         "waybar/config".text = lib.generators.toJSON { } base;
-        "waybar/style-dark.css".source = ./style-dark.css;
-        "waybar/style-light.css".source = ./style-light.css;
+        "waybar/style-dark.css".text = mkStyle config.colors.dark;
+        "waybar/style-light.css".text = mkStyle config.colors.light;
       };
   };
 }
