@@ -124,8 +124,8 @@ in
         ];
 
         mkStyle = variant: ''
-          @define-color bg ${variant.background};
-          @define-color fg ${variant.bright-white};
+          @define-color bg ${variant.statusline.background};
+          @define-color fg ${variant.statusline.foreground};
           @define-color fg_dim ${variant.bright-black};
           @define-color accent ${variant.blue};
           @define-color green ${variant.green};

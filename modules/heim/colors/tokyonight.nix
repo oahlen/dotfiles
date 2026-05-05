@@ -22,7 +22,7 @@
     bright-white = "#c0caf5";
 
     statusline = {
-      foreground = "#9aa5ce";
+      foreground = "#c0caf5";
       background = "#15161e";
       inactive = "#292d40";
     };
@@ -57,7 +57,7 @@
     bright-white = "#2b3048";
 
     statusline = {
-      foreground = "#343B58";
+      foreground = "#2b3048";
       background = "#d7d9e2";
       inactive = "#c8cbd8";
     };
