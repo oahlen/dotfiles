@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 let
   homeDirectory = "/home/oahlen";
 in

@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   # Since we don't have a hardware-configuration.nix
   nixpkgs.hostPlatform = "x86_64-linux";

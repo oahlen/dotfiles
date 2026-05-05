@@ -1,4 +1,7 @@
-{ lib, ... }:
+{
+  lib,
+  ...
+}:
 {
   options = {
     wayland.systemd.target = lib.mkOption {
