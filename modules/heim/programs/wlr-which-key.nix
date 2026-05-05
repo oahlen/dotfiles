@@ -100,7 +100,7 @@ let
       }
       {
         key = "s";
-        desc = "System";
+        desc = "System Actions";
         submenu = [
           {
             key = "s";
@@ -116,6 +116,28 @@ let
             key = "p";
             desc = "Poweroff";
             cmd = "systemctl poweroff";
+          }
+        ];
+      }
+      {
+        key = "w";
+        desc = "Workspace Mode";
+        submenu = [
+          {
+            key = "w";
+            desc = "Work";
+            cmd = ''
+              heim-activate --variant work
+              notify-send "Workspace Mode" "Switched to Work mode"
+            '';
+          }
+          {
+            key = "v";
+            desc = "Vibe";
+            cmd = ''
+              heim-activate --variant vibe
+              notify-send "Workspace Mode" "Switched to Vibe mode"
+            '';
           }
         ];
       }

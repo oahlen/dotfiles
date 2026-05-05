@@ -8,11 +8,13 @@ let
   cfg = config.programs.niri;
 
   base = ''
+    include "binds.kdl"
     include "common.kdl"
     include "input.kdl"
     include "layout.kdl"
-    include "binds.kdl"
+    include "mode.kdl"
     include "rules.kdl"
+    include "theme.kdl"
   '';
 
   mkTheme = variant: ''
@@ -59,6 +61,26 @@ in
         light = {
           text = mkTheme config.colors.light;
           default = config.colorscheme.default == "light";
+        };
+      };
+
+      "niri/mode.kdl".variants = {
+        work = {
+          text = ''
+            animations {
+                off
+            }
+          '';
+
+          default = true;
+        };
+
+        vibe = {
+          text = ''
+            animations {
+                on
+            }
+          '';
         };
       };
     };

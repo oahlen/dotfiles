@@ -1,9 +1,3 @@
-include "input.kdl"
-include "layout.kdl"
-include "binds.kdl"
-include "rules.kdl"
-include "theme.kdl"
-
 prefer-no-csd
 
 // You can change the path where screenshots are saved.
@@ -28,10 +22,6 @@ gestures {
     hot-corners {
         off
     }
-}
-
-animations {
-    off
 }
 
 hotkey-overlay {
