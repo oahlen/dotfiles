@@ -70,6 +70,6 @@ in
   };
 
   config = lib.mkIf (builtins.length cfg.packages > 0) {
-    environment.systemPackages = [ flatpak-sync ];
+    packages = [ flatpak-sync ];
   };
 }
