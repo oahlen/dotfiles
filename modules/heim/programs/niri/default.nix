@@ -7,6 +7,14 @@
 let
   cfg = config.programs.niri;
 
+  base = ''
+    include "common.kdl"
+    include "input.kdl"
+    include "layout.kdl"
+    include "binds.kdl"
+    include "rules.kdl"
+  '';
+
   mkTheme = variant: ''
     overview {
         backdrop-color "${variant.background}"
@@ -36,33 +44,23 @@ in
   config = lib.mkIf cfg.enable {
     packages = [ cfg.package ];
 
-    xdg.config.files =
-      let
-        base = ''
-          include "common.kdl"
-          include "input.kdl"
-          include "layout.kdl"
-          include "binds.kdl"
-          include "rules.kdl"
-        '';
-      in
-      {
-        "niri/config.kdl".text =
-          base + lib.optionalString (cfg.extraConfig != null) ("\n" + cfg.extraConfig);
+    xdg.config.files = {
+      "niri/config.kdl".text =
+        base + lib.optionalString (cfg.extraConfig != null) ("\n" + cfg.extraConfig);
 
-        "niri".source = ./config;
+      "niri".source = ./config;
 
-        "niri/theme.kdl".variants = {
-          dark = {
-            text = mkTheme config.colors.dark;
-            default = config.colorscheme.default == "dark";
-          };
+      "niri/theme.kdl".variants = {
+        dark = {
+          text = mkTheme config.colors.dark;
+          default = config.colorscheme.default == "dark";
+        };
 
-          light = {
-            text = mkTheme config.colors.light;
-            default = config.colorscheme.default == "light";
-          };
+        light = {
+          text = mkTheme config.colors.light;
+          default = config.colorscheme.default == "light";
         };
       };
+    };
   };
 }
