@@ -15,6 +15,8 @@
     ./programs/waybar.nix
     ./programs/wlr-which-key.nix
 
+    ./services/flatpak.nix
+
     ./settings.nix
   ];
 }

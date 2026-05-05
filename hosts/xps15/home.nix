@@ -39,18 +39,28 @@
     };
   };
 
+  services.flatpak.packages = [
+    "com.github.PintaProject.Pinta"
+    "md.obsidian.Obsidian"
+    "org.chromium.Chromium"
+    "org.inkscape.Inkscape"
+  ];
+
   home = {
     directory = "/home/oahlen";
 
     files = {
-      "Pictures/Wallpapers".source = ./config/Wallpapers;
+      "Pictures/Wallpapers".source = ./Wallpapers;
     };
   };
 
   xdg.config.files = {
-    "environment.d".source = ./config/environment.d;
-    "scripts/apply-conf".source = ./config/scripts/apply-conf;
-    "scripts/flatpak-sync".source = ./config/scripts/flatpak-sync;
+    "environment.d/30-nix.conf".text = ''
+      [Lookup]
+      PATH=%h/.local/state/nix/profile/bin
+    '';
+
+    "scripts/apply-conf".source = ./scripts/apply-conf;
   };
 
   packages = [ pkgs.fastfetch ];
