@@ -8,7 +8,7 @@
     ./features/development.nix
     ./features/gaming.nix
 
-    ./programs/niri
+    ./programs/niri/default.nix
     ./programs/foot.nix
     ./programs/fuzzel.nix
     ./programs/mako.nix

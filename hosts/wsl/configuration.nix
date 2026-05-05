@@ -28,7 +28,6 @@
     description = "Oscar Ahlén";
     isNormalUser = true;
     extraGroups = [
-      "podman"
       "wheel"
     ];
 

@@ -12,7 +12,7 @@ in
 
   config = lib.mkIf cfg.enable {
     profiles = {
-      desktop.enable = true; # laptop profile is a superset of the desktop profile
+      desktop.enable = true; # Laptop profile is a superset of the desktop profile
     };
 
     powerManagement.powertop.enable = true;
