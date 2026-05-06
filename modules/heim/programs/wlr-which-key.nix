@@ -24,27 +24,6 @@ let
 
     menu = [
       {
-        key = "m";
-        desc = "Multimedia Controls";
-        submenu = [
-          {
-            key = "t";
-            desc = "Toggle Play/Pause";
-            cmd = "playerctl play-pause";
-          }
-          {
-            key = "n";
-            desc = "Next Track";
-            cmd = "playerctl next";
-          }
-          {
-            key = "p";
-            desc = "Previous Track";
-            cmd = "playerctl previous";
-          }
-        ];
-      }
-      {
         key = "o";
         desc = "Output Settings";
         submenu = [
@@ -121,7 +100,7 @@ let
       }
       {
         key = "w";
-        desc = "Workspace Mode";
+        desc = "Workspace profiles";
         submenu = [
           {
             key = "w";
