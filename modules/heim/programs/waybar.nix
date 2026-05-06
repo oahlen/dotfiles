@@ -13,8 +13,13 @@ let
       layer = "top";
       height = 40;
       spacing = 20;
-      modules-left = [ "niri/workspaces" ];
-      modules-center = [ "clock" ];
+      modules-left = [
+        "niri/workspaces"
+      ];
+      modules-center = [
+        "clock"
+        "mpris"
+      ];
       modules-right = [
         "niri/language"
         "network"
@@ -24,6 +29,19 @@ let
 
       "niri/workspaces" = {
         "disable-scroll" = true;
+      };
+
+      mpris = {
+        format = "{dynamic}";
+        tooltip-format = "{dynamic}";
+
+        dynamic-order = [
+          "title"
+          "artist"
+          "album"
+        ];
+
+        dynamic-len = 50;
       };
 
       clock = {
@@ -170,6 +188,10 @@ let
         background: @fg;
         box-shadow: inherit;
         text-shadow: inherit;
+    }
+
+    #mpris.paused {
+        color: @fg_dim;
     }
 
     #clock {
