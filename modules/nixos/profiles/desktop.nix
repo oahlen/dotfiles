@@ -55,6 +55,16 @@ in
       firefox.enable = true; # Default browser
     };
 
+    environment.systemPackages = with pkgs; [
+      adw-gtk3
+      gnome-multi-writer
+      gnome-text-editor
+      loupe
+      nautilus
+      papirus-icon-theme
+      xdg-utils
+    ];
+
     environment.sessionVariables = {
       _JAVA_AWT_WM_NONREPARENTING = "1";
       NIXOS_OZONE_WL = "1";

@@ -123,16 +123,9 @@ in
 
     environment.systemPackages = with pkgs; [
       adwaita-icon-theme
-      adw-gtk3
-      gnome-multi-writer
-      gnome-text-editor
       libnotify
-      loupe
       mako
-      nautilus
-      papirus-icon-theme
       pavucontrol
-      xdg-utils
     ];
   };
 }

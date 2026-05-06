@@ -6,6 +6,12 @@
 }:
 let
   cfg = config.desktops.gnome;
+
+  extensions = with pkgs.gnomeExtensions; [
+    color-picker
+    gnome-40-ui-improvements
+    places-status-indicator
+  ];
 in
 {
   options.desktops.gnome.enable = lib.mkEnableOption "the Gnome desktop environment.";
@@ -16,53 +22,18 @@ in
       desktopManager.gnome.enable = true;
 
       gnome = {
+        core-apps.enable = lib.mkForce false; # Disables most basic apps
         evolution-data-server.enable = lib.mkForce false;
         gnome-online-accounts.enable = false;
       };
     };
 
-    environment = {
-      systemPackages =
-        with pkgs;
-        [
-          dconf-editor
-          gnome-tweaks
-          papirus-icon-theme
-        ]
-        ++ (with pkgs.gnomeExtensions; [
-          color-picker
-          gnome-40-ui-improvements
-          places-status-indicator
-        ]);
-
-      gnome.excludePackages = with pkgs; [
-        baobab
-        cheese
-        epiphany
-        evince
-        file-roller
-        geary
-        gedit
-        gnome-backgrounds
-        gnome-calendar
-        gnome-clocks
-        gnome-connections
-        gnome-contacts
-        gnome-logs
-        gnome-maps
-        gnome-music
-        gnome-software
-        gnome-tour
-        gnome-user-docs
-        gnome-weather
-        orca
-        seahorse
-        simple-scan
-        totem
-        yelp
-      ];
-    };
-
     programs.evolution.enable = false;
+
+    environment.systemPackages = with pkgs; [
+      dconf-editor
+      extensions
+      gnome-tweaks
+    ];
   };
 }
