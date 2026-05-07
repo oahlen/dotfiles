@@ -30,23 +30,6 @@ in
 
       # Add udev rules for common game controllers
       udev.packages = [ pkgs.game-devices-udev-rules ];
-
-      # Fixes for audio crackling
-      pipewire.extraConfig = {
-        pipewire."99-custom-quantum.conf" = {
-          "context.properties" = {
-            "default.clock.min-quantum" = 1024;
-            "default.clock.max-quantum" = 8192;
-          };
-        };
-        pipewire-pulse."99-custom-quantum.conf" = {
-          "context.properties" = {
-            "pulse.min.quantum" = "1024/48000";
-            "pulse.default.quantum" = "1024/48000";
-            "pulse.max.quantum" = "8192/48000";
-          };
-        };
-      };
     };
 
     # Gamemode
