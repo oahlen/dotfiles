@@ -8,12 +8,13 @@
     ./features/development.nix
     ./features/gaming.nix
 
-    ./programs/niri/default.nix
+    ./programs/niri
+    ./programs/wlr-which-key
+
     ./programs/foot.nix
     ./programs/fuzzel.nix
     ./programs/mako.nix
     ./programs/waybar.nix
-    ./programs/wlr-which-key.nix
 
     ./services/flatpak.nix
 

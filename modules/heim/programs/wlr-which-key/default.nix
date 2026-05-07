@@ -7,6 +7,10 @@
 let
   cfg = config.programs.wlr-which-key;
 
+  switch-theme = pkgs.callPackage ./switch-theme.nix {
+    inherit (config.colorscheme) default;
+  };
+
   base = {
     font = "JetBrainsMono Nerd Font 11.5";
     separator = " ➜ ";
@@ -127,32 +131,17 @@ let
           {
             key = "t";
             desc = "Default";
-            cmd = ''
-              dconf write /org/gnome/desktop/interface/color-scheme "'default'"
-              heim-activate --variant dark
-              pkill -USR2 foot || true
-              notify-send "Application Theme" "Set to Default"
-            '';
+            cmd = "switch-theme default";
           }
           {
             key = "d";
             desc = "Dark";
-            cmd = ''
-              dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-              heim-activate --variant dark
-              pkill -USR1 foot || true
-              notify-send "Application Theme" "Set to Dark"
-            '';
+            cmd = "switch-theme dark";
           }
           {
             key = "l";
             desc = "Light";
-            cmd = ''
-              dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
-              heim-activate --variant light
-              pkill -USR2 foot || true
-              notify-send "Application Theme" "Set to Light"
-            '';
+            cmd = "switch-theme light";
           }
         ];
       }
@@ -169,7 +158,10 @@ in
   options.programs.wlr-which-key.enable = lib.mkEnableOption "wlr-which-key.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.wlr-which-key ];
+    packages = with pkgs; [
+      wlr-which-key
+      switch-theme
+    ];
 
     xdg.config.files = {
       "wlr-which-key/config.yaml".variants = {
