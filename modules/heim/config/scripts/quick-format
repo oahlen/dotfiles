@@ -5,8 +5,8 @@ set -euo pipefail
 FILES=$(git diff HEAD --relative --name-only --diff-filter=ACM | grep "\.cs\$" || true)
 
 if [ -z "$FILES" ]; then
-    echo "No files to format"
-    exit 0
+  echo "No files to format"
+  exit 0
 fi
 
 echo "Formatting changed files ..."

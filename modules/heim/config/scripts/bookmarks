@@ -3,20 +3,20 @@
 set -euo pipefail
 
 if [ -t 0 ]; then
-    FINDER="fzf --with-nth=1 --accept-nth=2 -d\t"
+  FINDER="fzf --with-nth=1 --accept-nth=2 -d\t"
 else
-    FINDER="fuzzel -d --with-nth=1 --accept-nth=2 --nth-delimiter=\t"
+  FINDER="fuzzel -d --with-nth=1 --accept-nth=2 --nth-delimiter=\t"
 fi
 
 BOOKMARKS="$HOME/bookmarks"
 
 if [ ! -f "$BOOKMARKS" ]; then
-    command -v notify-send >/dev/null 2>&1 && notify-send "No bookmarks configured"
-    exit 0
+  command -v notify-send >/dev/null 2>&1 && notify-send "No bookmarks configured"
+  exit 0
 fi
 
 RESULT=$($FINDER < "$HOME/bookmarks")
 
 if [ -n "$RESULT" ]; then
-    exec xdg-open "https://$RESULT"
+  exec xdg-open "https://$RESULT"
 fi
