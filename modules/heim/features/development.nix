@@ -26,6 +26,7 @@ in
       fish
       github-copilot-cli
       gitui
+      goose-cli
       jless
       just
       lua-language-server
