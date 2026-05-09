@@ -18,8 +18,6 @@ in
         variable-refresh-rate on-demand=true
     }
 
-    spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
-
     spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "${homeDirectory}/Pictures/Wallpapers/buck.jpg" "-m" "fit"
   '';
 

@@ -15,6 +15,8 @@ let
     include "mode.kdl"
     include "rules.kdl"
     include "theme.kdl"
+
+    spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
   '';
 
   mkTheme = variant: ''
