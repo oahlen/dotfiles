@@ -30,10 +30,12 @@ in
 
     programs.evolution.enable = false;
 
-    environment.systemPackages = with pkgs; [
-      dconf-editor
-      extensions
-      gnome-tweaks
-    ];
+    environment.systemPackages =
+      with pkgs;
+      [
+        dconf-editor
+        gnome-tweaks
+      ]
+      ++ extensions;
   };
 }

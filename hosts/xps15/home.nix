@@ -2,15 +2,18 @@
   pkgs,
   ...
 }:
+let
+  homeDirectory = "/home/oahlen";
+in
 {
   desktops.niri = {
     enable = true;
-    extraPackages = with pkgs; [
-      soteria
-      swayidle
-      swayosd
-      wlsunset
-    ];
+    # extraPackages = with pkgs; [
+    #   soteria
+    #   swayidle
+    #   swayosd
+    #   wlsunset
+    # ];
   };
 
   features = {
@@ -19,25 +22,29 @@
 
   programs = {
     niri = {
-      package = pkgs.customPackages.niri;
+      # package = pkgs.customPackages.niri;
       extraConfig = ''
         output "eDP-1" {
             scale 2.0
         }
 
-        spawn-sh-at-startup "swaybg -o \"*\" -i ~/Pictures/Wallpapers/sunset.jpg -m fit"
+        spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
 
-        spawn-sh-at-startup "waybar"
+        spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "${homeDirectory}/Pictures/Wallpapers/buck.jpg" "-m" "fit"
 
-        spawn-sh-at-startup "polkit-soteria"
+         // spawn-sh-at-startup "swaybg -o \"*\" -i ~/Pictures/Wallpapers/sunset.jpg -m fit"
 
-        spawn-sh-at-startup "swayosd-server"
+         // spawn-sh-at-startup "waybar"
 
-        spawn-sh-at-startup "wlsunset -L 17.64 -l 59.85 -T 6500 -t 4500"
+         // spawn-sh-at-startup "polkit-soteria"
 
-        spawn-sh-at-startup "mako"
+         // spawn-sh-at-startup "swayosd-server"
 
-        spawn-sh-at-startup "swayidle -w timeout 300 'gtklock -d' timeout 900 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors' timeout 1800 'systemctl suspend' before-sleep 'gtklock -d'"
+         // spawn-sh-at-startup "wlsunset -L 17.64 -l 59.85 -T 6500 -t 4500"
+
+         // spawn-sh-at-startup "mako"
+
+         // spawn-sh-at-startup "swayidle -w timeout 300 'gtklock -d' timeout 900 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors' timeout 1800 'systemctl suspend' before-sleep 'gtklock -d'"
       '';
     };
   };
@@ -50,21 +57,27 @@
   ];
 
   home = {
-    directory = "/home/oahlen";
+    directory = homeDirectory;
 
     files = {
       "Pictures/Wallpapers".source = ./Wallpapers;
     };
   };
 
-  xdg.config.files = {
-    "environment.d/30-nix.conf".text = ''
-      [Lookup]
-      PATH=%h/.local/state/nix/profile/bin
-    '';
+  # xdg.config.files = {
+  #   "environment.d/30-nix.conf".text = ''
+  #     [Lookup]
+  #     PATH=%h/.local/state/nix/profile/bin
+  #   '';
+  #
+  #   "scripts/apply-conf".source = ./scripts/apply-conf;
+  # };
 
-    "scripts/apply-conf".source = ./scripts/apply-conf;
-  };
+  packages = with pkgs; [
+    _1password-gui
+    customPackages.rbw
+    fastfetch
+  ];
 
-  packages = [ pkgs.fastfetch ];
+  colorscheme.name = "tokyonight";
 }

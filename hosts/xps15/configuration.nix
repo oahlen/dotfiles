@@ -48,11 +48,7 @@
       "wheel"
     ];
 
-    packages = with pkgs; [
-      _1password-gui
-      customPackages.rbw
-      filen-cli
-    ];
+    heim = import ./home.nix { inherit pkgs; };
   };
 
   system.stateVersion = "25.11";
