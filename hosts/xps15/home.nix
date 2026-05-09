@@ -1,10 +1,8 @@
 {
+  config,
   pkgs,
   ...
 }:
-let
-  homeDirectory = "/home/oahlen";
-in
 {
   desktops.niri.enable = true;
 
@@ -19,7 +17,7 @@ in
             scale 2.0
         }
 
-        spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "${homeDirectory}/Pictures/Wallpapers/sunset.jpg" "-m" "fit"
+        spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "${config.home.directory}/Pictures/Wallpapers/sunset.jpg" "-m" "fit"
       '';
     };
   };
@@ -31,12 +29,8 @@ in
     "org.inkscape.Inkscape"
   ];
 
-  home = {
-    directory = homeDirectory;
-
-    files = {
-      "Pictures/Wallpapers".source = ./Wallpapers;
-    };
+  home.files = {
+    "Pictures/Wallpapers".source = ./Wallpapers;
   };
 
   packages = with pkgs; [
@@ -44,6 +38,4 @@ in
     customPackages.rbw
     fastfetch
   ];
-
-  colorscheme.name = "tokyonight";
 }

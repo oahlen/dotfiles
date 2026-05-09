@@ -20,6 +20,7 @@
 
     ./services/flatpak.nix
 
+    ./options.nix
     ./settings.nix
   ];
 }

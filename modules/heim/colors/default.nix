@@ -13,6 +13,7 @@ in
     colorscheme = {
       name = lib.mkOption {
         type = lib.types.enum (lib.attrNames schemes);
+        default = "tokyonight";
         description = "Name of the colorscheme to use.";
       };
 

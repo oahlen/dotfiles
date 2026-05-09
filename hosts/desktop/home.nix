@@ -1,10 +1,8 @@
 {
+  config,
   pkgs,
   ...
 }:
-let
-  homeDirectory = "/home/oahlen";
-in
 {
   desktops.niri.enable = true;
 
@@ -18,7 +16,7 @@ in
         variable-refresh-rate on-demand=true
     }
 
-    spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "${homeDirectory}/Pictures/Wallpapers/buck.jpg" "-m" "fit"
+    spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "${config.home.directory}/Pictures/Wallpapers/buck.jpg" "-m" "fit"
   '';
 
   services.flatpak.packages = [
@@ -30,12 +28,8 @@ in
     "org.keepassxc.KeePassXC"
   ];
 
-  home = {
-    directory = homeDirectory;
-
-    files = {
-      "Pictures/Wallpapers".source = ./Wallpapers;
-    };
+  home.files = {
+    "Pictures/Wallpapers".source = ./Wallpapers;
   };
 
   packages = with pkgs; [
@@ -44,6 +38,4 @@ in
     fastfetch
     filen-cli
   ];
-
-  colorscheme.name = "tokyonight";
 }
