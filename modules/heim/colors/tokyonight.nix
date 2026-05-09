@@ -33,6 +33,11 @@
       highlight = "#ff9e64";
     };
 
+    diff = {
+      added_bg = "#343e33";
+      deleted_bg = "#462d3a";
+    };
+
     overview = "#1a1b26";
   };
 
@@ -68,6 +73,11 @@
       foreground = "#2b3048";
       background = "#d7d9e2";
       highlight = "#965027";
+    };
+
+    diff = {
+      added_bg = "#c3cbc0";
+      deleted_bg = "#d4c6cd";
     };
 
     overview = "#1a1b26";

@@ -13,6 +13,7 @@
 
     ./programs/foot.nix
     ./programs/fuzzel.nix
+    ./programs/git.nix
     ./programs/mako.nix
     ./programs/waybar.nix
 

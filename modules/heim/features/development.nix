@@ -62,6 +62,10 @@ in
       zoxide
     ];
 
+    programs = {
+      git.enable = true;
+    };
+
     home = {
       files = {
         ".bash_profile".source = ../config/bash/.bash_profile;
@@ -80,7 +84,6 @@ in
       "bottom".source = ../config/bottom;
       "fd".source = ../config/fd;
       "fish".source = ../config/fish;
-      "git".source = ../config/git;
       "gitui".source = ../config/gitui;
       "ideavim".source = ../config/ideavim;
       "nvim".source = ../config/nvim;
