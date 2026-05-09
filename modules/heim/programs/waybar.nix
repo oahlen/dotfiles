@@ -252,6 +252,8 @@ in
 
     xdg.config.files = {
       "waybar/config".text = lib.generators.toJSON { } base;
+
+      "waybar/style.css".text = mkStyle config.colors.${config.colorscheme.default};
       "waybar/style-dark.css".text = mkStyle config.colors.dark;
       "waybar/style-light.css".text = mkStyle config.colors.light;
     };
