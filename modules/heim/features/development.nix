@@ -18,7 +18,6 @@ in
       calc
       curl
       customPackages.neovim
-      direnv
       dos2unix
       dust
       eza
@@ -63,6 +62,7 @@ in
     ];
 
     programs = {
+      direnv.enable = true;
       git.enable = true;
     };
 
@@ -76,10 +76,6 @@ in
     };
 
     xdg.config.files = {
-      "direnv/direnvrc".text = ''
-        source ${pkgs.nix-direnv}/share/nix-direnv/direnvrc
-      '';
-
       "bat".source = ../config/bat;
       "bottom".source = ../config/bottom;
       "fd".source = ../config/fd;

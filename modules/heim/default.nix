@@ -11,6 +11,7 @@
     ./programs/niri
     ./programs/wlr-which-key
 
+    ./programs/direnv.nix
     ./programs/foot.nix
     ./programs/fuzzel.nix
     ./programs/git.nix
