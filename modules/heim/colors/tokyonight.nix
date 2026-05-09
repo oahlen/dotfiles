@@ -32,6 +32,8 @@
       background = "#292d40";
       highlight = "#ff9e64";
     };
+
+    overview = "#1a1b26";
   };
 
   light = {
@@ -67,5 +69,7 @@
       background = "#d7d9e2";
       highlight = "#965027";
     };
+
+    overview = "#1a1b26";
   };
 }

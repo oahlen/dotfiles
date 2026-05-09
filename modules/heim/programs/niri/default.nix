@@ -21,7 +21,7 @@ let
 
   mkTheme = variant: ''
     overview {
-        backdrop-color "${variant.background}"
+        backdrop-color "${variant.overview}"
     }
 
     layout {
