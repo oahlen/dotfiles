@@ -9,7 +9,6 @@ binds {
     Mod+Shift+S hotkey-overlay-title="Power Settings" { spawn "wlr-which-key" "-k" "s"; }
     Mod+Shift+C hotkey-overlay-title="Color Picker" { spawn "hyprpicker" "-a"; }
 
-    Mod+E hotkey-overlay-title="Show Bookmarks" { spawn "bookmarks"; }
     Mod+P hotkey-overlay-title="Run Password Picker" { spawn "launch-terminal" "password-picker"; }
 
     Mod+B hotkey-overlay-title="Toggle Waybar" { spawn "pkill" "-USR1" "waybar"; }

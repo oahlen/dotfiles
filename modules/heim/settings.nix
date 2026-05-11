@@ -20,7 +20,6 @@
     COLORTERM = "truecolor";
     DOTNET_CLI_HOME = "$HOME/.local/share/dotnet";
     LESSHISTFILE = "$HOME/.local/share/less/history";
-    TMUXP_PROGRESS = 0;
 
     PATH = "$HOME/.config/scripts:$HOME/.local/share/cargo/bin:$HOME/.local/share/dotnet/tools\${PATH:+:}$PATH";
   };

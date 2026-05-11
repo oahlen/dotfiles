@@ -1,0 +1,66 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  cfg = config.features.development;
+in
+{
+  options.features.development.enable = lib.mkEnableOption "basic development features.";
+
+  config = lib.mkIf cfg.enable {
+    packages = with pkgs; [
+      calc
+      curl
+      dos2unix
+      dust
+      eza
+      figlet
+      github-copilot-cli # move
+      jless
+      just
+      nixfmt-tree
+      nix-prefetch-git
+      nix-search-cli
+      nix-tree
+      npins
+      pokeget-rs
+      procs
+      rage
+      scooter
+      sd
+      statix
+      stylua
+      tokei
+      tree
+      typos
+      unzip
+      wget
+      zip
+    ];
+
+    programs = {
+      bash.enable = true;
+      bat.enable = true;
+      bottom.enable = true;
+      direnv.enable = true;
+      fd.enable = true;
+      fish.enable = true;
+      fzf.enable = true;
+      git.enable = true;
+      gitui.enable = true;
+      jq.enable = true;
+      neovim.enable = true;
+      ripgrep.enable = true;
+      tmux.enable = true;
+      yazi.enable = true;
+      zoxide.enable = true;
+    };
+
+    xdg.config.files = {
+      "scripts".source = ./scripts;
+    };
+  };
+}

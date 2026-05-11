@@ -16,6 +16,7 @@
     awscli2
     duckdb
     fastfetchMinimal
+    goose-cli
     pqrs
     trash-cli
     typst

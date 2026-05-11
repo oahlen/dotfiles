@@ -5,13 +5,23 @@
 
     ./desktops/niri.nix
 
-    ./features/development.nix
+    ./features/development
     ./features/gaming.nix
 
+    ./programs/bash
+    ./programs/bat
+    ./programs/bottom
+    ./programs/fish
+    ./programs/gitui
+    ./programs/ideavim
+    ./programs/neovim
     ./programs/niri
+    ./programs/tmux
     ./programs/wlr-which-key
+    ./programs/yazi
 
     ./programs/direnv.nix
+    ./programs/fd.nix
     ./programs/foot.nix
     ./programs/fuzzel.nix
     ./programs/fzf.nix
@@ -20,9 +30,11 @@
     ./programs/mako.nix
     ./programs/ripgrep.nix
     ./programs/waybar.nix
+    ./programs/zoxide.nix
 
     ./services/flatpak.nix
 
+    ./mimeapps.nix
     ./options.nix
     ./settings.nix
   ];
