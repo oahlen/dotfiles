@@ -47,7 +47,7 @@ return {
     },
     after = function()
         require("agentic").setup({
-            provider = os.getenv("AGENTIC_NVIM_PROVIDER") or "opencode-acp",
+            provider = os.getenv("AGENTIC_NVIM_PROVIDER") or "No ACP provider found",
             diagnostic_icons = {
                 error = "󰅚 ",
                 warn = "󰀪 ",

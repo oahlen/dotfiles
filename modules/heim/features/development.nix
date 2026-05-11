@@ -35,7 +35,6 @@ in
       nix-search-cli
       nix-tree
       npins
-      opencode
       pokeget-rs
       procs
       rage
