@@ -29,7 +29,6 @@
 
   home.files = {
     "Pictures/Wallpapers".source = ./Wallpapers;
-    ".profile".source = ./.profile;
   };
 
   packages = with pkgs; [

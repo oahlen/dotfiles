@@ -58,8 +58,8 @@ in
       zoxide.enable = true;
     };
 
-    xdg.config.files = {
-      "scripts".source = ./scripts;
+    home.files = {
+      ".local/bin".source = ./scripts;
     };
 
     sessionVariables = {
@@ -67,8 +67,12 @@ in
       CARGO_HOME = "$HOME/.local/share/cargo";
       DOTNET_CLI_HOME = "$HOME/.local/share/dotnet";
       LESSHISTFILE = "$HOME/.local/share/less/history";
-
-      PATH = "$HOME/.config/scripts:$HOME/.local/share/cargo/bin:$HOME/.local/share/dotnet/tools\${PATH:+:}$PATH";
     };
+
+    sessionPath = [
+      "$HOME/.local/bin"
+      "$HOME/.local/share/cargo/bin"
+      "$HOME/.local/share/dotnet/tools"
+    ];
   };
 }

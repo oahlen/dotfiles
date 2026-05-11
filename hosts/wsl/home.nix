@@ -7,10 +7,6 @@
     development.enable = true;
   };
 
-  home.files = {
-    ".profile".source = ./.profile;
-  };
-
   packages = with pkgs; [
     _1password-cli
     awscli2
