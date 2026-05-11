@@ -14,8 +14,11 @@
     ./programs/direnv.nix
     ./programs/foot.nix
     ./programs/fuzzel.nix
+    ./programs/fzf.nix
     ./programs/git.nix
+    ./programs/jq.nix
     ./programs/mako.nix
+    ./programs/ripgrep.nix
     ./programs/waybar.nix
 
     ./services/flatpak.nix

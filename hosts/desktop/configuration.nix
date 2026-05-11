@@ -30,6 +30,7 @@
   };
 
   environment.systemPackages = [ pkgs.nfs-utils ];
+  environment.pathsToLink = [ "/share/heim" ];
 
   fileSystems."/mnt/backup".options = [
     "noatime"

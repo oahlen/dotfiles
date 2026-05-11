@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }:
@@ -17,7 +16,7 @@
             scale 2.0
         }
 
-        spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "${config.home.directory}/Pictures/Wallpapers/sunset.jpg" "-m" "fit"
+        spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "/home/oahlen/Pictures/Wallpapers/sunset.jpg" "-m" "fit"
       '';
     };
   };
@@ -31,6 +30,7 @@
 
   home.files = {
     "Pictures/Wallpapers".source = ./Wallpapers;
+    ".profile".source = ./.profile;
   };
 
   packages = with pkgs; [

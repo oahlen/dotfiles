@@ -24,11 +24,9 @@ in
       fd
       figlet
       fish
-      fzf
       github-copilot-cli
       gitui
       jless
-      jq
       just
       lua-language-server
       nil
@@ -41,7 +39,6 @@ in
       pokeget-rs
       procs
       rage
-      ripgrep
       scooter
       sd
       shellcheck
@@ -63,14 +60,16 @@ in
 
     programs = {
       direnv.enable = true;
+      fzf.enable = true;
       git.enable = true;
+      jq.enable = true;
+      ripgrep.enable = true;
     };
 
     home = {
       files = {
         ".bash_profile".source = ../config/bash/.bash_profile;
         ".bashrc".source = ../config/bash/.bashrc;
-        ".profile".source = ../config/profile/.profile;
         ".ssh".source = ../config/ssh;
       };
     };
@@ -83,7 +82,6 @@ in
       "gitui".source = ../config/gitui;
       "ideavim".source = ../config/ideavim;
       "nvim".source = ../config/nvim;
-      "ripgrep".source = ../config/ripgrep;
       "scripts".source = ../config/scripts;
       "tmuxp".source = ../config/tmuxp;
       "tmux".source = ../config/tmux;

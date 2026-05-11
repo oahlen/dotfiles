@@ -6,7 +6,7 @@
 }:
 let
   inherit (lib)
-    concatStringsSep
+    concatLines
     mapAttrsToList
     ;
 
@@ -35,7 +35,7 @@ let
 
   formatValue = v: if builtins.isBool v then if v then "true" else "false" else toString v;
 
-  mkConfig = cfg: concatStringsSep "\n" (mapAttrsToList (k: v: "${k}=${formatValue v}") cfg);
+  mkConfig = cfg: concatLines (mapAttrsToList (k: v: "${k}=${formatValue v}") cfg);
 in
 {
   options.programs.mako.enable = lib.mkEnableOption "mako.";

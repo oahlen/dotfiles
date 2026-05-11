@@ -1,4 +1,0 @@
---glob
-!.cache/
---glob
-!.git/
