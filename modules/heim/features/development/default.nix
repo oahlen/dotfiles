@@ -18,7 +18,6 @@ in
       dust
       eza
       figlet
-      github-copilot-cli # move
       jless
       just
       nixfmt-tree

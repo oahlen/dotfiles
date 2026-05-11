@@ -37,5 +37,6 @@
     customPackages.rbw
     fastfetch
     filen-cli
+    github-copilot-cli
   ];
 }
