@@ -94,4 +94,6 @@
 
   networking.networkmanager.wifi.backend = "iwd";
   services.dbus.implementation = "broker";
+
+  environment.pathsToLink = [ "/share/heim" ];
 }
