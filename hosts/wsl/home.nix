@@ -24,4 +24,10 @@
     wl-clipboard
     xdg-utils
   ];
+
+  sessionVariables = {
+    AWS_CONFIG_FILE = "$HOME/.config/aws/config";
+    AWS_SHARED_CREDENTIALS_FILE = "$HOME/.config/aws/credentials";
+    COLORTERM = "truecolor";
+  };
 }

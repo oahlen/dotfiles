@@ -61,5 +61,14 @@ in
     xdg.config.files = {
       "scripts".source = ./scripts;
     };
+
+    sessionVariables = {
+      CALCHISTFILE = "$HOME/.cache/calc_history";
+      CARGO_HOME = "$HOME/.local/share/cargo";
+      DOTNET_CLI_HOME = "$HOME/.local/share/dotnet";
+      LESSHISTFILE = "$HOME/.local/share/less/history";
+
+      PATH = "$HOME/.config/scripts:$HOME/.local/share/cargo/bin:$HOME/.local/share/dotnet/tools\${PATH:+:}$PATH";
+    };
   };
 }
