@@ -11,7 +11,7 @@ in
   options.programs.bottom.enable = lib.mkEnableOption "bottom.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.bottom ];
+    home.packages = [ pkgs.bottom ];
 
     xdg.config.files = {
       "bottom/bottom.toml".source = ./bottom.toml;

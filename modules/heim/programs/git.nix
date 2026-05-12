@@ -77,7 +77,7 @@ in
   options.programs.git.enable = lib.mkEnableOption "git.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.delta ];
+    home.packages = [ pkgs.delta ];
 
     xdg.config.files = {
       "git/config".text = base;

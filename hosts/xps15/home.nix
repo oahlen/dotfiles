@@ -28,13 +28,15 @@
     "org.inkscape.Inkscape"
   ];
 
-  home.files = {
-    "Pictures/Wallpapers".source = ./Wallpapers;
-  };
+  home = {
+    files = {
+      "Pictures/Wallpapers".source = ./Wallpapers;
+    };
 
-  packages = with pkgs; [
-    _1password-gui
-    customPackages.rbw
-    fastfetch
-  ];
+    packages = with pkgs; [
+      _1password-gui
+      customPackages.rbw
+      fastfetch
+    ];
+  };
 }

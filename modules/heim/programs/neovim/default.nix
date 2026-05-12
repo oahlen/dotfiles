@@ -18,7 +18,7 @@ in
   options.programs.neovim.enable = lib.mkEnableOption "neovim.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.customPackages.neovim ] ++ extraPackages;
+    home.packages = [ pkgs.customPackages.neovim ] ++ extraPackages;
 
     xdg.config.files = {
       "nvim/ftdetect".source = ./ftdetect;

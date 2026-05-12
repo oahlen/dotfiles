@@ -11,6 +11,6 @@ in
   options.programs.zoxide.enable = lib.mkEnableOption "zoxide.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.zoxide ];
+    home.packages = [ pkgs.zoxide ];
   };
 }

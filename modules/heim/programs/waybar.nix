@@ -248,7 +248,7 @@ in
   options.programs.waybar.enable = lib.mkEnableOption "waybar.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.waybar ];
+    home.packages = [ pkgs.waybar ];
 
     xdg.config.files = {
       "waybar/config".text = lib.generators.toJSON { } base;

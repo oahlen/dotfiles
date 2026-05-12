@@ -46,7 +46,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    packages = [ cfg.package ];
+    home.packages = [ cfg.package ];
 
     xdg.config.files = {
       "niri/config.kdl".text =

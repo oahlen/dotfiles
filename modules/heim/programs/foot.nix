@@ -50,7 +50,7 @@ in
   options.programs.foot.enable = lib.mkEnableOption "foot.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.foot ];
+    home.packages = [ pkgs.foot ];
 
     xdg.config.files = {
       "foot/foot.ini".variants = {

@@ -11,7 +11,7 @@ in
   options.programs.bat.enable = lib.mkEnableOption "bat.";
 
   config = lib.mkIf cfg.enable {
-    packages = with pkgs; [
+    home.packages = with pkgs; [
       bat
       bat-extras.batman
     ];

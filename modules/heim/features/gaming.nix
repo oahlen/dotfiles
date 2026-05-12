@@ -11,7 +11,7 @@ in
   options.features.gaming.enable = lib.mkEnableOption "gaming support.";
 
   config = lib.mkIf cfg.enable {
-    packages = with pkgs; [
+    home.packages = with pkgs; [
       heroic
       mangohud
     ];

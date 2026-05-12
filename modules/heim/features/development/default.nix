@@ -11,35 +11,6 @@ in
   options.features.development.enable = lib.mkEnableOption "basic development features.";
 
   config = lib.mkIf cfg.enable {
-    packages = with pkgs; [
-      calc
-      curl
-      dos2unix
-      dust
-      eza
-      figlet
-      jless
-      just
-      nixfmt-tree
-      nix-prefetch-git
-      nix-search-cli
-      nix-tree
-      npins
-      pokeget-rs
-      procs
-      rage
-      scooter
-      sd
-      statix
-      stylua
-      tokei
-      tree
-      typos
-      unzip
-      wget
-      zip
-    ];
-
     programs = {
       bash.enable = true;
       bat.enable = true;
@@ -58,21 +29,52 @@ in
       zoxide.enable = true;
     };
 
-    home.files = {
-      ".local/bin".source = ./scripts;
-    };
+    home = {
+      files = {
+        ".local/bin".source = ./scripts;
+      };
 
-    sessionVariables = {
-      CALCHISTFILE = "$HOME/.cache/calc_history";
-      CARGO_HOME = "$HOME/.local/share/cargo";
-      DOTNET_CLI_HOME = "$HOME/.local/share/dotnet";
-      LESSHISTFILE = "$HOME/.local/share/less/history";
-    };
+      packages = with pkgs; [
+        calc
+        curl
+        dos2unix
+        dust
+        eza
+        figlet
+        jless
+        just
+        nixfmt-tree
+        nix-prefetch-git
+        nix-search-cli
+        nix-tree
+        npins
+        pokeget-rs
+        procs
+        rage
+        scooter
+        sd
+        statix
+        stylua
+        tokei
+        tree
+        typos
+        unzip
+        wget
+        zip
+      ];
 
-    sessionPath = [
-      "$HOME/.local/bin"
-      "$HOME/.local/share/cargo/bin"
-      "$HOME/.local/share/dotnet/tools"
-    ];
+      sessionVariables = {
+        CALCHISTFILE = "$HOME/.cache/calc_history";
+        CARGO_HOME = "$HOME/.local/share/cargo";
+        DOTNET_CLI_HOME = "$HOME/.local/share/dotnet";
+        LESSHISTFILE = "$HOME/.local/share/less/history";
+      };
+
+      sessionPath = [
+        "$HOME/.local/bin"
+        "$HOME/.local/share/cargo/bin"
+        "$HOME/.local/share/dotnet/tools"
+      ];
+    };
   };
 }

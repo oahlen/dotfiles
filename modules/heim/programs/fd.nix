@@ -16,7 +16,7 @@ in
   options.programs.fd.enable = lib.mkEnableOption "fd.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.fd ];
+    home.packages = [ pkgs.fd ];
 
     xdg.config.files = {
       "fd/ignore".text = ignore;

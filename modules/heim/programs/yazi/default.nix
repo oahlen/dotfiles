@@ -13,7 +13,7 @@ in
   options.programs.yazi.enable = lib.mkEnableOption "yazi.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ package ];
+    home.packages = [ package ];
 
     xdg.config.files = {
       "yazi/yazi.toml".source = ./yazi.toml;

@@ -27,15 +27,17 @@
     "org.keepassxc.KeePassXC"
   ];
 
-  home.files = {
-    "Pictures/Wallpapers".source = ./Wallpapers;
-  };
+  home = {
+    files = {
+      "Pictures/Wallpapers".source = ./Wallpapers;
+    };
 
-  packages = with pkgs; [
-    customPackages.hytale-launcher
-    customPackages.rbw
-    fastfetch
-    filen-cli
-    github-copilot-cli
-  ];
+    packages = with pkgs; [
+      customPackages.hytale-launcher
+      customPackages.rbw
+      fastfetch
+      filen-cli
+      github-copilot-cli
+    ];
+  };
 }

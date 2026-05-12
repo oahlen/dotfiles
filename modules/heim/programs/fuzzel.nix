@@ -46,7 +46,7 @@ in
   options.programs.fuzzel.enable = lib.mkEnableOption "fuzzel.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.fuzzel ];
+    home.packages = [ pkgs.fuzzel ];
 
     xdg.config.files = {
       "fuzzel/fuzzel.ini".variants = {

@@ -70,6 +70,6 @@ in
   };
 
   config = lib.mkIf (builtins.length cfg.packages > 0) {
-    packages = [ flatpak-sync ];
+    home.packages = [ flatpak-sync ];
   };
 }

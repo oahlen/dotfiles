@@ -44,12 +44,14 @@ in
   options.programs.fzf.enable = lib.mkEnableOption "fzf.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.fzf ];
+    home = {
+      packages = [ pkgs.fzf ];
 
-    sessionVariables = {
-      FZF_DEFAULT_COMMAND = defaultCommand;
-      FZF_DEFAULT_OPTS = flags;
-      _ZO_FZF_OPTS = (lib.mkIf config.programs.zoxide.enable) flags;
+      sessionVariables = {
+        FZF_DEFAULT_COMMAND = defaultCommand;
+        FZF_DEFAULT_OPTS = flags;
+        _ZO_FZF_OPTS = (lib.mkIf config.programs.zoxide.enable) flags;
+      };
     };
   };
 }

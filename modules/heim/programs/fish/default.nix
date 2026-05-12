@@ -11,7 +11,7 @@ in
   options.programs.fish.enable = lib.mkEnableOption "fish.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.fish ];
+    home.packages = [ pkgs.fish ];
 
     xdg.config.files = {
       "fish/conf.d".source = ./conf.d;

@@ -158,7 +158,7 @@ in
   options.programs.wlr-which-key.enable = lib.mkEnableOption "wlr-which-key.";
 
   config = lib.mkIf cfg.enable {
-    packages = with pkgs; [
+    home.packages = with pkgs; [
       wlr-which-key
       switch-theme
     ];

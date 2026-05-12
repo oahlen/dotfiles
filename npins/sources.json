@@ -22,9 +22,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "a11e1cb563c76d56f3a399cef66ed0873076bcf0",
-      "url": "https://github.com/oahlen/nix-heim/archive/a11e1cb563c76d56f3a399cef66ed0873076bcf0.tar.gz",
-      "hash": "sha256-ZgkXaWnBG7CBNslujAtEDQFoqnyENcsb/Nl1vApONGA="
+      "revision": "62416c2fc8c50ee2e27deb7f0e6e2097a5175fb5",
+      "url": "https://github.com/oahlen/nix-heim/archive/62416c2fc8c50ee2e27deb7f0e6e2097a5175fb5.tar.gz",
+      "hash": "sha256-y3hkw4MgY2vwCzYsCfEQUE+xw+yjsOWAg/leteGyUWw="
     },
     "nix-index-database": {
       "type": "Git",

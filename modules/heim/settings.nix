@@ -3,25 +3,27 @@
   ...
 }:
 {
-  pathsToLink = [
-    "/bin"
-    "/share/doc"
-    "/share/man"
-  ];
+  home = {
+    files = {
+      ".profile".text = ''
+        . ${config.home.loadSessionVariables}
 
-  extraOutputsToInstall = [
-    "man"
-    "doc"
-  ];
+        if [ -f "$HOME/.env" ]; then
+          . "$HOME/.env"
+        fi
+      '';
+    };
 
-  home.files = {
-    ".profile".text = ''
-      . ${config.loadSessionVariables}
+    pathsToLink = [
+      "/bin"
+      "/share/doc"
+      "/share/man"
+    ];
 
-      if [ -f "$HOME/.env" ]; then
-        . "$HOME/.env"
-      fi
-    '';
+    extraOutputsToInstall = [
+      "man"
+      "doc"
+    ];
   };
 
   overwrite = true;

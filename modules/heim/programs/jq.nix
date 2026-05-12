@@ -22,8 +22,10 @@ in
   options.programs.jq.enable = lib.mkEnableOption "jq.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.jq ];
+    home = {
+      packages = [ pkgs.jq ];
 
-    sessionVariables.JQ_COLORS = colors;
+      sessionVariables.JQ_COLORS = colors;
+    };
   };
 }

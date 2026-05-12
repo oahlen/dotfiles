@@ -11,7 +11,7 @@ in
   options.programs.gitui.enable = lib.mkEnableOption "gitui.";
 
   config = lib.mkIf cfg.enable {
-    packages = [ pkgs.gitui ];
+    home.packages = [ pkgs.gitui ];
 
     xdg.config.files = {
       "gitui/key_bindings.ron".source = ./key_bindings.ron;

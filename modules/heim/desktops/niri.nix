@@ -28,23 +28,25 @@ in
       wlr-which-key.enable = true;
     };
 
-    packages =
-      with pkgs;
-      [
-        brightnessctl
-        hyprpicker
-        playerctl
-        swaybg
-        wf-recorder
-        wl-clipboard
-        wl-mirror
-        xwayland-satellite
-      ]
-      ++ cfg.extraPackages;
+    home = {
+      packages =
+        with pkgs;
+        [
+          brightnessctl
+          hyprpicker
+          playerctl
+          swaybg
+          wf-recorder
+          wl-clipboard
+          wl-mirror
+          xwayland-satellite
+        ]
+        ++ cfg.extraPackages;
 
-    pathsToLink = [
-      "/share/applications"
-      "/share/icons"
-    ];
+      pathsToLink = [
+        "/share/applications"
+        "/share/icons"
+      ];
+    };
   };
 }
