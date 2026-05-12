@@ -35,7 +35,6 @@
     ./services/flatpak.nix
 
     ./mimeapps.nix
-    ./options.nix
     ./settings.nix
   ];
 }

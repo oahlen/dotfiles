@@ -40,7 +40,7 @@ let
 
     push.autoSetupRemote = true;
 
-    user.name = config.user.fullName;
+    user.name = "Oscar Ahlén";
   };
 
   mkDeltaConfig =

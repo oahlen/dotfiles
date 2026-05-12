@@ -1,8 +1,11 @@
 {
   config,
+  lib,
   ...
 }:
 {
+  user = lib.mkDefault "oahlen";
+
   home = {
     files = {
       ".profile".text = ''
