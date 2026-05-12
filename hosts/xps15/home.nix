@@ -37,6 +37,7 @@
       _1password-gui
       customPackages.rbw
       fastfetch
+      github-copilot-cli
     ];
   };
 }
