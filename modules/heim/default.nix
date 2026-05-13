@@ -7,6 +7,7 @@
 
     ./features/development
     ./features/gaming.nix
+    ./features/standalone.nix
 
     ./programs/bash
     ./programs/bat

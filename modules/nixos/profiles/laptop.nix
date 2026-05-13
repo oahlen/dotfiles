@@ -11,9 +11,7 @@ in
   options.profiles.laptop.enable = lib.mkEnableOption "laptop profile.";
 
   config = lib.mkIf cfg.enable {
-    profiles = {
-      desktop.enable = true; # Laptop profile is a superset of the desktop profile
-    };
+    profiles.desktop.enable = true; # Laptop profile is a superset of the desktop profile
 
     powerManagement.powertop.enable = true;
 
