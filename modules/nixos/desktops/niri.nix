@@ -47,6 +47,7 @@ in
     };
 
     networking.networkmanager.enable = true;
+    users.groups.networkmanager.members = config.users.groups.users.members;
 
     users.groups.audio.members = config.users.groups.users.members;
     users.groups.video.members = config.users.groups.users.members;
