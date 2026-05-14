@@ -47,10 +47,16 @@ in
     };
 
     networking.networkmanager.enable = true;
-    users.groups.networkmanager.members = config.users.groups.users.members;
 
-    users.groups.audio.members = config.users.groups.users.members;
-    users.groups.video.members = config.users.groups.users.members;
+    users.groups =
+      let
+        users = config.users.groups.users.members;
+      in
+      {
+        audio.members = users;
+        networkmanager.members = users;
+        video.members = users;
+      };
 
     security.rtkit.enable = true;
 
