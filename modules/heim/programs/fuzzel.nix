@@ -15,7 +15,7 @@ let
       icons-enabled = "no";
       inner-pad = 8;
       line-height = 16;
-      prompt = "> ";
+      prompt = "\"> \"";
       terminal = "foot -e";
       use-bold = "yes";
       vertical-pad = 20;
