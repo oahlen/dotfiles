@@ -12,6 +12,7 @@ status is-interactive; and begin
     alias di dev-session
     alias dots 'tmuxp load -y dotfiles'
     alias gi gitui
+    alias j just
     alias la 'eza -a'
     alias lf yazi
     alias lla 'eza -la'
