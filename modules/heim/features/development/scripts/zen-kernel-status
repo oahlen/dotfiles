@@ -1,3 +1,0 @@
-#!/bin/sh
-
-xdg-open https://github.com/NixOS/nixpkgs/blob/master/pkgs/os-specific/linux/kernel/zen-kernels.nix
