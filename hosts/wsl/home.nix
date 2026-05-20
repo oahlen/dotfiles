@@ -13,6 +13,7 @@
       awscli2
       duckdb
       fastfetchMinimal
+      gh
       github-copilot-cli
       goose-cli
       pqrs
