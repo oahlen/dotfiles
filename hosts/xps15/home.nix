@@ -23,6 +23,7 @@
 
   services.flatpak.packages = [
     "com.github.PintaProject.Pinta"
+    "com.onepassword.OnePassword"
     "md.obsidian.Obsidian"
     "org.chromium.Chromium"
     "org.inkscape.Inkscape"
@@ -34,7 +35,6 @@
     };
 
     packages = with pkgs; [
-      _1password-gui
       customPackages.rbw
       fastfetch
       github-copilot-cli
