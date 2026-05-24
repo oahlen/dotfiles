@@ -15,7 +15,6 @@ in
 
     programs = {
       dconf.enable = true;
-      gnome-disks.enable = true;
 
       gtklock = {
         enable = true;
@@ -62,7 +61,6 @@ in
 
     services = {
       blueman.enable = config.hardware.bluetooth.enable;
-      displayManager.gdm.enable = true;
 
       dbus = {
         enable = true;
