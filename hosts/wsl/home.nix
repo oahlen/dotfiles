@@ -12,7 +12,7 @@
       _1password-cli
       awscli2
       duckdb
-      fastfetchMinimal
+      fastfetch.minimal
       gh
       github-copilot-cli
       goose-cli
