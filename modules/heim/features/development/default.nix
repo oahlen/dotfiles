@@ -48,6 +48,7 @@ in
         nix-search-cli
         nix-tree
         npins
+        pastel
         pokeget-rs
         procs
         rage
