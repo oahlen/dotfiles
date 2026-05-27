@@ -117,6 +117,7 @@ wrapNeovimUnstable neovim-unwrapped {
     tokyonight-nvim
     treesitter
     which-key-nvim
+    koda-nvim
   ];
   wrapRc = false; # Use ~/.config/nvim/init.lua
 }
