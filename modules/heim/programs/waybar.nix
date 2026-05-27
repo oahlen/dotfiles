@@ -103,8 +103,8 @@ let
         format-plugged = "";
         interval = 15;
         states = {
-          critical = 15;
-          warning = 30;
+          critical = 25;
+          warning = 50;
         };
         tooltip-format-charging = "Capacity: {capacity}%\nTime: {time}\nCharging at: {power:>1.0f}W\nHealth: {health}%";
         tooltip-format-discharging = "Capacity: {capacity}%\nTime: {time}\nDischarging at {power:>1.0f}W\nHealth: {health}%";
