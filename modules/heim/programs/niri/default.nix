@@ -26,7 +26,7 @@ let
 
     layout {
         focus-ring {
-            active-color "${variant.cyan}"
+            active-color "${variant.blue}"
             inactive-color "${variant.bright-black}"
         }
     }

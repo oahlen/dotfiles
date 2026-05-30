@@ -32,7 +32,7 @@ let
 
   mkColors = variant: {
     background = withAlpha variant.background;
-    border = withAlpha variant.cyan;
+    border = withAlpha variant.blue;
     input = withAlpha variant.foreground;
     match = withAlpha variant.yellow;
     prompt = withAlpha variant.green;

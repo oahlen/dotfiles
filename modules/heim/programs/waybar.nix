@@ -136,7 +136,6 @@ let
     @define-color green ${variant.green};
     @define-color highlight ${variant.selection.highlight};
     @define-color red ${variant.red};
-    @define-color cyan ${variant.cyan};
 
     * {
         font-family: "JetBrainsMono Nerd Font";
@@ -235,7 +234,7 @@ let
 
     tooltip {
         background: @bg;
-        border: 2px solid @cyan;
+        border: 2px solid @accent;
         border-radius: 8px;
     }
 

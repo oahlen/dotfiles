@@ -46,6 +46,19 @@ let
     meta.homepage = "https://github.com/oahlen/tokyonight.nvim";
   };
 
+  edge-nvim = vimUtils.buildVimPlugin {
+    pname = "edge-nvim";
+    version = "1.0.0";
+    src = fetchFromGitHub {
+      owner = "oahlen";
+      repo = "edge.nvim";
+      rev = "c83fd4f3cd520403c3e25f5806e7b0ac8a010f69";
+      sha256 = "sha256-PiR3TqqoJ22gJg/XSBihhJg9DDncRdtKW3xDFT4EoS8=";
+    };
+
+    meta.homepage = "https://github.com/oahlen/edge.nvim";
+  };
+
   treesitter = vimPlugins.nvim-treesitter.withPlugins (
     plugins: with plugins; [
       bash
@@ -102,6 +115,7 @@ wrapNeovimUnstable neovim-unwrapped {
     blink-cmp
     blink-cmp-spell
     conform-nvim
+    edge-nvim
     fzf-lua
     gitsigns-nvim
     heirline-nvim

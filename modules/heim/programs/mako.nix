@@ -28,7 +28,7 @@ let
 
   mkColors = variant: {
     background-color = variant.background;
-    border-color = variant.cyan;
+    border-color = variant.blue;
     progress-color = variant.statusline.inactive;
     text-color = variant.foreground;
   };

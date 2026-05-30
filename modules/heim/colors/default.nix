@@ -5,6 +5,7 @@
 }:
 let
   schemes = {
+    edge = import ./edge.nix;
     tokyonight = import ./tokyonight.nix;
   };
 in
@@ -13,7 +14,7 @@ in
     colorscheme = {
       name = lib.mkOption {
         type = lib.types.enum (lib.attrNames schemes);
-        default = "tokyonight";
+        default = "edge";
         description = "Name of the colorscheme to use.";
       };
 

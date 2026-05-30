@@ -151,7 +151,7 @@ let
   mkColors = variant: {
     inherit (variant) background;
     color = variant.foreground;
-    border = variant.cyan;
+    border = variant.blue;
   };
 in
 {
