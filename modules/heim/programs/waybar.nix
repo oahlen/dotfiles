@@ -132,7 +132,7 @@ let
     @define-color bg ${variant.statusline.background};
     @define-color fg ${variant.statusline.foreground};
     @define-color fg_dim ${variant.bright-black};
-    @define-color accent ${variant.blue};
+    @define-color accent ${variant.statusline.accent};
     @define-color green ${variant.green};
     @define-color highlight ${variant.selection.highlight};
     @define-color red ${variant.red};
@@ -240,6 +240,7 @@ let
 
     tooltip label {
         color: @fg;
+        text-shadow: none;
     }
   '';
 in

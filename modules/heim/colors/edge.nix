@@ -3,7 +3,7 @@
     foreground = "#c5cdd9";
     background = "#2c2e34";
 
-    black = "#33353f";
+    black = "#363944";
     red = "#ec7279";
     green = "#a0c980";
     yellow = "#deb974";
@@ -24,7 +24,8 @@
     statusline = {
       foreground = "#c5cdd9";
       background = "#24262a";
-      inactive = "#363944";
+      inactive = "#414550";
+      accent = "#6cb6eb";
     };
 
     selection = {
@@ -45,7 +46,7 @@
     foreground = "#4b505b";
     background = "#fafafa";
 
-    black = "#eef1f4";
+    black = "#e8ebf0";
     red = "#d05858";
     green = "#608e32";
     yellow = "#be7505";
@@ -67,6 +68,7 @@
       foreground = "#4b505b";
       background = "#eef1f4";
       inactive = "#dde2e7";
+      accent = "#6996e0";
     };
 
     selection = {
