@@ -39,7 +39,7 @@
       deleted_bg = "#55393d";
     };
 
-    overview = "#24262a";
+    overview = "#202023";
   };
 
   light = {
@@ -82,6 +82,6 @@
       deleted_bg = "#f6e4e4";
     };
 
-    overview = "#24262a";
+    overview = "#202023";
   };
 }
