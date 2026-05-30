@@ -10,7 +10,7 @@
     blue = "#6cb6eb";
     purple = "#d38aea";
     cyan = "#5dbbc1";
-    white = "#dcdfe4";
+    white = "#c5cdd9";
 
     bright-black = "#758094";
     bright-red = "#ec7279";
