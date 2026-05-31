@@ -25,6 +25,7 @@
       foreground = "#c0caf5";
       background = "#15161e";
       inactive = "#292d40";
+      accent = "#7aa2f7";
     };
 
     selection = {
@@ -43,9 +44,9 @@
 
   light = {
     foreground = "#343B58";
-    background = "#e6e7ed";
+    background = "#f5f5f8";
 
-    black = "#d7d9e2";
+    black = "#e6e7ed";
     red = "#8c4351";
     green = "#385f0d";
     yellow = "#8f5e15";
@@ -61,16 +62,17 @@
     bright-blue = "#2959aa";
     bright-purple = "#5a3e8e";
     bright-cyan = "#006c86";
-    bright-white = "#2b3048";
+    bright-white = "#343B58";
 
     statusline = {
-      foreground = "#2b3048";
-      background = "#d7d9e2";
-      inactive = "#c8cbd8";
+      foreground = "#343b58";
+      background = "#e6e7ed";
+      inactive = "#d7d9e2";
+      accent = "#2959aa";
     };
 
     selection = {
-      foreground = "#2b3048";
+      foreground = "#343b58";
       background = "#d7d9e2";
       highlight = "#965027";
     };

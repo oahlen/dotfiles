@@ -39,8 +39,8 @@ let
     src = fetchFromGitHub {
       owner = "oahlen";
       repo = "tokyonight.nvim";
-      rev = "e150aaabd119b8be7d9956637c3c3c0159f0fb32";
-      sha256 = "sha256-dWYPCkYVpbaKLj0Bs3/COpgvhkiXqOhhP4Iz7KQaWc8=";
+      rev = "40f882d1c051a95951c04d05a54830d85f1ef0cb";
+      sha256 = "sha256-NomRKyrjIsyJMxLa38EXrmosgNlwxuhpv4vS8knf53Q=";
     };
 
     meta.homepage = "https://github.com/oahlen/tokyonight.nvim";
