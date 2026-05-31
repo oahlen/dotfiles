@@ -27,6 +27,69 @@ return {
         local Space = { provider = "    " }
         local Padding = { provider = " " }
 
+        local VimMode = {
+            static = {
+                mode_names = {
+                    n = "NORMAL",
+                    no = "NORMAL",
+                    nov = "NORMAL",
+                    noV = "NORMAL",
+                    ["no\22"] = "NORMAL",
+                    niI = "NORMAL",
+                    niR = "NORMAL",
+                    niV = "NORMAL",
+                    nt = "NORMAL",
+                    v = "VISUAL",
+                    vs = "VISUAL",
+                    V = "VISUAL",
+                    Vs = "VISUAL",
+                    ["\22"] = "VISUAL",
+                    ["\22s"] = "VISUAL",
+                    s = "SELECT",
+                    S = "SELECT",
+                    ["\19"] = "SELECT",
+                    i = "INSERT",
+                    ic = "INSERT",
+                    ix = "INSERT",
+                    R = "REPLACE",
+                    Rc = "REPLACE",
+                    Rx = "REPLACE",
+                    Rv = "REPLACE",
+                    c = "COMMAND",
+                    cv = "COMMAND",
+                    t = "TERMINAL",
+                },
+                mode_colors = {
+                    NORMAL = "blue",
+                    INSERT = "green",
+                    VISUAL = "orange",
+                    SELECT = "orange",
+                    REPLACE = "red",
+                    COMMAND = "purple",
+                    TERMINAL = "cyan",
+                },
+            },
+            init = function(self)
+                self.mode = vim.fn.mode(1)
+                self.mode_name = self.mode_names[self.mode] or "UNKNOWN"
+            end,
+            update = { "ModeChanged", pattern = "*:*" },
+            {
+                provider = function(self)
+                    return " " .. self.mode_name .. " "
+                end,
+                hl = function(self)
+                    return { fg = "bg", bg = self.mode_colors[self.mode_name] or "fg", bold = true }
+                end,
+            },
+            {
+                provider = "",
+                hl = function(self)
+                    return { fg = self.mode_colors[self.mode_name] or "fg", bg = "bg" }
+                end,
+            },
+        }
+
         local FileTree = {
             condition = function()
                 return vim.bo.filetype == "NvimTree"
@@ -208,6 +271,7 @@ return {
         local Statusline = {
             condition = conditions.is_active,
             hl = { fg = "fg", bg = "bg" },
+            VimMode,
             Padding,
             FileTree,
             FileNameBlock,
