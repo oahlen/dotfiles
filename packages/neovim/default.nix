@@ -52,8 +52,8 @@ let
     src = fetchFromGitHub {
       owner = "oahlen";
       repo = "edge.nvim";
-      rev = "f0f2ba9be7ce18ef00d26c2f489f4f450184e6ee";
-      sha256 = "sha256-mnI8+bRaaLAERsAloWYwBrBvmDstPGNPFWjAbz7iNVM=";
+      rev = "b3262820cb336cefe577e1b0ceb8836bc56f5510";
+      sha256 = "sha256-OH6I8VpYVtdI3CxpXJxFkHkAksvE+BgOi+E1S0Aclbg=";
     };
 
     meta.homepage = "https://github.com/oahlen/edge.nvim";
