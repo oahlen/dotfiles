@@ -44,9 +44,9 @@
 
   light = {
     foreground = "#343B58";
-    background = "#f5f5f8";
+    background = "#e6e7ed";
 
-    black = "#e6e7ed";
+    black = "#d7d9e2";
     red = "#8c4351";
     green = "#385f0d";
     yellow = "#8f5e15";
@@ -66,8 +66,8 @@
 
     statusline = {
       foreground = "#343b58";
-      background = "#e6e7ed";
-      inactive = "#d7d9e2";
+      background = "#d7d9e2";
+      inactive = "#c8cbd8";
       accent = "#2959aa";
     };
 
