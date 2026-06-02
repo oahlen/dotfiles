@@ -27,6 +27,7 @@ help:
 # Run nixos-rebuild switch for the current host
 @rebuild-switch:
     nixos-rebuild switch -f . -A "hosts.$(hostname)" --quiet --no-reexec --sudo
+    heim-activate
 
 # Installs the home configuration for the current host
 @home-install:
