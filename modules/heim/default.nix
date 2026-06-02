@@ -11,7 +11,6 @@
 
     ./programs/bash
     ./programs/bat
-    ./programs/bottom
     ./programs/fish
     ./programs/gitui
     ./programs/ideavim
@@ -21,6 +20,7 @@
     ./programs/wlr-which-key
     ./programs/yazi
 
+    ./programs/bottom.nix
     ./programs/direnv.nix
     ./programs/fd.nix
     ./programs/foot.nix
