@@ -18,7 +18,6 @@
     ./programs/niri
     ./programs/tmux
     ./programs/wlr-which-key
-    ./programs/yazi
 
     ./programs/bottom.nix
     ./programs/direnv.nix
@@ -31,6 +30,7 @@
     ./programs/mako.nix
     ./programs/ripgrep.nix
     ./programs/waybar.nix
+    ./programs/yazi.nix
     ./programs/zoxide.nix
 
     ./services/flatpak.nix
