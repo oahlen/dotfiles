@@ -12,8 +12,8 @@ let
     src = fetchFromGitHub {
       owner = "carlos-algms";
       repo = "agentic.nvim";
-      rev = "57ec685e434d41c31df4b263dfb16b5b43dcfa48";
-      sha256 = "sha256-CBvvByPvB6ST3nlT/0ozhIPZ8HabwGaRlXn33BGIlF0=";
+      rev = "b6529a4749ee72ba64e40401e4b25d0ef7cdb81e";
+      sha256 = "sha256-G1g+5jUmAyWBh3PBMGff27CkfUyJTdoY+gRlmcVf/OM=";
     };
 
     meta.homepage = "https://github.com/carlos-algms/agentic.nvim";
@@ -39,8 +39,8 @@ let
     src = fetchFromGitHub {
       owner = "oahlen";
       repo = "tokyonight.nvim";
-      rev = "221c0b43c98cd73ff101cff011c7d5a5f4d5e680";
-      sha256 = "sha256-afq0EgZlWWQLL+I4k2+UUXbS/9Pk9o5plJiPgSHwnOw=";
+      rev = "722592e322cf854a86720d109e0e3e5506e477e7";
+      sha256 = "sha256-IVXFVINSOTvx2naVdZ3Su4HMvZg858nHGB8GkDvopeg=";
     };
 
     meta.homepage = "https://github.com/oahlen/tokyonight.nvim";
