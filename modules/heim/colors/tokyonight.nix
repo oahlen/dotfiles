@@ -51,7 +51,7 @@
     green = "#385f0d";
     yellow = "#8f5e15";
     blue = "#2959aa";
-    purple = "#5a3e8e";
+    purple = "#65359d";
     cyan = "#006c86";
     white = "#343B58";
 
@@ -60,7 +60,7 @@
     bright-green = "#385f0d";
     bright-yellow = "#8f5e15";
     bright-blue = "#2959aa";
-    bright-purple = "#5a3e8e";
+    bright-purple = "#65359d";
     bright-cyan = "#006c86";
     bright-white = "#343B58";
 
