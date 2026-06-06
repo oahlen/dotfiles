@@ -34,12 +34,12 @@
             "name": null,
             "owner": "oahlen",
             "repo": "aurora.nvim",
-            "rev": "32f7d5d19f4441eff3f13187e7ab0ede7fe701e0",
-            "sha256": "sha256-yXyl0EswMQft16O67gjzpKAo1KdSlAkCU6N48xldPLU=",
+            "rev": "c1046ca8a278c9af5da5b0a3b803d3d2187f224d",
+            "sha256": "sha256-3yUOr9bXdPEa8eunUOLrkFzCUJql0X1QOeacMyOQNME=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "32f7d5d19f4441eff3f13187e7ab0ede7fe701e0"
+        "version": "c1046ca8a278c9af5da5b0a3b803d3d2187f224d"
     },
     "shellcheck-nvim": {
         "cargoLock": null,
