@@ -1,12 +1,12 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
   schemes = {
-    edge = import ./edge.nix;
-    tokyonight = import ./tokyonight.nix;
+    aurora = import ./aurora.nix { inherit pkgs; };
   };
 in
 {
@@ -14,7 +14,7 @@ in
     colorscheme = {
       name = lib.mkOption {
         type = lib.types.enum (lib.attrNames schemes);
-        default = "tokyonight";
+        default = "aurora";
         description = "Name of the colorscheme to use.";
       };
 

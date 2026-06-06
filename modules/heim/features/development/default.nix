@@ -48,6 +48,7 @@ in
         nix-search-cli
         nix-tree
         npins
+        nvfetcher
         pastel
         pokeget-rs
         procs

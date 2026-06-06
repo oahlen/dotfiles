@@ -16,6 +16,10 @@ help:
 @update:
     npins update
 
+# Update neovim sources to the latest version
+@update-nvim:
+    nvfetcher -c packages/neovim/nvfetcher.toml -o packages/neovim/sources
+
 # Check the current host configuration
 @check host:
     nix build -f . "hosts.$1.config.system.build.toplevel"

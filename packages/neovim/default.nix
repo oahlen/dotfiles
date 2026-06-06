@@ -1,4 +1,5 @@
 {
+  callPackage,
   fetchFromGitHub,
   neovim-unwrapped,
   vimPlugins,
@@ -6,31 +7,31 @@
   wrapNeovimUnstable,
 }:
 let
-  agentic-nvim = vimUtils.buildVimPlugin {
-    pname = "agentic-nvim";
-    version = "1.0.0";
-    src = fetchFromGitHub {
-      owner = "carlos-algms";
-      repo = "agentic.nvim";
-      rev = "b6529a4749ee72ba64e40401e4b25d0ef7cdb81e";
-      sha256 = "sha256-G1g+5jUmAyWBh3PBMGff27CkfUyJTdoY+gRlmcVf/OM=";
-    };
+  sources = callPackage ./sources/generated.nix { };
 
-    meta.homepage = "https://github.com/carlos-algms/agentic.nvim";
+  agentic-nvim = vimUtils.buildVimPlugin {
+    inherit (sources.agentic-nvim)
+      pname
+      version
+      src
+      ;
     doCheck = false;
   };
 
-  shellcheck-nvim = vimUtils.buildVimPlugin {
-    pname = "shellcheck-nvim";
-    version = "1.0.0";
-    src = fetchFromGitHub {
-      owner = "pablos123";
-      repo = "shellcheck.nvim";
-      rev = "ee40e705ea61a4d790907c93cd01cc52480351fa";
-      sha256 = "sha256-1rfEtD+II1uh6cn/dBxwGKxNFUwgoKXWtcJHIi6ydy4=";
-    };
+  aurora-nvim = vimUtils.buildVimPlugin {
+    inherit (sources.aurora-nvim)
+      pname
+      version
+      src
+      ;
+  };
 
-    meta.homepage = "https://github.com/pablos123/shellcheck.nvim";
+  shellcheck-nvim = vimUtils.buildVimPlugin {
+    inherit (sources.shellcheck-nvim)
+      pname
+      version
+      src
+      ;
   };
 
   tokyonight-nvim = vimUtils.buildVimPlugin {
@@ -112,6 +113,7 @@ in
 wrapNeovimUnstable neovim-unwrapped {
   plugins = with vimPlugins; [
     agentic-nvim
+    aurora-nvim
     blink-cmp
     blink-cmp-spell
     conform-nvim

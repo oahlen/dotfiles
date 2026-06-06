@@ -1,0 +1,14 @@
+[agentic-nvim]
+src.git = "https://github.com/carlos-algms/agentic.nvim"
+fetch.github = "carlos-algms/agentic.nvim"
+src.branch = "main"
+
+[aurora-nvim]
+src.git = "https://github.com/oahlen/aurora.nvim"
+fetch.github = "oahlen/aurora.nvim"
+src.branch = "main"
+
+[shellcheck-nvim]
+src.git = "https://github.com/pablos123/shellcheck.nvim"
+fetch.github = "pablos123/shellcheck.nvim"
+src.branch = "main"

@@ -6,7 +6,7 @@ else
     vim.o.background = "dark"
 end
 
-vim.cmd.colorscheme(os.getenv("NVIM_COLORSCHEME") or "tokyonight")
+vim.cmd.colorscheme(os.getenv("NVIM_COLORSCHEME") or "aurora")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
