@@ -72,6 +72,10 @@ let
     runScript = writeShellScript "hytale-launcher-wrapper" ''
       set -e
 
+      # Force temp dir to be on the same file system
+      export TMPDIR="$HOME/.local/share/Hytale/tmp"
+      mkdir -p "$TMPDIR"
+
       LAUNCHER_DIR="$HOME/.local/share/hytale-launcher"
       LAUNCHER_BIN="$LAUNCHER_DIR/hytale-launcher"
       DOWNLOAD_URL="https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.zip"
@@ -126,7 +130,7 @@ let
 
   # Fetch the Hytale icon
   hytaleIcon = fetchurl {
-    url = "https://hytale.com/favicon.ico";
+    url = "https://hytale.com/images/favicon.ico";
     hash = "sha256-eniMb/wct+vjtzXF2z8Z1XPBmwabjV8RCDyd8J1QLT0=";
   };
 
