@@ -30,6 +30,7 @@
     ./programs/mako.nix
     ./programs/ripgrep.nix
     ./programs/waybar.nix
+    ./programs/windows-terminal.nix
     ./programs/yazi.nix
     ./programs/zoxide.nix
 

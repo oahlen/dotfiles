@@ -7,6 +7,10 @@
     development.enable = true;
   };
 
+  programs = {
+    windows-terminal.enable = true;
+  };
+
   home = {
     packages = with pkgs; [
       _1password-cli
