@@ -6,7 +6,7 @@
 }:
 let
   schemes = {
-    Aurora = import ./aurora.nix { inherit pkgs; };
+    aurora = import ./aurora.nix { inherit pkgs; };
   };
 in
 {
@@ -14,7 +14,7 @@ in
     colorscheme = {
       name = lib.mkOption {
         type = lib.types.enum (lib.attrNames schemes);
-        default = "Aurora";
+        default = "aurora";
         description = "Name of the colorscheme to use.";
       };
 
