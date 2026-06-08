@@ -19,6 +19,7 @@ let
       blue
       purple
       cyan
+      white
       ;
 
     brightBlack = variant.bright-black;
