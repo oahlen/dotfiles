@@ -8,27 +8,27 @@
 {
   agentic-nvim = {
     pname = "agentic-nvim";
-    version = "b6529a4749ee72ba64e40401e4b25d0ef7cdb81e";
+    version = "bc87eab6b80ac01825ea0c316f6549b4c143504f";
     src = fetchFromGitHub {
       owner = "carlos-algms";
       repo = "agentic.nvim";
-      rev = "b6529a4749ee72ba64e40401e4b25d0ef7cdb81e";
+      rev = "bc87eab6b80ac01825ea0c316f6549b4c143504f";
       fetchSubmodules = false;
-      sha256 = "sha256-G1g+5jUmAyWBh3PBMGff27CkfUyJTdoY+gRlmcVf/OM=";
+      sha256 = "sha256-eX4WPQGxAyS8vY++SOhl44D9ivbHsuEAxH2cBg4k6yA=";
     };
-    date = "2026-05-29";
+    date = "2026-06-07";
   };
   aurora-nvim = {
     pname = "aurora-nvim";
-    version = "c1046ca8a278c9af5da5b0a3b803d3d2187f224d";
+    version = "078c712ae25809770965c2bd97b1e6289226b8f3";
     src = fetchFromGitHub {
       owner = "oahlen";
       repo = "aurora.nvim";
-      rev = "c1046ca8a278c9af5da5b0a3b803d3d2187f224d";
+      rev = "078c712ae25809770965c2bd97b1e6289226b8f3";
       fetchSubmodules = false;
-      sha256 = "sha256-3yUOr9bXdPEa8eunUOLrkFzCUJql0X1QOeacMyOQNME=";
+      sha256 = "sha256-JBov/UMPZb35lnk4cQZIgdX8CfZxWOB/3tltBjlQDuI=";
     };
-    date = "2026-06-06";
+    date = "2026-06-08";
   };
   shellcheck-nvim = {
     pname = "shellcheck-nvim";
