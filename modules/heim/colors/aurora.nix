@@ -34,7 +34,7 @@ let
         foreground = fg2;
         background = statusline_bg;
         inactive = bg2;
-        accent = filled_blue;
+        accent = blue;
       };
 
       selection = {
