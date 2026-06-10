@@ -10,10 +10,10 @@ set -g fish_color_history_current --bold
 set -g fish_color_keyword purple
 set -g fish_color_normal normal
 set -g fish_color_operator normal
-set -g fish_color_option bryellow
+set -g fish_color_option yellow
 set -g fish_color_param white
 set -g fish_color_quote green
-set -g fish_color_redirection bryellow --bold
+set -g fish_color_redirection yellow --bold
 set -g fish_color_search_match --background black
 set -g fish_color_selection --background black
 set -g fish_color_status red
@@ -23,7 +23,7 @@ set -g fish_color_valid_path --underline
 set -g fish_color_cwd blue --bold
 set -g fish_color_cwd_root red --bold
 set -g fish_color_host cyan --bold
-set -g fish_color_host_remote bryellow --bold
+set -g fish_color_host_remote green --bold
 set -g fish_color_user yellow --bold
 
 # Completion Pager

@@ -20,15 +20,15 @@
   };
   aurora-nvim = {
     pname = "aurora-nvim";
-    version = "aa4886cfc233b9a088369e2146e74018b76c44c4";
+    version = "e7781bacd7e76dcd2920774d96e90093a2111dd0";
     src = fetchFromGitHub {
       owner = "oahlen";
       repo = "aurora.nvim";
-      rev = "aa4886cfc233b9a088369e2146e74018b76c44c4";
+      rev = "e7781bacd7e76dcd2920774d96e90093a2111dd0";
       fetchSubmodules = false;
-      sha256 = "sha256-rwRbKPXl6Apjv/TVhS8K/HpVamOw3XMgPLLXDy6fCc8=";
+      sha256 = "sha256-x6tHVtlhWmbqL95iglkYwmRPUrgUyKeE2N6vt+YFgYw=";
     };
-    date = "2026-06-09";
+    date = "2026-06-10";
   };
   shellcheck-nvim = {
     pname = "shellcheck-nvim";
