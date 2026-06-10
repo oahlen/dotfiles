@@ -62,6 +62,11 @@ enable("lua_ls", {
     },
 })
 
+enable("harper_ls", {
+    cmd = { "harper-ls", "--stdio" },
+    filetypes = { "markdown", "text", "tex", "typst" },
+})
+
 enable("csharp_ls")
 enable("cssls")
 enable("html")

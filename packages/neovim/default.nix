@@ -115,7 +115,6 @@ wrapNeovimUnstable neovim-unwrapped {
     agentic-nvim
     aurora-nvim
     blink-cmp
-    blink-cmp-spell
     conform-nvim
     edge-nvim
     fzf-lua

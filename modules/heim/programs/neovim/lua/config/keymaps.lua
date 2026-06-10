@@ -53,5 +53,4 @@ vim.keymap.set("n", "<leader>tc", "<CMD>tabclose<CR>", { desc = "Close Current T
 vim.keymap.set("n", "<Esc>", "<CMD>nohl<CR>", { desc = "Clear Search Highlights" })
 
 -- Toggle actions
-vim.keymap.set("n", "<leader>ns", "<CMD>set spell! spelllang=en<CR>", { desc = "Toggle Spelling" })
 vim.keymap.set("n", "<leader>nb", "<CMD>ToggleBackground<CR>", { desc = "Toggle Background" })

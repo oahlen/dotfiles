@@ -8,6 +8,7 @@ let
   cfg = config.programs.neovim;
 
   extraPackages = with pkgs; [
+    harper
     lua-language-server
     nil
     shellcheck
