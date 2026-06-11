@@ -7,12 +7,12 @@ return {
 
         local function setup_colors()
             return {
-                red = utils.get_highlight("DiagnosticError").fg,
-                green = utils.get_highlight("String").fg,
-                orange = utils.get_highlight("Constant").fg,
-                blue = utils.get_highlight("Function").fg,
-                purple = utils.get_highlight("Statement").fg,
-                cyan = utils.get_highlight("PreProc").fg,
+                red = utils.get_highlight("Red").fg,
+                green = utils.get_highlight("Green").fg,
+                orange = utils.get_highlight("Orange").fg,
+                blue = utils.get_highlight("Blue").fg,
+                purple = utils.get_highlight("Purple").fg,
+                cyan = utils.get_highlight("Cyan").fg,
                 fg = utils.get_highlight("StatusLine").fg,
                 bg = utils.get_highlight("StatusLine").bg,
 
