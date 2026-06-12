@@ -71,6 +71,10 @@ enable("lua_ls", {
 enable("harper_ls", {
     cmd = { "harper-ls", "--stdio" },
     filetypes = { "markdown", "text", "tex", "typst" },
+    on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+        vim.diagnostic.config({ virtual_text = false }, vim.lsp.diagnostic.get_namespace(client.id))
+    end,
 })
 
 enable("csharp_ls")
