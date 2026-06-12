@@ -5,7 +5,7 @@ return {
         require("render-markdown").setup({
             code = { sign = false },
             completions = { lsp = { enabled = true } },
-            heading = { enabled = false },
+            heading = { enabled = true },
             file_types = {
                 "AgenticChat",
                 "markdown",

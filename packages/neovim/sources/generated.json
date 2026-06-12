@@ -1,7 +1,7 @@
 {
     "agentic-nvim": {
         "cargoLock": null,
-        "date": "2026-06-08",
+        "date": "2026-06-11",
         "extract": null,
         "name": "agentic-nvim",
         "passthru": null,
@@ -13,16 +13,16 @@
             "name": null,
             "owner": "carlos-algms",
             "repo": "agentic.nvim",
-            "rev": "ca7700bdcf57f6079833574d924c99f0d3dbc4b9",
-            "sha256": "sha256-OqcLWbyBafWFtmrDXMGIlp4hm/sELDa66tr2plRtmu8=",
+            "rev": "a19fee663aa8be5f46f0af6fc0b46427b0e75cf2",
+            "sha256": "sha256-ZT1ME4E8jwC6DPLVpEgCudL8go91q7PkfJn5ylajmYA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "ca7700bdcf57f6079833574d924c99f0d3dbc4b9"
+        "version": "a19fee663aa8be5f46f0af6fc0b46427b0e75cf2"
     },
     "aurora-nvim": {
         "cargoLock": null,
-        "date": "2026-06-11",
+        "date": "2026-06-12",
         "extract": null,
         "name": "aurora-nvim",
         "passthru": null,
@@ -34,12 +34,12 @@
             "name": null,
             "owner": "oahlen",
             "repo": "aurora.nvim",
-            "rev": "d60d47c3183d6ddc50804cec9c084dcc5b4516b5",
-            "sha256": "sha256-dhtmd+dvCGerhQF3VbLs2qB4jKhCKfwrLW2bmERMHkk=",
+            "rev": "1dffeb24379095e60a2d059dbff6c9a792e1c0ee",
+            "sha256": "sha256-XFz5sUE4OTxe2Hm879hD1r0kejT358D5QSP4B7KOV40=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d60d47c3183d6ddc50804cec9c084dcc5b4516b5"
+        "version": "1dffeb24379095e60a2d059dbff6c9a792e1c0ee"
     },
     "shellcheck-nvim": {
         "cargoLock": null,
