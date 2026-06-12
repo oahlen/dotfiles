@@ -22,8 +22,14 @@ local on_attach = function(_, bufnr)
         vim.diagnostic.jump({ count = -1, float = true })
     end, "Goto Prev")
 
-    map("K", vim.lsp.buf.hover, "Hover Documentation")
-    map("<C-s>", vim.lsp.buf.signature_help, "Signature Help")
+    map("K", function()
+        vim.lsp.buf.hover({ border = "solid" })
+    end, "Hover Documentation")
+
+    map("<C-s>", function()
+        vim.lsp.buf.signature_help({ border = "solid" })
+    end, "Signature Help")
+
     map("grt", vim.lsp.buf.type_definition, "Type Definition")
     map("grn", vim.lsp.buf.rename, "Rename Symbol")
     map("gra", finder.lsp_code_actions, "Code Actions")
