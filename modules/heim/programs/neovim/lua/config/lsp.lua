@@ -23,11 +23,11 @@ local on_attach = function(_, bufnr)
     end, "Goto Prev")
 
     map("K", function()
-        vim.lsp.buf.hover({ border = "rounded" })
+        vim.lsp.buf.hover({ border = "rounded", max_width = 100, max_height = 40 })
     end, "Hover Documentation")
 
     map("<C-s>", function()
-        vim.lsp.buf.signature_help({ border = "rounded" })
+        vim.lsp.buf.signature_help({ border = "rounded", max_width = 100, max_height = 40 })
     end, "Signature Help")
 
     map("grt", vim.lsp.buf.type_definition, "Type Definition")
