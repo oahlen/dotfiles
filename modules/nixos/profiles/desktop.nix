@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 let
@@ -11,72 +10,18 @@ in
   options.profiles.desktop.enable = lib.mkEnableOption "desktop profile.";
 
   config = lib.mkIf cfg.enable {
-    boot = {
-      loader.systemd-boot.enable = true;
-
-      plymouth.enable = true;
-
-      consoleLogLevel = 3;
-      initrd.verbose = false;
-      initrd.systemd.enable = true;
-
-      kernelParams = [
-        "quiet"
-        "splash"
-        "intremap=on"
-        "boot.shell_on_fail"
-        "udev.log_priority=3"
-        "rd.systemd.show_status=auto"
-      ];
+    features = {
+      audio.enable = true;
+      boot.enable = true;
+      core-apps.enable = true;
+      fonts.enable = true;
+      storage.enable = true;
+      wayland.enable = true;
     };
-
-    fonts.packages = with pkgs; [
-      dejavu_fonts
-      liberation_ttf
-      nerd-fonts.jetbrains-mono
-      noto-fonts-color-emoji
-    ];
 
     services = {
       flatpak.enable = true;
-      fstrim.enable = true;
-
-      pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-      };
-
       power-profiles-daemon.enable = true;
     };
-
-    programs = {
-      firefox.enable = true; # Default browser
-    };
-
-    environment.systemPackages = with pkgs; [
-      adw-gtk3
-      gnome-multi-writer
-      gnome-text-editor
-      loupe
-      nautilus
-      papirus-icon-theme
-      xdg-utils
-    ];
-
-    environment.sessionVariables = {
-      _JAVA_AWT_WM_NONREPARENTING = "1";
-      NIXOS_OZONE_WL = "1";
-      QT_QPA_PLATFORM = "wayland";
-      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-      SDL_VIDEODRIVER = "wayland";
-    };
-
-    fileSystems."/".options = [
-      "noatime"
-      "nodiratime"
-      "discard"
-    ];
   };
 }

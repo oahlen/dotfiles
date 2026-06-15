@@ -4,17 +4,22 @@
     ./desktops/gnome.nix
     ./desktops/niri.nix
 
+    ./features/apptainer.nix
+    ./features/audio.nix
+    ./features/boot.nix
     ./features/containers.nix
+    ./features/core-apps.nix
+    ./features/fonts.nix
     ./features/gaming.nix
     ./features/security-key.nix
+    ./features/storage.nix
     ./features/virtualisation.nix
+    ./features/wayland.nix
 
     ./profiles/desktop.nix
     ./profiles/home.nix
     ./profiles/laptop.nix
     ./profiles/work.nix
-
-    ./programs/apptainer.nix
 
     ./services/nix-gc-user.nix
     ./services/polkit-soteria.nix

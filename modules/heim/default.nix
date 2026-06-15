@@ -1,13 +1,17 @@
 { ... }:
 {
   imports = [
-    ./colors/default.nix
-
-    ./desktops/niri.nix
-
-    ./features/development
-    ./features/gaming.nix
+    ./features/cli.nix
+    ./features/dotnet.nix
+    ./features/nix-dev.nix
+    ./features/rust.nix
     ./features/standalone.nix
+
+    ./options/colors
+
+    ./profiles/desktops/niri.nix
+    ./profiles/development
+    ./profiles/gaming.nix
 
     ./programs/bash
     ./programs/bat
@@ -28,6 +32,7 @@
     ./programs/git.nix
     ./programs/jq.nix
     ./programs/mako.nix
+    ./programs/mangohud.nix
     ./programs/ripgrep.nix
     ./programs/waybar.nix
     ./programs/windows-terminal.nix

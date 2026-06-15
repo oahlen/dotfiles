@@ -37,7 +37,6 @@
 
   features = {
     containers.enable = true;
-    security-key.enable = true;
   };
 
   users.users.oahlen = {

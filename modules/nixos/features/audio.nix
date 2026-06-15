@@ -1,0 +1,20 @@
+{
+  config,
+  lib,
+  ...
+}:
+let
+  cfg = config.features.audio;
+in
+{
+  options.features.audio.enable = lib.mkEnableOption "audio.";
+
+  config = lib.mkIf cfg.enable {
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+  };
+}

@@ -26,7 +26,6 @@
   features = {
     containers.enable = true;
     gaming.enable = true;
-    security-key.enable = true;
   };
 
   environment.systemPackages = [ pkgs.nfs-utils ];
