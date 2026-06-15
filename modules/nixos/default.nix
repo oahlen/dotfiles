@@ -7,14 +7,14 @@
     ./features/apptainer.nix
     ./features/audio.nix
     ./features/boot.nix
-    ./features/containers.nix
     ./features/core-apps.nix
     ./features/fonts.nix
     ./features/gaming.nix
-    ./features/security-key.nix
+    ./features/podman.nix
     ./features/storage.nix
     ./features/virtualisation.nix
     ./features/wayland.nix
+    ./features/yubikey.nix
 
     ./profiles/desktop.nix
     ./profiles/home.nix

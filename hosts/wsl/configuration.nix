@@ -13,7 +13,7 @@
   };
 
   features = {
-    containers = {
+    podman = {
       enable = true;
       dockerCompat = true;
     };

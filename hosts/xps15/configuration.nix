@@ -36,7 +36,7 @@
   };
 
   features = {
-    containers.enable = true;
+    podman.enable = true;
   };
 
   users.users.oahlen = {

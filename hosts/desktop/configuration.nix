@@ -24,7 +24,7 @@
   desktops.niri.enable = true;
 
   features = {
-    containers.enable = true;
+    podman.enable = true;
     gaming.enable = true;
   };
 

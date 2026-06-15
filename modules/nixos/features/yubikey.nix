@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.features.security-key;
+  cfg = config.features.yubikey;
 in
 {
-  options.features.security-key.enable = lib.mkEnableOption "security key support.";
+  options.features.yubikey.enable = lib.mkEnableOption "Yubikey support.";
 
   config = lib.mkIf cfg.enable {
     services.pcscd.enable = true;

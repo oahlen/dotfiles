@@ -5,11 +5,11 @@
   ...
 }:
 let
-  cfg = config.features.containers;
+  cfg = config.features.podman;
 in
 {
-  options.features.containers = {
-    enable = lib.mkEnableOption "containers.";
+  options.features.podman = {
+    enable = lib.mkEnableOption "Podman containers.";
     dockerCompat = lib.mkEnableOption "Docker related compatibility features.";
   };
 

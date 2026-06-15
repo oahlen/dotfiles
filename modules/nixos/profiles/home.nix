@@ -11,7 +11,7 @@ in
 
   config = lib.mkIf cfg.enable {
     features = {
-      security-key.enable = true;
+      yubikey.enable = true;
     };
 
     services.tailscale = {
