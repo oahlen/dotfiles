@@ -31,6 +31,7 @@ in
 
     home = {
       files = {
+        ".agents/skills".source = ./skills;
         ".local/bin".source = ./scripts;
       };
 
