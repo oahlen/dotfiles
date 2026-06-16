@@ -22,7 +22,7 @@
     },
     "aurora-nvim": {
         "cargoLock": null,
-        "date": "2026-06-12",
+        "date": "2026-06-15",
         "extract": null,
         "name": "aurora-nvim",
         "passthru": null,
@@ -34,12 +34,12 @@
             "name": null,
             "owner": "oahlen",
             "repo": "aurora.nvim",
-            "rev": "1dffeb24379095e60a2d059dbff6c9a792e1c0ee",
-            "sha256": "sha256-XFz5sUE4OTxe2Hm879hD1r0kejT358D5QSP4B7KOV40=",
+            "rev": "0453aa2e7fb01699f3d2482e6737709e1388f488",
+            "sha256": "sha256-kejpYJAuT1qT/tSLUOFJIcbzPanHOrzWiTuH+6Qw8KI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "1dffeb24379095e60a2d059dbff6c9a792e1c0ee"
+        "version": "0453aa2e7fb01699f3d2482e6737709e1388f488"
     },
     "shellcheck-nvim": {
         "cargoLock": null,
