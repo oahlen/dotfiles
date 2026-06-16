@@ -4,16 +4,12 @@
   ...
 }:
 let
-  cfg = config.profiles.home;
+  cfg = config.features.tailscale;
 in
 {
-  options.profiles.home.enable = lib.mkEnableOption "home profile.";
+  options.features.tailscale.enable = lib.mkEnableOption "Tailscale.";
 
   config = lib.mkIf cfg.enable {
-    features = {
-      yubikey.enable = true;
-    };
-
     services.tailscale = {
       enable = true;
       useRoutingFeatures = "both";

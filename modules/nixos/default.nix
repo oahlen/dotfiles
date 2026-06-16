@@ -11,12 +11,12 @@
     ./features/niri.nix
     ./features/podman.nix
     ./features/ssd.nix
+    ./features/tailscale.nix
     ./features/virtualisation.nix
     ./features/wayland.nix
     ./features/yubikey.nix
 
     ./profiles/desktop.nix
-    ./profiles/home.nix
     ./profiles/laptop.nix
     ./profiles/work.nix
     ./profiles/wsl.nix

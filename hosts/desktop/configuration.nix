@@ -16,13 +16,14 @@
 
   profiles = {
     desktop.enable = true;
-    home.enable = true;
   };
 
   features = {
     gaming.enable = true;
     niri.enable = true;
     podman.enable = true;
+    tailscale.enable = true;
+    yubikey.enable = true;
   };
 
   environment.systemPackages = [ pkgs.nfs-utils ];

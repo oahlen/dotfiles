@@ -23,7 +23,6 @@
   };
 
   profiles = {
-    home.enable = true;
     laptop.enable = true;
     work.enable = true;
   };
@@ -32,6 +31,8 @@
     intel.gpu.enable = true;
     niri.enable = true;
     podman.enable = true;
+    tailscale.enable = true;
+    yubikey.enable = true;
   };
 
   users.users.oahlen = {
