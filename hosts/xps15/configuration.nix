@@ -28,7 +28,6 @@
   };
 
   features = {
-    intel.gpu.enable = true;
     niri.enable = true;
     podman.enable = true;
     tailscale.enable = true;

@@ -6,6 +6,7 @@
 
     ./features/cli.nix
     ./features/gaming.nix
+    ./features/niri.nix
     ./features/nix-dev.nix
 
     ./options/colors
