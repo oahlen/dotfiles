@@ -3,11 +3,10 @@
   ...
 }:
 {
-  desktops.niri.enable = true;
-
   features = {
     development.enable = true;
     gaming.enable = true;
+    niri.enable = true;
   };
 
   programs.niri.extraConfig = ''

@@ -9,11 +9,9 @@
 
   networking.hostName = "desktop";
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-
   hardware = {
     amdgpu.initrd.enable = true;
-    bluetooth.enable = true;
+    amdgpu.overdrive.enable = true;
   };
 
   profiles = {
@@ -21,11 +19,10 @@
     home.enable = true;
   };
 
-  desktops.niri.enable = true;
-
   features = {
-    podman.enable = true;
     gaming.enable = true;
+    niri.enable = true;
+    podman.enable = true;
   };
 
   environment.systemPackages = [ pkgs.nfs-utils ];

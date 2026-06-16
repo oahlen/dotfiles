@@ -13,9 +13,9 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    hardware = {
-      amdgpu.overdrive.enable = true;
+    boot.kernelPackages = pkgs.linuxPackages_zen; # Gaming kernel
 
+    hardware = {
       graphics = {
         enable = true;
         enable32Bit = true; # Required by some more modern games like The Witcher 3

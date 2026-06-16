@@ -15,13 +15,23 @@ in
       boot.enable = true;
       core-apps.enable = true;
       fonts.enable = true;
-      storage.enable = true;
+      ssd.enable = true;
       wayland.enable = true;
     };
 
+    hardware.bluetooth.enable = true;
+
+    networking.networkmanager.enable = true;
+
     services = {
       flatpak.enable = true;
+      gvfs.enable = true;
       power-profiles-daemon.enable = true;
+      tumbler.enable = true;
+    };
+
+    programs = {
+      dconf.enable = true;
     };
   };
 }

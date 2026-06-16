@@ -10,6 +10,10 @@ in
   options.profiles.work.enable = lib.mkEnableOption "work profile.";
 
   config = lib.mkIf cfg.enable {
+    features = {
+      gnome.enable = true;
+    };
+
     services.intune.enable = true;
 
     # Update /etc/os-release values to make Intune happy

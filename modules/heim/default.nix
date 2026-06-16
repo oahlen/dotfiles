@@ -1,17 +1,17 @@
 { ... }:
 {
   imports = [
+    ./features/development
+
     ./features/cli.nix
     ./features/dotnet.nix
+    ./features/gaming.nix
     ./features/nix-dev.nix
     ./features/rust.nix
-    ./features/standalone.nix
 
     ./options/colors
 
-    ./profiles/desktops/niri.nix
-    ./profiles/development
-    ./profiles/gaming.nix
+    ./profiles/standalone.nix
 
     ./programs/bash
     ./programs/bat

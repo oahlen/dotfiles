@@ -5,17 +5,15 @@
   ...
 }:
 let
-  cfg = config.desktops.niri;
+  cfg = config.features.niri;
 in
 {
-  options.desktops.niri.enable = lib.mkEnableOption "the Niri window manager and related desktop components.";
+  options.features.niri.enable = lib.mkEnableOption "the Niri window manager and related desktop components.";
 
   config = lib.mkIf cfg.enable {
     wayland.systemd.target = "niri-session.target";
 
     programs = {
-      dconf.enable = true;
-
       gtklock = {
         enable = true;
 
@@ -45,8 +43,6 @@ in
       after = [ "graphical-session-pre.target" ];
     };
 
-    networking.networkmanager.enable = true;
-
     users.groups =
       let
         users = config.users.groups.users.members;
@@ -56,8 +52,6 @@ in
         networkmanager.members = users;
         video.members = users;
       };
-
-    security.rtkit.enable = true;
 
     services = {
       blueman.enable = config.hardware.bluetooth.enable;
@@ -70,7 +64,6 @@ in
         ];
       };
 
-      gvfs.enable = true;
       polkit-soteria.enable = true;
 
       swayidle = {
@@ -101,7 +94,6 @@ in
       };
 
       swayosd.enable = true;
-      tumbler.enable = true;
 
       waybar = {
         enable = true;

@@ -17,6 +17,7 @@ let
     pkgs.nixos (
       [
         ./modules/nixos
+        "${sources.NixOS-WSL}/modules"
         "${sources.nix-index-database}/nixos-module.nix"
         heim.nixosModules.default
       ]
@@ -28,10 +29,7 @@ in
 {
   hosts = {
     desktop = mkHost [ ./hosts/desktop/configuration.nix ];
-    nixos = mkHost [
-      ./hosts/wsl/configuration.nix
-      "${sources.NixOS-WSL}/modules"
-    ];
+    nixos = mkHost [ ./hosts/wsl/configuration.nix ];
     xps15 = mkHost [ ./hosts/xps15/configuration.nix ];
   };
 

@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.features.storage;
+  cfg = config.features.ssd;
 in
 {
-  options.features.storage.enable = lib.mkEnableOption "physical storage configuration.";
+  options.features.ssd.enable = lib.mkEnableOption "SSD storage configuration.";
 
   config = lib.mkIf cfg.enable {
     services.fstrim.enable = true;

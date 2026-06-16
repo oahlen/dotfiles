@@ -15,8 +15,6 @@
   };
 
   hardware = {
-    bluetooth.enable = true;
-
     graphics.extraPackages = with pkgs; [
       intel-compute-runtime
       intel-media-driver
@@ -30,12 +28,9 @@
     work.enable = true;
   };
 
-  desktops = {
-    gnome.enable = true;
-    niri.enable = true;
-  };
-
   features = {
+    intel.gpu.enable = true;
+    niri.enable = true;
     podman.enable = true;
   };
 

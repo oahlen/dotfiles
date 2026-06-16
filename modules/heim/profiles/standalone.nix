@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.features.standalone;
+  cfg = config.profiles.standalone;
 in
 {
-  options.features.standalone.enable = lib.mkEnableOption "standalone (generic) linux support.";
+  options.profiles.standalone.enable = lib.mkEnableOption "standalone (generic) linux profile.";
 
   config = lib.mkIf cfg.enable {
     home.sessionVariables = {

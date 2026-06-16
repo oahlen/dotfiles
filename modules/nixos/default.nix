@@ -1,17 +1,16 @@
 { ... }:
 {
   imports = [
-    ./desktops/gnome.nix
-    ./desktops/niri.nix
-
     ./features/apptainer.nix
     ./features/audio.nix
     ./features/boot.nix
     ./features/core-apps.nix
     ./features/fonts.nix
     ./features/gaming.nix
+    ./features/gnome.nix
+    ./features/niri.nix
     ./features/podman.nix
-    ./features/storage.nix
+    ./features/ssd.nix
     ./features/virtualisation.nix
     ./features/wayland.nix
     ./features/yubikey.nix
@@ -20,6 +19,7 @@
     ./profiles/home.nix
     ./profiles/laptop.nix
     ./profiles/work.nix
+    ./profiles/wsl.nix
 
     ./services/nix-gc-user.nix
     ./services/polkit-soteria.nix

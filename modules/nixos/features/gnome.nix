@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.desktops.gnome;
+  cfg = config.features.gnome;
 
   extensions = with pkgs.gnomeExtensions; [
     color-picker
@@ -14,7 +14,7 @@ let
   ];
 in
 {
-  options.desktops.gnome.enable = lib.mkEnableOption "the Gnome desktop environment.";
+  options.features.gnome.enable = lib.mkEnableOption "the Gnome desktop environment.";
 
   config = lib.mkIf cfg.enable {
     services = {

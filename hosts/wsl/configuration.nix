@@ -3,13 +3,10 @@
   ...
 }:
 {
-  # Since we don't have a hardware-configuration.nix
-  nixpkgs.hostPlatform = "x86_64-linux";
+  wsl.defaultUser = "oahlen";
 
-  wsl = {
-    enable = true;
-    defaultUser = "oahlen";
-    useWindowsDriver = true;
+  profiles = {
+    wsl.enable = true;
   };
 
   features = {
@@ -22,7 +19,6 @@
   };
 
   programs = {
-    dconf.enable = true;
     git.lfs.enable = true;
     ssh.startAgent = true;
   };

@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.features.gaming;
+  cfg = config.roles.gaming;
 in
 {
-  options.features.gaming.enable = lib.mkEnableOption "gaming support.";
+  options.roles.gaming.enable = lib.mkEnableOption "gaming support.";
 
   config = lib.mkIf cfg.enable {
     programs = {

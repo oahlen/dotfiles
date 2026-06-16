@@ -3,10 +3,9 @@
   ...
 }:
 {
-  desktops.niri.enable = true;
-
   features = {
     development.enable = true;
+    niri.enable = true;
   };
 
   programs = {
