@@ -13,6 +13,8 @@
   };
 
   features = {
+    apptainer.enable = true;
+
     podman = {
       enable = true;
       dockerCompat = true;
@@ -20,7 +22,6 @@
   };
 
   programs = {
-    apptainer.enable = true;
     dconf.enable = true;
     git.lfs.enable = true;
     ssh.startAgent = true;
