@@ -19,7 +19,6 @@
       fastfetch.minimal
       gh
       github-copilot-cli
-      goose-cli
       pqrs
       trash-cli
       typst
