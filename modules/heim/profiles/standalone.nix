@@ -11,6 +11,8 @@ in
   options.profiles.standalone.enable = lib.mkEnableOption "standalone (generic) linux profile.";
 
   config = lib.mkIf cfg.enable {
+    profiles.default.enable = true;
+
     home.sessionVariables = {
       NIX_PATH = lib.mkForce "nixpkgs=${builtins.storePath pkgs.path}";
     };

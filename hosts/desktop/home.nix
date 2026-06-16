@@ -3,6 +3,10 @@
   ...
 }:
 {
+  profiles = {
+    default.enable = true;
+  };
+
   features = {
     development.enable = true;
     gaming.enable = true;

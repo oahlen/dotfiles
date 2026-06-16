@@ -2,15 +2,15 @@
 {
   imports = [
     ./features/development
+    ./features/scripts
 
     ./features/cli.nix
-    ./features/dotnet.nix
     ./features/gaming.nix
     ./features/nix-dev.nix
-    ./features/rust.nix
 
     ./options/colors
 
+    ./profiles/default.nix
     ./profiles/standalone.nix
 
     ./programs/bash

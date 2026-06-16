@@ -11,13 +11,6 @@ in
   options.features.development.enable = lib.mkEnableOption "basic development features.";
 
   config = lib.mkIf cfg.enable {
-    features = {
-      cli.enable = true;
-      dotnet.enable = true;
-      nix-dev.enable = true;
-      rust.enable = true;
-    };
-
     programs = {
       git.enable = true;
       gitui.enable = true;
@@ -27,13 +20,22 @@ in
     home = {
       files = {
         ".agents/skills".source = ./skills;
-        ".local/bin".source = ./scripts;
       };
 
       packages = with pkgs; [
         just
         stylua
         tokei
+      ];
+
+      sessionVariables = {
+        CARGO_HOME = "$HOME/.local/share/cargo";
+        DOTNET_CLI_HOME = "$HOME/.local/share/dotnet";
+      };
+
+      sessionPath = [
+        "$HOME/.local/share/cargo/bin"
+        "$HOME/.local/share/dotnet/tools"
       ];
     };
   };
