@@ -1,6 +1,5 @@
 {
   callPackage,
-  fetchFromGitHub,
   neovim-unwrapped,
   vimPlugins,
   vimUtils,
@@ -32,32 +31,6 @@ let
       version
       src
       ;
-  };
-
-  tokyonight-nvim = vimUtils.buildVimPlugin {
-    pname = "tokyonight-nvim";
-    version = "1.0.0";
-    src = fetchFromGitHub {
-      owner = "oahlen";
-      repo = "tokyonight.nvim";
-      rev = "722592e322cf854a86720d109e0e3e5506e477e7";
-      sha256 = "sha256-IVXFVINSOTvx2naVdZ3Su4HMvZg858nHGB8GkDvopeg=";
-    };
-
-    meta.homepage = "https://github.com/oahlen/tokyonight.nvim";
-  };
-
-  edge-nvim = vimUtils.buildVimPlugin {
-    pname = "edge-nvim";
-    version = "1.0.0";
-    src = fetchFromGitHub {
-      owner = "oahlen";
-      repo = "edge.nvim";
-      rev = "b3262820cb336cefe577e1b0ceb8836bc56f5510";
-      sha256 = "sha256-OH6I8VpYVtdI3CxpXJxFkHkAksvE+BgOi+E1S0Aclbg=";
-    };
-
-    meta.homepage = "https://github.com/oahlen/edge.nvim";
   };
 
   treesitter = vimPlugins.nvim-treesitter.withPlugins (
