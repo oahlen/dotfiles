@@ -25,7 +25,7 @@ in
     contents = tools ++ [ dockerTools.caCertificates ];
 
     extraCommands = ''
-      mkdir -p /etc /tmp /home/agent
+      mkdir -p etc tmp home/agent
 
       # Create users
       echo 'root:x:0:0:root:/root:/bin/sh' > etc/passwd
