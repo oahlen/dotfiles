@@ -89,7 +89,6 @@ wrapNeovimUnstable neovim-unwrapped {
     aurora-nvim
     blink-cmp
     conform-nvim
-    edge-nvim
     fzf-lua
     gitsigns-nvim
     heirline-nvim
@@ -102,7 +101,6 @@ wrapNeovimUnstable neovim-unwrapped {
     nvim-web-devicons
     render-markdown-nvim
     shellcheck-nvim
-    tokyonight-nvim
     treesitter
     which-key-nvim
   ];
