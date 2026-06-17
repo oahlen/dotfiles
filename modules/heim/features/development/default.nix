@@ -23,6 +23,7 @@ in
       };
 
       packages = with pkgs; [
+        customPackages.agent-container.script
         just
         stylua
         tokei

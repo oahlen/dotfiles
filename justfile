@@ -45,6 +45,11 @@ help:
 @manifest:
     nix build -f . "homes.$(hostname).manifest"
 
+# Build and load the agent container image into podman
+@agent-load:
+    nix build -f . packages.agent-container.image
+    ./result | podman load
+
 # Build the specified package
 @build package:
     nix build -f . "packages.$1"
