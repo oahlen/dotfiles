@@ -19,6 +19,7 @@ let
   image = dockerTools.streamLayeredImage {
     name = "agent-container";
     tag = "latest";
+    created = "now"; # Binary reproducibility is not important since we stream directly into podman load
 
     contents = tools ++ [ dockerTools.caCertificates ];
 
