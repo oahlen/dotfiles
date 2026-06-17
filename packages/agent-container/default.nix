@@ -15,7 +15,8 @@ let
     jq
     ripgrep
   ];
-
+in
+{
   image = dockerTools.streamLayeredImage {
     name = "agent-container";
     tag = "latest";
@@ -66,10 +67,4 @@ let
         -v "$HOME/.agents:/home/agent/.agents:Z" \
         agent-container:latest
   '';
-in
-{
-  inherit
-    image
-    script
-    ;
 }
