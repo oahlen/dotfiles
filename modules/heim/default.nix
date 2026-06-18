@@ -1,10 +1,8 @@
 { ... }:
 {
   imports = [
-    ./features/development
-    ./features/scripts
-
     ./features/cli.nix
+    ./features/development.nix
     ./features/gaming.nix
     ./features/niri.nix
     ./features/nix-dev.nix
