@@ -19,7 +19,7 @@ let
 
   theme = {
     mgr = {
-      syntect_theme = "~/.config/bat/themes/base16.tmTheme";
+      syntect_theme = "${pkgs.customPackages.base16-theme}";
       border_style = {
         fg = "DarkGray";
       };

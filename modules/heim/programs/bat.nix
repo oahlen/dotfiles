@@ -21,7 +21,7 @@ in
         --theme=base16
       '';
 
-      "bat/themes".source = ./themes;
+      "bat/themes/base16.tmTheme".source = pkgs.customPackages.base16-theme;
     };
   };
 }

@@ -14,8 +14,6 @@
     ./profiles/default.nix
     ./profiles/standalone.nix
 
-    ./programs/bash
-    ./programs/bat
     ./programs/fish
     ./programs/gitui
     ./programs/ideavim
@@ -24,6 +22,8 @@
     ./programs/tmux
     ./programs/wlr-which-key
 
+    ./programs/bash.nix
+    ./programs/bat.nix
     ./programs/bottom.nix
     ./programs/direnv.nix
     ./programs/fd.nix
