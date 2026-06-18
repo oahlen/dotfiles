@@ -34,6 +34,10 @@ in
       # Create groups
       echo 'root:x:0:' > etc/group
       echo 'agent:x:1000:' >> etc/group
+
+      # Install skills
+      mkdir -p home/agent/.agents
+      cp -r ${pkgs.customPackages.agent-skills} home/agent/.agents/skills
     '';
 
     fakeRootCommands = ''
@@ -64,7 +68,6 @@ in
         --security-opt=no-new-privileges \
         -v "$workspace:/workspace:Z" \
         -v "$HOME/.copilot:/home/agent/.copilot:Z" \
-        -v "$HOME/.agents:/home/agent/.agents:Z" \
         agent-container:latest
   '';
 }
