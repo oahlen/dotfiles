@@ -19,11 +19,10 @@ in
 
     home = {
       files = {
-        ".agents/skills".source = pkgs.customPackages.agent-skills;
+        ".agents/skills".source = ./skills;
       };
 
       packages = with pkgs; [
-        customPackages.agent-container.script
         just
         stylua
         tokei
