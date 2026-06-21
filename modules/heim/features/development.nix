@@ -23,6 +23,7 @@ in
       };
 
       packages = with pkgs; [
+        customPackages.copilot
         just
         stylua
         tokei

@@ -22,7 +22,6 @@
       duckdb
       fastfetch.minimal
       gh
-      github-copilot-cli
       pqrs
       trash-cli
       typst

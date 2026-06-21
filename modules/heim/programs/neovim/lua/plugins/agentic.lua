@@ -48,6 +48,11 @@ return {
     after = function()
         require("agentic").setup({
             provider = os.getenv("AGENTIC_NVIM_PROVIDER") or "No ACP provider found",
+            acp_providers = {
+                ["copilot-acp"] = {
+                    command = "copilot-sandbox",
+                },
+            },
             diagnostic_icons = {
                 error = "󰅚 ",
                 warn = "󰀪 ",

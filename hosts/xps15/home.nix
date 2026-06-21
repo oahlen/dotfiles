@@ -40,7 +40,6 @@
     packages = with pkgs; [
       customPackages.rbw
       fastfetch
-      github-copilot-cli
     ];
   };
 }
