@@ -12,6 +12,7 @@ in
 
   config = lib.mkIf cfg.enable {
     programs = {
+      direnv.enable = true;
       git.enable = true;
       gitui.enable = true;
       neovim.enable = true;
@@ -25,6 +26,13 @@ in
       packages = with pkgs; [
         customPackages.copilot
         just
+        nixfmt-tree
+        nix-prefetch-git
+        nix-search-cli
+        nix-tree
+        npins
+        nvfetcher
+        statix
         stylua
         tokei
       ];

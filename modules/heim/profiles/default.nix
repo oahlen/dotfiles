@@ -12,7 +12,6 @@ in
   config = lib.mkIf cfg.enable {
     features = {
       cli.enable = true;
-      nix-dev.enable = true;
     };
   };
 }
