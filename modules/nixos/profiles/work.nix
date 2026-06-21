@@ -21,7 +21,7 @@ in
       distroId = "ubuntu";
 
       extraOSReleaseArgs = {
-        VERSION_ID = "24.04";
+        VERSION_ID = "26.04";
       };
     };
   };
