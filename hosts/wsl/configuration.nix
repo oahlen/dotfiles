@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ ... }:
 {
   wsl.defaultUser = "oahlen";
 
@@ -30,8 +27,6 @@
     extraGroups = [
       "wheel"
     ];
-
-    heim = import ./home.nix { inherit pkgs; };
   };
 
   system.stateVersion = "24.11";

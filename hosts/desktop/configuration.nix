@@ -42,8 +42,6 @@
       "users"
       "wheel"
     ];
-
-    heim = import ./home.nix { inherit pkgs; };
   };
 
   system.stateVersion = "22.11";

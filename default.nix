@@ -19,7 +19,6 @@ let
         ./modules/nixos
         "${sources.NixOS-WSL}/modules"
         "${sources.nix-index-database}/nixos-module.nix"
-        heim.nixosModules.default
       ]
       ++ modules
     );

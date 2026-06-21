@@ -31,6 +31,4 @@
     ./options.nix
     ./settings.nix
   ];
-
-  heim.sharedModules = (import ../heim { }).imports;
 }
