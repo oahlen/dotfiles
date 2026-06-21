@@ -47,6 +47,14 @@ in
         zip
       ];
 
+      files = {
+        ".local/bin".source = ./bin;
+      };
+
+      sessionPath = [
+        "$HOME/.local/bin"
+      ];
+
       sessionVariables = {
         CALCHISTFILE = "$HOME/.cache/calc_history";
         LESSHISTFILE = "$HOME/.local/share/less/history";

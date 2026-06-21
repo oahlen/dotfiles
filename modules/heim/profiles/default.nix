@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 let
@@ -15,7 +14,5 @@ in
       cli.enable = true;
       nix-dev.enable = true;
     };
-
-    home.packages = [ pkgs.customPackages.scripts ];
   };
 }
