@@ -31,17 +31,14 @@ help:
 # Run nixos-rebuild switch for the current host
 @rebuild-switch:
     nixos-rebuild switch -f . -A "hosts.$(hostname)" --quiet --no-reexec --sudo
-    heim-activate
 
 # Installs the home configuration for the current host
 @home-install:
     nix run -f . "homes.$(hostname).install"
-    heim-activate
 
 # Switches to the home configuration for the current host
 @home-switch:
     heim-switch . "homes.$(hostname)"
-    heim-activate
 
 # Build the home configuration (manifest) for the current host
 @manifest:
