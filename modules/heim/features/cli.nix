@@ -34,14 +34,12 @@ in
         eza
         figlet
         jless
-        pastel
         pokeget-rs
         procs
         rage
         scooter
         sd
         tree
-        typos
         unzip
         wget
         zip

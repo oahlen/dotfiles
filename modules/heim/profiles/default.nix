@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -12,6 +13,12 @@ in
   config = lib.mkIf cfg.enable {
     features = {
       cli.enable = true;
+    };
+
+    home = {
+      packages = with pkgs; [
+        fastfetch
+      ];
     };
   };
 }

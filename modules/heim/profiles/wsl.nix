@@ -11,7 +11,9 @@ in
   options.profiles.wsl.enable = lib.mkEnableOption "WSL profile.";
 
   config = lib.mkIf cfg.enable {
-    profiles.default.enable = true;
+    features = {
+      cli.enable = true;
+    };
 
     programs = {
       windows-terminal.enable = true;

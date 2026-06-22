@@ -39,7 +39,6 @@
 
     packages = with pkgs; [
       customPackages.rbw
-      fastfetch
     ];
   };
 }

@@ -38,7 +38,6 @@
     packages = with pkgs; [
       customPackages.hytale-launcher
       customPackages.rbw
-      fastfetch
       filen-cli
     ];
   };
