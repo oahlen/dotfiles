@@ -1,8 +1,10 @@
 { ... }:
 {
   imports = [
-    ./features/cli.nix
-    ./features/development.nix
+    ./features/cli
+    ./features/development
+    ./features/gnome
+
     ./features/gaming.nix
     ./features/niri.nix
 
@@ -10,11 +12,15 @@
 
     ./profiles/default.nix
     ./profiles/standalone.nix
+    ./profiles/work.nix
     ./profiles/wsl.nix
 
     ./programs/fish
+    ./programs/ideavim
     ./programs/neovim
     ./programs/niri
+    ./programs/one-password
+    ./programs/rbw
     ./programs/tmux
     ./programs/wlr-which-key
 
@@ -28,10 +34,8 @@
     ./programs/fzf.nix
     ./programs/git.nix
     ./programs/gitui.nix
-    ./programs/ideavim.nix
     ./programs/jq.nix
     ./programs/mako.nix
-    ./programs/mangohud.nix
     ./programs/ripgrep.nix
     ./programs/waybar.nix
     ./programs/windows-terminal.nix

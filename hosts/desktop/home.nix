@@ -13,22 +13,29 @@
     niri.enable = true;
   };
 
-  programs.niri.extraConfig = ''
-    output "DP-2" {
-        variable-refresh-rate on-demand=true
-    }
+  programs = {
+    niri.extraConfig = ''
+      output "DP-2" {
+          variable-refresh-rate on-demand=true
+      }
 
-    spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "/home/oahlen/Pictures/Wallpapers/buck.jpg" "-m" "fit"
-  '';
+      spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "/home/oahlen/Pictures/Wallpapers/buck.jpg" "-m" "fit"
+    '';
 
-  services.flatpak.packages = [
-    "com.bitwarden.desktop"
-    "com.github.PintaProject.Pinta"
-    "io.github.ungoogled_software.ungoogled_chromium"
-    "md.obsidian.Obsidian"
-    "org.inkscape.Inkscape"
-    "org.keepassxc.KeePassXC"
-  ];
+    rbw.enable = true;
+  };
+
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "com.bitwarden.desktop"
+      "com.github.PintaProject.Pinta"
+      "io.github.ungoogled_software.ungoogled_chromium"
+      "md.obsidian.Obsidian"
+      "org.inkscape.Inkscape"
+      "org.keepassxc.KeePassXC"
+    ];
+  };
 
   home = {
     files = {
@@ -37,7 +44,6 @@
 
     packages = with pkgs; [
       customPackages.hytale-launcher
-      customPackages.rbw
       filen-cli
     ];
   };

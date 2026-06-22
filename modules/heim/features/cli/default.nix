@@ -46,7 +46,11 @@ in
       ];
 
       files = {
-        ".local/bin".source = ./bin;
+        ".local/bin/doscleanup".source = ./bin/doscleanup;
+        ".local/bin/external-ip".source = ./bin/external-ip;
+        ".local/bin/kernels".source = ./bin/kernels;
+        ".local/bin/nix-kernels".source = ./bin/nix-kernels;
+        ".local/bin/show-gc-roots".source = ./bin/show-gc-roots;
       };
 
       sessionPath = [

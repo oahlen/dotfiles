@@ -4,6 +4,7 @@
 }:
 {
   profiles = {
+    work.enable = true;
     wsl.enable = true;
   };
 
@@ -11,9 +12,12 @@
     development.enable = true;
   };
 
+  programs = {
+    one-password.enable = true;
+  };
+
   home = {
     packages = with pkgs; [
-      _1password-cli
       awscli2
       duckdb
       gh

@@ -23,6 +23,8 @@ let
 in
 {
   options.services.flatpak = {
+    enable = lib.mkEnableOption "declarative flatpak installation script.";
+
     repositories = lib.mkOption {
       type = lib.types.listOf (
         lib.types.submodule {
@@ -69,7 +71,7 @@ in
     };
   };
 
-  config = lib.mkIf (builtins.length cfg.packages > 0) {
+  config = lib.mkIf (cfg.enable && builtins.length cfg.packages > 0) {
     home.packages = [ flatpak-sync ];
   };
 }

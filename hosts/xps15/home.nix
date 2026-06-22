@@ -5,6 +5,7 @@
 {
   profiles = {
     default.enable = true;
+    work.enable = true;
   };
 
   features = {
@@ -13,32 +14,30 @@
   };
 
   programs = {
-    niri = {
-      extraConfig = ''
-        output "eDP-1" {
-            scale 2.0
-        }
+    niri.extraConfig = ''
+      output "eDP-1" {
+          scale 2.0
+      }
 
-        spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "/home/oahlen/Pictures/Wallpapers/sunset.jpg" "-m" "fit"
-      '';
-    };
+      spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "/home/oahlen/Pictures/Wallpapers/sunset.jpg" "-m" "fit"
+    '';
+
+    rbw.enable = true;
   };
 
-  services.flatpak.packages = [
-    "com.github.PintaProject.Pinta"
-    "com.onepassword.OnePassword"
-    "md.obsidian.Obsidian"
-    "org.chromium.Chromium"
-    "org.inkscape.Inkscape"
-  ];
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "com.github.PintaProject.Pinta"
+      "md.obsidian.Obsidian"
+      "org.chromium.Chromium"
+      "org.inkscape.Inkscape"
+    ];
+  };
 
   home = {
     files = {
       "Pictures/Wallpapers".source = ./Wallpapers;
     };
-
-    packages = with pkgs; [
-      customPackages.rbw
-    ];
   };
 }

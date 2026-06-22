@@ -11,13 +11,20 @@ in
   options.roles.gaming.enable = lib.mkEnableOption "gaming support.";
 
   config = lib.mkIf cfg.enable {
-    programs = {
-      mangohud.enable = true;
-    };
-
-    home.packages = [ pkgs.heroic ];
+    home.packages = [
+      pkgs.heroic
+      pkgs.mangohud
+    ];
 
     xdg.config.files = {
+      "MangoHud/MangoHud.conf".text = lib.concatLines [
+        "gpu_junction_temp"
+        "gpu_mem_temp"
+        "gpu_power"
+        "gpu_temp"
+        "vram"
+      ];
+
       # Fixes for audio crackling
       "pipewire/pipewire.conf.d/99-custom-quantum.conf".text = ''
         context.properties = {
