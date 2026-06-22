@@ -10,6 +10,7 @@
 
     ./profiles/default.nix
     ./profiles/standalone.nix
+    ./profiles/wsl.nix
 
     ./programs/fish
     ./programs/neovim
