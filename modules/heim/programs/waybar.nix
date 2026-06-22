@@ -7,7 +7,7 @@
 let
   cfg = config.programs.waybar;
 
-  base = [
+  main = [
     {
       position = "top";
       layer = "top";
@@ -251,7 +251,7 @@ in
     home.packages = [ pkgs.waybar ];
 
     xdg.config.files = {
-      "waybar/config".text = lib.generators.toJSON { } base;
+      "waybar/config".text = lib.generators.toJSON { } main;
 
       "waybar/style.css".text = mkStyle config.colors.${config.colorscheme.default};
       "waybar/style-dark.css".text = mkStyle config.colors.dark;

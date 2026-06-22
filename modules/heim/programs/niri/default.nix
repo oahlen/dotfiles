@@ -7,7 +7,7 @@
 let
   cfg = config.programs.niri;
 
-  base = ''
+  main = ''
     include "binds.kdl"
     include "common.kdl"
     include "input.kdl"
@@ -50,7 +50,7 @@ in
 
     xdg.config.files = {
       "niri/config.kdl".text =
-        base + lib.optionalString (cfg.extraConfig != null) ("\n" + cfg.extraConfig);
+        main + lib.optionalString (cfg.extraConfig != null) ("\n" + cfg.extraConfig);
 
       "niri".source = ./config;
 

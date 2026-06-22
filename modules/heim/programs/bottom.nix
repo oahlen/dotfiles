@@ -8,7 +8,7 @@ let
   cfg = config.programs.bottom;
   toml = pkgs.formats.toml { };
 
-  base = {
+  conf = {
     flags = {
       group_processes = true;
       process_memory_as_value = true;
@@ -123,7 +123,7 @@ in
     home.packages = [ pkgs.bottom ];
 
     xdg.config.files = {
-      "bottom/bottom.toml".source = toml.generate "bottom.toml" base;
+      "bottom/bottom.toml".source = toml.generate "bottom.toml" conf;
     };
   };
 }

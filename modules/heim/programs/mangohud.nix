@@ -6,6 +6,14 @@
 }:
 let
   cfg = config.programs.mangohud;
+
+  conf = lib.concatLines [
+    "gpu_junction_temp"
+    "gpu_mem_temp"
+    "gpu_power"
+    "gpu_temp"
+    "vram"
+  ];
 in
 {
   options.programs.mangohud.enable = lib.mkEnableOption "MangoHud.";
@@ -14,13 +22,7 @@ in
     home.packages = [ pkgs.mangohud ];
 
     xdg.config.files = {
-      "MangoHud/MangoHud.conf".text = ''
-        gpu_junction_temp
-        gpu_mem_temp
-        gpu_power
-        gpu_temp
-        vram
-      '';
+      "MangoHud/MangoHud.conf".text = conf;
     };
   };
 }

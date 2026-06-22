@@ -12,7 +12,6 @@
     ./profiles/standalone.nix
 
     ./programs/fish
-    ./programs/ideavim
     ./programs/neovim
     ./programs/niri
     ./programs/tmux
@@ -28,6 +27,7 @@
     ./programs/fzf.nix
     ./programs/git.nix
     ./programs/gitui.nix
+    ./programs/ideavim.nix
     ./programs/jq.nix
     ./programs/mako.nix
     ./programs/mangohud.nix

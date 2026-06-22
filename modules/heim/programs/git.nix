@@ -7,7 +7,7 @@
 let
   cfg = config.programs.git;
 
-  base = lib.generators.toGitINI {
+  conf = lib.generators.toGitINI {
     alias = {
       br = "branch";
       c = "commit";
@@ -80,7 +80,7 @@ in
     home.packages = [ pkgs.delta ];
 
     xdg.config.files = {
-      "git/config".text = base;
+      "git/config".text = conf;
 
       "git/delta".variants = {
         dark = {

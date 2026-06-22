@@ -12,7 +12,7 @@ let
 
   cfg = config.programs.mako;
 
-  base = {
+  conf = {
     font = "JetBrainsMono Nerd Font 11.5";
 
     anchor = "top-right";
@@ -46,12 +46,12 @@ in
     xdg.config.files = {
       "mako/config".variants = {
         dark = {
-          text = mkConfig (base // mkColors config.colors.dark);
+          text = mkConfig (conf // mkColors config.colors.dark);
           default = config.colorscheme.default == "dark";
         };
 
         light = {
-          text = mkConfig (base // mkColors config.colors.light);
+          text = mkConfig (conf // mkColors config.colors.light);
           default = config.colorscheme.default == "light";
         };
       };

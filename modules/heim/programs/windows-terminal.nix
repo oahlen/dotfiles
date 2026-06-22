@@ -60,7 +60,7 @@ let
     };
   };
 
-  base = {
+  conf = {
     "$help" = "https://aka.ms/terminal-documentation";
     "$schema" = "https://aka.ms/terminal-profiles-schema";
 
@@ -130,7 +130,7 @@ in
 
   config = lib.mkIf cfg.enable {
     xdg.config.files = {
-      "WindowsTerminal/settings.json".text = lib.generators.toJSON { } base;
+      "WindowsTerminal/settings.json".text = lib.generators.toJSON { } conf;
     };
   };
 }

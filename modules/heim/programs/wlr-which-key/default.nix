@@ -11,7 +11,7 @@ let
     inherit (config.colorscheme) default;
   };
 
-  base = {
+  conf = {
     font = "JetBrainsMono Nerd Font 11.5";
     separator = " ➜ ";
     border_width = 2;
@@ -166,12 +166,12 @@ in
     xdg.config.files = {
       "wlr-which-key/config.yaml".variants = {
         dark = {
-          text = lib.generators.toYAML { } (base // mkColors config.colors.dark);
+          text = lib.generators.toYAML { } (conf // mkColors config.colors.dark);
           default = config.colorscheme.default == "dark";
         };
 
         light = {
-          text = lib.generators.toYAML { } (base // mkColors config.colors.light);
+          text = lib.generators.toYAML { } (conf // mkColors config.colors.light);
           default = config.colorscheme.default == "light";
         };
       };

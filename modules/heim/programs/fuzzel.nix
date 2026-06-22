@@ -7,7 +7,7 @@
 let
   cfg = config.programs.fuzzel;
 
-  base = {
+  conf = {
     main = {
       dpi-aware = "no";
       font = "JetBrainsMono Nerd Font:size=11.5";
@@ -51,12 +51,12 @@ in
     xdg.config.files = {
       "fuzzel/fuzzel.ini".variants = {
         dark = {
-          text = lib.generators.toINI { } (base // { colors = mkColors config.colors.dark; });
+          text = lib.generators.toINI { } (conf // { colors = mkColors config.colors.dark; });
           default = config.colorscheme.default == "dark";
         };
 
         light = {
-          text = lib.generators.toINI { } (base // { colors = mkColors config.colors.light; });
+          text = lib.generators.toINI { } (conf // { colors = mkColors config.colors.light; });
           default = config.colorscheme.default == "light";
         };
       };
