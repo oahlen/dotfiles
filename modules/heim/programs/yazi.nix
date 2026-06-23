@@ -19,7 +19,7 @@ let
 
   theme = {
     mgr = {
-      syntect_theme = "${pkgs.customPackages.base16-theme}";
+      syntect_theme = "${pkgs.customPackages.base16-theme}/base16.tmTheme";
       border_style = {
         fg = "DarkGray";
       };
