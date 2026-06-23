@@ -52,7 +52,10 @@ in
       "niri/config.kdl".text =
         main + lib.optionalString (cfg.extraConfig != null) ("\n" + cfg.extraConfig);
 
-      "niri".source = ./config;
+      "niri" = {
+        source = ./config;
+        recursive = true;
+      };
 
       "niri/theme.kdl".variants = {
         dark = {

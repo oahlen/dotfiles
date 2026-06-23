@@ -39,7 +39,10 @@
 
   home = {
     files = {
-      "Pictures/Wallpapers".source = ./Wallpapers;
+      "Pictures/Wallpapers" = {
+        source = ./Wallpapers;
+        recursive = true;
+      };
     };
 
     packages = with pkgs; [

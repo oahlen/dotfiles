@@ -14,9 +14,10 @@ in
     home.packages = [ pkgs.fish ];
 
     xdg.config.files = {
-      "fish/conf.d".source = ./conf.d;
-      "fish/config.fish".source = ./config.fish;
-      "fish/functions".source = ./functions;
+      "fish" = {
+        source = ./config;
+        recursive = true;
+      };
     };
   };
 }

@@ -22,9 +22,10 @@ in
     home.packages = [ pkgs.customPackages.neovim ] ++ extraPackages;
 
     xdg.config.files = {
-      "nvim/ftdetect".source = ./ftdetect;
-      "nvim/init.lua".source = ./init.lua;
-      "nvim/lua".source = ./lua;
+      "nvim" = {
+        source = ./config;
+        recursive = true;
+      };
     };
   };
 }
