@@ -14,12 +14,16 @@ let
       "git_config"
       "nix_runtime"
       "system_read_linux_core"
+      "system_write_linux"
     ];
     workdir.access = "readwrite";
     filesystem = {
       allow = [
         "~/.cache/copilot"
         "~/.copilot"
+      ];
+      allow_file = [
+        "/dev/ptmx"
       ];
       read = [
         "~/.agents"
