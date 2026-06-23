@@ -45,12 +45,26 @@ let
     colors-dark = mkColors config.colors.dark;
     colors-light = mkColors config.colors.light;
   };
+
+  inherit (pkgs) foot;
+
+  launch-terminal = pkgs.writeShellScriptBin "launch-terminal" ''
+    if [[ $# -lt 1 ]]; then
+      echo "Usage: $0 <program>" >&2
+      exit 1
+    fi
+
+    exec ${lib.getExe foot} -a "$1" -e "$1"
+  '';
 in
 {
   options.programs.foot.enable = lib.mkEnableOption "foot.";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.foot ];
+    home.packages = [
+      foot
+      launch-terminal
+    ];
 
     xdg.config.files = {
       "foot/foot.ini".variants = {

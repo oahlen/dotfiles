@@ -46,13 +46,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home = {
-      files = {
-        ".local/bin/launch-terminal".source = ./launch-terminal;
-      };
-
-      packages = [ cfg.package ];
-    };
+    home.packages = [ cfg.package ];
 
     xdg.config.files = {
       "niri/config.kdl".text =
