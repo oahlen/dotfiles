@@ -6,11 +6,13 @@
 }:
 writeShellApplication {
   name = "quick-format";
+
   runtimeInputs = [
     combined
     gitMinimal
     gnugrep
   ];
+
   text = ''
     FILES=$(git diff HEAD --relative --name-only --diff-filter=ACM | grep "\.cs\$" || true)
 

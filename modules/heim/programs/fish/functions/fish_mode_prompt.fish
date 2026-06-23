@@ -1,4 +1,4 @@
-function fish_mode_prompt --description "Write out the mode prompt"
+function fish_mode_prompt
     switch $fish_bind_mode
         case default
             set_color --bold red

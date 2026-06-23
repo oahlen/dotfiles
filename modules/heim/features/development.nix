@@ -21,10 +21,6 @@ in
     home = {
       files = {
         ".agents/skills".source = ./skills;
-
-        ".local/bin/duck".source = ./bin/duck;
-        ".local/bin/prune-branches".source = ./bin/prune-branches;
-        ".local/bin/switch-branch".source = ./bin/switch-branch;
       };
 
       packages = with pkgs; [

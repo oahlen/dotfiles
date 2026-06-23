@@ -1,5 +1,5 @@
 {
-  default,
+  default ? "dark",
   writeShellScriptBin,
 }:
 writeShellScriptBin "switch-theme" ''

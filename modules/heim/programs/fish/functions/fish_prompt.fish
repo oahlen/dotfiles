@@ -1,4 +1,4 @@
-function fish_prompt --description "Write out the prompt"
+function fish_prompt
     set -lx fish_prompt_pwd_dir_length 1
     set -lx fish_prompt_pwd_full_dirs 3
 
