@@ -7,6 +7,7 @@
   runCommand,
   symlinkJoin,
   writeShellScript,
+  ...
 }:
 let
   # Source from https://github.com/TNAZEP/HytaleLauncherFlake

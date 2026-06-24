@@ -3,6 +3,7 @@
   pinentry-curses,
   rbw,
   symlinkJoin,
+  ...
 }:
 # Create an rbw wrapper with a pinentry program accessible
 symlinkJoin {

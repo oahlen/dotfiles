@@ -5,6 +5,7 @@
   symlinkJoin,
   writeShellScriptBin,
   writeText,
+  ...
 }:
 let
   # Custom copilot sandbox wrapper

@@ -1,13 +1,11 @@
 {
-  callPackage,
   neovim-unwrapped,
+  sources,
   vimPlugins,
   vimUtils,
   wrapNeovimUnstable,
 }:
 let
-  sources = callPackage ../../sources/generated.nix { };
-
   agentic-nvim = vimUtils.buildVimPlugin {
     inherit (sources.agentic-nvim)
       pname

@@ -1,4 +1,1 @@
-{
-  callPackage,
-}:
-(callPackage ../../sources/generated.nix { }).agentic-skills.src
+{ sources }: sources.agentic-skills.src
