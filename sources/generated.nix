@@ -18,6 +18,18 @@
     };
     date = "2026-06-11";
   };
+  agentic-skills = {
+    pname = "agentic-skills";
+    version = "fe08fac55cc40f7428abf18e422631fd00f2c2b7";
+    src = fetchFromGitHub {
+      owner = "oahlen";
+      repo = "agentic-skills";
+      rev = "fe08fac55cc40f7428abf18e422631fd00f2c2b7";
+      fetchSubmodules = false;
+      sha256 = "sha256-UowdqBvCJT3tv4wibiODeGi2EI2jChDWxt0w5tbVbL0=";
+    };
+    date = "2026-06-24";
+  };
   aurora-nvim = {
     pname = "aurora-nvim";
     version = "48a313ee79c4720084be6e12aa8a4d56d8df35cf";

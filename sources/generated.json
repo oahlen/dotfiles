@@ -20,6 +20,27 @@
         },
         "version": "a19fee663aa8be5f46f0af6fc0b46427b0e75cf2"
     },
+    "agentic-skills": {
+        "cargoLock": null,
+        "date": "2026-06-24",
+        "extract": null,
+        "name": "agentic-skills",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "oahlen",
+            "repo": "agentic-skills",
+            "rev": "fe08fac55cc40f7428abf18e422631fd00f2c2b7",
+            "sha256": "sha256-UowdqBvCJT3tv4wibiODeGi2EI2jChDWxt0w5tbVbL0=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "fe08fac55cc40f7428abf18e422631fd00f2c2b7"
+    },
     "aurora-nvim": {
         "cargoLock": null,
         "date": "2026-06-16",

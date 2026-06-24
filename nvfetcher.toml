@@ -3,6 +3,11 @@ src.git = "https://github.com/carlos-algms/agentic.nvim"
 fetch.github = "carlos-algms/agentic.nvim"
 src.branch = "main"
 
+[agentic-skills]
+src.git = "https://github.com/oahlen/agentic-skills"
+fetch.github = "oahlen/agentic-skills"
+src.branch = "main"
+
 [aurora-nvim]
 src.git = "https://github.com/oahlen/aurora.nvim"
 fetch.github = "oahlen/aurora.nvim"

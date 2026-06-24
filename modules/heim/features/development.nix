@@ -20,7 +20,7 @@ in
 
     home = {
       files = {
-        ".agents/skills".source = pkgs.customPackages.skills;
+        ".agents/skills".source = "${pkgs.customPackages.agentic-skills}/skills";
       };
 
       packages = with pkgs; [
