@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  sources,
   ...
 }:
 let
@@ -19,7 +20,7 @@ let
 
   theme = {
     mgr = {
-      syntect_theme = "${pkgs.customPackages.base16-theme}/base16.tmTheme";
+      syntect_theme = "${sources.base16-theme.src}/base16.tmTheme";
       border_style = {
         fg = "DarkGray";
       };

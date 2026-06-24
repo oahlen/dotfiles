@@ -1,29 +1,44 @@
 let
-  sources = import ./npins;
+  pins = import ./npins;
 
-  pkgs = import sources.nixpkgs {
+  sources = pkgs.callPackage ./sources/generated.nix { };
+
+  pkgs = import pins.nixpkgs {
     config.allowUnfree = true;
     overlays = [
       (final: prev: {
-        customPackages = import ./packages { pkgs = final; };
+        customPackages = import ./packages {
+          pkgs = final;
+          inherit sources;
+        };
       })
     ];
   };
 
-  heim = import sources.nix-heim;
+  heim = import pins.nix-heim;
 
   mkHost =
     modules:
     pkgs.nixos (
       [
         ./modules/nixos
-        "${sources.NixOS-WSL}/modules"
-        "${sources.nix-index-database}/nixos-module.nix"
+        "${pins.NixOS-WSL}/modules"
+        "${pins.nix-index-database}/nixos-module.nix"
       ]
       ++ modules
     );
 
-  mkHome = modules: heim pkgs ([ ./modules/heim ] ++ modules);
+  mkHome =
+    modules:
+    heim pkgs {
+      modules = [
+        ./modules/heim
+        {
+          _module.args = { inherit sources; };
+        }
+      ]
+      ++ modules;
+    };
 in
 {
   hosts = {

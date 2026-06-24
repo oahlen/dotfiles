@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  sources,
   ...
 }:
 let
@@ -21,7 +22,7 @@ in
         --theme=base16
       '';
 
-      "bat/themes/base16.tmTheme".source = pkgs.customPackages.base16-theme;
+      "bat/themes/base16.tmTheme".source = "${sources.base16-theme.src}/base16.tmTheme";
     };
   };
 }

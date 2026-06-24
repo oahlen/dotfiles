@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  sources,
   ...
 }:
 let
@@ -20,7 +21,7 @@ in
 
     home = {
       files = {
-        ".agents/skills".source = "${pkgs.customPackages.agentic-skills}/skills";
+        ".agents/skills".source = "${sources.agentic-skills.src}/skills";
       };
 
       packages = with pkgs; [

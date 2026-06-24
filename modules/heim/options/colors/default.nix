@@ -2,11 +2,17 @@
   config,
   lib,
   pkgs,
+  sources,
   ...
 }:
 let
   schemes = {
-    aurora = import ./aurora.nix { inherit pkgs; };
+    aurora = import ./aurora.nix {
+      inherit
+        pkgs
+        sources
+        ;
+    };
   };
 in
 {
