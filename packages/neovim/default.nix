@@ -6,7 +6,7 @@
   wrapNeovimUnstable,
 }:
 let
-  sources = callPackage ./sources/generated.nix { };
+  sources = callPackage ../../sources/generated.nix { };
 
   agentic-nvim = vimUtils.buildVimPlugin {
     inherit (sources.agentic-nvim)

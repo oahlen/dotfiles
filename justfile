@@ -9,16 +9,16 @@ help:
     nix-shell
 
 # Open the pinned nixpkgs release page
-@sources:
+@nixpkgs:
     url=$(jq -r '.pins.nixpkgs.url' npins/sources.json); xdg-open "${url%/*}"
 
-# Update sources to the latest version
-@update:
+# Update pins to the latest version
+@update-pins:
     npins update
 
-# Update neovim sources to the latest version
-@update-nvim:
-    nvfetcher -c packages/neovim/nvfetcher.toml -o packages/neovim/sources
+# Update sources to the latest version
+@update-sources:
+    nvfetcher -o sources
 
 # Check the current host configuration
 @check host:

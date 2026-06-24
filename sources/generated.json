@@ -22,7 +22,7 @@
     },
     "aurora-nvim": {
         "cargoLock": null,
-        "date": "2026-06-15",
+        "date": "2026-06-16",
         "extract": null,
         "name": "aurora-nvim",
         "passthru": null,
@@ -34,12 +34,54 @@
             "name": null,
             "owner": "oahlen",
             "repo": "aurora.nvim",
-            "rev": "0453aa2e7fb01699f3d2482e6737709e1388f488",
-            "sha256": "sha256-kejpYJAuT1qT/tSLUOFJIcbzPanHOrzWiTuH+6Qw8KI=",
+            "rev": "48a313ee79c4720084be6e12aa8a4d56d8df35cf",
+            "sha256": "sha256-IUSoMWwNiigMjOoEiKJYGzazN7HKwNnAmiVAWwj68Qw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "0453aa2e7fb01699f3d2482e6737709e1388f488"
+        "version": "48a313ee79c4720084be6e12aa8a4d56d8df35cf"
+    },
+    "base16-theme": {
+        "cargoLock": null,
+        "date": "2026-06-22",
+        "extract": null,
+        "name": "base16-theme",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "oahlen",
+            "repo": "base16.tmTheme",
+            "rev": "83fe109c88668d1ae78851fa66c1c06957d82c52",
+            "sha256": "sha256-1L9m48twPsBAVCmWnxggFjiLgDDHJz92lNfW+UBtTxs=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "83fe109c88668d1ae78851fa66c1c06957d82c52"
+    },
+    "nixGL": {
+        "cargoLock": null,
+        "date": "2025-11-02",
+        "extract": null,
+        "name": "nixGL",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nix-community",
+            "repo": "nixGL",
+            "rev": "b6105297e6f0cd041670c3e8628394d4ee247ed5",
+            "sha256": "sha256-fbRQzIGPkjZa83MowjbD2ALaJf9y6KMDdJBQMKFeY/8=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "b6105297e6f0cd041670c3e8628394d4ee247ed5"
     },
     "shellcheck-nvim": {
         "cargoLock": null,

@@ -1,6 +1,6 @@
 { pkgs }:
 let
-  src = (pkgs.callPackage ../../../../packages/neovim/sources/generated.nix { }).aurora-nvim.src;
+  src = pkgs.customPackages.aurora-nvim;
   dark-palette = builtins.fromJSON (builtins.readFile "${src}/aurora-dark-palette.json");
   light-palette = builtins.fromJSON (builtins.readFile "${src}/aurora-light-palette.json");
 

@@ -8,6 +8,16 @@ src.git = "https://github.com/oahlen/aurora.nvim"
 fetch.github = "oahlen/aurora.nvim"
 src.branch = "main"
 
+[base16-theme]
+src.git = "https://github.com/oahlen/base16.tmTheme"
+fetch.github = "oahlen/base16.tmTheme"
+src.branch = "main"
+
+[nixGL]
+src.git = "https://github.com/nix-community/nixGL"
+fetch.github = "nix-community/nixGL"
+src.branch = "main"
+
 [shellcheck-nvim]
 src.git = "https://github.com/pablos123/shellcheck.nvim"
 fetch.github = "pablos123/shellcheck.nvim"

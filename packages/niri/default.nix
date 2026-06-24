@@ -1,13 +1,14 @@
 {
+  callPackage,
   niri,
   pkgs,
   symlinkJoin,
   writeShellScriptBin,
 }:
 let
-  sources = import ../../npins;
+  sources = callPackage ../../sources/generated.nix { };
 
-  nixGL = import "${sources.nixGL}" {
+  nixGL = import "${sources.nixGL.src}" {
     inherit pkgs;
     enable32bits = true;
     enableIntelX86Extensions = true;

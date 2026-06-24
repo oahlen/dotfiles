@@ -20,15 +20,39 @@
   };
   aurora-nvim = {
     pname = "aurora-nvim";
-    version = "0453aa2e7fb01699f3d2482e6737709e1388f488";
+    version = "48a313ee79c4720084be6e12aa8a4d56d8df35cf";
     src = fetchFromGitHub {
       owner = "oahlen";
       repo = "aurora.nvim";
-      rev = "0453aa2e7fb01699f3d2482e6737709e1388f488";
+      rev = "48a313ee79c4720084be6e12aa8a4d56d8df35cf";
       fetchSubmodules = false;
-      sha256 = "sha256-kejpYJAuT1qT/tSLUOFJIcbzPanHOrzWiTuH+6Qw8KI=";
+      sha256 = "sha256-IUSoMWwNiigMjOoEiKJYGzazN7HKwNnAmiVAWwj68Qw=";
     };
-    date = "2026-06-15";
+    date = "2026-06-16";
+  };
+  base16-theme = {
+    pname = "base16-theme";
+    version = "83fe109c88668d1ae78851fa66c1c06957d82c52";
+    src = fetchFromGitHub {
+      owner = "oahlen";
+      repo = "base16.tmTheme";
+      rev = "83fe109c88668d1ae78851fa66c1c06957d82c52";
+      fetchSubmodules = false;
+      sha256 = "sha256-1L9m48twPsBAVCmWnxggFjiLgDDHJz92lNfW+UBtTxs=";
+    };
+    date = "2026-06-22";
+  };
+  nixGL = {
+    pname = "nixGL";
+    version = "b6105297e6f0cd041670c3e8628394d4ee247ed5";
+    src = fetchFromGitHub {
+      owner = "nix-community";
+      repo = "nixGL";
+      rev = "b6105297e6f0cd041670c3e8628394d4ee247ed5";
+      fetchSubmodules = false;
+      sha256 = "sha256-fbRQzIGPkjZa83MowjbD2ALaJf9y6KMDdJBQMKFeY/8=";
+    };
+    date = "2025-11-02";
   };
   shellcheck-nvim = {
     pname = "shellcheck-nvim";
