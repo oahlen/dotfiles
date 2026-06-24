@@ -14,6 +14,7 @@
     ./profiles/work.nix
     ./profiles/wsl.nix
 
+    ./programs/copilot
     ./programs/fish
     ./programs/ideavim
     ./programs/neovim
