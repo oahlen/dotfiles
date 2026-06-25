@@ -13,6 +13,7 @@ let
     meta.name = "copilot";
     groups.include = [
       "git_config"
+      "linux_temp_read"
       "nix_runtime"
       "system_read_linux_core"
       "system_write_linux"
@@ -22,12 +23,15 @@ let
       allow = [
         "~/.cache/copilot"
         "~/.copilot"
+        "~/.local/share/dotnet" # NuGet etc.
+        "~/.local/share/rtk" # Write to rtk history
       ];
       allow_file = [
         "/dev/ptmx"
       ];
       read = [
         "~/.agents"
+        "~/dotfiles" # Some config files link back here
       ];
       write = [ ];
     };
