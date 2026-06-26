@@ -34,6 +34,7 @@ in
         eza
         figlet
         jless
+        moreutils # Nice extensions to coreutils
         pokeget-rs
         procs
         rage

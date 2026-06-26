@@ -19,6 +19,7 @@ help:
 # Update sources to the latest version
 @update-sources:
     nvfetcher -o sources
+    jq '.' sources/generated.json | sponge sources/generated.json
 
 # Check the current host configuration
 @check host:
