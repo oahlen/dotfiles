@@ -6,30 +6,20 @@
   wrapNeovimUnstable,
 }:
 let
-  agentic-nvim = vimUtils.buildVimPlugin {
-    inherit (sources.agentic-nvim)
-      pname
-      version
-      src
-      ;
-    doCheck = false;
-  };
+  buildPlugin =
+    source:
+    vimUtils.buildVimPlugin {
+      inherit (source) pname version src;
+      doCheck = false;
+    };
 
-  aurora-nvim = vimUtils.buildVimPlugin {
-    inherit (sources.aurora-nvim)
-      pname
-      version
-      src
-      ;
-  };
+  buildPlugins = names: map (name: buildPlugin sources.${name}) names;
 
-  shellcheck-nvim = vimUtils.buildVimPlugin {
-    inherit (sources.shellcheck-nvim)
-      pname
-      version
-      src
-      ;
-  };
+  customPlugins = buildPlugins [
+    "agentic-nvim"
+    "aurora-nvim"
+    "shellcheck-nvim"
+  ];
 
   treesitter = vimPlugins.nvim-treesitter.withPlugins (
     plugins: with plugins; [
@@ -82,25 +72,26 @@ let
   );
 in
 wrapNeovimUnstable neovim-unwrapped {
-  plugins = with vimPlugins; [
-    agentic-nvim
-    aurora-nvim
-    blink-cmp
-    conform-nvim
-    fzf-lua
-    gitsigns-nvim
-    heirline-nvim
-    indent-blankline-nvim
-    lz-n
-    nvim-autopairs
-    nvim-colorizer-lua
-    nvim-lspconfig
-    nvim-tree-lua
-    nvim-web-devicons
-    render-markdown-nvim
-    shellcheck-nvim
-    treesitter
-    which-key-nvim
-  ];
+  plugins =
+    with vimPlugins;
+    [
+      blink-cmp
+      conform-nvim
+      fzf-lua
+      gitsigns-nvim
+      heirline-nvim
+      indent-blankline-nvim
+      lz-n
+      nvim-autopairs
+      nvim-colorizer-lua
+      nvim-lspconfig
+      nvim-tree-lua
+      nvim-web-devicons
+      render-markdown-nvim
+      treesitter
+      which-key-nvim
+    ]
+    ++ customPlugins;
+
   wrapRc = false; # Use ~/.config/nvim/init.lua
 }
