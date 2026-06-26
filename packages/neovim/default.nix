@@ -38,6 +38,7 @@ let
       comment
       c_sharp
       css
+      desktop
       diff
       dockerfile
       editorconfig
@@ -49,11 +50,11 @@ let
       git_rebase
       go
       html
-      java
+      ini
       javascript
       json
       kdl
-      kotlin
+      just
       lua
       luadoc
       make
@@ -64,7 +65,6 @@ let
       properties
       proto
       python
-      ron
       rust
       scss
       sql

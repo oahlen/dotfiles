@@ -32,15 +32,15 @@
   };
   aurora-nvim = {
     pname = "aurora-nvim";
-    version = "50193b46a447339c53acda2450d5f7f0ede38b7c";
+    version = "562614f2028a3d232e9af96ba227d0eb16e2cf54";
     src = fetchFromGitHub {
       owner = "oahlen";
       repo = "aurora.nvim";
-      rev = "50193b46a447339c53acda2450d5f7f0ede38b7c";
+      rev = "562614f2028a3d232e9af96ba227d0eb16e2cf54";
       fetchSubmodules = false;
-      sha256 = "sha256-lTRtQD5w9CIZUkRjlaWg8OY+5BlNOq0Ni4V3jtXHGfI=";
+      sha256 = "sha256-/l3gSK+EmymlyIdnQyTK4Tch6254cppG7Epo4LGS/iU=";
     };
-    date = "2026-06-25";
+    date = "2026-06-26";
   };
   base16-theme = {
     pname = "base16-theme";
