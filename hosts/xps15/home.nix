@@ -14,8 +14,6 @@
   };
 
   programs = {
-    firefox.enable = true;
-
     niri.extraConfig = ''
       output "eDP-1" {
           scale 2.0

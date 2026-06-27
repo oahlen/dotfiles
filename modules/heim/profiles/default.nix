@@ -15,6 +15,10 @@ in
       cli.enable = true;
     };
 
+    programs = {
+      firefox.enable = true;
+    };
+
     mimeapps.default = {
       "image/jpeg" = "org.gnome.Loupe.desktop";
       "image/png" = "org.gnome.Loupe.desktop";
