@@ -14,6 +14,8 @@
   };
 
   programs = {
+    firefox.enable = true;
+
     niri.extraConfig = ''
       output "DP-2" {
           variable-refresh-rate on-demand=true
@@ -34,7 +36,6 @@
       "md.obsidian.Obsidian"
       "org.inkscape.Inkscape"
       "org.keepassxc.KeePassXC"
-      "org.mozilla.firefox"
     ];
   };
 

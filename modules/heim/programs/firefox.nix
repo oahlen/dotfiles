@@ -1,0 +1,29 @@
+{
+  config,
+  lib,
+  ...
+}:
+let
+  cfg = config.programs.firefox;
+in
+{
+  options.programs.firefox.enable = lib.mkEnableOption "Firefox.";
+
+  config = lib.mkIf cfg.enable {
+    services.flatpak.packages = [ "org.mozilla.firefox" ];
+
+    mimeapps.default = {
+      "application/pdf" = "org.mozilla.firefox.desktop";
+      "application/x-extension-htm" = "org.mozilla.firefox.desktop";
+      "application/x-extension-html" = "org.mozilla.firefox.desktop";
+      "application/x-extension-shtml" = "org.mozilla.firefox.desktop";
+      "application/x-extension-xht" = "org.mozilla.firefox.desktop";
+      "application/x-extension-xhtml" = "org.mozilla.firefox.desktop";
+      "application/xhtml+xml" = "org.mozilla.firefox.desktop";
+      "text/html" = "org.mozilla.firefox.desktop";
+      "x-scheme-handler/chrome" = "org.mozilla.firefox.desktop";
+      "x-scheme-handler/http" = "org.mozilla.firefox.desktop";
+      "x-scheme-handler/https" = "org.mozilla.firefox.desktop";
+    };
+  };
+}

@@ -23,6 +23,7 @@
     ./programs/wlr-which-key
 
     ./programs/bash.nix
+    ./programs/firefox.nix
     ./programs/bat.nix
     ./programs/bottom.nix
     ./programs/direnv.nix

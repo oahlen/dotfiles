@@ -1,36 +1,41 @@
 {
+  config,
   lib,
   ...
 }:
 let
-  added = { };
+  cfg = config.mimeapps;
 
-  default = {
-    "application/pdf" = "org.mozilla.firefox.desktop";
-    "application/x-extension-htm" = "org.mozilla.firefox.desktop";
-    "application/x-extension-html" = "org.mozilla.firefox.desktop";
-    "application/x-extension-shtml" = "org.mozilla.firefox.desktop";
-    "application/x-extension-xht" = "org.mozilla.firefox.desktop";
-    "application/x-extension-xhtml" = "org.mozilla.firefox.desktop";
-    "application/xhtml+xml" = "org.mozilla.firefox.desktop";
-    "image/jpeg" = "org.gnome.Loupe.desktop";
-    "image/png" = "org.gnome.Loupe.desktop";
-    "inode/directory" = "org.gnome.Nautilus.desktop";
-    "text/html" = "org.mozilla.firefox.desktop";
-    "text/plain" = "org.gnome.TextEditor.desktop";
-    "x-scheme-handler/chrome" = "org.mozilla.firefox.desktop";
-    "x-scheme-handler/http" = "org.mozilla.firefox.desktop";
-    "x-scheme-handler/https" = "org.mozilla.firefox.desktop";
-  };
-
-  removed = { };
+  attrsOfDesktopEntries = lib.types.attrsOf lib.types.str;
 in
 {
-  xdg.config.files = {
-    "mimeapps.list".text = lib.generators.toINI { } {
-      "Added Associations" = added;
-      "Default Applications" = default;
-      "Removed Associations" = removed;
+  options.mimeapps = {
+    added = lib.mkOption {
+      type = attrsOfDesktopEntries;
+      default = { };
+      description = "MIME type to desktop file mappings for Added Associations.";
+    };
+
+    default = lib.mkOption {
+      type = attrsOfDesktopEntries;
+      default = { };
+      description = "MIME type to desktop file mappings for Default Applications.";
+    };
+
+    removed = lib.mkOption {
+      type = attrsOfDesktopEntries;
+      default = { };
+      description = "MIME type to desktop file mappings for Removed Associations.";
+    };
+  };
+
+  config = lib.mkIf (cfg.added != { } || cfg.default != { } || cfg.removed != { }) {
+    xdg.config.files = {
+      "mimeapps.list".text = lib.generators.toINI { } {
+        "Added Associations" = cfg.added;
+        "Default Applications" = cfg.default;
+        "Removed Associations" = cfg.removed;
+      };
     };
   };
 }

@@ -15,6 +15,13 @@ in
       cli.enable = true;
     };
 
+    mimeapps.default = {
+      "image/jpeg" = "org.gnome.Loupe.desktop";
+      "image/png" = "org.gnome.Loupe.desktop";
+      "inode/directory" = "org.gnome.Nautilus.desktop";
+      "text/plain" = "org.gnome.TextEditor.desktop";
+    };
+
     home = {
       packages = with pkgs; [
         fastfetch
