@@ -34,6 +34,7 @@
       "md.obsidian.Obsidian"
       "org.inkscape.Inkscape"
       "org.keepassxc.KeePassXC"
+      "org.mozilla.firefox"
     ];
   };
 

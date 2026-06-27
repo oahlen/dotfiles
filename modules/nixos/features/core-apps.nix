@@ -11,10 +11,6 @@ in
   options.features.core-apps.enable = lib.mkEnableOption "core system applications.";
 
   config = lib.mkIf cfg.enable {
-    programs = {
-      firefox.enable = true; # Default browser
-    };
-
     environment.systemPackages = with pkgs; [
       adw-gtk3
       gnome-multi-writer

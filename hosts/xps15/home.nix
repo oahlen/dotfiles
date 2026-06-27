@@ -32,6 +32,7 @@
       "md.obsidian.Obsidian"
       "org.chromium.Chromium"
       "org.inkscape.Inkscape"
+      "org.mozilla.firefox"
     ];
   };
 
