@@ -73,10 +73,5 @@ in
 
   config = lib.mkIf (cfg.enable && builtins.length cfg.packages > 0) {
     home.packages = [ flatpak-sync ];
-
-    # Default flatpak applications
-    services.flatpak.packages = [
-      "flathub com.github.tchx84.Flatseal"
-    ];
   };
 }

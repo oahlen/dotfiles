@@ -30,6 +30,7 @@
     packages = [
       "com.bitwarden.desktop"
       "com.github.PintaProject.Pinta"
+      "flathub com.github.tchx84.Flatseal"
       "io.github.ungoogled_software.ungoogled_chromium"
       "md.obsidian.Obsidian"
       "org.inkscape.Inkscape"
