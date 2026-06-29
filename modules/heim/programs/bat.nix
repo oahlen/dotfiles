@@ -24,5 +24,7 @@ in
 
       "bat/themes/base16.tmTheme".source = "${sources.base16-theme.src}/base16.tmTheme";
     };
+
+    activationHooks = [ "bat cache --build" ];
   };
 }
