@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 let
@@ -14,7 +13,7 @@ let
     else
       entry.repository + " " + entry.ref + "\"\n";
 
-  flatpak-sync = pkgs.writeShellScriptBin "flatpak-sync" ''
+  flatpak-sync = ''
     ${lib.concatMapStrings (
       x: "flatpak remote-add --if-not-exists " + x.name + " " + x.location + "\n"
     ) cfg.repositories}
@@ -72,6 +71,6 @@ in
   };
 
   config = lib.mkIf (cfg.enable && builtins.length cfg.packages > 0) {
-    home.packages = [ flatpak-sync ];
+    activationHooks = [ flatpak-sync ];
   };
 }
