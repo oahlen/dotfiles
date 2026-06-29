@@ -29,6 +29,7 @@
     enable = true;
     packages = [
       "com.github.PintaProject.Pinta"
+      "flathub com.github.tchx84.Flatseal"
       "md.obsidian.Obsidian"
       "org.chromium.Chromium"
       "org.inkscape.Inkscape"
