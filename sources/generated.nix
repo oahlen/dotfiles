@@ -8,15 +8,15 @@
 {
   agentic-nvim = {
     pname = "agentic-nvim";
-    version = "a19fee663aa8be5f46f0af6fc0b46427b0e75cf2";
+    version = "37a53a7ad074d12740d90eab9efc0c01e6155864";
     src = fetchFromGitHub {
       owner = "carlos-algms";
       repo = "agentic.nvim";
-      rev = "a19fee663aa8be5f46f0af6fc0b46427b0e75cf2";
+      rev = "37a53a7ad074d12740d90eab9efc0c01e6155864";
       fetchSubmodules = false;
-      sha256 = "sha256-ZT1ME4E8jwC6DPLVpEgCudL8go91q7PkfJn5ylajmYA=";
+      sha256 = "sha256-olrSbH2Alw7IUPMJH17RV7cmKvIL1BPMPpKCWndF22U=";
     };
-    date = "2026-06-11";
+    date = "2026-06-28";
   };
   agentic-skills = {
     pname = "agentic-skills";
@@ -32,15 +32,15 @@
   };
   aurora-nvim = {
     pname = "aurora-nvim";
-    version = "562614f2028a3d232e9af96ba227d0eb16e2cf54";
+    version = "04f80cc6ec62c4b0e61dbdd5895fc84b33702bd0";
     src = fetchFromGitHub {
       owner = "oahlen";
       repo = "aurora.nvim";
-      rev = "562614f2028a3d232e9af96ba227d0eb16e2cf54";
+      rev = "04f80cc6ec62c4b0e61dbdd5895fc84b33702bd0";
       fetchSubmodules = false;
-      sha256 = "sha256-/l3gSK+EmymlyIdnQyTK4Tch6254cppG7Epo4LGS/iU=";
+      sha256 = "sha256-9ceV20LUngmWNNOByS+uxwTTWj8Giw2kNhQihb4S9Ww=";
     };
-    date = "2026-06-26";
+    date = "2026-06-30";
   };
   base16-theme = {
     pname = "base16-theme";

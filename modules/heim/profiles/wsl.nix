@@ -21,7 +21,7 @@ in
 
     home = {
       packages = with pkgs; [
-        fastfetch.minimal
+        fastfetch-unwrapped
         trash-cli
         wl-clipboard
         xdg-utils

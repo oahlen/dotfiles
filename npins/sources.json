@@ -35,16 +35,16 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "854d04e2368fb2e9c328a36b3c0a04cd713bfae1",
-      "url": "https://github.com/nix-community/nix-index-database/archive/854d04e2368fb2e9c328a36b3c0a04cd713bfae1.tar.gz",
-      "hash": "sha256-W7S8O86bVrw2gaomEwkHStOzmPpnFIHQ6lS4Q2HffJ0="
+      "revision": "058b1f9381fa79fcda49982370a750ff92dbba43",
+      "url": "https://github.com/nix-community/nix-index-database/archive/058b1f9381fa79fcda49982370a750ff92dbba43.tar.gz",
+      "hash": "sha256-ripjZa7BBLwL1uS5VJF3s/VpZpWt5ZIQEvkJ/FJNpQw="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1017464.567a49d1913c/nixexprs.tar.xz",
-      "hash": "sha256-rcUHdUtJEvMdNEl2Wq+YpHraHKfcer3KsBscpZEF2Yg="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1024265.b5aa0fbd5389/nixexprs.tar.xz",
+      "hash": "sha256-T6OhkwGyyGHer1lr4GkbOp//7ii23xLE7HuMmjrdkXI="
     }
   },
   "version": 8
