@@ -54,3 +54,9 @@ vim.keymap.set("n", "<Esc>", "<CMD>nohl<CR>", { desc = "Clear Search Highlights"
 
 -- Toggle actions
 vim.keymap.set("n", "<leader>nb", "<CMD>ToggleBackground<CR>", { desc = "Toggle Background" })
+vim.keymap.set(
+    "n",
+    "<leader>nm",
+    "<CMD>RenderMarkdown buf_toggle<CR>",
+    { desc = "Toggle Markdown Rendering for Buffer" }
+)
