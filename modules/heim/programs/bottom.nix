@@ -10,8 +10,10 @@ let
 
   conf = {
     flags = {
-      group_processes = true;
-      process_memory_as_value = true;
+      processes = {
+        default_grouped = true;
+        default_memory_value = true;
+      };
     };
 
     row = [
