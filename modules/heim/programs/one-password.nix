@@ -7,14 +7,12 @@
 let
   cfg = config.programs.one-password;
 
-  op-password-picker = pkgs.writeShellApplication {
-    name = "op-password-picker";
+  op = pkgs._1password-cli;
 
-    runtimeInputs = with pkgs; [
-      fzf
-      jq
-      wl-clipboard
-    ];
+  op-signin = pkgs.writeShellApplication {
+    name = "op-signin";
+
+    runtimeInputs = [ op ];
 
     text = ''
       if [ -z "$OP_ACCOUNT" ]; then
@@ -24,18 +22,39 @@ let
 
       SESSION_FILE="/tmp/op-session"
 
-      # Source existing session if available
       if [ -f "$SESSION_FILE" ]; then
         # shellcheck source=/dev/null
         source "$SESSION_FILE"
       fi
 
-      # Check if signed in, if not, sign in and save session
       if ! op whoami >/dev/null 2>&1; then
         TOKEN="$(op signin --raw 2>/dev/null)" || { echo "Failed to sign in to 1Password"; exit 1; }
         (umask 077; echo "export OP_SESSION_''${OP_ACCOUNT}=\"$TOKEN\"" > "$SESSION_FILE")
+      fi
+    '';
+  };
+
+  op-password-picker = pkgs.writeShellApplication {
+    name = "op-password-picker";
+
+    runtimeInputs = with pkgs; [
+      fzf
+      jq
+      op
+      wl-clipboard
+    ];
+
+    text = ''
+      SESSION_FILE="/tmp/op-session"
+
+      if [ -f "$SESSION_FILE" ]; then
         # shellcheck source=/dev/null
         source "$SESSION_FILE"
+      fi
+
+      if ! op whoami >/dev/null 2>&1; then
+        echo "Not signed in to 1Password. Run 'op-signin' first."
+        exit 1
       fi
 
       RESULT=$(op item list --format=json | jq -r ".[].title" | fzf)
@@ -54,8 +73,9 @@ in
     services.flatpak.packages = [ "com.onepassword.OnePassword" ];
 
     home.packages = [
-      pkgs._1password-cli
+      op
       op-password-picker
+      op-signin
     ];
   };
 }
