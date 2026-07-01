@@ -25,17 +25,6 @@
     rbw.enable = true;
   };
 
-  services.flatpak = {
-    enable = true;
-    packages = [
-      "com.github.PintaProject.Pinta"
-      "com.github.tchx84.Flatseal"
-      "md.obsidian.Obsidian"
-      "org.chromium.Chromium"
-      "org.inkscape.Inkscape"
-    ];
-  };
-
   home = {
     files = {
       "Pictures/Wallpapers" = {
@@ -43,5 +32,10 @@
         recursive = true;
       };
     };
+
+    packages = with pkgs; [
+      obsidian
+      pinta
+    ];
   };
 }

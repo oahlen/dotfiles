@@ -23,7 +23,6 @@
     ./programs/wlr-which-key
 
     ./programs/bash.nix
-    ./programs/firefox.nix
     ./programs/bat.nix
     ./programs/bottom.nix
     ./programs/direnv.nix
@@ -42,8 +41,6 @@
     ./programs/windows-terminal.nix
     ./programs/yazi.nix
     ./programs/zoxide.nix
-
-    ./services/flatpak.nix
 
     ./mimeapps.nix
     ./settings.nix

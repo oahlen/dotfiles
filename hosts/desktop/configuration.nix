@@ -26,6 +26,10 @@
     yubikey.enable = true;
   };
 
+  programs = {
+    chromium.enable = true;
+  };
+
   environment.systemPackages = [ pkgs.nfs-utils ];
 
   fileSystems."/mnt/backup".options = [

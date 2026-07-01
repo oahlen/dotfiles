@@ -25,19 +25,6 @@
     rbw.enable = true;
   };
 
-  services.flatpak = {
-    enable = true;
-    packages = [
-      "com.bitwarden.desktop"
-      "com.github.PintaProject.Pinta"
-      "com.github.tchx84.Flatseal"
-      "io.github.ungoogled_software.ungoogled_chromium"
-      "md.obsidian.Obsidian"
-      "org.inkscape.Inkscape"
-      "org.keepassxc.KeePassXC"
-    ];
-  };
-
   home = {
     files = {
       "Pictures/Wallpapers" = {
@@ -49,6 +36,9 @@
     packages = with pkgs; [
       customPackages.hytale-launcher
       filen-cli
+      keepassxc
+      obsidian
+      pinta
     ];
   };
 }

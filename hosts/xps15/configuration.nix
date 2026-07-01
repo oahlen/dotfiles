@@ -34,6 +34,10 @@
     yubikey.enable = true;
   };
 
+  programs = {
+    chromium.enable = true;
+  };
+
   users.users.oahlen = {
     uid = 1000;
     description = "Oscar Ahlén";

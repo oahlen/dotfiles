@@ -70,8 +70,6 @@ in
   options.programs.one-password.enable = lib.mkEnableOption "1password.";
 
   config = lib.mkIf cfg.enable {
-    services.flatpak.packages = [ "com.onepassword.OnePassword" ];
-
     home.packages = [
       op
       op-password-picker
