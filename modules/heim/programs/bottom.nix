@@ -9,11 +9,9 @@ let
   toml = pkgs.formats.toml { };
 
   conf = {
-    flags = {
-      processes = {
-        default_grouped = true;
-        default_memory_value = true;
-      };
+    processes = {
+      default_grouped = true;
+      default_memory_value = true;
     };
 
     row = [
