@@ -24,7 +24,7 @@ in
         "PasswordManagerEnabled" = false;
         "SpellcheckEnabled" = true;
         "SpellcheckLanguage" = [
-          "en-US"
+          "en"
           "sv-SE"
         ];
       };
