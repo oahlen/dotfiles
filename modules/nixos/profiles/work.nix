@@ -11,6 +11,8 @@ in
 
   config = lib.mkIf cfg.enable {
     features = {
+      chromium.blockThirdPartyCookies = false;
+
       gnome.enable = true;
     };
 
