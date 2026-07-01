@@ -4,6 +4,7 @@
     ./features/apptainer.nix
     ./features/audio.nix
     ./features/boot.nix
+    ./features/chromium.nix
     ./features/core-apps.nix
     ./features/fonts.nix
     ./features/gaming.nix

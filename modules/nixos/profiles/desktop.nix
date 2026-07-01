@@ -14,6 +14,7 @@ in
     features = {
       audio.enable = true;
       boot.enable = true;
+      chromium.enable = true;
       core-apps.enable = true;
       fonts.enable = true;
       ssd.enable = true;
@@ -32,7 +33,6 @@ in
 
     programs = {
       dconf.enable = true;
-      chromium.enable = true;
     };
 
     environment.systemPackages = [ pkgs.chromium ];
