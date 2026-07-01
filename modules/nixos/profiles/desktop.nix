@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -31,6 +32,9 @@ in
 
     programs = {
       dconf.enable = true;
+      chromium.enable = true;
     };
+
+    environment.systemPackages = [ pkgs.chromium ];
   };
 }
