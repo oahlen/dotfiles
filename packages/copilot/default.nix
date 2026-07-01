@@ -41,6 +41,9 @@ let
   file = writeText "profile.json" (builtins.toJSON profile);
 
   sandbox = writeShellScriptBin "copilot-sandbox" ''
+    # Remove sensitive variables
+    unset $(env | grep -o '^OP_[^=]*')
+
     ${lib.getExe nono} run --profile ${file} --allow-cwd -- ${lib.getExe github-copilot-cli} "$@"
   '';
 

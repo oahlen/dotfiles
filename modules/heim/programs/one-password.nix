@@ -20,7 +20,7 @@ let
         exit 1
       fi
 
-      SESSION_FILE="/tmp/op-session"
+      SESSION_FILE="''${XDG_CACHE_HOME:-$HOME/.cache}/op-session"
 
       if [ -f "$SESSION_FILE" ]; then
         # shellcheck source=/dev/null
@@ -45,7 +45,7 @@ let
     ];
 
     text = ''
-      SESSION_FILE="/tmp/op-session"
+      SESSION_FILE="''${XDG_CACHE_HOME:-$HOME/.cache}/op-session"
 
       if [ -f "$SESSION_FILE" ]; then
         # shellcheck source=/dev/null
