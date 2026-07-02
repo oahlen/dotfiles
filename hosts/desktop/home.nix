@@ -14,6 +14,12 @@
   };
 
   programs = {
+    bash.extraProfile = ''
+      if [[ -z $DISPLAY && -z $WAYLAND_DISPLAY && $(tty) == /dev/tty1 ]]; then
+        exec niri-session
+      fi
+    '';
+
     niri.extraConfig = ''
       output "DP-2" {
           variable-refresh-rate on-demand=true
