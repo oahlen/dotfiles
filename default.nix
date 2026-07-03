@@ -4,7 +4,8 @@ let
   sources = pkgs.callPackage ./sources/generated.nix { };
 
   pkgs = import pins.nixpkgs {
-    config.allowUnfree = true;
+    config = import ./nixpkgs.nix;
+
     overlays = [
       (final: prev: {
         customPackages = import ./packages {
