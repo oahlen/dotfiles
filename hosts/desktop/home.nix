@@ -39,6 +39,7 @@
       keepassxc
       obsidian
       pinta
+      spotify
     ];
   };
 }
