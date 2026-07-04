@@ -54,6 +54,11 @@ in
       };
 
     services = {
+      displayManager = {
+        gdm.enable = true;
+        defaultSession = lib.mkDefault "niri";
+      };
+
       blueman.enable = config.hardware.bluetooth.enable;
 
       dbus = {

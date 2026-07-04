@@ -12,8 +12,6 @@ let
 
     # Include .bashrc if it exists
     [[ -f ~/.bashrc ]] && . "$HOME/.bashrc"
-
-    ${cfg.extraProfile}
   '';
 
   rc = ''
@@ -39,26 +37,10 @@ let
     alias lt='eza --tree'
 
     PS1='[\u@\h \W]\$ '
-
-    ${cfg.extraRC}
   '';
 in
 {
-  options.programs.bash = {
-    enable = lib.mkEnableOption "bash.";
-
-    extraProfile = lib.mkOption {
-      type = lib.types.lines;
-      default = "";
-      description = "Extra lines appended to .bash_profile.";
-    };
-
-    extraRC = lib.mkOption {
-      type = lib.types.lines;
-      default = "";
-      description = "Extra lines appended to .bashrc.";
-    };
-  };
+  options.programs.bash.enable = lib.mkEnableOption "bash.";
 
   config = lib.mkIf cfg.enable {
     home.files = {

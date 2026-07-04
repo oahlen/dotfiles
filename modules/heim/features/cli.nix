@@ -12,6 +12,7 @@ in
 
   config = lib.mkIf cfg.enable {
     programs = {
+      bash.enable = true;
       bat.enable = true;
       bottom.enable = true;
       fd.enable = true;
