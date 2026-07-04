@@ -34,6 +34,10 @@
     yubikey.enable = true;
   };
 
+  services = {
+    flatpak.enable = true;
+  };
+
   users.users.oahlen = {
     uid = 1000;
     description = "Oscar Ahlén";
