@@ -103,5 +103,7 @@ in
         "EnableMediaRouter" = false;
       };
     };
+
+    environment.systemPackages = [ pkgs.chromium ];
   };
 }

@@ -35,17 +35,16 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "058b1f9381fa79fcda49982370a750ff92dbba43",
-      "url": "https://github.com/nix-community/nix-index-database/archive/058b1f9381fa79fcda49982370a750ff92dbba43.tar.gz",
-      "hash": "sha256-ripjZa7BBLwL1uS5VJF3s/VpZpWt5ZIQEvkJ/FJNpQw="
+      "revision": "fab14c7b63499d57cb6673d5690168c3ec42b99a",
+      "url": "https://github.com/nix-community/nix-index-database/archive/fab14c7b63499d57cb6673d5690168c3ec42b99a.tar.gz",
+      "hash": "sha256-jzisD+3wWZPC4QvAsKtYguiGsmlH2SN3Mjx5LWd68Ok="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-26.05",
-      "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.3869.95ca1e203c07/nixexprs.tar.xz",
-      "hash": "sha256-Q80uZ1R+Y0g0kNfzGG8AcbvNkgYlnwJ3ubunAuIDUIQ="
+      "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.4193.a50de1b7d8a5/nixexprs.tar.xz",
+      "hash": "sha256-H9+N+GFtsbVC8ZniHliChM7ndizxtqVZs6bnGOLM3WQ="
     }
   },
-  "version": 8
+  "version": 7
 }
