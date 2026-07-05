@@ -24,7 +24,6 @@ let
       [
         ./modules/nixos
         "${pins.NixOS-WSL}/modules"
-        "${pins.nix-index-database}/nixos-module.nix"
       ]
       ++ modules
     );
