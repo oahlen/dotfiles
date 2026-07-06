@@ -35,6 +35,7 @@
 
     packages = with pkgs; [
       customPackages.hytale-launcher
+      customPackages.logseq
       filen-cli
       keepassxc
       obsidian
