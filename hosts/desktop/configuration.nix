@@ -39,11 +39,6 @@
     "discard"
   ];
 
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-  };
-
   users.users.oahlen = {
     uid = 1000;
     description = "Oscar Ahlén";
