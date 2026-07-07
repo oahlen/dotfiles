@@ -34,7 +34,7 @@
     };
 
     packages = with pkgs; [
-      obsidian
+      customPackages.logseq
       pinta
     ];
   };

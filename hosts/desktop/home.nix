@@ -38,7 +38,6 @@
       customPackages.logseq
       filen-cli
       keepassxc
-      obsidian
       pinta
       spotify
     ];
