@@ -12,6 +12,7 @@
     ./features/niri.nix
     ./features/podman.nix
     ./features/ssd.nix
+    ./features/syncthing.nix
     ./features/tailscale.nix
     ./features/virtualisation.nix
     ./features/wayland.nix

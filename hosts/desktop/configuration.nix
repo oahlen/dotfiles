@@ -26,6 +26,7 @@
     gaming.enable = true;
     niri.enable = true;
     podman.enable = true;
+    syncthing.enable = true;
     tailscale.enable = true;
     yubikey.enable = true;
   };
