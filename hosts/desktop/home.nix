@@ -37,7 +37,7 @@
       customPackages.hytale-launcher
       filen-cli
       keepassxc
-      mdformat
+      markdownlint-cli2
       obsidian
       pinta
       spotify
