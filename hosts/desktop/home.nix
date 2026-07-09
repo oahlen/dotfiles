@@ -35,9 +35,10 @@
 
     packages = with pkgs; [
       customPackages.hytale-launcher
-      customPackages.logseq
       filen-cli
       keepassxc
+      mdformat
+      obsidian
       pinta
       spotify
     ];
