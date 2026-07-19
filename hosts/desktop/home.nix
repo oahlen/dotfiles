@@ -38,7 +38,6 @@
       filen-cli
       keepassxc
       markdownlint-cli2
-      obsidian
       pinta
       spotify
     ];

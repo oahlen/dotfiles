@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "5675822ba756e6e56f8f6a5a76e90e0da2ece94d",
-      "url": "https://github.com/nix-community/NixOS-WSL/archive/5675822ba756e6e56f8f6a5a76e90e0da2ece94d.tar.gz",
-      "hash": "sha256-V5EQQbDnmdiXGQXrEF1PEL7QYsFqfH8N1E89Z5ONwFk="
+      "revision": "24c8dc8e0f2170e1a377be24dfadc7d9d21dc1ad",
+      "url": "https://github.com/nix-community/NixOS-WSL/archive/24c8dc8e0f2170e1a377be24dfadc7d9d21dc1ad.tar.gz",
+      "hash": "sha256-3u3tvbCIAid3Mv7RrJx13jusIEQC/HeKYhO/SUSxR3A="
     },
     "nix-heim": {
       "type": "Git",
@@ -26,11 +26,17 @@
       "url": "https://github.com/oahlen/nix-heim/archive/2eb1a7ef12f0d10ff8956e2bf875f122e1cc7c83.tar.gz",
       "hash": "sha256-zFmCkF0Smln2P7CXAYPayMsh45B1bcGDUVwokvehYoc="
     },
+    "nixos-unstable": {
+      "type": "Channel",
+      "name": "nixos-unstable",
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1036777.61b7c44c4073/nixexprs.tar.xz",
+      "hash": "sha256-zupdTm41be2fY8cexroEOGjopl3F2Gqs3gk7ieqaM3s="
+    },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-26.05",
-      "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.4193.a50de1b7d8a5/nixexprs.tar.xz",
-      "hash": "sha256-H9+N+GFtsbVC8ZniHliChM7ndizxtqVZs6bnGOLM3WQ="
+      "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.5449.293d6abedf04/nixexprs.tar.xz",
+      "hash": "sha256-tdf956RzIg3clDWEZsQrngaEJVxpPNzUsGhVHgGKBj8="
     }
   },
   "version": 7

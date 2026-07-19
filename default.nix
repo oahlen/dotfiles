@@ -16,6 +16,10 @@ let
     ];
   };
 
+  pkgs-unstable = import pins.nixos-unstable {
+    config.allowUnfree = true;
+  };
+
   heim = import pins.nix-heim;
 
   mkHost =
@@ -34,7 +38,9 @@ let
       modules = [
         ./modules/heim
         {
-          _module.args = { inherit sources; };
+          _module.args = {
+            inherit pkgs-unstable sources;
+          };
         }
       ]
       ++ modules;
