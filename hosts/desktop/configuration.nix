@@ -36,7 +36,6 @@
   fileSystems."/mnt/backup".options = [
     "noatime"
     "nodiratime"
-    "discard"
   ];
 
   users.users.oahlen = {
