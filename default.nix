@@ -22,11 +22,13 @@ let
 
   heim = import pins.nix-heim;
 
-  mkHost =
+  mkHost = modules: pkgs.nixos ([ ./modules/nixos ] ++ modules);
+
+  mkWslHost =
     modules:
-    pkgs.nixos (
+    mkHost (
       [
-        ./modules/nixos
+        ./modules/nixos/profiles/wsl.nix
         "${pins.NixOS-WSL}/modules"
       ]
       ++ modules
@@ -49,7 +51,7 @@ in
 {
   hosts = {
     desktop = mkHost [ ./hosts/desktop/configuration.nix ];
-    nixos = mkHost [ ./hosts/wsl/configuration.nix ];
+    nixos = mkWslHost [ ./hosts/wsl/configuration.nix ];
     xps15 = mkHost [ ./hosts/xps15/configuration.nix ];
   };
 

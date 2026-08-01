@@ -21,7 +21,6 @@
     ./profiles/desktop.nix
     ./profiles/laptop.nix
     ./profiles/work.nix
-    ./profiles/wsl.nix
 
     ./services/nix-gc-user.nix
     ./services/polkit-soteria.nix
