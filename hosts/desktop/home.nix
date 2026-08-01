@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   ...
 }:
 {
@@ -39,6 +40,7 @@
       keepassxc
       markdownlint-cli2
       pinta
+      pkgs-unstable.noctalia
       spotify
     ];
   };
