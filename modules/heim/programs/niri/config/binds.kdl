@@ -4,6 +4,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
 
     Mod+D hotkey-overlay-title="Run an Application" { spawn "fuzzel"; }
+    // Mod+D hotkey-overlay-title="Run an Application" { spawn "noctalia" "msg" "panel-open" "launcher"; }
     Mod+S hotkey-overlay-title="Which Key" { spawn "wlr-which-key"; }
 
     Mod+Shift+S hotkey-overlay-title="Power Settings" { spawn "wlr-which-key" "-k" "s"; }
@@ -11,22 +12,22 @@ binds {
 
     Mod+P hotkey-overlay-title="Run Password Picker" { spawn "launch-terminal" "password-picker"; }
 
-    Mod+B hotkey-overlay-title="Toggle Waybar" { spawn "pkill" "-USR1" "waybar"; }
+    Mod+B hotkey-overlay-title="Toggle Statusbar" { spawn "noctalia" "msg" "bar-toggle"; }
 
-    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "gtklock"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "noctalia" "msg" "session" "lock"; }
 
-    XF86MonBrightnessUp   allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia" "msg" "brightness-down"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
-    XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-up" "1"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "noctalia" "msg" "volume-down" "1"; }
+    XF86AudioMute        allow-when-locked=true { spawn "noctalia" "msg" "volume-mute"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn "noctalia" "msg" "mic-mute"; }
 
-    XF86AudioPlay  allow-when-locked=true { spawn "playerctl" "play"; }
-    XF86AudioPause allow-when-locked=true { spawn "playerctl" "pause"; }
-    XF86AudioNext  allow-when-locked=true { spawn "playerctl" "next"; }
-    XF86AudioPrev  allow-when-locked=true { spawn "playerctl" "previous"; }
+    XF86AudioPlay  allow-when-locked=true { spawn "noctalia" "msg" "media" "play"; }
+    XF86AudioPause allow-when-locked=true { spawn "noctalia" "msg" "media" "pause"; }
+    XF86AudioNext  allow-when-locked=true { spawn "noctalia" "msg" "media" "next"; }
+    XF86AudioPrev  allow-when-locked=true { spawn "noctalia" "msg" "media" "previous"; }
 
     Mod+O repeat=false { toggle-overview; }
 

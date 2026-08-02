@@ -29,6 +29,5 @@ writeShellScriptBin "switch-theme" ''
   signal=$([ "$scheme" = "prefer-light" ] && echo USR2 || echo USR1)
   pkill -"$signal" foot || true
 
-  makoctl reload
   notify-send "Application Theme" "Set to $1"
 ''

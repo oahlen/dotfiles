@@ -22,7 +22,15 @@ let
 
   heim = import pins.nix-heim;
 
-  mkHost = modules: pkgs.nixos ([ ./modules/nixos ] ++ modules);
+  mkHost =
+    modules:
+    pkgs.nixos (
+      [
+        ./modules/nixos
+        { _module.args = { inherit pkgs-unstable sources; }; }
+      ]
+      ++ modules
+    );
 
   mkWslHost =
     modules:
@@ -39,11 +47,7 @@ let
     heim pkgs {
       modules = [
         ./modules/heim
-        {
-          _module.args = {
-            inherit pkgs-unstable sources;
-          };
-        }
+        { _module.args = { inherit pkgs-unstable sources; }; }
       ]
       ++ modules;
     };

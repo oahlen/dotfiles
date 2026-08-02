@@ -22,9 +22,7 @@ in
     programs = {
       foot.enable = true;
       fuzzel.enable = true;
-      mako.enable = true;
       niri.enable = true;
-      waybar.enable = true;
       wlr-which-key.enable = true;
     };
 
@@ -35,7 +33,6 @@ in
           brightnessctl
           hyprpicker
           playerctl
-          swaybg
           wf-recorder
           wl-clipboard
           wl-mirror

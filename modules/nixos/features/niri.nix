@@ -14,24 +14,6 @@ in
     wayland.systemd.target = "niri-session.target";
 
     programs = {
-      gtklock = {
-        enable = true;
-
-        config = {
-          main = {
-            gtk-theme = "adw-gtk3-dark";
-            idle-hide = true;
-            idle-timeout = 10;
-          };
-        };
-
-        modules = with pkgs; [
-          gtklock-playerctl-module
-          gtklock-powerbar-module
-          gtklock-userinfo-module
-        ];
-      };
-
       niri.enable = true;
     };
 
@@ -59,74 +41,17 @@ in
         defaultSession = lib.mkDefault "niri";
       };
 
-      blueman.enable = config.hardware.bluetooth.enable;
-
       dbus = {
         enable = true;
-        packages = [
-          pkgs.gcr_4
-          pkgs.mako
-        ];
+        packages = [ pkgs.gcr_4 ];
       };
 
-      polkit-soteria.enable = true;
-
-      swayidle = {
-        enable = true;
-
-        events = [
-          {
-            event = "before-sleep";
-            command = "${pkgs.gtklock}/bin/gtklock -d";
-          }
-        ];
-
-        timeouts = [
-          {
-            timeout = 300;
-            command = "${pkgs.gtklock}/bin/gtklock -d";
-          }
-          {
-            timeout = 900;
-            command = "${lib.getExe pkgs.niri} msg action power-off-monitors";
-            resumeCommand = "${lib.getExe pkgs.niri} msg action power-on-monitors";
-          }
-          {
-            timeout = 1800;
-            command = "${pkgs.systemd}/bin/systemctl suspend";
-          }
-        ];
-      };
-
-      swayosd.enable = true;
-
-      waybar = {
-        enable = true;
-        extraPackages = [
-          pkgs.bash # We might run scripts through waybar
-          pkgs.swayosd
-        ];
-      };
-
-      wlsunset = {
-        enable = true;
-        args = [
-          "-L"
-          "17.64"
-          "-l"
-          "59.85"
-          "-T"
-          "6500"
-          "-t"
-          "4500"
-        ];
-      };
+      noctalia.enable = true;
     };
 
     environment.systemPackages = with pkgs; [
       adwaita-icon-theme
       libnotify
-      mako
       pavucontrol
     ];
   };

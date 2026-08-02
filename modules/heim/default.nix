@@ -33,11 +33,9 @@
     ./programs/git.nix
     ./programs/gitui.nix
     ./programs/jq.nix
-    ./programs/mako.nix
     ./programs/one-password.nix
     ./programs/rbw.nix
     ./programs/ripgrep.nix
-    ./programs/waybar.nix
     ./programs/windows-terminal.nix
     ./programs/yazi.nix
     ./programs/zoxide.nix

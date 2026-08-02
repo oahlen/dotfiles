@@ -4,7 +4,6 @@ window-rule {
 }
 
 window-rule {
-    match app-id="blueman-manager"
     match app-id="nm-connection-editor"
     match app-id="password-picker"
     match app-id="pavucontrol"

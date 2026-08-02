@@ -23,11 +23,7 @@
     ./profiles/work.nix
 
     ./services/nix-gc-user.nix
-    ./services/polkit-soteria.nix
-    ./services/swayidle.nix
-    ./services/swayosd.nix
-    ./services/waybar.nix
-    ./services/wlsunset.nix
+    ./services/noctalia.nix
 
     ./options.nix
     ./settings.nix

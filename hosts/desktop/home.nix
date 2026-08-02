@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-unstable,
   ...
 }:
 {
@@ -19,8 +18,6 @@
       output "DP-2" {
           variable-refresh-rate on-demand=true
       }
-
-      spawn-at-startup "${pkgs.swaybg}/bin/swaybg" "-o" "*" "-i" "/home/oahlen/Pictures/Wallpapers/buck.jpg" "-m" "fit"
     '';
 
     rbw.enable = true;
@@ -40,7 +37,6 @@
       keepassxc
       markdownlint-cli2
       pinta
-      pkgs-unstable.noctalia
       spotify
     ];
   };
