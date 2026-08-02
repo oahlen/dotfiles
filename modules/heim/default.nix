@@ -19,6 +19,7 @@
     ./programs/ideavim
     ./programs/neovim
     ./programs/niri
+    ./programs/noctalia
     ./programs/tmux
     ./programs/wlr-which-key
 

@@ -23,6 +23,7 @@ in
       foot.enable = true;
       fuzzel.enable = true;
       niri.enable = true;
+      noctalia.enable = true;
       wlr-which-key.enable = true;
     };
 

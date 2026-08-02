@@ -41,11 +41,7 @@ in
         defaultSession = lib.mkDefault "niri";
       };
 
-      dbus = {
-        enable = true;
-        packages = [ pkgs.gcr_4 ];
-      };
-
+      dbus.enable = true;
       noctalia.enable = true;
     };
 
