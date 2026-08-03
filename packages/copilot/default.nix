@@ -1,4 +1,5 @@
 {
+  bash,
   github-copilot-cli,
   lib,
   nono,
@@ -51,6 +52,7 @@ in
 symlinkJoin {
   name = "copilot";
   paths = [
+    bash # Make sure bash is available
     github-copilot-cli
     nono # For debugging
     sandbox
