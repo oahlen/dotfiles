@@ -31,12 +31,9 @@ in
       packages =
         with pkgs;
         [
-          brightnessctl
           hyprpicker
-          playerctl
           wf-recorder
           wl-clipboard
-          wl-mirror
           xwayland-satellite
         ]
         ++ cfg.extraPackages;
