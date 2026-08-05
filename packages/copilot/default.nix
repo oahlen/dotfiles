@@ -14,6 +14,7 @@ let
     meta.name = "copilot";
     groups.include = [
       "git_config"
+      "linux_sysfs_read"
       "linux_temp_read"
       "nix_runtime"
       "system_read_linux_core"
@@ -26,6 +27,7 @@ let
         "~/.copilot"
         "~/.local/share/dotnet" # NuGet etc.
         "~/.local/share/rtk" # Write to rtk history
+        ""
       ];
       allow_file = [
         "/dev/ptmx"
