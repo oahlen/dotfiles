@@ -27,7 +27,6 @@ let
         "~/.copilot"
         "~/.local/share/dotnet" # NuGet etc.
         "~/.local/share/rtk" # Write to rtk history
-        ""
       ];
       allow_file = [
         "/dev/ptmx"
