@@ -1,14 +1,18 @@
 {
   bash,
-  github-copilot-cli,
   lib,
-  nono,
+  pkgs-unstable,
   symlinkJoin,
   writeShellScriptBin,
   writeText,
   ...
 }:
 let
+  inherit (pkgs-unstable)
+    github-copilot-cli
+    nono
+    ;
+
   # Custom copilot sandbox wrapper
   profile = {
     meta.name = "copilot";
@@ -26,7 +30,6 @@ let
         "~/.cache/copilot"
         "~/.copilot"
         "~/.local/share/dotnet" # NuGet etc.
-        "~/.local/share/rtk" # Write to rtk history
       ];
       allow_file = [
         "/dev/ptmx"

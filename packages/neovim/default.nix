@@ -4,6 +4,7 @@
   vimPlugins,
   vimUtils,
   wrapNeovimUnstable,
+  ...
 }:
 let
   buildPlugin =

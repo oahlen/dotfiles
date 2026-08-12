@@ -3,6 +3,10 @@ let
 
   sources = pkgs.callPackage ./sources/generated.nix { };
 
+  pkgs-unstable = import pins.nixos-unstable {
+    config.allowUnfree = true;
+  };
+
   pkgs = import pins.nixpkgs {
     config.allowUnfree = true;
 
@@ -10,14 +14,10 @@ let
       (final: prev: {
         customPackages = import ./packages {
           pkgs = final;
-          inherit sources;
+          inherit pkgs-unstable sources;
         };
       })
     ];
-  };
-
-  pkgs-unstable = import pins.nixos-unstable {
-    config.allowUnfree = true;
   };
 
   heim = import pins.nix-heim;

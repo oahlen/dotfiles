@@ -4,6 +4,7 @@
   sources,
   symlinkJoin,
   writeShellScriptBin,
+  ...
 }:
 let
   nixGL = import "${sources.nixGL.src}" {

@@ -13,7 +13,6 @@ in
 
   config = lib.mkIf cfg.enable {
     programs = {
-      copilot.enable = true;
       direnv.enable = true;
       git.enable = true;
       gitui.enable = true;
@@ -26,6 +25,7 @@ in
       };
 
       packages = with pkgs; [
+        customPackages.copilot
         just
         nixfmt-tree
         nix-prefetch-git
