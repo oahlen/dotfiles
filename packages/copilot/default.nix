@@ -18,6 +18,7 @@ let
     meta.name = "copilot";
     groups.include = [
       "git_config"
+      "linux_runtime_state"
       "linux_sysfs_read"
       "linux_temp_read"
       "nix_runtime"
