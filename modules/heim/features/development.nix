@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgs-unstable,
   sources,
   ...
 }:
@@ -25,6 +26,7 @@ in
       };
 
       packages = with pkgs; [
+        pkgs-unstable.ccusage # Use stable pkgs when upgrading to 26.11
         customPackages.copilot
         just
         nixfmt-tree

@@ -14,6 +14,7 @@ let
     ;
 
   # Custom copilot sandbox wrapper
+  # Policy reference https://github.com/nolabs-ai/nono/blob/main/crates/nono-cli/data/policy.json
   profile = {
     meta.name = "copilot";
     groups.include = [
@@ -49,6 +50,12 @@ let
   sandbox = writeShellScriptBin "copilot-sandbox" ''
     # Remove sensitive variables
     unset $(env | grep -o '^OP_[^=]*')
+
+    # Enable OTEL export for ccusage
+    export COPILOT_OTEL_ENABLED=true
+    export COPILOT_OTEL_EXPORTER_TYPE=file
+    mkdir -p "$HOME/.copilot/otel"
+    export COPILOT_OTEL_FILE_EXPORTER_PATH="$HOME/.copilot/otel/copilot-otel-$(date +%Y%m%d-%H%M%S).jsonl"
 
     ${lib.getExe nono} run --profile ${file} --allow-cwd -- ${lib.getExe github-copilot-cli} "$@"
   '';
