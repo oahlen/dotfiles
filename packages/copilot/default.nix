@@ -13,6 +13,8 @@ let
     nono
     ;
 
+  defaultModel = "claude-sonnet-5";
+
   # Custom copilot sandbox wrapper
   # Policy reference https://github.com/nolabs-ai/nono/blob/main/crates/nono-cli/data/policy.json
   profile = {
@@ -57,7 +59,7 @@ let
     mkdir -p "$HOME/.copilot/otel"
     export COPILOT_OTEL_FILE_EXPORTER_PATH="$HOME/.copilot/otel/copilot-otel-$(date +%Y%m%d-%H%M%S).jsonl"
 
-    ${lib.getExe nono} run --profile ${file} --allow-cwd -- ${lib.getExe github-copilot-cli} "$@"
+    ${lib.getExe nono} run --profile ${file} --allow-cwd -- ${lib.getExe github-copilot-cli} --model ${defaultModel} "$@"
   '';
 
 in
