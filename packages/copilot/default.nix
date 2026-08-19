@@ -15,16 +15,22 @@ let
 
   defaultModel = "claude-sonnet-5";
 
+  dotnetDevDirs = [
+    "~/.local/share/AvaloniaUI"
+    "~/.local/share/dotnet" # NuGet etc.
+  ];
+
   # Custom copilot sandbox wrapper
   # Policy reference https://github.com/nolabs-ai/nono/blob/main/crates/nono-cli/data/policy.json
   profile = {
     meta.name = "copilot";
     groups.include = [
       "git_config"
-      "linux_runtime_state"
-      "linux_sysfs_read"
-      "linux_temp_read"
+      "linux-host-compat"
       "nix_runtime"
+      "node-dev"
+      "python_runtime"
+      "rust_runtime"
       "system_read_linux_core"
       "system_write_linux"
     ];
@@ -33,8 +39,9 @@ let
       allow = [
         "~/.cache/copilot"
         "~/.copilot"
-        "~/.local/share/dotnet" # NuGet etc.
-      ];
+        "~/.local/share/Olink"
+      ]
+      ++ dotnetDevDirs;
       allow_file = [
         "/dev/ptmx"
       ];
