@@ -17,6 +17,7 @@ in
       "fish" = {
         source = ./config;
         recursive = true;
+        keepOutOfStore = true;
       };
     };
   };

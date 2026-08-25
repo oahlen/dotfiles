@@ -28,6 +28,7 @@
       "Pictures/Wallpapers" = {
         source = ./Wallpapers;
         recursive = true;
+        keepOutOfStore = true;
       };
     };
 

@@ -25,6 +25,7 @@ in
       "nvim" = {
         source = ./config;
         recursive = true;
+        keepOutOfStore = true;
       };
     };
   };
