@@ -24,7 +24,6 @@ in
       fuzzel.enable = true;
       niri.enable = true;
       noctalia.enable = true;
-      wlr-which-key.enable = true;
     };
 
     home = {

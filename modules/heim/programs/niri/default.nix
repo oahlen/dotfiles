@@ -12,7 +12,6 @@ let
     include "common.kdl"
     include "input.kdl"
     include "layout.kdl"
-    include "mode.kdl"
     include "rules.kdl"
     include "theme.kdl"
 
@@ -66,26 +65,6 @@ in
         light = {
           text = mkTheme config.colors.light;
           default = config.colorscheme.default == "light";
-        };
-      };
-
-      "niri/mode.kdl".variants = {
-        work = {
-          text = ''
-            animations {
-                off
-            }
-          '';
-
-          default = true;
-        };
-
-        vibe = {
-          text = ''
-            animations {
-                on
-            }
-          '';
         };
       };
     };

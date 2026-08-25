@@ -5,9 +5,7 @@ binds {
 
     Mod+D hotkey-overlay-title="Run an Application" { spawn "fuzzel"; }
     // Mod+D hotkey-overlay-title="Run an Application" { spawn "noctalia" "msg" "panel-open" "launcher"; }
-    Mod+S hotkey-overlay-title="Which Key" { spawn "wlr-which-key"; }
 
-    Mod+Shift+S hotkey-overlay-title="Power Settings" { spawn "wlr-which-key" "-k" "s"; }
     Mod+Shift+C hotkey-overlay-title="Color Picker" { spawn "hyprpicker" "-a"; }
 
     Mod+P hotkey-overlay-title="Run Password Picker" { spawn "launch-terminal" "password-picker"; }

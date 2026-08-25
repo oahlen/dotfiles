@@ -20,7 +20,6 @@
     ./programs/niri
     ./programs/noctalia
     ./programs/tmux
-    ./programs/wlr-which-key
 
     ./programs/bash.nix
     ./programs/bat.nix

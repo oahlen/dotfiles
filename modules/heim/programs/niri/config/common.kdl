@@ -18,6 +18,10 @@ overview {
     }
 }
 
+animations {
+    off
+}
+
 gestures {
     hot-corners {
         off

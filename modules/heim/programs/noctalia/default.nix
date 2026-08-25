@@ -1,16 +1,21 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
   cfg = config.programs.noctalia;
+
+  switch-theme = pkgs.callPackage ./switch-theme.nix {
+    inherit (config.colorscheme) default;
+  };
 in
 {
   options.programs.noctalia.enable = lib.mkEnableOption "noctalia.";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ ];
+    home.packages = [ switch-theme ];
 
     xdg.config.files = {
       "noctalia/config.toml".text = ''
