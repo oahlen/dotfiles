@@ -2,10 +2,10 @@
 {
   imports = [
     ./features/cli.nix
+    ./features/desktop-environment.nix
     ./features/development.nix
     ./features/gaming.nix
-    ./features/gnome.nix
-    ./features/niri.nix
+    ./features/window-manager.nix
 
     ./options/colors
 

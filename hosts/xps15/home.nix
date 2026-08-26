@@ -23,7 +23,7 @@ in
 
   features = {
     development.enable = true;
-    niri.enable = true;
+    window-manager.enable = true;
   };
 
   programs = {
@@ -37,14 +37,6 @@ in
   };
 
   home = {
-    files = {
-      "Pictures/Wallpapers" = {
-        source = ./Wallpapers;
-        recursive = true;
-        keepOutOfStore = true;
-      };
-    };
-
     packages = with pkgs; [
       pinta
       set-resolution-2k

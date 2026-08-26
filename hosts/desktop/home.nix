@@ -10,7 +10,7 @@
   features = {
     development.enable = true;
     gaming.enable = true;
-    niri.enable = true;
+    window-manager.enable = true;
   };
 
   programs = {
@@ -24,14 +24,6 @@
   };
 
   home = {
-    files = {
-      "Pictures/Wallpapers" = {
-        source = ./Wallpapers;
-        recursive = true;
-        keepOutOfStore = true;
-      };
-    };
-
     packages = with pkgs; [
       customPackages.hytale-launcher
       filen-cli

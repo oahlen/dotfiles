@@ -28,10 +28,10 @@
   };
 
   features = {
-    niri.enable = true;
     podman.enable = true;
     syncthing.enable = true;
     tailscale.enable = true;
+    window-manager.enable = true;
     yubikey.enable = true;
   };
 

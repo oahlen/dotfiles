@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.features.niri;
+  cfg = config.features.window-manager;
 in
 {
-  options.features.niri.enable = lib.mkEnableOption "the Niri window manager and related desktop components.";
+  options.features.window-manager.enable = lib.mkEnableOption "the preferred window manager and related desktop components.";
 
   config = lib.mkIf cfg.enable {
     wayland.systemd.target = "niri-session.target";

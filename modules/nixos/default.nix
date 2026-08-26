@@ -6,16 +6,16 @@
     ./features/boot.nix
     ./features/chromium.nix
     ./features/core-apps.nix
+    ./features/desktop-environment.nix
     ./features/fonts.nix
     ./features/gaming.nix
-    ./features/gnome.nix
-    ./features/niri.nix
     ./features/podman.nix
     ./features/ssd.nix
     ./features/syncthing.nix
     ./features/tailscale.nix
     ./features/virtualisation.nix
     ./features/wayland.nix
+    ./features/window-manager.nix
     ./features/yubikey.nix
 
     ./profiles/desktop.nix

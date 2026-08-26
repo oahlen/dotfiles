@@ -8,7 +8,7 @@ let
 in
 {
   options.features.gnome = {
-    enable = lib.mkEnableOption "Gnome desktop tweaks.";
+    enable = lib.mkEnableOption "the preferred desktop environment.";
   };
 
   config = lib.mkIf cfg.enable {

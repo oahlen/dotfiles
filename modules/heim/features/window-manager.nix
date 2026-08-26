@@ -9,12 +9,12 @@ let
 in
 {
   options.features.niri = {
-    enable = lib.mkEnableOption "the Niri window manager.";
+    enable = lib.mkEnableOption "the preferred window manager.";
 
     extraPackages = lib.mkOption {
       type = with lib.types; listOf package;
       default = [ ];
-      description = "Extra packages to be installed alonside Niri.";
+      description = "Extra packages to be installed alongside the window manager.";
     };
   };
 

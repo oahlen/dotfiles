@@ -34,6 +34,14 @@ in
     };
 
     home = {
+      files = {
+        "Pictures/Wallpapers" = {
+          source = ./wallpapers;
+          recursive = true;
+          keepOutOfStore = true;
+        };
+      };
+
       packages = with pkgs; [
         fastfetch
       ];
