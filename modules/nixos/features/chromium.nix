@@ -38,72 +38,73 @@ in
 
       extraOpts = {
         # Account & sync
-        "BrowserSignin" = 0;
-        "SyncDisabled" = true;
+        BrowserSignin = 0;
+        SyncDisabled = true;
 
         # Browser behaviour
-        "DefaultBrowserSettingEnabled" = false;
-        "BackgroundModeEnabled" = false;
-        "ChromeVariations" = 2;
-        "NetworkPredictionOptions" = 2;
-        "ShowFullUrlsInAddressBar" = true;
-        "PromptForDownloadLocation" = true;
+        DefaultBrowserSettingEnabled = false;
+        BackgroundModeEnabled = false;
+        ChromeVariations = 2;
+        NetworkPredictionOptions = 2;
+        ShowFullUrlsInAddressBar = true;
+        PromptForDownloadLocation = true;
 
         # Privacy
-        "BlockThirdPartyCookies" = cfg.blockThirdPartyCookies;
-        "MetricsReportingEnabled" = false;
-        "UrlKeyedAnonymizedDataCollectionEnabled" = false;
-        "SearchSuggestEnabled" = false;
-        "SpellCheckServiceEnabled" = false;
-        "PromotionsEnabled" = false;
-        "WebRtcTextLogCollectionAllowed" = false;
+        BlockThirdPartyCookies = cfg.blockThirdPartyCookies;
+        MetricsReportingEnabled = false;
+        UrlKeyedAnonymizedDataCollectionEnabled = false;
+        SearchSuggestEnabled = false;
+        SpellCheckServiceEnabled = false;
+        PromotionsEnabled = false;
+        WebRtcTextLogCollectionAllowed = false;
 
         # Safe browsing (keep enabled but disable privacy-invasive reporting)
-        "SafeBrowsingDeepScanningEnabled" = false;
-        "SafeBrowsingExtendedReportingEnabled" = false;
-        "SafeBrowsingSurveysEnabled" = false;
+        SafeBrowsingDeepScanningEnabled = false;
+        SafeBrowsingExtendedReportingEnabled = false;
+        SafeBrowsingSurveysEnabled = false;
 
         # Privacy sandbox
-        "PrivacySandboxAdMeasurementEnabled" = false;
-        "PrivacySandboxAdTopicsEnabled" = false;
-        "PrivacySandboxPromptEnabled" = false;
-        "PrivacySandboxSiteEnabledAdsEnabled" = false;
-        "RelatedWebsiteSetsEnabled" = false;
+        PrivacySandboxAdMeasurementEnabled = false;
+        PrivacySandboxAdTopicsEnabled = false;
+        PrivacySandboxPromptEnabled = false;
+        PrivacySandboxSiteEnabledAdsEnabled = false;
+        RelatedWebsiteSetsEnabled = false;
 
         # Security
-        "HttpsOnlyMode" = "force_enabled";
-        "HttpsOnlyModeAllowlist" = cfg.httpAllowlist;
-        "SitePerProcess" = true;
-        "AudioSandboxEnabled" = true;
-        "NetworkServiceSandboxEnabled" = true;
-        "BlockExternalExtensions" = true;
-        "ExtensionInstallBlocklist" = [ "*" ];
-        "ExtensionInstallAllowlist" = [ "ddkjiahejlhfcafbddmgiahcphecmpfh" ];
-        "DefaultSensorsSetting" = 2;
-        "RemoteDebuggingAllowed" = false;
-        "RemoteAccessHostAllowRemoteAccessConnections" = false;
-        "RemoteAccessHostFirewallTraversal" = false;
+        HttpsOnlyMode = "force_enabled";
+        HttpsOnlyModeAllowlist = cfg.httpAllowlist;
+        SitePerProcess = true;
+        AudioSandboxEnabled = true;
+        NetworkServiceSandboxEnabled = true;
+        BlockExternalExtensions = true;
+        ExtensionInstallBlocklist = [ "*" ];
+        ExtensionInstallAllowlist = [ "ddkjiahejlhfcafbddmgiahcphecmpfh" ];
+        DefaultSensorsSetting = 2;
+        RemoteDebuggingAllowed = false;
+        RemoteAccessHostAllowRemoteAccessConnections = false;
+        RemoteAccessHostFirewallTraversal = false;
 
         # DNS over HTTPS (automatic — use system/network DoH if available)
-        "DnsOverHttpsMode" = "automatic";
+        DnsOverHttpsMode = "automatic";
 
         # Password & autofill
-        "PasswordManagerEnabled" = false;
-        "AutofillAddressEnabled" = false;
-        "AutofillCreditCardEnabled" = false;
+        PasswordManagerEnabled = false;
+        AutofillAddressEnabled = false;
+        AutofillCreditCardEnabled = false;
 
         # Spellcheck
-        "SpellcheckEnabled" = true;
-        "SpellcheckLanguage" = [
+        SpellcheckEnabled = true;
+        SpellcheckLanguage = [
           "en"
           "sv-SE"
         ];
 
         # Media
-        "EnableMediaRouter" = false;
+        EnableMediaRouter = false;
       };
     };
 
+    # Add chromium to system path since it's not done by the nixos module
     environment.systemPackages = [ pkgs.chromium ];
   };
 }

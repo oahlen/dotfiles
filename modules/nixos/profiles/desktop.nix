@@ -15,6 +15,7 @@ in
       boot.enable = true;
       chromium.enable = true;
       core-apps.enable = true;
+      # firefox.enable = true;
       fonts.enable = true;
       ssd.enable = true;
       wayland.enable = true;

@@ -7,6 +7,7 @@
     ./features/chromium.nix
     ./features/core-apps.nix
     ./features/desktop-environment.nix
+    ./features/firefox.nix
     ./features/fonts.nix
     ./features/gaming.nix
     ./features/podman.nix
