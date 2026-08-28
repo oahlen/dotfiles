@@ -5,10 +5,10 @@
   ...
 }:
 let
-  cfg = config.features.niri;
+  cfg = config.features.window-manager;
 in
 {
-  options.features.niri = {
+  options.features.window-manager = {
     enable = lib.mkEnableOption "the preferred window manager.";
 
     extraPackages = lib.mkOption {
