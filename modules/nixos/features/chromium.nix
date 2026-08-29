@@ -74,7 +74,7 @@ in
         HttpsOnlyMode = "force_enabled";
         HttpsOnlyModeAllowlist = cfg.httpAllowlist;
         SitePerProcess = true;
-        AudioSandboxEnabled = true;
+        AudioSandboxEnabled = false;
         NetworkServiceSandboxEnabled = true;
         BlockExternalExtensions = true;
         ExtensionInstallBlocklist = [ "*" ];
