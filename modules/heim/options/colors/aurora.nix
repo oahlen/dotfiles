@@ -11,6 +11,7 @@ let
     palette: with palette; {
       foreground = fg1;
       background = bg0;
+      surface-variant = bg1;
 
       inherit
         black
