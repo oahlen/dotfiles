@@ -21,7 +21,6 @@ in
   config = lib.mkIf cfg.enable {
     programs = {
       foot.enable = true;
-      fuzzel.enable = true;
       niri.enable = true;
       noctalia.enable = true;
     };

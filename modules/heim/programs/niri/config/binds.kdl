@@ -3,8 +3,7 @@ binds {
 
     Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
 
-    Mod+D hotkey-overlay-title="Run an Application" { spawn "fuzzel"; }
-    // Mod+D hotkey-overlay-title="Run an Application" { spawn "noctalia" "msg" "panel-open" "launcher"; }
+    Mod+D hotkey-overlay-title="Run an Application" { spawn "noctalia" "msg" "panel-open" "launcher"; }
 
     Mod+Shift+C hotkey-overlay-title="Color Picker" { spawn "hyprpicker" "-a"; }
 

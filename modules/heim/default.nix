@@ -27,7 +27,6 @@
     ./programs/direnv.nix
     ./programs/fd.nix
     ./programs/foot.nix
-    ./programs/fuzzel.nix
     ./programs/fzf.nix
     ./programs/git.nix
     ./programs/gitui.nix
