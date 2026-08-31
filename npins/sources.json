@@ -1,17 +1,20 @@
 {
   "pins": {
     "NixOS-WSL": {
-      "type": "Git",
+      "type": "GitRelease",
       "repository": {
         "type": "GitHub",
         "owner": "nix-community",
         "repo": "NixOS-WSL"
       },
-      "branch": "main",
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
       "submodules": false,
-      "revision": "eaeb18da90024448a60eb1ec7132eafa4003404e",
-      "url": "https://github.com/nix-community/NixOS-WSL/archive/eaeb18da90024448a60eb1ec7132eafa4003404e.tar.gz",
-      "hash": "sha256-hcbDqFuySAJawljt5r0sKBCJKYnbtGD0T/ZIozH1Dq0="
+      "version": "2605.7.2",
+      "revision": "add6b01c7ca72240046b5d541a74845423f1ee35",
+      "url": "https://api.github.com/repos/nix-community/NixOS-WSL/tarball/refs/tags/2605.7.2",
+      "hash": "sha256-pVadZqLm8RJcwLuDzJm7d2KO6e+RHPpIa/2qdqtn+B4="
     },
     "nix-heim": {
       "type": "Git",
