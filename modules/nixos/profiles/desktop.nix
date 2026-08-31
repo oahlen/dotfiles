@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -32,12 +33,12 @@ in
     };
 
     programs = {
-      appimage = {
-        enable = true;
-        binfmt = true;
-      };
-
       dconf.enable = true;
     };
+
+    # Add hardcoded /bin/bash for compatibility reasons
+    systemd.tmpfiles.rules = [
+      "L+ /bin/bash - - - - ${pkgs.bashInteractive}/bin/bash"
+    ];
   };
 }

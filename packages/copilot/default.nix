@@ -1,5 +1,4 @@
 {
-  bash,
   lib,
   pkgs-unstable,
   symlinkJoin,
@@ -75,7 +74,6 @@ in
 symlinkJoin {
   name = "copilot";
   paths = [
-    bash # Make sure bash is available
     github-copilot-cli
     nono # For debugging
     sandbox
