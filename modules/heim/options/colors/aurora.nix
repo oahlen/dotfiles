@@ -21,6 +21,7 @@ let
         blue
         purple
         cyan
+        orange
         ;
 
       white = fg1;

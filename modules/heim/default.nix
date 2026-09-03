@@ -20,6 +20,7 @@
     ./programs/niri
     ./programs/noctalia
     ./programs/tmux
+    ./programs/vscode
 
     ./programs/bash.nix
     ./programs/bat.nix

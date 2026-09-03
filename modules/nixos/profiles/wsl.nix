@@ -20,6 +20,9 @@ in
 
     programs = {
       dconf.enable = true;
+
+      # Usually needed for Windows tooling like remote VS Code server
+      nix-ld.enable = lib.mkDefault true;
     };
   };
 }
