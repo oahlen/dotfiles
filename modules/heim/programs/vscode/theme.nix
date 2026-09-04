@@ -48,6 +48,11 @@ with variant;
     "input.background" = surface-variant;
     "scrollbarSlider.background" = surface-variant;
 
+    "editorGroup.border" = surface-variant;
+    "sideBySideEditor.verticalBorder" = surface-variant;
+    "sideBySideEditor.horizontalBorder" = surface-variant;
+    "sash.hoverBorder" = statusline.accent;
+
     "diffEditor.insertedTextBackground" = diff.added_bg;
     "diffEditor.removedTextBackground" = diff.deleted_bg;
 
