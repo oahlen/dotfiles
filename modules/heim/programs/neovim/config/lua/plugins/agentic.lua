@@ -47,7 +47,7 @@ return {
     },
     after = function()
         require("agentic").setup({
-            provider = os.getenv("AGENTIC_NVIM_PROVIDER") or "No ACP provider found",
+            provider = "copilot-acp",
             acp_providers = {
                 ["copilot-acp"] = {
                     command = "copilot-sandbox",
