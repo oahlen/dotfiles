@@ -5,6 +5,8 @@ binds {
 
     Mod+D hotkey-overlay-title="Run an Application" { spawn "noctalia" "msg" "panel-open" "launcher"; }
 
+    Mod+S hotkey-overlay-title="Toggle Session Menu" { spawn "noctalia" "msg" "panel-toggle" "session"; }
+
     Mod+Shift+C hotkey-overlay-title="Color Picker" { spawn "hyprpicker" "-a"; }
 
     Mod+P hotkey-overlay-title="Run Password Picker" { spawn "launch-terminal" "password-picker"; }
