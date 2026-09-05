@@ -11,7 +11,11 @@ in
 
   config = lib.mkIf cfg.enable {
     features = {
-      chromium.blockThirdPartyCookies = false;
+      chromium = {
+        enable = true;
+        blockThirdPartyCookies = false;
+      };
+
       desktop-environment.enable = true;
     };
 
