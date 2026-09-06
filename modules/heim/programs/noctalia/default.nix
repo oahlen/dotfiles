@@ -94,6 +94,7 @@ let
     };
 
     shell = {
+      polkit_agent = true;
       animation.enabled = false;
       launcher.show_icons = false;
       panel.control_center_placement = "floating";
