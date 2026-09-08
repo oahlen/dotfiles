@@ -47,10 +47,10 @@ return {
     },
     after = function()
         require("agentic").setup({
-            provider = "copilot-acp",
+            provider = "goose-acp",
             acp_providers = {
-                ["copilot-acp"] = {
-                    command = "copilot-sandbox",
+                ["goose-acp"] = {
+                    command = "goose-cli-sandbox",
                 },
             },
             diagnostic_icons = {

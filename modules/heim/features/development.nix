@@ -27,7 +27,7 @@ in
 
       packages = with pkgs; [
         pkgs-unstable.ccusage # TODO Use stable pkgs when upgrading to 26.11
-        customPackages.copilot
+        customPackages.goose-cli
         just
         nixfmt-tree
         nix-prefetch-git
