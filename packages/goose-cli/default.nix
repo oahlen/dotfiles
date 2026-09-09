@@ -62,9 +62,6 @@ let
     # Remove sensitive variables
     unset $(env | grep -o '^OP_[^=]*')
 
-    # Create goose folders before entering the sandbox
-    mkdir -p "$HOME/.cache/goose" "$HOME/.config/goose" "$HOME/.local/share/goose" "$HOME/.local/state/goose"
-
     ${lib.getExe nono} run --profile ${file} --allow-cwd -- ${lib.getExe goose-cli} "$@"
   '';
 
