@@ -37,10 +37,11 @@ let
     filesystem = {
       allow = [
         "~/.cache/goose"
+        "~/.cache/nix"
         "~/.config/goose"
         "~/.local/share/goose"
-        "~/.local/state/goose"
         "~/.local/share/Olink"
+        "~/.local/state/goose"
       ]
       ++ dotnetDevDirs;
       allow_file = [
