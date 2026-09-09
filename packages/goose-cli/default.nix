@@ -12,9 +12,20 @@ let
     nono
     ;
 
-  dotnetDevDirs = [
+  dotnetDirs = [
     "~/.local/share/AvaloniaUI"
     "~/.local/share/dotnet" # NuGet etc.
+  ];
+
+  gooseDirs = [
+    "~/.cache/goose"
+    "~/.config/goose"
+    "~/.local/share/goose"
+    "~/.local/state/goose"
+  ];
+
+  nixDirs = [
+    "~/.cache/nix" # For fetching tarballs etc.
   ];
 
   # Custom goose sandbox wrapper
@@ -36,20 +47,17 @@ let
     workdir.access = "readwrite";
     filesystem = {
       allow = [
-        "~/.cache/goose"
-        "~/.cache/nix"
-        "~/.config/goose"
-        "~/.local/share/goose"
         "~/.local/share/Olink"
-        "~/.local/state/goose"
       ]
-      ++ dotnetDevDirs;
+      ++ dotnetDirs
+      ++ gooseDirs
+      ++ nixDirs;
       allow_file = [
         "/dev/ptmx"
       ];
       read = [
         "~/.agents"
-        "~/dotfiles" # Some config files link back here
+        "~/dotfiles" # Some config files can link back here
       ];
       write = [ ];
     };
