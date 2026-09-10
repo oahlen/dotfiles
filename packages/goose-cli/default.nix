@@ -28,6 +28,11 @@ let
     "~/.cache/nix" # For fetching tarballs etc.
   ];
 
+  rtkDirs = [
+    "~/.config/rtk"
+    "~/.local/share/rtk"
+  ];
+
   # Custom goose sandbox wrapper
   # Policy reference https://github.com/nolabs-ai/nono/blob/main/crates/nono-cli/data/policy.json
   profile = {
@@ -51,7 +56,8 @@ let
       ]
       ++ dotnetDirs
       ++ gooseDirs
-      ++ nixDirs;
+      ++ nixDirs
+      ++ rtkDirs;
       allow_file = [
         "/dev/ptmx"
       ];

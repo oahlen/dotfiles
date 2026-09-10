@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.features.gnome;
+  cfg = config.features.desktop-environment;
 in
 {
-  options.features.gnome = {
+  options.features.desktop-environment = {
     enable = lib.mkEnableOption "the preferred desktop environment.";
   };
 

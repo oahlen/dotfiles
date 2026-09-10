@@ -22,7 +22,6 @@ in
   };
 
   features = {
-    development.enable = true;
     window-manager.enable = true;
   };
 

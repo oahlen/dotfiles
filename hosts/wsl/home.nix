@@ -11,10 +11,6 @@ in
     wsl.enable = true;
   };
 
-  features = {
-    development.enable = true;
-  };
-
   programs = {
     one-password.enable = true;
     vscode = {

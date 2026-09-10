@@ -8,7 +8,6 @@
   };
 
   features = {
-    development.enable = true;
     gaming.enable = true;
     window-manager.enable = true;
   };
