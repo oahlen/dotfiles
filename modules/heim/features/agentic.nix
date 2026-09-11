@@ -28,6 +28,10 @@ in
       rtk.enable = true;
     };
 
+    features.agentic.stickyPromptLines = [
+      "When writing documentation, keep typical AI-sounding text to a minimum and never use em dashes."
+    ];
+
     home = {
       files = {
         ".agents/skills".source = "${sources.agentic-skills.src}/skills";
