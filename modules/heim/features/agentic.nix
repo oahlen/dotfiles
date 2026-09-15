@@ -29,7 +29,7 @@ in
     };
 
     features.agentic.stickyPromptLines = [
-      "When writing documentation, keep typical AI-sounding text to a minimum and never use em dashes."
+      "When writing documentation, keep typical AI-sounding text and bullet style lists to a minimum and never use em dashes."
     ];
 
     home = {
