@@ -19,9 +19,12 @@
   };
 
   features = {
-    chromium.httpAllowlist = [
-      "192.168.1.100"
-    ];
+    chromium = {
+      enable = true;
+      httpAllowlist = [
+        "192.168.1.100"
+      ];
+    };
 
     gaming.enable = true;
     podman.enable = true;
