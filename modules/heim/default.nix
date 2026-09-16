@@ -3,7 +3,6 @@
   imports = [
     ./features/agentic.nix
     ./features/cli.nix
-    ./features/desktop-environment.nix
     ./features/development.nix
     ./features/gaming.nix
     ./features/window-manager.nix
