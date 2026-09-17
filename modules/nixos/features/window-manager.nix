@@ -25,15 +25,11 @@ in
       after = [ "graphical-session-pre.target" ];
     };
 
-    users.groups =
-      let
-        users = config.users.groups.users.members;
-      in
-      {
-        audio.members = users;
-        networkmanager.members = users;
-        video.members = users;
-      };
+    users.groups = {
+      audio.members = config.primaryUsers;
+      networkmanager.members = config.primaryUsers;
+      video.members = config.primaryUsers;
+    };
 
     services = {
       displayManager = {

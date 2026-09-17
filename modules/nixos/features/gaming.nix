@@ -43,6 +43,6 @@ in
       };
     };
 
-    users.groups.gamemode.members = config.users.groups.users.members;
+    users.groups.gamemode.members = config.primaryUsers;
   };
 }

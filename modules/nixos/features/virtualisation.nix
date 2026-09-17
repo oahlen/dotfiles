@@ -13,7 +13,7 @@ in
   config = lib.mkIf cfg.enable {
     virtualisation.libvirtd.enable = true;
 
-    users.groups.libvirtd.members = config.users.groups.users.members;
+    users.groups.libvirtd.members = config.primaryUsers;
 
     programs.dconf.enable = true;
 
