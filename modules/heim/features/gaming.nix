@@ -11,9 +11,10 @@ in
   options.features.gaming.enable = lib.mkEnableOption "gaming support.";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [
-      pkgs.heroic
-      pkgs.mangohud
+    home.packages = with pkgs; [
+      heroic
+      mangohud
+      umu-launcher
     ];
 
     xdg.config.files = {
