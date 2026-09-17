@@ -33,6 +33,10 @@ let
     "~/.local/share/rtk"
   ];
 
+  rustDirs = [
+    "~/.local/share/cargo"
+  ];
+
   # Custom goose sandbox wrapper
   # Policy reference https://github.com/nolabs-ai/nono/blob/main/crates/nono-cli/data/policy.json
   profile = {
@@ -57,7 +61,8 @@ let
       ++ dotnetDirs
       ++ gooseDirs
       ++ nixDirs
-      ++ rtkDirs;
+      ++ rtkDirs
+      ++ rustDirs;
       allow_file = [
         "/dev/ptmx"
       ];
