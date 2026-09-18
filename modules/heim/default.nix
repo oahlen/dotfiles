@@ -19,6 +19,7 @@
     ./programs/neovim
     ./programs/niri
     ./programs/noctalia
+    ./programs/umbriel
     ./programs/tmux
     ./programs/vscode
 
