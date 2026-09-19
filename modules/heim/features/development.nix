@@ -20,6 +20,7 @@ in
 
     home = {
       packages = with pkgs; [
+        gh
         just
         nixfmt-tree
         nix-prefetch-git

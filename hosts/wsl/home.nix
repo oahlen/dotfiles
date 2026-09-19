@@ -23,7 +23,6 @@ in
     packages = with pkgs; [
       awscli2
       duckdb
-      gh
       pqrs
       typst
     ];
