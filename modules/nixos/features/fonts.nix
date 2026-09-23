@@ -12,7 +12,7 @@ in
 
   config = lib.mkIf cfg.enable {
     fonts.packages = with pkgs; [
-      dejavu_fonts
+      dejavu_fonts # TODO Replace with noto fonts
       liberation_ttf
       nerd-fonts.jetbrains-mono
       noto-fonts-color-emoji
