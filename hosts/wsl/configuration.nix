@@ -7,8 +7,6 @@
   };
 
   features = {
-    apptainer.enable = true;
-
     podman = {
       enable = true;
       dockerCompat = true;

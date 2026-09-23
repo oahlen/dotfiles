@@ -1,35 +1,17 @@
-{
-  pkgs,
-  ...
-}:
+{ ... }:
 let
-  windowsUser = "oscar.ahlen";
+  windowsUser = "oscar.ahlen"; # Change to correct Windows username
 in
 {
   profiles = {
     work.enable = true;
-    wsl.enable = true;
+    wsl.enable = true; # Would never use WSL outside of work ...
   };
 
   programs = {
-    one-password.enable = true;
     vscode = {
       enable = true;
       installPackage = false; # VS Code runs on Windows via Remote-WSL
-    };
-  };
-
-  home = {
-    packages = with pkgs; [
-      awscli2
-      duckdb
-      pqrs
-      typst
-    ];
-
-    sessionVariables = {
-      AWS_CONFIG_FILE = "$HOME/.config/aws/config";
-      AWS_SHARED_CREDENTIALS_FILE = "$HOME/.config/aws/credentials";
     };
   };
 
