@@ -12,6 +12,9 @@ help:
 @nixpkgs:
     url=$(jq -r '.pins.nixpkgs.url' npins/sources.json); xdg-open "${url%/*}"
 
+# Update pins and sources, then verify every configuration
+update: update-pins update-sources && check-hosts check-homes
+
 # Update pins to the latest version
 @update-pins:
     npins update

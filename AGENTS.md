@@ -26,6 +26,7 @@ Personal Nix dotfiles: NixOS hosts + home-manager-alternative [heim](https://git
 - `just home-switch` / `just home-install` / `just manifest` — apply/build heim home config
 - `just build <pkg>` / `just run <pkg>` — build/run from `packages.<pkg>`
 - `just shell <name>` — enter a dev shell from `shells/`
+- `just update` — bump pins and sources, then evaluate every host and home
 - `just update-pins` — `npins update` (bump flake-less inputs)
 - `just update-sources` — regenerate `sources/generated.*` via nvfetcher
 - `just checks` — `treefmt` (nix) + `statix check` + `stylua` (lua)
