@@ -18,18 +18,21 @@ Personal Nix dotfiles: NixOS hosts + home-manager-alternative [heim](https://git
 
 ## Commands (use `just`, see `justfile`)
 
-- `just check <host>` — build a host's system closure without switching
+- `just check-host <host>` — evaluate a host's system closure to a derivation, without building
+- `just check-home <home>` — evaluate a host's home closure to a derivation, without building
+- `just check-hosts` — evaluate every host configuration, used by CI
+- `just check-homes` — evaluate every home configuration, used by CI
 - `just rebuild-boot` / `just rebuild-switch` — apply NixOS config for current hostname
 - `just home-switch` / `just home-install` / `just manifest` — apply/build heim home config
 - `just build <pkg>` / `just run <pkg>` — build/run from `packages.<pkg>`
 - `just shell <name>` — enter a dev shell from `shells/`
 - `just update-pins` — `npins update` (bump flake-less inputs)
 - `just update-sources` — regenerate `sources/generated.*` via nvfetcher
-- `just fmt` — `treefmt` (nix) + `stylua` (lua); `just lint` — `statix check`
+- `just checks` — `treefmt` (nix) + `statix check` + `stylua` (lua)
 
 ## Conventions
 
 - No `flake.nix`/`flake.lock` — all pinning is npins (`npins/sources.json`) + nvfetcher (`sources/generated.json`) for non-nix fetches (e.g. plugins)
 - Modules follow the `features` (small toggle) vs `profiles` (composition of features per host role) split — put new host-agnostic options in `features/`, wire them up in a `profiles/*.nix`
 - Custom packages go under `packages/<name>/default.nix`, exported via `pkgs.customPackages` (see `packages/default.nix`)
-- Run `just fmt` before committing Nix changes
+- Run `just checks` before committing Nix changes

@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+  workflow_dispatch:
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: Cache nix store
+        uses: actions/cache@v6
+        with:
+          path: |
+            ~/.cache/nix
+          key: nix-${{ runner.os }}-${{ hashFiles('npins/sources.json', 'sources/generated.json') }}
+          restore-keys: nix-${{ runner.os }}-
+
+      - name: Build bootstrap shell
+        run: nix-shell --run true
+
+      - name: Evaluate hosts
+        run: nix-shell --run 'just check-hosts'
+
+      - name: Evaluate homes
+        run: nix-shell --run 'just check-homes'
+
+      - name: Lint
+        run: nix-shell --run 'statix check'
+
+      - name: Check formatting
+        run: nix-shell --run 'treefmt --fail-on-change --no-cache'
+
+      - name: Check lua formatting
+        run: nix-shell --run 'stylua --check .'

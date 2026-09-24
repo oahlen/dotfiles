@@ -21,9 +21,21 @@ help:
     nvfetcher -o sources
     jq '.' sources/generated.json | sponge sources/generated.json
 
-# Check the current host configuration
-@check host:
-    nix build -f . "hosts.$1.config.system.build.toplevel"
+# Evaluate the specified host configuration without building
+@check-host host:
+    nix eval --raw -f . "hosts.$1.config.system.build.toplevel.drvPath"
+
+# Evaluate the specified home configuration without building
+@check-home home:
+    nix eval --raw -f . "homes.$1.environment.drvPath"
+
+# Evaluate every host configuration without building
+@check-hosts:
+    nix eval -f . --json --apply 'builtins.mapAttrs (_: h: h.config.system.build.toplevel.drvPath)' hosts
+
+# Evaluate every home configuration without building
+@check-homes:
+    nix eval -f . --json --apply 'builtins.mapAttrs (_: h: h.environment.drvPath)' homes
 
 # Run nixos-rebuild boot for the current host
 @rebuild-boot:
@@ -62,16 +74,16 @@ help:
     nix-shell default.nix -A "shells.playground" --command "$SHELL"
 
 # Performs all code checks
-@fmt: nix lint lua
+@checks: fmt-nix lint-nix fmt-lua
 
 # Format nix code
-@nix:
+@fmt-nix:
     treefmt
 
 # Lint nix code
-@lint:
+@lint-nix:
     statix check
 
 # Format lua code
-@lua:
+@fmt-lua:
     stylua .
