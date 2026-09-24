@@ -9,6 +9,11 @@
 
   networking.hostName = "desktop";
 
+  defaultUser = {
+    name = "oahlen";
+    description = "Oscar Ahlén";
+  };
+
   hardware = {
     amdgpu = {
       initrd.enable = true;
@@ -42,16 +47,6 @@
     "noatime"
     "nodiratime"
   ];
-
-  users.users.oahlen = {
-    uid = 1000;
-    description = "Oscar Ahlén";
-    isNormalUser = true;
-    extraGroups = [
-      "users"
-      "wheel"
-    ];
-  };
 
   system.stateVersion = "22.11";
 }

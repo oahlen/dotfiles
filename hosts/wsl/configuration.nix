@@ -1,6 +1,14 @@
 { ... }:
+let
+  user = "oahlen";
+in
 {
-  wsl.defaultUser = "oahlen";
+  wsl.defaultUser = user;
+
+  defaultUser = {
+    name = user;
+    description = "Oscar Ahlén";
+  };
 
   profiles = {
     wsl.enable = true;
@@ -16,15 +24,6 @@
   programs = {
     git.lfs.enable = true;
     ssh.startAgent = true;
-  };
-
-  users.users.oahlen = {
-    uid = 1000;
-    description = "Oscar Ahlén";
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-    ];
   };
 
   system.stateVersion = "24.11";

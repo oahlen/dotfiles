@@ -9,6 +9,11 @@
 
   networking.hostName = "xps15";
 
+  defaultUser = {
+    name = "oahlen";
+    description = "Oscar Ahlén";
+  };
+
   boot = {
     blacklistedKernelModules = [ "nouveau" ];
     initrd.kernelModules = [ "i915" ];
@@ -37,16 +42,6 @@
 
   services = {
     flatpak.enable = true;
-  };
-
-  users.users.oahlen = {
-    uid = 1000;
-    description = "Oscar Ahlén";
-    isNormalUser = true;
-    extraGroups = [
-      "users"
-      "wheel"
-    ];
   };
 
   system.stateVersion = "25.11";

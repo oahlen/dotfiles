@@ -106,8 +106,8 @@ let
     };
 
     wallpaper = {
-      directory = "/home/oahlen/Pictures/Wallpapers";
-      default.path = "/home/oahlen/Pictures/Wallpapers/buck.jpg";
+      directory = "${config.home.directory}/Pictures/Wallpapers";
+      default.path = "${config.home.directory}/Pictures/Wallpapers/buck.jpg";
     };
 
     widget = {
