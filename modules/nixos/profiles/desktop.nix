@@ -14,8 +14,8 @@ in
     features = {
       audio.enable = true;
       boot.enable = true;
+      browser.enable = true;
       core-apps.enable = true;
-      firefox.enable = true;
       fonts.enable = true;
       ssd.enable = true;
       wayland.enable = true;
@@ -33,6 +33,7 @@ in
 
     programs = {
       dconf.enable = true;
+      firefox.enable = true;
     };
 
     # Add hardcoded /bin/bash for compatibility reasons

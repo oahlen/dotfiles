@@ -4,10 +4,9 @@
     ./features/apptainer.nix
     ./features/audio.nix
     ./features/boot.nix
-    ./features/chromium.nix
+    ./features/browser.nix
     ./features/core-apps.nix
     ./features/desktop-environment.nix
-    ./features/firefox.nix
     ./features/fonts.nix
     ./features/gaming.nix
     ./features/podman.nix

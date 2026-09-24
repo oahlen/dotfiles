@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -11,11 +12,7 @@ in
 
   config = lib.mkIf cfg.enable {
     features = {
-      chromium = {
-        enable = true;
-        blockThirdPartyCookies = false;
-      };
-
+      browser.blockThirdPartyCookies = false;
       desktop-environment.enable = true;
     };
 
@@ -29,5 +26,7 @@ in
         VERSION_ID = "26.04";
       };
     };
+
+    environment.systemPackages = [ pkgs.chromium ];
   };
 }

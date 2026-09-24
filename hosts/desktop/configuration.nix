@@ -10,8 +10,10 @@
   networking.hostName = "desktop";
 
   hardware = {
-    amdgpu.initrd.enable = true;
-    amdgpu.overdrive.enable = true;
+    amdgpu = {
+      initrd.enable = true;
+      overdrive.enable = true;
+    };
   };
 
   profiles = {
@@ -19,12 +21,9 @@
   };
 
   features = {
-    chromium = {
-      enable = true;
-      httpAllowlist = [
-        "192.168.1.100"
-      ];
-    };
+    browser.httpAllowlist = [
+      "192.168.1.100"
+    ];
 
     gaming.enable = true;
     podman.enable = true;
@@ -34,7 +33,10 @@
     yubikey.enable = true;
   };
 
-  environment.systemPackages = [ pkgs.nfs-utils ];
+  environment.systemPackages = with pkgs; [
+    chromium
+    nfs-utils
+  ];
 
   fileSystems."/mnt/backup".options = [
     "noatime"
