@@ -20,13 +20,5 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = [ pkgs.customPackages.neovim ] ++ extraPackages;
-
-    xdg.config.files = {
-      "nvim" = {
-        source = ./config;
-        recursive = true;
-        keepOutOfStore = true;
-      };
-    };
   };
 }

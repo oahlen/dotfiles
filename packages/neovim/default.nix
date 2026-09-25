@@ -22,6 +22,13 @@ let
     "shellcheck-nvim"
   ];
 
+  configPlugin = vimUtils.buildVimPlugin {
+    pname = "config";
+    version = "1.0.0";
+    src = ./config;
+    doCheck = false;
+  };
+
   treesitter = vimPlugins.nvim-treesitter.withPlugins (
     plugins: with plugins; [
       bash
@@ -91,8 +98,9 @@ wrapNeovimUnstable neovim-unwrapped {
       render-markdown-nvim
       treesitter
       which-key-nvim
+      configPlugin
     ]
     ++ customPlugins;
 
-  wrapRc = false; # Use ~/.config/nvim/init.lua
+  wrapRc = false;
 }

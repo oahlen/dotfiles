@@ -16,7 +16,6 @@
 
     ./programs/fish
     ./programs/ideavim
-    ./programs/neovim
     ./programs/niri
     ./programs/noctalia
     ./programs/tmux
@@ -33,6 +32,7 @@
     ./programs/gitui.nix
     ./programs/goose.nix
     ./programs/jq.nix
+    ./programs/neovim.nix
     ./programs/one-password.nix
     ./programs/rbw.nix
     ./programs/ripgrep.nix
