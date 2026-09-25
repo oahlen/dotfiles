@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+workdir="$PWD"
+dir=$(fd --type d | fzf)
+
+if [ -z "$dir" ] || [ ! -d "$dir" ]; then
+    exit 0
+fi
+
+name=$(basename "$dir" | tr '.' '-')
+
+cd "$dir" || exit
+tmuxp load -y dev-session -s "$name"
+cd "$workdir" || exit

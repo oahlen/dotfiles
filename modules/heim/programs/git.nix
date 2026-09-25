@@ -12,7 +12,6 @@ let
       br = "branch";
       c = "commit";
       s = "status";
-      sb = "!switch-branch";
       tree = "log --graph --decorate --oneline";
     };
 

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+branch=$(git branch --format '%(refname:short)' | fzf --prompt 'Switch branch: ')
+
+if [ -n "$branch" ]; then
+    git switch "$branch"
+fi

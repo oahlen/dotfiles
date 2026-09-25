@@ -20,6 +20,7 @@ in
       fzf.enable = true;
       jq.enable = true;
       ripgrep.enable = true;
+      scripts.enable = true;
       tmux.enable = true;
       yazi.enable = true;
       zoxide.enable = true;

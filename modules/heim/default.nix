@@ -14,10 +14,10 @@
     ./profiles/work.nix
     ./profiles/wsl.nix
 
-    ./programs/fish
     ./programs/ideavim
     ./programs/niri
     ./programs/noctalia
+    ./programs/scripts
     ./programs/tmux
     ./programs/vscode
 
@@ -26,6 +26,7 @@
     ./programs/bottom.nix
     ./programs/direnv.nix
     ./programs/fd.nix
+    ./programs/fish.nix
     ./programs/foot.nix
     ./programs/fzf.nix
     ./programs/git.nix
