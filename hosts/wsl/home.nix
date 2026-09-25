@@ -4,8 +4,7 @@ let
 in
 {
   profiles = {
-    work.enable = true;
-    wsl.enable = true; # Would never use WSL outside of work ...
+    wsl.enable = true;
   };
 
   programs = {

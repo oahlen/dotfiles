@@ -81,9 +81,6 @@ let
   # export GITHUB_COPILOT_HOST="your-company.ghe.com"
   # Use the bare host only - no https:// scheme and no trailing slash.
   sandbox = writeShellScriptBin "goose-cli-sandbox" ''
-    # Remove sensitive variables
-    unset $(env | grep -o '^OP_[^=]*')
-
     ${lib.getExe nono} run --profile ${file} --allow-cwd -- ${lib.getExe goose-cli} "$@"
   '';
 

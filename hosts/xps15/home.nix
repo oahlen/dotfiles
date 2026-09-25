@@ -18,7 +18,6 @@ in
 {
   profiles = {
     default.enable = true;
-    work.enable = true;
   };
 
   features = {

@@ -11,7 +11,6 @@
 
     ./profiles/default.nix
     ./profiles/standalone.nix
-    ./profiles/work.nix
     ./profiles/wsl.nix
 
     ./programs/ideavim
@@ -34,7 +33,6 @@
     ./programs/goose.nix
     ./programs/jq.nix
     ./programs/neovim.nix
-    ./programs/one-password.nix
     ./programs/rbw.nix
     ./programs/ripgrep.nix
     ./programs/rtk.nix
