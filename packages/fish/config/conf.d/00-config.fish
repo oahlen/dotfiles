@@ -11,6 +11,7 @@ status is-interactive; and begin
     alias cat bat
     alias di dev-session
     alias dots 'tmuxp load -y dotfiles'
+    alias fetch pokefetch
     alias gi gitui
     alias j just
     alias la 'eza -a'

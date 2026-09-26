@@ -7,12 +7,14 @@
 let
   cfg = config.programs.fastfetch;
 
-  fetch = pkgs.writeShellApplication {
-    name = "fetch";
+  pokeget = pkgs.pokeget-rs;
+
+  pokefetch = pkgs.writeShellApplication {
+    name = "pokefetch";
 
     runtimeInputs = [
       cfg.package
-      pkgs.pokeget-rs
+      pokeget
     ];
 
     text = ''
@@ -24,9 +26,18 @@ in
   options.programs.fastfetch = {
     enable = lib.mkEnableOption "fastfetch.";
     package = lib.mkPackageOption pkgs "fastfetch" { };
+    pokefetch.enable = lib.mkEnableOption "pokefetch." // {
+      default = true;
+    };
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ fetch ];
+    home.packages = [
+      cfg.package
+    ]
+    ++ lib.optionals cfg.pokefetch.enable [
+      pokefetch
+      pokeget
+    ];
   };
 }
