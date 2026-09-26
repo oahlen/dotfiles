@@ -35,7 +35,6 @@ in
         figlet
         jless
         jq
-        moreutils # Nice extensions to coreutils
         procs
         rage
         scooter

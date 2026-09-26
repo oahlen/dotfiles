@@ -22,7 +22,8 @@ update: update-pins update-sources && check-hosts check-homes
 # Update sources to the latest version
 @update-sources:
     nvfetcher -o sources
-    jq '.' sources/generated.json | sponge sources/generated.json
+    jq '.' sources/generated.json > sources/generated.json.tmp
+    mv sources/generated.json.tmp sources/generated.json
 
 # Evaluate the specified host configuration without building
 @check-host host:
