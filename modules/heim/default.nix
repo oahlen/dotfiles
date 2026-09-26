@@ -37,7 +37,6 @@
     ./programs/rtk.nix
     ./programs/windows-terminal.nix
     ./programs/yazi.nix
-    ./programs/zoxide.nix
 
     ./mimeapps.nix
     ./settings.nix

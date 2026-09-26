@@ -22,7 +22,6 @@ in
       scripts.enable = true;
       tmux.enable = true;
       yazi.enable = true;
-      zoxide.enable = true;
     };
 
     home = {

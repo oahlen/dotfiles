@@ -28,7 +28,6 @@ status is-interactive; and begin
     batman --export-env | source
     direnv hook fish | source
     fzf --fish | source
-    zoxide init fish | source
 
     set fish_greeting
 

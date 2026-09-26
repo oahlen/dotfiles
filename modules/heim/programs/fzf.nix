@@ -50,7 +50,6 @@ in
       sessionVariables = {
         FZF_DEFAULT_COMMAND = defaultCommand;
         FZF_DEFAULT_OPTS = flags;
-        _ZO_FZF_OPTS = (lib.mkIf config.programs.zoxide.enable) flags;
       };
     };
   };
