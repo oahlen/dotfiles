@@ -18,7 +18,6 @@ in
       fd.enable = true;
       fish.enable = true;
       fzf.enable = true;
-      jq.enable = true;
       ripgrep.enable = true;
       scripts.enable = true;
       tmux.enable = true;
@@ -35,6 +34,7 @@ in
         eza
         figlet
         jless
+        jq
         moreutils # Nice extensions to coreutils
         pokeget-rs
         procs

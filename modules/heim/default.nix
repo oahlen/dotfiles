@@ -31,7 +31,6 @@
     ./programs/git.nix
     ./programs/gitui.nix
     ./programs/goose.nix
-    ./programs/jq.nix
     ./programs/neovim.nix
     ./programs/rbw.nix
     ./programs/ripgrep.nix
