@@ -36,7 +36,7 @@ let
     main = {
       dpi-aware = "no";
       font = "JetBrainsMono Nerd Font:size=11.5";
-      shell = "${lib.getExe pkgs.fish}";
+      shell = "${lib.getExe pkgs.customPackages.fish}";
       initial-color-theme = "${theme}";
       pad = "10x10";
       term = "xterm-256color";
