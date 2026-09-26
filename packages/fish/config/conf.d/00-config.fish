@@ -33,7 +33,7 @@ status is-interactive; and begin
     set fish_greeting
 
     # For tmux
-    set -gx SHELL $(which fish)
+    set -gx SHELL (status fish-path)
 
     fish_vi_key_bindings
     set fish_vi_force_cursor
