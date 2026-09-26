@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ "$#" -eq 0 ]; then
+    echo "Usage: shell <package> [packages...]" >&2
+    exit 1
+fi
+
+shell="${SHELL:-bash}"
+
+nix-shell -p "$@" --command "export NIX_SHELL='Ephemeral Shell' && exec '$shell'"
