@@ -27,6 +27,9 @@ in
       };
     };
 
-    environment.systemPackages = [ pkgs.chromium ];
+    environment.systemPackages = with pkgs; [
+      _1password-gui
+      chromium
+    ];
   };
 }
