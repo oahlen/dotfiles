@@ -12,10 +12,7 @@ in
   config = lib.mkIf cfg.enable {
     home = {
       files = {
-        ".local/bin" = {
-          source = ./bin;
-          recursive = true;
-        };
+        ".local/bin".source = ./bin;
       };
 
       sessionPath = [ "$HOME/.local/bin" ];
