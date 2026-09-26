@@ -24,6 +24,7 @@
     ./programs/bat.nix
     ./programs/bottom.nix
     ./programs/direnv.nix
+    ./programs/fastfetch.nix
     ./programs/fd.nix
     ./programs/fish.nix
     ./programs/foot.nix

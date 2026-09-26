@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 let
@@ -43,10 +42,6 @@ in
           keepOutOfStore = true;
         };
       };
-
-      packages = with pkgs; [
-        fastfetch
-      ];
     };
   };
 }

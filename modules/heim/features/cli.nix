@@ -15,6 +15,7 @@ in
       bash.enable = true;
       bat.enable = true;
       bottom.enable = true;
+      fastfetch.enable = true;
       fd.enable = true;
       fish.enable = true;
       fzf.enable = true;
@@ -35,7 +36,6 @@ in
         jless
         jq
         moreutils # Nice extensions to coreutils
-        pokeget-rs
         procs
         rage
         scooter

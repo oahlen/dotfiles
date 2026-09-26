@@ -19,11 +19,11 @@ in
 
     programs = {
       windows-terminal.enable = true;
+      fastfetch.package = pkgs.fastfetch.minimal;
     };
 
     home = {
       packages = with pkgs; [
-        fastfetch.minimal
         trash-cli
         wl-clipboard
         xdg-utils
