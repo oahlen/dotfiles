@@ -77,6 +77,15 @@ enable("harper_ls", {
     end,
 })
 
+enable("ruff", {
+    cmd = { "ruff", "server" },
+    on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+        -- Let pyright (or other) own hover/definitions, ruff just lints/fixes
+        client.server_capabilities.hoverProvider = false
+    end,
+})
+
 enable("csharp_ls")
 enable("cssls")
 enable("html")

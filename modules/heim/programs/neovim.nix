@@ -11,6 +11,7 @@ let
     harper
     lua-language-server
     nil
+    ruff
     shellcheck
     vscode-langservers-extracted
   ];
