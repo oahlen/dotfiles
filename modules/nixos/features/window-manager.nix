@@ -13,10 +13,6 @@ in
   config = lib.mkIf cfg.enable {
     wayland.systemd.target = "niri-session.target";
 
-    programs = {
-      niri.enable = true;
-    };
-
     systemd.user.targets.niri-session = {
       description = "niri compositor session";
       documentation = [ "man:systemd.special(7)" ];
@@ -39,6 +35,10 @@ in
 
       dbus.enable = true;
       noctalia.enable = true;
+    };
+
+    programs = {
+      niri.enable = true;
     };
 
     environment.systemPackages = with pkgs; [
