@@ -1,5 +1,5 @@
 session_name: "${TMUX_SESSION}"
-start_directory: "${PWD}"
+start_directory: "${TMUX_DIR}"
 windows:
   - window_name: Code
     panes:
