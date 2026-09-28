@@ -37,6 +37,16 @@ let
       fi
     '';
   };
+
+  configTemplate = pkgs.writeText "rbw-config.json" (
+    builtins.toJSON {
+      base_url = "base_url";
+      email = "email";
+      identity_url = null;
+      lock_timeout = 3600;
+      pinentry = "pinentry";
+    }
+  );
 in
 {
   options.programs.rbw.enable = lib.mkEnableOption "rbw.";
@@ -45,6 +55,16 @@ in
     home.packages = [
       password-picker
       rbw
+    ];
+
+    activationHooks = [
+      ''
+        if [ ! -e "$HOME/.config/rbw/config.json" ]; then
+          echo "Installing default rbw config ..."
+          mkdir -p "$HOME/.config/rbw"
+          install -m 600 ${configTemplate} "$HOME/.config/rbw/config.json"
+        fi
+      ''
     ];
   };
 }

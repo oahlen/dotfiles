@@ -1,7 +1,0 @@
-{
-  "base_url": "base_url",
-  "email": "email",
-  "identity_url": null,
-  "lock_timeout": 3600,
-  "pinentry": "pinentry"
-}
