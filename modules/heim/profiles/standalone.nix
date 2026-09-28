@@ -6,6 +6,8 @@
 }:
 let
   cfg = config.profiles.standalone;
+
+  nix-config = pkgs.customPackages.nix-config;
 in
 {
   options.profiles.standalone.enable = lib.mkEnableOption "standalone (generic) linux profile.";
@@ -15,8 +17,14 @@ in
       cli.enable = true;
     };
 
-    home.sessionVariables = {
-      NIX_PATH = lib.mkForce "nixpkgs=${builtins.storePath pkgs.path}";
+    home = {
+      packages = [ nix-config.package ];
+
+      sessionVariables = {
+        NIX_PATH = lib.mkForce "nixpkgs=${builtins.storePath pkgs.path}";
+      };
     };
+
+    activationHooks = [ nix-config.activation ];
   };
 }
