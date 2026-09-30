@@ -28,6 +28,7 @@ in
     home = {
       packages = with pkgs; [
         calc
+        csvlens
         curl
         dos2unix
         dust
