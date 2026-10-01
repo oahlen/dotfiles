@@ -264,8 +264,20 @@ return {
             hl = { fg = "purple" },
         }
 
+        local RulerLine = {
+            provider = "%7(%l/%3L%)",
+        }
+
+        local RulerColumn = {
+            provider = "%2c",
+        }
+
         local Ruler = {
-            provider = "%7(%l/%3L%) %P",
+            RulerLine,
+            Space,
+            RulerColumn,
+            Space,
+            { provider = "%P" },
         }
 
         local Statusline = {
