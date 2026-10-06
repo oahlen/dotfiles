@@ -29,6 +29,7 @@
     ./programs/fish.nix
     ./programs/foot.nix
     ./programs/fzf.nix
+    ./programs/ghostty.nix
     ./programs/git.nix
     ./programs/gitui.nix
     ./programs/goose.nix
