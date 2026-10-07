@@ -35,4 +35,5 @@ jobs:
         with:
           name: ${{ inputs.home }}-bundle
           path: dist/${{ inputs.home }}-bundle/
+          include-hidden-files: true
           retention-days: 14
