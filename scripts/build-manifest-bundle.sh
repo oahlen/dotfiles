@@ -30,11 +30,11 @@ jq -r '.files[] | [.target, (.sources[] | select(.default) | .source)] | @tsv' "
     rel="${target#/*/*/}"
     dest="${stage_dir}/home/${rel}"
     mkdir -p "$(dirname "$dest")"
-    cp -a "$source" "$dest"
+    cp -aL "$source" "$dest"
   done
 
-chmod -R u+w "${stage_dir}"
-
 cp "$manifest_path" "${stage_dir}/manifest.json"
+
+chmod -R u+rwX,go+rX "${stage_dir}"
 
 echo "Bundle written to ${stage_dir}/"
