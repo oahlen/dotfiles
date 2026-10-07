@@ -28,14 +28,11 @@ jobs:
           key: nix-${{ runner.os }}-${{ hashFiles('npins/sources.json', 'sources/generated.json') }}
           restore-keys: nix-${{ runner.os }}-
 
-      - name: Install zstd
-        run: sudo apt-get update && sudo apt-get install -y zstd
-
       - name: Build bundle
         run: ./scripts/build-manifest-bundle.sh "${{ inputs.home }}"
 
       - uses: actions/upload-artifact@v7
         with:
           name: ${{ inputs.home }}-bundle
-          path: dist/${{ inputs.home }}-bundle.tar.zst
+          path: dist/${{ inputs.home }}-bundle/
           retention-days: 14
