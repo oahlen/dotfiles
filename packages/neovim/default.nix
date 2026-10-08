@@ -14,13 +14,16 @@ let
       doCheck = false;
     };
 
-  buildPlugins = names: map (name: buildPlugin sources.${name}) names;
+  plugins = map (plugin: {
+    plugin = (vimPlugins.${plugin.nix} or (buildPlugin sources.${plugin.nix})) // {
+      pname = plugin.name; # Set correct plugin name for lz.n and packadd
+    };
+    optional = !(plugin.start or false);
+  }) (builtins.fromJSON (builtins.readFile ./config/plugins.json));
 
-  customPlugins = buildPlugins [
-    "agentic-nvim"
-    "aurora-nvim"
-    "shellcheck-nvim"
-  ];
+  treesitter = vimPlugins.nvim-treesitter.withPlugins (
+    parsers: map (name: parsers.${name}) (builtins.fromJSON (builtins.readFile ./config/parsers.json))
+  );
 
   configPlugin = vimUtils.buildVimPlugin {
     pname = "config";
@@ -28,79 +31,12 @@ let
     src = ./config;
     doCheck = false;
   };
-
-  treesitter = vimPlugins.nvim-treesitter.withPlugins (
-    plugins: with plugins; [
-      bash
-      c
-      comment
-      c_sharp
-      css
-      desktop
-      diff
-      dockerfile
-      editorconfig
-      fish
-      gitattributes
-      gitcommit
-      git_config
-      gitignore
-      git_rebase
-      go
-      html
-      ini
-      javascript
-      json
-      kdl
-      just
-      lua
-      luadoc
-      make
-      markdown
-      markdown_inline
-      nix
-      powershell
-      properties
-      proto
-      python
-      rust
-      scss
-      sql
-      svelte
-      tmux
-      todotxt
-      toml
-      typescript
-      typst
-      vim
-      vimdoc
-      xml
-      yaml
-    ]
-  );
 in
 wrapNeovimUnstable neovim-unwrapped {
-  plugins =
-    with vimPlugins;
-    [
-      blink-cmp
-      conform-nvim
-      fzf-lua
-      gitsigns-nvim
-      heirline-nvim
-      indent-blankline-nvim
-      lz-n
-      nvim-autopairs
-      nvim-colorizer-lua
-      nvim-lspconfig
-      nvim-tree-lua
-      nvim-web-devicons
-      render-markdown-nvim
-      treesitter
-      which-key-nvim
-      configPlugin
-    ]
-    ++ customPlugins;
+  plugins = plugins ++ [
+    treesitter
+    configPlugin
+  ];
 
   wrapRc = false;
 }

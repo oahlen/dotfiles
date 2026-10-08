@@ -47,7 +47,8 @@ return {
     },
     after = function()
         require("agentic").setup({
-            provider = "goose-acp",
+            -- Set AGENTIC_NVIM_PROVIDER to use another provider, e.g. "claude-acp"
+            provider = os.getenv("AGENTIC_NVIM_PROVIDER") or "goose-acp",
             acp_providers = {
                 ["goose-acp"] = {
                     command = "goose-cli-sandbox",
