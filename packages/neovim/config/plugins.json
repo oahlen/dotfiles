@@ -1,0 +1,92 @@
+[
+  {
+    "name": "aurora",
+    "start": true,
+    "src": "https://github.com/oahlen/aurora.nvim",
+    "nix": "aurora-nvim"
+  },
+  {
+    "name": "lz.n",
+    "start": true,
+    "src": "https://github.com/lumen-oss/lz.n",
+    "nix": "lz-n"
+  },
+  {
+    "name": "agentic",
+    "src": "https://github.com/carlos-algms/agentic.nvim",
+    "nix": "agentic-nvim"
+  },
+  {
+    "name": "blink.cmp",
+    "src": "https://github.com/saghen/blink.cmp",
+    "nix": "blink-cmp",
+    "version": "1.*"
+  },
+  {
+    "name": "conform",
+    "src": "https://github.com/stevearc/conform.nvim",
+    "nix": "conform-nvim"
+  },
+  {
+    "name": "fzf-lua",
+    "src": "https://github.com/ibhagwan/fzf-lua",
+    "nix": "fzf-lua"
+  },
+  {
+    "name": "gitsigns",
+    "src": "https://github.com/lewis6991/gitsigns.nvim",
+    "nix": "gitsigns-nvim"
+  },
+  {
+    "name": "heirline.nvim",
+    "src": "https://github.com/rebelot/heirline.nvim",
+    "nix": "heirline-nvim"
+  },
+  {
+    "name": "ibl",
+    "src": "https://github.com/lukas-reineke/indent-blankline.nvim",
+    "nix": "indent-blankline-nvim"
+  },
+  {
+    "name": "nvim-autopairs",
+    "src": "https://github.com/windwp/nvim-autopairs",
+    "nix": "nvim-autopairs"
+  },
+  {
+    "name": "colorizer",
+    "src": "https://github.com/catgoose/nvim-colorizer.lua",
+    "nix": "nvim-colorizer-lua"
+  },
+  {
+    "name": "nvim-lspconfig",
+    "start": true,
+    "src": "https://github.com/neovim/nvim-lspconfig",
+    "nix": "nvim-lspconfig"
+  },
+  {
+    "name": "nvim-tree",
+    "src": "https://github.com/nvim-tree/nvim-tree.lua",
+    "nix": "nvim-tree-lua"
+  },
+  {
+    "name": "nvim-web-devicons",
+    "start": true,
+    "src": "https://github.com/nvim-tree/nvim-web-devicons",
+    "nix": "nvim-web-devicons"
+  },
+  {
+    "name": "render-markdown",
+    "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+    "nix": "render-markdown-nvim"
+  },
+  {
+    "name": "shellcheck",
+    "src": "https://github.com/pablos123/shellcheck.nvim",
+    "nix": "shellcheck-nvim"
+  },
+  {
+    "name": "which-key",
+    "src": "https://github.com/folke/which-key.nvim",
+    "nix": "which-key-nvim"
+  }
+]

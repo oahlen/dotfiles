@@ -14,13 +14,9 @@ let
       doCheck = false;
     };
 
-  buildPlugins = names: map (name: buildPlugin sources.${name}) names;
-
-  customPlugins = buildPlugins [
-    "agentic-nvim"
-    "aurora-nvim"
-    "shellcheck-nvim"
-  ];
+  plugins = map (plugin: vimPlugins.${plugin.nix} or (buildPlugin sources.${plugin.nix})) (
+    builtins.fromJSON (builtins.readFile ./config/plugins.json)
+  );
 
   configPlugin = vimUtils.buildVimPlugin {
     pname = "config";
@@ -80,27 +76,10 @@ let
   );
 in
 wrapNeovimUnstable neovim-unwrapped {
-  plugins =
-    with vimPlugins;
-    [
-      blink-cmp
-      conform-nvim
-      fzf-lua
-      gitsigns-nvim
-      heirline-nvim
-      indent-blankline-nvim
-      lz-n
-      nvim-autopairs
-      nvim-colorizer-lua
-      nvim-lspconfig
-      nvim-tree-lua
-      nvim-web-devicons
-      render-markdown-nvim
-      treesitter
-      which-key-nvim
-      configPlugin
-    ]
-    ++ customPlugins;
+  plugins = plugins ++ [
+    treesitter
+    configPlugin
+  ];
 
   wrapRc = false;
 }
