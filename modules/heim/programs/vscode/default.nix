@@ -11,7 +11,7 @@ let
 
   configDir = if isDarwin then "Library/Application Support/Code/User" else ".config/Code/User";
 
-  settings = import ./settings.nix;
+  settings = lib.importJSON ./settings.json;
 
   mkTheme = import ./theme.nix;
 
@@ -55,7 +55,7 @@ in
 
       files."${configDir}/settings.json".text = builtins.toJSON (settings // themeSettings);
 
-      files."${configDir}/keybindings.json".text = builtins.toJSON (import ./keybindings.nix);
+      files."${configDir}/keybindings.json".source = ./keybindings.json;
     };
   };
 }

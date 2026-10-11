@@ -1,0 +1,32 @@
+[
+  {
+    "command": "workbench.action.focusActiveEditorGroup",
+    "key": "ctrl+l",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "workbench.action.quickOpenSelectNext",
+    "key": "ctrl+j",
+    "when": "inQuickOpen"
+  },
+  {
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "key": "ctrl+k",
+    "when": "inQuickOpen"
+  },
+  {
+    "command": "search.action.focusSearchList",
+    "key": "ctrl+j",
+    "when": "searchViewletFocus && inputFocus && hasSearchResult"
+  },
+  {
+    "command": "list.focusDown",
+    "key": "ctrl+j",
+    "when": "searchViewletFocus && listFocus && !inputFocus"
+  },
+  {
+    "command": "list.focusUp",
+    "key": "ctrl+k",
+    "when": "searchViewletFocus && listFocus && !inputFocus"
+  }
+]
