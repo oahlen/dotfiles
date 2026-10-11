@@ -11,8 +11,6 @@ let
 
   configDir = if isDarwin then "Library/Application Support/Code/User" else ".config/Code/User";
 
-  settingsTarget = "${configDir}/settings.json";
-
   settings = import ./settings.nix;
 
   mkTheme = import ./theme.nix;
@@ -46,14 +44,18 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = lib.optional cfg.installPackage (
-      pkgs.vscode-with-extensions.override {
-        vscodeExtensions = with pkgs.vscode-extensions; [
-          vscodevim.vim
-        ];
-      }
-    );
+    home = {
+      packages = lib.optional cfg.installPackage (
+        pkgs.vscode-with-extensions.override {
+          vscodeExtensions = with pkgs.vscode-extensions; [
+            vscodevim.vim
+          ];
+        }
+      );
 
-    home.files.${settingsTarget}.text = builtins.toJSON (settings // themeSettings);
+      files."${configDir}/settings.json".text = builtins.toJSON (settings // themeSettings);
+
+      files."${configDir}/keybindings.json".text = builtins.toJSON (import ./keybindings.nix);
+    };
   };
 }

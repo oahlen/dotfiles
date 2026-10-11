@@ -13,6 +13,8 @@ with variant;
     "activityBar.foreground" = foreground;
     "sideBar.background" = background;
     "sideBar.foreground" = foreground;
+    "sideBarSectionHeader.background" = surface-variant;
+    "sideBarSectionHeader.foreground" = foreground;
 
     "statusBar.background" = statusline.background;
     "statusBar.foreground" = statusline.foreground;
@@ -20,12 +22,22 @@ with variant;
 
     "titleBar.activeBackground" = background;
     "titleBar.activeForeground" = foreground;
+    "titleBar.inactiveBackground" = background;
+    "titleBar.inactiveForeground" = foreground;
 
     "tab.activeBackground" = surface-variant;
     "tab.inactiveBackground" = background;
 
     "focusBorder" = statusline.accent;
     "badge.background" = statusline.accent;
+
+    "titleBar.border" = surface-variant;
+    "activityBar.border" = surface-variant;
+    "sideBar.border" = surface-variant;
+    "sideBarSectionHeader.border" = surface-variant;
+    "editorGroupHeader.tabsBorder" = surface-variant;
+    "tab.border" = surface-variant;
+    "statusBar.border" = surface-variant;
 
     "menu.background" = background;
     "menu.foreground" = foreground;

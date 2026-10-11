@@ -20,6 +20,7 @@
     '';
 
     rbw.enable = true;
+    vscode.enable = true;
   };
 
   home = {
