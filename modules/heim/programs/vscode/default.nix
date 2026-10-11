@@ -10,27 +10,6 @@ let
   isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
 
   configDir = if isDarwin then "Library/Application Support/Code/User" else ".config/Code/User";
-
-  settings = lib.importJSON ./settings.json;
-
-  mkTheme = import ./theme.nix;
-
-  themeSettings = {
-    "window.autoDetectColorScheme" = true;
-    "workbench.colorTheme" = "Dark Modern";
-    "workbench.preferredDarkColorTheme" = "Dark Modern";
-    "workbench.preferredLightColorTheme" = "Light Modern";
-
-    "workbench.colorCustomizations" = {
-      "[Dark Modern]" = (mkTheme { variant = config.colors.dark; }).workbench;
-      "[Light Modern]" = (mkTheme { variant = config.colors.light; }).workbench;
-    };
-
-    "editor.tokenColorCustomizations" = {
-      "[Dark Modern]".textMateRules = (mkTheme { variant = config.colors.dark; }).tokenColors;
-      "[Light Modern]".textMateRules = (mkTheme { variant = config.colors.light; }).tokenColors;
-    };
-  };
 in
 {
   options.programs.vscode = {
@@ -53,8 +32,7 @@ in
         }
       );
 
-      files."${configDir}/settings.json".text = builtins.toJSON (settings // themeSettings);
-
+      files."${configDir}/settings.json".source = ./settings.json;
       files."${configDir}/keybindings.json".source = ./keybindings.json;
     };
   };
