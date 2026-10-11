@@ -8,6 +8,8 @@ in
 
   "terminal.integrated.fontFamily" = fontFamily;
 
+  "keyboard.dispatch" = "keyCode";
+
   "vim.leader" = "<space>";
   "vim.hlsearch" = true;
   "vim.ignorecase" = true;
