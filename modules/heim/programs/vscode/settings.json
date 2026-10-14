@@ -1,4 +1,5 @@
 {
+  "editor.bracketPairColorization.enabled": false,
   "editor.cursorSurroundingLines": 10,
   "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
   "editor.lineNumbers": "relative",
