@@ -8,15 +8,15 @@
 {
   agentic-nvim = {
     pname = "agentic-nvim";
-    version = "81628c1dc07edadd1c2c3c27d8dbcb424da1dea0";
+    version = "f0bef086b3ed6121d9a18a5a820d071c69f2f0f5";
     src = fetchFromGitHub {
       owner = "carlos-algms";
       repo = "agentic.nvim";
-      rev = "81628c1dc07edadd1c2c3c27d8dbcb424da1dea0";
+      rev = "f0bef086b3ed6121d9a18a5a820d071c69f2f0f5";
       fetchSubmodules = false;
-      sha256 = "sha256-gGesKupHCLVTQ27vj2OTllOPNG1hubZdUrYTqpofEVM=";
+      sha256 = "sha256-wK6+NZ6WW06HHl/b7DK8jVCx+gdUlPOi6vOjzSarS4o=";
     };
-    date = "2026-08-23";
+    date = "2026-10-16";
   };
   agentic-skills = {
     pname = "agentic-skills";

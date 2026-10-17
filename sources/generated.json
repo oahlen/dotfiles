@@ -1,7 +1,7 @@
 {
   "agentic-nvim": {
     "cargoLock": null,
-    "date": "2026-08-23",
+    "date": "2026-10-16",
     "extract": null,
     "name": "agentic-nvim",
     "passthru": null,
@@ -13,12 +13,12 @@
       "name": null,
       "owner": "carlos-algms",
       "repo": "agentic.nvim",
-      "rev": "81628c1dc07edadd1c2c3c27d8dbcb424da1dea0",
-      "sha256": "sha256-gGesKupHCLVTQ27vj2OTllOPNG1hubZdUrYTqpofEVM=",
+      "rev": "f0bef086b3ed6121d9a18a5a820d071c69f2f0f5",
+      "sha256": "sha256-wK6+NZ6WW06HHl/b7DK8jVCx+gdUlPOi6vOjzSarS4o=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "81628c1dc07edadd1c2c3c27d8dbcb424da1dea0"
+    "version": "f0bef086b3ed6121d9a18a5a820d071c69f2f0f5"
   },
   "agentic-skills": {
     "cargoLock": null,
