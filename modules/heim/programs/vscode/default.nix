@@ -24,13 +24,15 @@ in
 
   config = lib.mkIf cfg.enable {
     home = {
-      packages = lib.optional cfg.installPackage (
-        pkgs.vscode-with-extensions.override {
-          vscodeExtensions = with pkgs.vscode-extensions; [
-            vscodevim.vim
-          ];
-        }
-      );
+      # packages = lib.optional cfg.installPackage (
+      #   pkgs.vscode-with-extensions.override {
+      #     vscodeExtensions = with pkgs.vscode-extensions; [
+      #       vscodevim.vim
+      #     ];
+      #   }
+      # );
+
+      packages = lib.optional cfg.installPackage pkgs.vscode-fhs;
 
       files."${configDir}/settings.json".source = ./settings.json;
       files."${configDir}/keybindings.json".source = ./keybindings.json;
