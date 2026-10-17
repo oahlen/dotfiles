@@ -73,7 +73,7 @@ in
     package = lib.mkPackageOption pkgs "ghostty" { };
 
     shell = lib.mkOption {
-      type = with lib.types; either str package;
+      type = with lib.types; coercedTo package lib.getExe str;
       default = pkgs.customPackages.fish;
       defaultText = lib.literalExpression "pkgs.customPackages.fish";
       description = "The shell to launch, either as a plain string or as a package to resolve an executable from.";
@@ -88,9 +88,7 @@ in
     ];
 
     xdg.config.files = {
-      "ghostty/config.ghostty".text = toKeyValue (
-        mkConfig (if lib.isDerivation cfg.shell then lib.getExe cfg.shell else cfg.shell)
-      );
+      "ghostty/config.ghostty".text = toKeyValue (mkConfig cfg.shell);
 
       "ghostty/themes/${themeName "dark"}".text = toKeyValue (mkTheme config.colors.dark);
       "ghostty/themes/${themeName "light"}".text = toKeyValue (mkTheme config.colors.light);
