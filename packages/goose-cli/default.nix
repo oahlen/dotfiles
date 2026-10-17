@@ -26,6 +26,7 @@ let
 
   nixDirs = [
     "~/.cache/nix" # For fetching tarballs etc.
+    "~/.cache/treefmt"
   ];
 
   rtkDirs = [
