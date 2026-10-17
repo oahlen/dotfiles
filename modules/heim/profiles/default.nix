@@ -17,21 +17,21 @@ in
     };
 
     mimeapps.default = {
-      "application/pdf" = "chromium";
-      "application/x-extension-htm" = "chromium";
-      "application/x-extension-html" = "chromium";
-      "application/x-extension-shtml" = "chromium";
-      "application/x-extension-xht" = "chromium";
-      "application/x-extension-xhtml" = "chromium";
-      "application/xhtml+xml" = "chromium";
+      "application/pdf" = "firefox";
+      "application/x-extension-htm" = "firefox";
+      "application/x-extension-html" = "firefox";
+      "application/x-extension-shtml" = "firefox";
+      "application/x-extension-xht" = "firefox";
+      "application/x-extension-xhtml" = "firefox";
+      "application/xhtml+xml" = "firefox";
       "image/jpeg" = "org.gnome.Loupe.desktop";
       "image/png" = "org.gnome.Loupe.desktop";
       "inode/directory" = "org.gnome.Nautilus.desktop";
-      "text/html" = "chromium";
+      "text/html" = "firefox";
       "text/plain" = "org.gnome.TextEditor.desktop";
-      "x-scheme-handler/chrome" = "chromium";
-      "x-scheme-handler/http" = "chromium";
-      "x-scheme-handler/https" = "chromium";
+      "x-scheme-handler/chrome" = "firefox";
+      "x-scheme-handler/http" = "firefox";
+      "x-scheme-handler/https" = "firefox";
     };
 
     home = {
