@@ -13,6 +13,8 @@
   };
 
   programs = {
+    goose.desktop.enable = true;
+
     niri.extraConfig = ''
       output "DP-2" {
           variable-refresh-rate on-demand=true

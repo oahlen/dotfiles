@@ -2,13 +2,17 @@
   config,
   lib,
   pkgs,
+  pkgs-unstable,
   ...
 }:
 let
   cfg = config.programs.goose;
 in
 {
-  options.programs.goose.enable = lib.mkEnableOption "goose, an AI coding agent CLI.";
+  options.programs.goose = {
+    enable = lib.mkEnableOption "goose, an AI coding agent CLI.";
+    desktop.enable = lib.mkEnableOption "goose desktop";
+  };
 
   config = lib.mkIf cfg.enable {
     features.agentic.stickyPromptLines = [
@@ -16,7 +20,10 @@ in
     ];
 
     home = {
-      packages = [ pkgs.customPackages.goose-cli ];
+      packages = [
+        pkgs.customPackages.goose-cli
+      ]
+      ++ lib.optional cfg.desktop.enable pkgs-unstable.goose-desktop;
 
       files = {
         ".config/goose/.goosehints".text =
