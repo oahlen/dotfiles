@@ -25,7 +25,7 @@ in
   config = lib.mkIf cfg.enable {
     programs = {
       goose.enable = true;
-      rtk.enable = true;
+      rtk.enable = false; # TODO Build currently broken
     };
 
     features.agentic.stickyPromptLines = [
