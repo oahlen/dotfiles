@@ -63,7 +63,6 @@ let
 
     profile = ''
       export SDL_VIDEODRIVER=x11
-      export MESA_LOADER_DRIVER_OVERRIDE=zink
 
       export GDK_BACKEND=x11
       export WEBKIT_DISABLE_COMPOSITING_MODE=1
