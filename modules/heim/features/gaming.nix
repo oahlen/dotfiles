@@ -24,6 +24,7 @@ in
         "gpu_power"
         "gpu_temp"
         "vram"
+        "cpu_temp"
       ];
 
       # Fixes for audio crackling
