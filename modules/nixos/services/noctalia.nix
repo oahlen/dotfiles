@@ -1,7 +1,8 @@
 {
   config,
   lib,
-  pkgs,
+  # pkgs,
+  pkgs-unstable,
   ...
 }:
 let
@@ -11,7 +12,7 @@ in
   options.services.noctalia = {
     enable = lib.mkEnableOption "noctalia, a sleek and customizable desktop shell for Wayland";
 
-    package = lib.mkPackageOption pkgs "noctalia" { };
+    package = lib.mkPackageOption pkgs-unstable "noctalia" { };
 
     systemd.target = lib.mkOption {
       type = lib.types.str;
