@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgs-unstable,
   ...
 }:
 let
@@ -12,7 +13,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      heroic
+      pkgs-unstable.heroic
       mangohud
       umu-launcher
     ];
