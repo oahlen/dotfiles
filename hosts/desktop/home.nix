@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   ...
 }:
 {
@@ -32,6 +33,7 @@
       keepassxc
       markdownlint-cli2
       pinta
+      pkgs-unstable.tutanota-desktop
       spotify
     ];
   };
