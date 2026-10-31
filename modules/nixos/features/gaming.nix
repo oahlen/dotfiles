@@ -24,12 +24,26 @@ in
       uinput.enable = true; # Virtual gamepad support
     };
 
+    # Group for reading CPU power monitoring
+    users.groups.rapl = {
+      members = config.primaryUsers;
+    };
+
     services = {
       # Enable overclocking
       lact.enable = true;
 
-      # Add udev rules for common game controllers
-      udev.packages = [ pkgs.game-devices-udev-rules ];
+      udev = {
+        # Add udev rules for common game controllers
+        packages = [ pkgs.game-devices-udev-rules ];
+
+        # Allow the rapl group to read CPU energy counters
+        extraRules = ''
+          ACTION=="add|change", SUBSYSTEM=="powercap", KERNEL=="intel-rapl:*", \
+            RUN+="${pkgs.coreutils}/bin/chgrp rapl /sys/%p/energy_uj", \
+            RUN+="${pkgs.coreutils}/bin/chmod g+r /sys/%p/energy_uj"
+        '';
+      };
     };
 
     # Gamemode
