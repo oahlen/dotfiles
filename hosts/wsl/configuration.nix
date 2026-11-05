@@ -10,10 +10,6 @@ in
     description = "Oscar Ahlén";
   };
 
-  profiles = {
-    wsl.enable = true;
-  };
-
   features = {
     podman = {
       enable = true;

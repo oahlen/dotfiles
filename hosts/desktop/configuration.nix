@@ -31,6 +31,9 @@
     ];
 
     gaming.enable = true;
+
+    microvm.vms = [ "devbox" ];
+
     podman.enable = true;
     syncthing.enable = true;
     tailscale.enable = true;

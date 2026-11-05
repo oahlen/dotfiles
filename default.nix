@@ -27,20 +27,40 @@ let
     pkgs.nixos (
       [
         ./modules/nixos
-        { _module.args = { inherit pkgs-unstable sources; }; }
+        ./modules/microvm/host.nix
+        "${pins.microvm}/nixos-modules/host"
+        { _module.args = { inherit pkgs-unstable sources vms; }; }
       ]
       ++ modules
     );
 
   mkWslHost =
     modules:
-    mkHost (
+    pkgs.nixos (
       [
-        ./modules/nixos/profiles/wsl.nix
+        ./modules/nixos
+        ./modules/wsl
         "${pins.NixOS-WSL}/modules"
+        { _module.args = { inherit pkgs-unstable sources; }; }
       ]
       ++ modules
     );
+
+  mkVm =
+    modules:
+    pkgs.nixos (
+      [
+        ./modules/nixos
+        ./modules/microvm/guest.nix
+        "${pins.microvm}/nixos-modules/microvm"
+        { _module.args = { inherit pkgs-unstable sources; }; }
+      ]
+      ++ modules
+    );
+
+  vms = {
+    devbox = mkVm [ ./vms/devbox/configuration.nix ];
+  };
 
   mkHome =
     modules:
@@ -58,6 +78,8 @@ in
     nixos = mkWslHost [ ./hosts/wsl/configuration.nix ];
     xps15 = mkHost [ ./hosts/xps15/configuration.nix ];
   };
+
+  inherit vms;
 
   homes = {
     desktop = mkHome [ ./hosts/desktop/home.nix ];

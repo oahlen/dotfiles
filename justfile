@@ -29,17 +29,25 @@ update: update-pins update-sources && check-hosts check-homes
 @check-host host:
     nix eval --raw -f . "hosts.$1.config.system.build.toplevel.drvPath"
 
-# Evaluate the specified home configuration without building
-@check-home home:
-    nix eval --raw -f . "homes.$1.environment.drvPath"
-
 # Evaluate every host configuration without building
 @check-hosts:
     nix eval -f . --json --apply 'builtins.mapAttrs (_: h: h.config.system.build.toplevel.drvPath)' hosts
 
+# Evaluate the specified home configuration without building
+@check-home home:
+    nix eval --raw -f . "homes.$1.environment.drvPath"
+
 # Evaluate every home configuration without building
 @check-homes:
     nix eval -f . --json --apply 'builtins.mapAttrs (_: h: h.environment.drvPath)' homes
+
+# Evaluate the specified VM configuration without building
+@check-vm vm:
+    nix eval --raw -f . "vms.$1.config.microvm.declaredRunner.drvPath"
+
+# Evaluate every VM configuration without building
+@check-vms:
+    nix eval -f . --json --apply 'builtins.mapAttrs (_: v: v.config.microvm.declaredRunner.drvPath)' vms
 
 # Run nixos-rebuild boot for the current host
 @rebuild-boot:

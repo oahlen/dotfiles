@@ -16,6 +16,19 @@
       "url": "https://api.github.com/repos/nix-community/NixOS-WSL/tarball/refs/tags/2605.7.2",
       "hash": "sha256-pVadZqLm8RJcwLuDzJm7d2KO6e+RHPpIa/2qdqtn+B4="
     },
+    "microvm": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "microvm-nix",
+        "repo": "microvm.nix"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b7bd556974fa8a171b5b639200e81d52244dfde4",
+      "url": "https://github.com/microvm-nix/microvm.nix/archive/b7bd556974fa8a171b5b639200e81d52244dfde4.tar.gz",
+      "hash": "sha256-ErGIqtoWEX9KKC8NFtJDx2pGGG02Cr6LGxrvzLd2sqA="
+    },
     "nix-heim": {
       "type": "Git",
       "repository": {
