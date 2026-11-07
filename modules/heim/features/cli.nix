@@ -28,22 +28,13 @@ in
     home = {
       packages = with pkgs; [
         calc
-        csvlens
-        curl
         dos2unix
         dust
         eza
-        figlet
-        jless
         jq
         procs
         rage
-        scooter
-        sd
         tree
-        unzip
-        wget
-        zip
       ];
 
       sessionVariables = {

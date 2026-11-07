@@ -34,7 +34,6 @@
 
     microvm.vms = [ "devbox" ];
 
-    podman.enable = true;
     syncthing.enable = true;
     tailscale.enable = true;
     window-manager.enable = true;

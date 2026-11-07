@@ -29,11 +29,6 @@ let
     "~/.cache/treefmt"
   ];
 
-  rtkDirs = [
-    "~/.config/rtk"
-    "~/.local/share/rtk"
-  ];
-
   rustDirs = [
     "~/.local/share/cargo"
   ];
@@ -62,7 +57,6 @@ let
       ++ dotnetDirs
       ++ gooseDirs
       ++ nixDirs
-      ++ rtkDirs
       ++ rustDirs;
       allow_file = [
         "/dev/ptmx"

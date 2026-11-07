@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./features/agentic.nix
     ./features/cli.nix
     ./features/development.nix
     ./features/gaming.nix
@@ -9,7 +8,7 @@
 
     ./options/colors
 
-    ./profiles/default.nix
+    ./profiles/desktop.nix
     ./profiles/standalone.nix
     ./profiles/wsl.nix
 
@@ -35,7 +34,6 @@
     ./programs/neovim.nix
     ./programs/rbw.nix
     ./programs/ripgrep.nix
-    ./programs/rtk.nix
     ./programs/windows-terminal.nix
     ./programs/yazi.nix
 

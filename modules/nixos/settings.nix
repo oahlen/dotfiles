@@ -72,22 +72,33 @@
     };
   };
 
-  environment.variables.NIX_PATH = lib.mkForce "nixpkgs=${builtins.storePath pkgs.path}";
-
   # Systemd settings
   services.journald.extraConfig = ''
     SystemMaxUse=100M
   '';
 
+  environment = {
+    variables.NIX_PATH = lib.mkForce "nixpkgs=${builtins.storePath pkgs.path}";
+
+    systemPackages = with pkgs; [
+      curl
+      just # For running tasks in dotfiles
+      nix-tree
+      unzip
+      wget
+      zip
+    ];
+
+    # Global environment variables
+    variables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
+  };
+
   # Essential programs
   programs = {
     git.enable = true;
-  };
-
-  # Global environment variables
-  environment.variables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
   };
 
   # General overrides

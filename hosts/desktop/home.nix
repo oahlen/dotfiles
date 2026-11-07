@@ -5,7 +5,7 @@
 }:
 {
   profiles = {
-    default.enable = true;
+    desktop.enable = true;
   };
 
   features = {
@@ -14,8 +14,6 @@
   };
 
   programs = {
-    goose.desktop.enable = true;
-
     niri.extraConfig = ''
       output "DP-2" {
           variable-refresh-rate on-demand=true
@@ -31,8 +29,8 @@
       customPackages.hytale-launcher
       filen-cli
       keepassxc
-      markdownlint-cli2
       pinta
+      pkgs-unstable.goose-desktop
       pkgs-unstable.tutanota-desktop
       spotify
     ];

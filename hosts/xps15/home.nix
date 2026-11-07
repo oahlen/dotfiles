@@ -17,7 +17,7 @@ let
 in
 {
   profiles = {
-    default.enable = true;
+    desktop.enable = true;
   };
 
   features = {

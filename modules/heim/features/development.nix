@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  sources,
   ...
 }:
 let
@@ -15,17 +16,17 @@ in
       direnv.enable = true;
       git.enable = true;
       gitui.enable = true;
+      goose.enable = true;
       neovim.enable = true;
     };
 
     home = {
       packages = with pkgs; [
         gh
-        just
+        jless
         nixfmt-tree
         nix-prefetch-git
         nix-search-cli
-        nix-tree
         npins
         nvfetcher
         pastel
@@ -34,6 +35,10 @@ in
         tokei
         typos
       ];
+
+      files = {
+        ".agents/skills".source = "${sources.agentic-skills.src}/skills";
+      };
 
       sessionVariables = {
         CARGO_HOME = "$HOME/.local/share/cargo";

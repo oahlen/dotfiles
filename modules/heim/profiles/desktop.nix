@@ -4,16 +4,14 @@
   ...
 }:
 let
-  cfg = config.profiles.default;
+  cfg = config.profiles.desktop;
 in
 {
-  options.profiles.default.enable = lib.mkEnableOption "the default profile.";
+  options.profiles.desktop.enable = lib.mkEnableOption "the desktop profile.";
 
   config = lib.mkIf cfg.enable {
     features = {
-      agentic.enable = true;
       cli.enable = true;
-      development.enable = true;
     };
 
     mimeapps.default = {

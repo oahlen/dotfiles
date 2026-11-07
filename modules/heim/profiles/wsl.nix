@@ -12,7 +12,6 @@ in
 
   config = lib.mkIf cfg.enable {
     features = {
-      agentic.enable = true;
       cli.enable = true;
       development.enable = true;
     };
