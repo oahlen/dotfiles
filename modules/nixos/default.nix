@@ -5,7 +5,6 @@
     ./features/audio.nix
     ./features/boot.nix
     ./features/browser.nix
-    ./features/core-apps.nix
     ./features/desktop-environment.nix
     ./features/fonts.nix
     ./features/gaming.nix

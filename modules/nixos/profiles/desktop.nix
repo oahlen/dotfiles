@@ -15,7 +15,6 @@ in
       audio.enable = true;
       boot.enable = true;
       browser.enable = true;
-      core-apps.enable = true;
       fonts.enable = true;
       ssd.enable = true;
       wayland.enable = true;
@@ -35,6 +34,13 @@ in
       dconf.enable = true;
       firefox.enable = true;
     };
+
+    environment.systemPackages = with pkgs; [
+      adwaita-icon-theme
+      libnotify
+      nautilus
+      xdg-utils
+    ];
 
     # Add hardcoded /bin/bash for compatibility reasons
     systemd.tmpfiles.rules = [

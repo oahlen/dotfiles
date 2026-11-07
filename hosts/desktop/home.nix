@@ -21,13 +21,11 @@
     '';
 
     rbw.enable = true;
-    vscode.enable = true;
   };
 
   home = {
     packages = with pkgs; [
       customPackages.hytale-launcher
-      filen-cli
       keepassxc
       pinta
       pkgs-unstable.tutanota-desktop

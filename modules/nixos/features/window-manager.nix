@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  pkgs,
   ...
 }:
 let
@@ -40,11 +39,5 @@ in
     programs = {
       niri.enable = true;
     };
-
-    environment.systemPackages = with pkgs; [
-      adwaita-icon-theme
-      libnotify
-      pavucontrol
-    ];
   };
 }
