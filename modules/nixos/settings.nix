@@ -84,7 +84,6 @@
       curl
       just # For running tasks in dotfiles
       neovim-unwrapped
-      nix-tree
       unzip
       wget
       zip

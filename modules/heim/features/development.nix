@@ -28,6 +28,7 @@ in
         nixfmt-tree
         nix-prefetch-git
         nix-search-cli
+        nix-tree
         npins
         nvfetcher
         pastel
