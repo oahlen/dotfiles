@@ -15,7 +15,6 @@ in
     home.packages = with pkgs; [
       pkgs-unstable.heroic
       mangohud
-      umu-launcher
     ];
 
     xdg.config.files = {
