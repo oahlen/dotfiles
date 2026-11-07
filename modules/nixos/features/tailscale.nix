@@ -12,7 +12,7 @@ in
   config = lib.mkIf cfg.enable {
     services.tailscale = {
       enable = true;
-      useRoutingFeatures = "both";
+      useRoutingFeatures = "client";
     };
   };
 }
