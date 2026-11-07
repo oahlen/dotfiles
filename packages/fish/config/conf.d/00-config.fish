@@ -20,15 +20,14 @@ status is-interactive; and begin
     alias ll 'eza -l'
     alias ls eza
     alias lt 'eza --tree'
-    alias notes 'tmuxp load -y notes'
     alias tree 'eza --tree'
     alias vim nvim
     alias vi nvim
 
     # Interactive shell initialisation
-    batman --export-env | source
-    direnv hook fish | source
-    fzf --fish | source
+    type -q batman; and batman --export-env | source
+    type -q direnv; and direnv hook fish | source
+    type -q fzf; and fzf --fish | source
 
     set fish_greeting
 
@@ -39,7 +38,4 @@ status is-interactive; and begin
     set fish_vi_force_cursor
     set fish_cursor_default block
     set fish_cursor_insert line
-
-    # The superior note taking system
-    bind \cn 'nvim $HOME/notes.txt'
 end
