@@ -30,7 +30,6 @@
       filen-cli
       keepassxc
       pinta
-      pkgs-unstable.goose-desktop
       pkgs-unstable.tutanota-desktop
       spotify
     ];
