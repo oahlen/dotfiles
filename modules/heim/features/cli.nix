@@ -21,7 +21,6 @@ in
       fzf.enable = true;
       ripgrep.enable = true;
       scripts.enable = true;
-      tmux.enable = true;
       yazi.enable = true;
     };
 

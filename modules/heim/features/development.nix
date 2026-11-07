@@ -18,6 +18,7 @@ in
       gitui.enable = true;
       goose.enable = true;
       neovim.enable = true;
+      tmux.enable = true;
     };
 
     home = {
