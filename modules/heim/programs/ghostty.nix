@@ -50,6 +50,7 @@ let
     window-padding-y = 8;
 
     command = shellCommand;
+    term = "xterm-256color";
 
     quit-after-last-window-closed = true;
     quit-after-last-window-closed-delay = "5m";
