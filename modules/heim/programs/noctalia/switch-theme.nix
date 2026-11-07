@@ -26,8 +26,5 @@ writeShellScriptBin "switch-theme" ''
 
   heim-activate --variant "$variant"
 
-  signal=$([ "$scheme" = "prefer-light" ] && echo USR2 || echo USR1)
-  pkill -"$signal" foot || true
-
   notify-send "Application Theme" "Set to $1"
 ''

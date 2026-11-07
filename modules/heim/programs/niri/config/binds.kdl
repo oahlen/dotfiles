@@ -1,7 +1,7 @@
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "ghostty"; }
 
     Mod+D hotkey-overlay-title="Run an Application" { spawn "noctalia" "msg" "panel-open" "launcher"; }
 
