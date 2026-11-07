@@ -86,6 +86,9 @@ in
     mac = mkHome [ ./hosts/mac/home.nix ];
     nixos = mkHome [ ./hosts/wsl/home.nix ];
     xps15 = mkHome [ ./hosts/xps15/home.nix ];
+  }
+  // {
+    devbox = mkHome [ ./vms/devbox/home.nix ];
   };
 
   packages = pkgs.customPackages;
