@@ -8,10 +8,6 @@ let
   cfg = config.programs.noctalia;
   toml = pkgs.formats.toml { };
 
-  switch-theme = pkgs.callPackage ./switch-theme.nix {
-    inherit (config.colorscheme) default;
-  };
-
   mkPalette = import ./palette.nix;
 
   palette = {
@@ -120,8 +116,6 @@ in
   options.programs.noctalia.enable = lib.mkEnableOption "noctalia.";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ switch-theme ];
-
     xdg.config.files = {
       "noctalia/palettes/aurora.json".text = lib.generators.toJSON { } palette;
 

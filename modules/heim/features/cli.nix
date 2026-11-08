@@ -32,7 +32,7 @@ in
         eza
         jq
         procs
-        rage
+        trash-cli
         tree
       ];
 

@@ -23,7 +23,6 @@ in
 
     home = {
       packages = with pkgs; [
-        trash-cli
         wl-clipboard
         xdg-utils
       ];
