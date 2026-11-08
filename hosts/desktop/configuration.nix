@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-{
+{ ... }: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -43,11 +39,6 @@
   services = {
     flatpak.enable = true;
   };
-
-  environment.systemPackages = with pkgs; [
-    chromium
-    nfs-utils
-  ];
 
   fileSystems."/mnt/backup".options = [
     "noatime"
