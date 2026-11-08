@@ -37,6 +37,8 @@ let
   };
 in
 {
+  imports = [ ./network.nix ];
+
   options.features.microvm.vms = lib.mkOption {
     type = lib.types.listOf lib.types.str;
     default = [ ];

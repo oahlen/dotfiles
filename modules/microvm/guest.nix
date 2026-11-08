@@ -5,10 +5,13 @@
 }:
 let
   registry = import ./registry.nix;
+
   name = config.networking.hostName;
   index =
     registry.${name} or (throw "microvm: '${name}' is missing from modules/microvm/registry.nix");
+
   hex = lib.fixedWidthString 2 "0" (lib.toLower (lib.toHexString index));
+  mac = "02:00:00:00:00:${hex}";
 in
 {
   imports = [ ./features/persistence.nix ];
@@ -32,18 +35,53 @@ in
 
       writableStoreOverlay = "/nix/.rw-store";
 
-      # QEMU user-mode NAT, no host network setup needed
+      # Routed tap link to the host, see ./network.nix
       interfaces = [
         {
-          type = "user";
-          id = "vm-${config.networking.hostName}";
-          mac = "02:00:00:00:00:${hex}";
+          type = "tap";
+          id = "vm${toString index}";
+          inherit mac;
         }
       ];
 
       vsock = {
         ssh.enable = true;
         cid = index + 2; # 0-2 are reserved, so the first VM gets 3
+      };
+    };
+
+    networking = {
+      useNetworkd = true;
+      useDHCP = false;
+      enableIPv6 = false; # LAN filtering on the host is IPv4 only
+    };
+
+    # Static addressing, the host end of the link is always 10.0.0.0
+    systemd.network.networks."10-uplink" = {
+      matchConfig.MACAddress = mac;
+      address = [ "10.0.0.${toString index}/32" ];
+
+      routes = [
+        {
+          Destination = "10.0.0.0/32";
+          GatewayOnLink = true;
+        }
+        {
+          Destination = "0.0.0.0/0";
+          Gateway = "10.0.0.0";
+          GatewayOnLink = true;
+        }
+      ];
+
+      networkConfig = {
+        # Public resolvers, the LAN router should be off limits
+        DNS = [
+          "1.1.1.1"
+          "1.0.0.1"
+        ];
+
+        LinkLocalAddressing = "no";
+        IPv6AcceptRA = false;
       };
     };
 
