@@ -20,7 +20,7 @@ in
     microvm = {
       hypervisor = lib.mkDefault "qemu";
       vcpu = lib.mkDefault 4;
-      mem = lib.mkDefault (4 * 1024);
+      mem = lib.mkDefault (8 * 1024);
 
       # Host store shared read-only, guest writes go to an overlay
       shares = [
