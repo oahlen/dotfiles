@@ -60,6 +60,7 @@ let
 
   vms = {
     devbox = mkVm [ ./vms/devbox/configuration.nix ];
+    sandbox = mkVm [ ./vms/sandbox/configuration.nix ];
   };
 
   mkHome =

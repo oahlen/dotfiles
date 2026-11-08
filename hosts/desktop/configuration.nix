@@ -28,7 +28,10 @@
 
     gaming.enable = true;
 
-    microvm.vms = [ "devbox" ];
+    microvm.vms = [
+      "devbox"
+      "sandbox"
+    ];
 
     syncthing.enable = true;
     tailscale.enable = true;
