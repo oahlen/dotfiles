@@ -33,6 +33,7 @@ let
     workdir.access = "readwrite";
     filesystem = {
       allow = [
+        "~/.config/goose"
         "~/.local/share/cargo"
         "~/.local/share/dotnet"
         "~/.local/share/goose"
@@ -43,7 +44,6 @@ let
       ];
       read = [
         "~/.agents"
-        "~/.config/goose"
         "~/dotfiles" # Some config files can link back here
       ];
       write = [ ];
