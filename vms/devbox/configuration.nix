@@ -5,10 +5,10 @@
   microvm = {
     vcpu = 8;
     mem = 12 * 1024;
-    vsock.cid = 3; # Lowest number a VM can have
   };
 
   features = {
+    persistence.enable = true;
     podman.enable = true;
   };
 }

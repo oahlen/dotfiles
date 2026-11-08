@@ -8,7 +8,7 @@
 let
   cfg = config.features.microvm;
 
-  # ssh into a VM by name, resolving its vsock CID from the VM config
+  # Connect to a VM by name, resolving its vsock CID from the VM config
   ssh-vm = pkgs.writeShellApplication {
     name = "ssh-vm";
     runtimeInputs = [ pkgs.openssh ];
@@ -43,17 +43,35 @@ in
     description = "The list of named virtual machines to run on this host.";
   };
 
-  config.environment.systemPackages = lib.mkIf (cfg.vms != [ ]) [ ssh-vm ];
+  config = {
+    assertions =
+      let
+        registry = import ./registry.nix;
+        indices = lib.attrValues registry;
+      in
+      [
+        {
+          assertion = lib.length indices == lib.length (lib.unique indices);
+          message = "modules/microvm/registry.nix: VM indices must be unique";
+        }
+        {
+          assertion = lib.all (i: i >= 1 && i <= 254) indices;
+          message = "modules/microvm/registry.nix: VM indices must be within 1-254";
+        }
+      ];
 
-  config.microvm = {
-    host = {
-      enable = cfg.vms != [ ];
-      installCommand = false;
+    environment.systemPackages = lib.mkIf (cfg.vms != [ ]) [ ssh-vm ];
+
+    microvm = {
+      host = {
+        enable = cfg.vms != [ ];
+        installCommand = false;
+      };
+
+      vms = lib.genAttrs cfg.vms (name: {
+        evaluatedConfig = vms.${name};
+        autostart = false;
+      });
     };
-
-    vms = lib.genAttrs cfg.vms (name: {
-      evaluatedConfig = vms.${name};
-      autostart = false;
-    });
   };
 }
