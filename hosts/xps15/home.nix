@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 let
   set-resolution-2k = pkgs.writeShellScriptBin "set-resolution-2k" ''
     niri msg output eDP-1 custom-mode 1920x1200@60

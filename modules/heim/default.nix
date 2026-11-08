@@ -37,7 +37,6 @@
     ./programs/windows-terminal.nix
     ./programs/yazi.nix
 
-    ./mimeapps.nix
     ./settings.nix
   ];
 }
