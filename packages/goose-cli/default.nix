@@ -12,27 +12,6 @@ let
     nono
     ;
 
-  dotnetDirs = [
-    "~/.local/share/AvaloniaUI"
-    "~/.local/share/dotnet" # NuGet etc.
-  ];
-
-  gooseDirs = [
-    "~/.cache/goose"
-    "~/.config/goose"
-    "~/.local/share/goose"
-    "~/.local/state/goose"
-  ];
-
-  nixDirs = [
-    "~/.cache/nix" # For fetching tarballs etc.
-    "~/.cache/treefmt"
-  ];
-
-  rustDirs = [
-    "~/.local/share/cargo"
-  ];
-
   # Custom goose sandbox wrapper
   # Policy reference https://github.com/nolabs-ai/nono/blob/main/crates/nono-cli/data/policy.json
   profile = {
@@ -48,21 +27,23 @@ let
       "rust_runtime"
       "system_read_linux_core"
       "system_write_linux"
+      "user_caches_linux"
+      "user_tools"
     ];
     workdir.access = "readwrite";
     filesystem = {
       allow = [
-        "~/.local/share/Olink"
-      ]
-      ++ dotnetDirs
-      ++ gooseDirs
-      ++ nixDirs
-      ++ rustDirs;
+        "~/.local/share/cargo"
+        "~/.local/share/dotnet"
+        "~/.local/share/goose"
+        "~/.local/state/goose"
+      ];
       allow_file = [
         "/dev/ptmx"
       ];
       read = [
         "~/.agents"
+        "~/.config/goose"
         "~/dotfiles" # Some config files can link back here
       ];
       write = [ ];
