@@ -8,21 +8,27 @@ status is-interactive; and begin
     abbr --add -- extract tar xzf \"targz_file\"
 
     # Aliases
-    alias cat bat
-    alias di dev-session
-    alias dots 'tmuxp load -y dotfiles'
-    alias fetch pokefetch
-    alias gi gitui
-    alias j just
-    alias la 'eza -a'
-    alias lf yazi
-    alias lla 'eza -la'
-    alias ll 'eza -l'
-    alias ls eza
-    alias lt 'eza --tree'
-    alias tree 'eza --tree'
-    alias vim nvim
-    alias vi nvim
+    command -q bat; and alias cat bat
+    command -q dev-session; and alias di dev-session
+    command -q tmuxp; and alias dots 'tmuxp load -y dotfiles'
+    command -q pokefetch; and alias fetch pokefetch
+    command -q gitui; and alias gi gitui
+    command -q just; and alias j just
+    command -q yazi; and alias lf yazi
+
+    if command -q eza
+        alias ls eza
+        alias la 'eza -a'
+        alias ll 'eza -l'
+        alias lla 'eza -la'
+        alias lt 'eza --tree'
+        alias tree 'eza --tree'
+    end
+
+    if command -q nvim
+        alias vim nvim
+        alias vi nvim
+    end
 
     # Interactive shell initialisation
     type -q batman; and batman --export-env | source
