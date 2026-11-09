@@ -6,7 +6,10 @@ else
     vim.o.background = "dark"
 end
 
-vim.cmd.colorscheme(os.getenv("NVIM_COLORSCHEME") or "aurora")
+local scheme = os.getenv("NVIM_COLORSCHEME") or "aurora"
+if not pcall(vim.cmd.colorscheme, scheme) then
+    vim.cmd.colorscheme("default")
+end
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","

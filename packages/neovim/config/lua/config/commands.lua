@@ -7,16 +7,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    group = vim.api.nvim_create_augroup("treesitter-setup", {}),
+    group = vim.api.nvim_create_augroup("treesitter-setup", { clear = true }),
     callback = function(args)
-        local filetype = args.match
-
-        local language = vim.treesitter.language.get_lang(filetype) or filetype
-        if not vim.treesitter.language.add(language) then
-            return
-        end
-
-        vim.treesitter.start(args.buf, language)
+        pcall(vim.treesitter.start, args.buf)
     end,
 })
 
