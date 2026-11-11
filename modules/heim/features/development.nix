@@ -23,8 +23,6 @@ in
 
     home = {
       packages = with pkgs; [
-        gh
-        jless
         nixfmt-tree
         nix-prefetch-git
         nix-search-cli

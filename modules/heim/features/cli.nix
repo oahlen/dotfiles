@@ -33,7 +33,6 @@ in
         jq
         procs
         trash-cli
-        tree
       ];
 
       sessionVariables = {
