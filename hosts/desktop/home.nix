@@ -27,6 +27,7 @@
     packages = with pkgs; [
       customPackages.hytale-launcher
       keepassxc
+      pastel
       pinta
       pkgs-unstable.tutanota-desktop
       spotify

@@ -29,7 +29,6 @@ in
         nix-tree
         npins
         nvfetcher
-        pastel
         statix
         stylua
         tokei
