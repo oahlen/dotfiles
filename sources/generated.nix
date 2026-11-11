@@ -8,15 +8,15 @@
 {
   agentic-nvim = {
     pname = "agentic-nvim";
-    version = "f0bef086b3ed6121d9a18a5a820d071c69f2f0f5";
+    version = "4750d6ce4298b3018dd67f975a1457afbeeaa09f";
     src = fetchFromGitHub {
       owner = "carlos-algms";
       repo = "agentic.nvim";
-      rev = "f0bef086b3ed6121d9a18a5a820d071c69f2f0f5";
+      rev = "4750d6ce4298b3018dd67f975a1457afbeeaa09f";
       fetchSubmodules = false;
-      sha256 = "sha256-wK6+NZ6WW06HHl/b7DK8jVCx+gdUlPOi6vOjzSarS4o=";
+      sha256 = "sha256-LfjVF0Elq0VQLxO3LQZKjt6IdsK2JvUlW8mw1EeA+Hk=";
     };
-    date = "2026-10-16";
+    date = "2026-11-08";
   };
   agentic-skills = {
     pname = "agentic-skills";
@@ -56,15 +56,15 @@
   };
   nixGL = {
     pname = "nixGL";
-    version = "b6105297e6f0cd041670c3e8628394d4ee247ed5";
+    version = "4306ae1d15adf3d386f1462b330d4f2648404711";
     src = fetchFromGitHub {
       owner = "nix-community";
       repo = "nixGL";
-      rev = "b6105297e6f0cd041670c3e8628394d4ee247ed5";
+      rev = "4306ae1d15adf3d386f1462b330d4f2648404711";
       fetchSubmodules = false;
-      sha256 = "sha256-fbRQzIGPkjZa83MowjbD2ALaJf9y6KMDdJBQMKFeY/8=";
+      sha256 = "sha256-c263mBFrDLv2/sguzQeKL99aJ4PkCdcUzcAuA5Cpzjo=";
     };
-    date = "2025-11-02";
+    date = "2026-11-04";
   };
   shellcheck-nvim = {
     pname = "shellcheck-nvim";

@@ -45,14 +45,14 @@
     "nixos-unstable": {
       "type": "Channel",
       "name": "nixos-unstable",
-      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1106360.0bb2eedc20e4/nixexprs.tar.xz",
-      "hash": "sha256-us2GRWGXbOQpN1blyJGvmdx+g4bv9GoFYq5iiOHRiZ8="
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1113206.f4a03c008967/nixexprs.tar.xz",
+      "hash": "sha256-VZ8WvA9m3XN36juXyg/GwbDRU2OezOHJlXpJCXkccv0="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixos-26.05",
-      "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.13446.7dcdd87373d7/nixexprs.tar.xz",
-      "hash": "sha256-dKEjuquCf1NEYiTZZr6xrvTrkhAm5Q94JuEwLBzycEs="
+      "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.13936.ac588ef1c914/nixexprs.tar.xz",
+      "hash": "sha256-YqwBRaXgqn0+I8BCsZVLkzd746X/84fr1/FvZiocsYE="
     }
   },
   "version": 7
