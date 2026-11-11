@@ -23,11 +23,6 @@
     "version": "1.*"
   },
   {
-    "name": "conform",
-    "src": "https://github.com/stevearc/conform.nvim",
-    "nix": "conform-nvim"
-  },
-  {
     "name": "fzf-lua",
     "src": "https://github.com/ibhagwan/fzf-lua",
     "nix": "fzf-lua"
