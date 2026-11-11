@@ -8,9 +8,9 @@ help:
 @bootstrap:
     nix-shell
 
-# Open the pinned nixpkgs release page
-@nixpkgs:
-    url=$(jq -r '.pins.nixpkgs.url' npins/sources.json); xdg-open "${url%/*}"
+# Show the release date of the pinned nixpkgs channel
+@date:
+    curl -sIL "$(jq -r '.pins.nixpkgs.url' npins/sources.json)" | sed -n 's/^last-modified: //Ip'
 
 # Update pins and sources, then verify every configuration
 update: update-pins update-sources && check-hosts check-homes
