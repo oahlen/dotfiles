@@ -1,5 +1,5 @@
--- Nix puts every plugin on the runtimepath at startup
-if #vim.api.nvim_get_runtime_file("lua/lz/n/init.lua", false) > 0 then
+-- Managed by nix, nothing more to do here
+if vim.g.nix then
     return
 end
 

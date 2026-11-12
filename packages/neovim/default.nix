@@ -38,5 +38,5 @@ wrapNeovimUnstable neovim-unwrapped {
     configPlugin
   ];
 
-  wrapRc = false;
+  luaRcContent = "vim.g.nix = true";
 }
