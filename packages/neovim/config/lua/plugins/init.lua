@@ -1,23 +1,13 @@
-return {
-    {
-        "colorizer",
-        event = "BufEnter",
-        after = function()
-            require("colorizer").setup()
-        end,
-    },
-    {
-        "ibl",
-        event = "BufEnter",
-        after = function()
-            require("ibl").setup()
-        end,
-    },
-    {
-        "nvim-autopairs",
-        event = "BufEnter",
-        after = function()
-            require("nvim-autopairs").setup()
-        end,
-    },
-}
+require("colorizer").setup()
+require("ibl").setup()
+require("nvim-autopairs").setup()
+
+require("plugins.blink")
+require("plugins.fzf-lua")
+require("plugins.gitsigns")
+require("plugins.nvim-tree")
+require("plugins.render-markdown")
+require("plugins.statusline")
+require("plugins.which-key")
+require("plugins.agentic")
+require("shellcheck-nvim").setup()

@@ -14,12 +14,26 @@ let
       doCheck = false;
     };
 
-  plugins = map (plugin: {
-    plugin = (vimPlugins.${plugin.nix} or (buildPlugin sources.${plugin.nix})) // {
-      pname = plugin.name; # Set correct plugin name for lz.n and packadd
-    };
-    optional = !(plugin.start or false);
-  }) (builtins.fromJSON (builtins.readFile ./config/plugins.json));
+  plugins =
+    (with vimPlugins; [
+      blink-cmp
+      fzf-lua
+      gitsigns-nvim
+      heirline-nvim
+      indent-blankline-nvim
+      nvim-autopairs
+      nvim-colorizer-lua
+      nvim-lspconfig
+      nvim-tree-lua
+      nvim-web-devicons
+      render-markdown-nvim
+      which-key-nvim
+    ])
+    ++ map (name: buildPlugin sources.${name}) [
+      "agentic-nvim"
+      "aurora-nvim"
+      "shellcheck-nvim"
+    ];
 
   treesitter = vimPlugins.nvim-treesitter.withPlugins (
     parsers: map (name: parsers.${name}) (builtins.fromJSON (builtins.readFile ./config/parsers.json))

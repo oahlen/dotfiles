@@ -1,37 +1,29 @@
--- Managed by nix, nothing more to do here
 if vim.g.nix then
     return
 end
 
--- Neovim instance is managed with vim.pack, run `:lua vim.pack.update()` to keep them updated
-local file = vim.fs.joinpath(vim.fn.stdpath("config"), "plugins.json")
-local plugins = vim.json.decode(table.concat(vim.fn.readfile(file), "\n"))
+vim.pack.add({
+    "https://github.com/carlos-algms/agentic.nvim",
+    "https://github.com/oahlen/aurora.nvim",
+    { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
+    "https://github.com/ibhagwan/fzf-lua",
+    "https://github.com/lewis6991/gitsigns.nvim",
+    "https://github.com/rebelot/heirline.nvim",
+    "https://github.com/lukas-reineke/indent-blankline.nvim",
+    "https://github.com/mason-org/mason.nvim",
+    "https://github.com/windwp/nvim-autopairs",
+    "https://github.com/catgoose/nvim-colorizer.lua",
+    "https://github.com/neovim/nvim-lspconfig",
+    "https://github.com/nvim-tree/nvim-tree.lua",
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+    "https://github.com/nvim-tree/nvim-web-devicons",
+    "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+    "https://github.com/pablos123/shellcheck.nvim",
+    "https://github.com/folke/which-key.nvim",
+}, { confirm = false })
 
-local specs = vim.iter(plugins)
-    :map(function(plugin)
-        return {
-            name = plugin.name,
-            src = plugin.src,
-            version = plugin.version and vim.version.range(plugin.version),
-        }
-    end)
-    :totable()
-
--- Only install, lz.n loads the plugins that have a spec
-vim.pack.add(specs, { confirm = false, load = function() end })
-
-for _, plugin in ipairs(plugins) do
-    if plugin.start then
-        vim.cmd.packadd(plugin.name)
-    end
-end
-
--- Without nix, we install language servers and tools through mason
-vim.pack.add({ "https://github.com/mason-org/mason.nvim" }, { confirm = false })
 require("mason").setup()
 
--- Without nix, parsers are compiled by nvim-treesitter (requires the tree-sitter CLI and a C compiler)
-vim.pack.add({ { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" } }, { confirm = false })
 local parsers = vim.fs.joinpath(vim.fn.stdpath("config"), "parsers.json")
 
 if vim.fn.executable("tree-sitter") == 1 then
