@@ -37,6 +37,7 @@ let
         "~/.local/share/cargo"
         "~/.local/share/dotnet"
         "~/.local/share/goose"
+        "~/.local/share/nvfetcher"
         "~/.local/state/goose"
       ];
       allow_file = [
