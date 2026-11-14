@@ -10,10 +10,9 @@ let
 
   mkPalette = import ./palette.nix;
 
-  palette = {
-    dark = mkPalette { variant = config.colors.dark; };
-    light = mkPalette { variant = config.colors.light; };
-  };
+  palettes = lib.mapAttrs (
+    _: lib.mapAttrs (_: variant: mkPalette { inherit variant; })
+  ) config.colorschemes;
 
   conf = {
     bar.default = {
@@ -97,7 +96,7 @@ let
     };
 
     theme = {
-      custom_palette = "aurora";
+      custom_palette = config.colorscheme.name;
       source = "custom";
     };
 
@@ -117,9 +116,11 @@ in
 
   config = lib.mkIf cfg.enable {
     xdg.config.files = {
-      "noctalia/palettes/aurora.json".text = lib.generators.toJSON { } palette;
-
       "noctalia/config.toml".source = toml.generate "config.toml" conf;
-    };
+    }
+    // lib.mapAttrs' (
+      name: palette:
+      lib.nameValuePair "noctalia/palettes/${name}.json" { text = lib.generators.toJSON { } palette; }
+    ) palettes;
   };
 }

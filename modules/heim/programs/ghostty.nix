@@ -7,7 +7,7 @@
 let
   cfg = config.programs.ghostty;
 
-  themeName = variant: "${config.colorscheme.name}-${variant}";
+  themeName = scheme: variant: "${scheme}-${variant}";
 
   toKeyValue = lib.generators.toKeyValue {
     listsAsDuplicateKeys = true;
@@ -55,7 +55,11 @@ let
     quit-after-last-window-closed = true;
     quit-after-last-window-closed-delay = "5m";
 
-    theme = "light:${themeName "light"},dark:${themeName "dark"}";
+    theme =
+      let
+        inherit (config.colorscheme) name;
+      in
+      "light:${themeName name "light"},dark:${themeName name "dark"}";
   };
 
   launch-terminal = pkgs.writeShellScriptBin "launch-terminal" ''
@@ -90,9 +94,15 @@ in
 
     xdg.config.files = {
       "ghostty/config.ghostty".text = toKeyValue (mkConfig cfg.shell);
-
-      "ghostty/themes/${themeName "dark"}".text = toKeyValue (mkTheme config.colors.dark);
-      "ghostty/themes/${themeName "light"}".text = toKeyValue (mkTheme config.colors.light);
-    };
+    }
+    // lib.concatMapAttrs (
+      scheme: variants:
+      lib.mapAttrs' (
+        variant: colors:
+        lib.nameValuePair "ghostty/themes/${themeName scheme variant}" {
+          text = toKeyValue (mkTheme colors);
+        }
+      ) variants
+    ) config.colorschemes;
   };
 }
