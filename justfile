@@ -12,8 +12,8 @@ help:
 @date:
     curl -sIL "$(jq -r '.pins.nixpkgs.url' npins/sources.json)" | sed -n 's/^last-modified: //Ip'
 
-# Update pins and sources, then verify every configuration
-update: update-pins update-sources && check-hosts check-homes
+# Update pins and sources
+update: update-pins update-sources
 
 # Update pins to the latest version
 @update-pins:
