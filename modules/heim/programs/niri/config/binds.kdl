@@ -11,7 +11,7 @@ binds {
 
     Mod+P hotkey-overlay-title="Run Password Picker" { spawn "launch-terminal" "password-picker"; }
 
-    Mod+T hotkey-overlay-title="Toggle Theme Mode" {spawn  "noctalia" "msg" "theme-mode-toggle" };
+    Mod+T hotkey-overlay-title="Toggle Theme Mode" { spawn "noctalia" "msg" "theme-mode-toggle"; };
 
     Mod+B hotkey-overlay-title="Toggle Statusbar" { spawn "noctalia" "msg" "bar-toggle"; }
 
