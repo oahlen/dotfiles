@@ -16,7 +16,7 @@ in
     colorscheme = {
       name = lib.mkOption {
         type = lib.types.enum (lib.attrNames schemes);
-        default = "hacker";
+        default = "aurora";
         description = "Name of the active colorscheme.";
       };
 
